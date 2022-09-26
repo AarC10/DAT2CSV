@@ -6,7 +6,7 @@ import Files.DatConLog;
 import Files.Signal;
 import Files.Units;
 
-public class AirCraftCondition extends java.lang.Record {
+public class AirCraftCondition extends Record {
     protected boolean valid = false;
 
     protected short intFlightState = (short) 0;

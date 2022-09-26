@@ -30,6 +30,7 @@ import java.util.LinkedList;
 import java.util.Vector;
 
 import DatConRecs.*;
+import DatConRecs.Record;
 import Files.DatHeader.AcType;
 import apps.DatCon;
 import DatConRecs.RecDef.RecordDef;

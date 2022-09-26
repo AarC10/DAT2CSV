@@ -2,14 +2,14 @@ package DatConRecs.RecDef;
 
 import java.util.Vector;
 
-import src.DatConRecs.Payload;
-import src.DatConRecs.Record;
-import src.Files.ConvertDat.lineType;
-import src.Files.DatConLog;
-import src.Files.RecSpec;
-import src.Files.Signal;
-import src.Files.Units;
-import src.V3.Files.ConvertDatV3;
+import DatConRecs.Payload;
+import DatConRecs.Record;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.RecSpec;
+import Files.Signal;
+import Files.Units;
+import V3.Files.ConvertDatV3;
 
 public class RecordDef extends Record {
 

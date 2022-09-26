@@ -5,7 +5,7 @@ import Files.ConvertDat;
 import Files.Signal;
 import Files.Units;
 
-public class BattInfo extends java.lang.Record {
+public class BattInfo extends Record {
     protected boolean valid = false;
 
     protected float Vol = (float) 0;

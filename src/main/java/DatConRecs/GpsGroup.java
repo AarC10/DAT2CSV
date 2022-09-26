@@ -11,7 +11,7 @@ import Files.DatConLog;
 import Files.Signal;
 import Files.Units;
 
-public class GpsGroup extends java.lang.Record {
+public class GpsGroup extends Record {
     //    private String suffix = "";
 
     protected boolean valid = false;

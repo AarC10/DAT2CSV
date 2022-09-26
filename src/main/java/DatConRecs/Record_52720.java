@@ -6,7 +6,7 @@ import Files.Signal;
 import Files.Units;
 import Files.ConvertDat.lineType;
 
-public class Record_52720 extends java.lang.Record {
+public class Record_52720 extends Record {
     protected boolean valid = false;
 
     protected int cpu_usage_pcnt = (int) 0;

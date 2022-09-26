@@ -57,23 +57,23 @@ import javax.swing.Timer;
 import javax.swing.UIManager;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import src.Files.AnalyzeDatResults;
+import Files.AnalyzeDatResults;
 import Files.ConvertDat;
-import src.Files.DJIAssistantFile;
-import src.Files.DatConLog;
-import src.Files.DatConPopups;
+import Files.DJIAssistantFile;
+import Files.DatConLog;
+import Files.DatConPopups;
 import Files.DatFile;
-import src.Files.FileBeingUsed;
-import src.Files.Persist;
-import src.Files.WorkingDir;
-import src.GUI.CheckUpdates;
-import src.GUI.CsvPanel;
-import src.GUI.DatConMenuBar;
-import src.GUI.DataModelDialog;
-import src.GUI.KMLPanel;
-import src.GUI.LogFilesPanel;
-import src.GUI.LoggingPanel;
-import src.GUI.TimeAxisPanel;
+import Files.FileBeingUsed;
+import Files.Persist;
+import Files.WorkingDir;
+import GUI.CheckUpdates;
+import GUI.CsvPanel;
+import GUI.DatConMenuBar;
+import GUI.DataModelDialog;
+import GUI.KMLPanel;
+import GUI.LogFilesPanel;
+import GUI.LoggingPanel;
+import GUI.TimeAxisPanel;
 
 @SuppressWarnings("serial")
 public class DatCon extends JPanel

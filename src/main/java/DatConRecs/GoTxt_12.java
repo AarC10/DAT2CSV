@@ -10,7 +10,7 @@ import Files.ConvertDat.lineType;
 
 // Stuff that ends up in the .txt file produced by the Go App
 
-public class GoTxt_12 extends java.lang.Record {
+public class GoTxt_12 extends Record {
 
     public static enum NON_GPS_CAUSE {
         ALREADY(0), FORBIN(1), GPSNUM_NONENOUGH(2), GPS_HDOP_LARGE(

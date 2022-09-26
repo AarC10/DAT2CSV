@@ -9,10 +9,10 @@ import java.io.PrintStream;
 import java.util.HashSet;
 import java.util.Vector;
 
-import src.DatConRecs.RecDef.Field.FieldType;
-import src.Files.DatConLog;
-import src.Files.Persist;
-import src.Files.RecSpec;
+import DatConRecs.RecDef.Field.FieldType;
+import Files.DatConLog;
+import Files.Persist;
+import Files.RecSpec;
 
 public class OpConfig {
 
@@ -314,11 +314,11 @@ public class OpConfig {
                 lines.add(line);
             }
             File dictFile = new File(System.getProperty("user.dir")
-                    + "/src/DatConRecs/" + dirName + "/" + "Dictionary.java");
+                    + "/DatConRecs/" + dirName + "/" + "Dictionary.java");
             PrintStream dictPrintStream = new PrintStream(dictFile);
-            dictPrintStream.println("package src.DatConRecs." + dirName + ";");
+            dictPrintStream.println("package DatConRecs." + dirName + ";");
             dictPrintStream.println("import java.util.Vector;");
-            dictPrintStream.println("import src.Files.RecClassSpec;");
+            dictPrintStream.println("import Files.RecClassSpec;");
             dictPrintStream.println("public class Dictionary {");
             dictPrintStream.println(
                     " public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();");
@@ -348,7 +348,7 @@ public class OpConfig {
 
     private static void createJavaFile(String dirName, RecordDef record)
             throws FileNotFoundException {
-        File file = new File(System.getProperty("user.dir") + "/src/DatConRecs/"
+        File file = new File(System.getProperty("user.dir") + "/DatConRecs/"
                 + dirName + "/" + record.getNameWithLengthAndId() + ".java");
         PrintStream printStream = new PrintStream(file);
         try {
@@ -364,11 +364,11 @@ public class OpConfig {
 
     private static void createJavaFileString(PrintStream printStream,
             String dirName, RecordDef record) {
-        printStream.println("package src.DatConRecs." + dirName + ";");
-        printStream.println("import src.DatConRecs.*;");
-        printStream.println("import src.Files.ConvertDat;");
-        printStream.println("import src.Files.ConvertDat.lineType;");
-        printStream.println("import src.Files.DatConLog;");
+        printStream.println("package DatConRecs." + dirName + ";");
+        printStream.println("import DatConRecs.*;");
+        printStream.println("import Files.ConvertDat;");
+        printStream.println("import Files.ConvertDat.lineType;");
+        printStream.println("import Files.DatConLog;");
 
         printStream.println("public class " + record.getNameWithLengthAndId()
                 + " extends Record {");
@@ -397,13 +397,13 @@ public class OpConfig {
 
     private static void createJavaFileBinary(PrintStream printStream,
             String dirName, RecordDef record) {
-        printStream.println("package src.DatConRecs." + dirName + ";");
-        printStream.println("import src.DatConRecs.*;");
-        printStream.println("import src.Files.ConvertDat;");
-        printStream.println("import src.Files.ConvertDat.lineType;");
-        printStream.println("import src.Files.DatConLog;");
-        printStream.println("import src.Files.Signal;");
-        printStream.println("import src.Files.Units;");
+        printStream.println("package DatConRecs." + dirName + ";");
+        printStream.println("import DatConRecs.*;");
+        printStream.println("import Files.ConvertDat;");
+        printStream.println("import Files.ConvertDat.lineType;");
+        printStream.println("import Files.DatConLog;");
+        printStream.println("import Files.Signal;");
+        printStream.println("import Files.Units;");
         printStream.println("");
         printStream.println("");
         printStream.println("public class " + record.getNameWithLengthAndId()
