@@ -74,9 +74,9 @@ public class Dictionary {
         //defaultOrder.add(Integer.valueOf());
     }
 
-    public static java.lang.Record getRecordInst(Vector<RecClassSpec> entries,
+    public static Record getRecordInst(Vector<RecClassSpec> entries,
                                                  RecSpec recInDat, ConvertDat convertDat, boolean strictLength) {
-        java.lang.Record retv = null;
+        Record retv = null;
         Iterator<RecClassSpec> iter = entries.iterator();
         while (iter.hasNext()) {
             RecClassSpec recClassSpec = iter.next();
@@ -87,7 +87,7 @@ public class Dictionary {
                     Class<?> recordClass = recClassSpec.getRecClass();
                     if (recordClass != null) {
                         try {
-                            retv = (java.lang.Record) recordClass
+                            retv = (Record) recordClass
                                     .getConstructor(ConvertDat.class)
                                     .newInstance(convertDat);
                             return retv;

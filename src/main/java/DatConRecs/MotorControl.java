@@ -7,7 +7,7 @@ import Files.Signal;
 import Files.Units;
 import Files.ConvertDat.lineType;
 
-public class MotorControl extends java.lang.Record {
+public class MotorControl extends Record {
 
     protected float pwm1 = (float) 0;
 
