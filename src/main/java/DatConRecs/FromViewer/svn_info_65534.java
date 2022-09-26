@@ -3,6 +3,9 @@ package DatConRecs.FromViewer;
 import java.nio.ByteBuffer;
 
 import DatConRecs.*;
+import DatConRecs.Record;
+import DatConRecs.*;
+import DatConRecs.Record;
 import Files.ConvertDat;
 import Files.ConvertDat.lineType;
 import Files.DatConLog;

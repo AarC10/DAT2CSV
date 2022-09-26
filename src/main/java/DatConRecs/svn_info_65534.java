@@ -6,7 +6,7 @@ import Files.ConvertDat;
 import Files.ConvertDat.lineType;
 import Files.DatConLog;
 
-public class svn_info_65534 extends java.lang.Record {
+public class svn_info_65534 extends Record {
 
     ByteBuffer payload = null;
 

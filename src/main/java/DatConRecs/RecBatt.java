@@ -7,7 +7,7 @@ import Files.Signal;
 import Files.Units;
 import Files.ConvertDat.lineType;
 
-public class RecBatt extends java.lang.Record {
+public class RecBatt extends Record {
 
     public float crrnt = (float) 0.0;
 

@@ -1,6 +1,7 @@
 package DatConRecs.FromOtherV3Dats;
 
 import DatConRecs.*;
+import DatConRecs.Record;
 import Files.ConvertDat;
 import Files.ConvertDat.lineType;
 import Files.DatConLog;
