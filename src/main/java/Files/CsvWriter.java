@@ -17,10 +17,13 @@ public class CsvWriter extends FileWriter {
     }
 
     public void print(String string) throws IOException {
+//        System.out.println("Print called");
         write(string, 0, string.length());
     }
 
     public void println(String string) throws IOException {
+//        System.out.println("Println called");
+
         print(string + "\n");
     }
 

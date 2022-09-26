@@ -77,16 +77,16 @@ public class ConvertDatV3 extends ConvertDat {
                 if (tickNo > tickRangeUpper) {
                     throw new FileEnd();
                 }
-                for (int i = 0; i < records.size(); i++) {
-                    if (records.get(i).isId(payloadType)) {
+                for (Record record : records) {
+                    if (record.isId(payloadType)) {
                         Payload payload = new Payload(_datFile, payloadStart,
                                 payloadLength, payloadType, tickNo);
                         try {
-                            ((Record) records.get(i)).process(payload);
+                            ((Record) record).process(payload);
                             processedPayload = true;
                         } catch (Exception e) {
                             String errMsg = "Can't process record "
-                                    + ((Record) records.get(i)) + " tickNo="
+                                    + ((Record) record) + " tickNo="
                                     + tickNo + " filePos=" + _datFile.getPos();
                             if (Persist.EXPERIMENTAL_DEV) {
                                 System.out.println(errMsg);

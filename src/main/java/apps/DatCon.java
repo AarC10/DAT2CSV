@@ -725,24 +725,19 @@ public class DatCon extends JPanel
                 }
             });
             KeyboardFocusManager.getCurrentKeyboardFocusManager()
-            .addPropertyChangeListener("permanentFocusOwner", new PropertyChangeListener()
-        {
-            public void propertyChange(final PropertyChangeEvent e)
-            {
-                if (e.getNewValue() instanceof JTextField)
-                {
-                                        SwingUtilities.invokeLater(new Runnable()
-                    {
-                        public void run()
-                        {
-                            JTextField textField = (JTextField)e.getNewValue();
-                            textField.selectAll();
+                    .addPropertyChangeListener("permanentFocusOwner", new PropertyChangeListener() {
+                        public void propertyChange(final PropertyChangeEvent e) {
+                            if (e.getNewValue() instanceof JTextField) {
+                                SwingUtilities.invokeLater(new Runnable() {
+                                    public void run() {
+                                        JTextField textField = (JTextField) e.getNewValue();
+                                        textField.selectAll();
+                                    }
+                                });
+
+                            }
                         }
                     });
-
-                }
-            }
-        });
         } else {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
