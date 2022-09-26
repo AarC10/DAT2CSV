@@ -14,10 +14,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import src.Files.ConvertDat;
-import src.Files.DatConLog;
-import src.Files.FileBeingUsed;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.DatConLog;
+import Files.FileBeingUsed;
+import apps.DatCon;
 
 @SuppressWarnings("serial")
 public class HPElevation extends JPanel

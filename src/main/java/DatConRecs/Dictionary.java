@@ -4,12 +4,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
 import java.util.Vector;
 
-import src.DatConRecs.Created4V1.RecBatt45_17;
-import src.Files.ConvertDat;
-import src.Files.DatConLog;
-import src.Files.Persist;
-import src.Files.RecClassSpec;
-import src.Files.RecSpec;
+import DatConRecs.Created4V1.RecBatt45_17;
+import Files.ConvertDat;
+import Files.DatConLog;
+import Files.Persist;
+import Files.RecClassSpec;
+import Files.RecSpec;
 
 public class Dictionary {
 

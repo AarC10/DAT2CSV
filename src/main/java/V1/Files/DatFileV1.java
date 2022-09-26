@@ -7,15 +7,15 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-import src.DatConRecs.Payload;
-import src.Files.AnalyzeDatResults;
-import src.Files.ConvertDat;
-import src.Files.Corrupted;
-import src.Files.DatFile;
-import src.Files.DatHeader;
-import src.Files.FileEnd;
-import src.Files.NotDatFile;
-import src.Files.Persist;
+import DatConRecs.Payload;
+import Files.AnalyzeDatResults;
+import Files.ConvertDat;
+import Files.Corrupted;
+import Files.DatFile;
+import Files.DatHeader;
+import Files.FileEnd;
+import Files.NotDatFile;
+import Files.Persist;
 
 public class DatFileV1 extends DatFile {
 

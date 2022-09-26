@@ -21,8 +21,8 @@ package GUI;
 
 import java.io.FileNotFoundException;
 
-import src.Files.ConvertDat;
-import src.Files.FileBeingUsed;
+import Files.ConvertDat;
+import Files.FileBeingUsed;
 
 public interface IDatConPanel {
 

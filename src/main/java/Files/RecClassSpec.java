@@ -1,6 +1,6 @@
 package Files;
 
-import src.DatConRecs.Record;
+import DatConRecs.Record;
 
 public class RecClassSpec extends RecSpec {
 

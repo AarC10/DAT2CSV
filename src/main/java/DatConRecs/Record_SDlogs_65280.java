@@ -22,9 +22,9 @@ package DatConRecs;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import src.Files.ConvertDat;
-import src.Files.DatConLog;
-import src.Files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.DatConLog;
+import Files.ConvertDat.lineType;
 
 public class Record_SDlogs_65280 extends java.lang.Record {
 

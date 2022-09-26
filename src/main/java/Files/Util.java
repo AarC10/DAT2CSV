@@ -117,7 +117,7 @@ public class Util {
     @SuppressWarnings("rawtypes")
     public static void main(String[] args) throws IOException {
         try {
-            Class[] classes = getClasses("src.DatConRecs.Created4V3");
+            Class[] classes = getClasses("DatConRecs.Created4V3");
             for (int i = 0; i < classes.length; i++) {
                 Class cls = classes[i];
                 System.out.println("CLASS " + cls);

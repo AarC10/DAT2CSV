@@ -33,8 +33,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import src.Files.DatConLog;
-import src.apps.DatCon;
+import Files.DatConLog;
+import apps.DatCon;
 
 public class DashwarePanelX extends JPanel implements ActionListener {
     DatCon datCon = null;

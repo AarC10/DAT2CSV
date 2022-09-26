@@ -21,13 +21,13 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 
-import src.Files.ConvertDat;
-import src.Files.DatConLog;
-import src.Files.DatFile;
-import src.Files.FileBeingUsed;
-import src.Files.Persist;
-import src.V3.Files.DatFileV3;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.DatConLog;
+import Files.DatFile;
+import Files.FileBeingUsed;
+import Files.Persist;
+import V3.Files.DatFileV3;
+import apps.DatCon;
 
 @SuppressWarnings("serial")
 public class LogFilesPanel extends JPanel

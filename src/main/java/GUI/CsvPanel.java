@@ -40,11 +40,11 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 
-import src.Files.ConvertDat;
-import src.Files.CsvWriter;
-import src.Files.DatConLog;
-import src.Files.FileBeingUsed;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.CsvWriter;
+import Files.DatConLog;
+import Files.FileBeingUsed;
+import apps.DatCon;
 
 public class CsvPanel extends JPanel
         implements ActionListener, PropertyChangeListener, IDatConPanel {

@@ -42,7 +42,7 @@ public class DatFileV3 extends Files.DatFile {
     }
 
     public ConvertDat createConVertDat() {
-        return (new src.V3.Files.ConvertDatV3(this));
+        return (new V3.Files.ConvertDatV3(this));
     }
 
     public void reset() throws IOException {

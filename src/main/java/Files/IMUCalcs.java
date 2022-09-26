@@ -2,8 +2,8 @@ package Files;
 
 import java.io.IOException;
 
-import src.DatConRecs.RecIMU;
-import src.Files.ConvertDat.lineType;
+import DatConRecs.RecIMU;
+import Files.ConvertDat.lineType;
 
 public class IMUCalcs {
     private static boolean debug = true;

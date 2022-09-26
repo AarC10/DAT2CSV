@@ -7,8 +7,8 @@ import javax.swing.JComponent;
 import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
 
-import src.Files.DatConLog;
-import src.Files.Persist;
+import Files.DatConLog;
+import Files.Persist;
 
 @SuppressWarnings("serial")
 public class FieldCategories extends JMenu implements ActionListener {

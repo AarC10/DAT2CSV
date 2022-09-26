@@ -1,9 +1,9 @@
 package DatConRecs;
 
-import src.Files.AxesAndSigs;
-import src.Files.ConvertDat;
-import src.Files.Signal;
-import src.Files.Units;
+import Files.AxesAndSigs;
+import Files.ConvertDat;
+import Files.Signal;
+import Files.Units;
 
 public class BattInfo extends java.lang.Record {
     protected boolean valid = false;

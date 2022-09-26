@@ -36,12 +36,12 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingUtilities;
 import javax.swing.border.LineBorder;
-import src.Files.ConvertDat;
-import src.Files.DatFile;
-import src.Files.FileBeingUsed;
-import src.Files.Persist;
-import src.Files.DatConLog;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.DatFile;
+import Files.FileBeingUsed;
+import Files.Persist;
+import Files.DatConLog;
+import apps.DatCon;
 
 public class TimeAxisPanel extends JPanel
         implements ActionListener, PropertyChangeListener, IDatConPanel {

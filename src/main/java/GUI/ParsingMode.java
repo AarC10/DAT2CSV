@@ -9,8 +9,8 @@ import javax.swing.JMenu;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JSeparator;
 
-import src.Files.DatConLog;
-import src.Files.Persist;
+import Files.DatConLog;
+import Files.Persist;
 
 @SuppressWarnings("serial")
 public class ParsingMode extends JMenu implements ActionListener {

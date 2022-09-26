@@ -29,10 +29,10 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Vector;
 
-import src.DatConRecs.*;
-import src.Files.DatHeader.AcType;
-import src.apps.DatCon;
-import src.DatConRecs.RecDef.RecordDef;
+import DatConRecs.*;
+import Files.DatHeader.AcType;
+import apps.DatCon;
+import DatConRecs.RecDef.RecordDef;
 
 public class ConvertDat {
 

@@ -24,12 +24,12 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 
-import src.Files.ConvertDat;
-import src.Files.ConvertDat.KmlType;
-import src.Files.FileBeingUsed;
-import src.Files.GoogleElevation;
-import src.Files.DatConLog;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.ConvertDat.KmlType;
+import Files.FileBeingUsed;
+import Files.GoogleElevation;
+import Files.DatConLog;
+import apps.DatCon;
 
 @SuppressWarnings("serial")
 public class KMLPanel extends JPanel

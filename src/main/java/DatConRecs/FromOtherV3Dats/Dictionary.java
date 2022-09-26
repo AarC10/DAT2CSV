@@ -2,7 +2,7 @@ package DatConRecs.FromOtherV3Dats;
 
 import java.util.Vector;
 
-import src.Files.RecClassSpec;
+import Files.RecClassSpec;
 
 public class Dictionary {
     public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();

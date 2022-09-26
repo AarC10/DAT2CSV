@@ -3,16 +3,16 @@ package V1.Files;
 import java.io.IOException;
 import java.util.Vector;
 
-import src.DatConRecs.Dictionary;
-import src.DatConRecs.Payload;
-import src.DatConRecs.Record;
-import src.Files.AnalyzeDatResults;
-import src.Files.ConvertDat;
-import src.Files.Corrupted;
-import src.Files.DatConLog;
-import src.Files.FileEnd;
-import src.Files.Persist;
-import src.Files.RecSpec;
+import DatConRecs.Dictionary;
+import DatConRecs.Payload;
+import DatConRecs.Record;
+import Files.AnalyzeDatResults;
+import Files.ConvertDat;
+import Files.Corrupted;
+import Files.DatConLog;
+import Files.FileEnd;
+import Files.Persist;
+import Files.RecSpec;
 
 public class ConvertDatV1 extends ConvertDat {
 
@@ -102,7 +102,7 @@ public class ConvertDatV1 extends ConvertDat {
     protected Vector<Record> getRecordInst(RecSpec recInDat) {
         Vector<Record> retv = new Vector<Record>();
         Record rec = null;
-        rec = Dictionary.getRecordInst(src.DatConRecs.String.Dictionary.entries,
+        rec = Dictionary.getRecordInst(DatConRecs.String.Dictionary.entries,
                 recInDat, this, true);
         if (rec != null) {
             retv.add(rec);
@@ -160,20 +160,20 @@ public class ConvertDatV1 extends ConvertDat {
 
     private Record getRecordInstEngineered(RecSpec recInDat) {
         Record retv = null;
-        retv = Dictionary.getRecordInst(src.DatConRecs.Dictionary.entries,
+        retv = Dictionary.getRecordInst(DatConRecs.Dictionary.entries,
                 recInDat, this, true);
         if (retv != null) {
             return retv;
         }
         retv = Dictionary.getRecordInst(
-                src.DatConRecs.Created4V1.Dictionary.entries, recInDat, this,
+                DatConRecs.Created4V1.Dictionary.entries, recInDat, this,
                 true);
         return retv;
     }
 
     private Record getRecordInstFromDat(RecSpec recInDat) {
         Record retv = Dictionary.getRecordInst(
-                src.DatConRecs.FromViewer.Dictionary.entries, recInDat, this,
+                DatConRecs.FromViewer.Dictionary.entries, recInDat, this,
                 false);
         return retv;
     }

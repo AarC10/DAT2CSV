@@ -30,10 +30,10 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import src.Files.ConvertDat;
-import src.Files.FileBeingUsed;
-import src.Files.Persist;
-import src.apps.DatCon;
+import Files.ConvertDat;
+import Files.FileBeingUsed;
+import Files.Persist;
+import apps.DatCon;
 
 public class SampRatePanel extends JPanel implements IDatConPanel {
 

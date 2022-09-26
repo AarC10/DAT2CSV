@@ -6,10 +6,10 @@ import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-import src.Files.DatFile;
-import src.Files.FileEnd;
-import src.Files.Quaternion;
-import src.Files.RollPitchYaw;
+import Files.DatFile;
+import Files.FileEnd;
+import Files.Quaternion;
+import Files.RollPitchYaw;
 
 public class Payload {
 

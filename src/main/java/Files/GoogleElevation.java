@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 import javax.swing.SwingWorker;
-import src.GUI.KMLPanel;
+import GUI.KMLPanel;
 
 public class GoogleElevation extends SwingWorker<Void, Void> {
 

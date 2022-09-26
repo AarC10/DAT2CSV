@@ -1,7 +1,7 @@
 package Files;
 
 import java.io.File;
-import src.apps.DatCon;
+import apps.DatCon;
 
 public class WorkingDir {
 	private File workingDir = null;

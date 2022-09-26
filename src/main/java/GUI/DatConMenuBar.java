@@ -36,9 +36,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JSeparator;
 
-import src.Files.DatConLog;
-import src.Files.Persist;
-import src.apps.DatCon;
+import Files.DatConLog;
+import Files.Persist;
+import apps.DatCon;
 
 @SuppressWarnings("serial")
 public class DatConMenuBar extends JMenuBar implements ActionListener {

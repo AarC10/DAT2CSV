@@ -2,9 +2,9 @@ package DatConRecs;
 
 import Files.ConvertDat;
 import Files.ConvertDat.lineType;
-import src.Files.DatConLog;
-import src.Files.Signal;
-import src.Files.Units;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class AirCraftCondition extends java.lang.Record {
     protected boolean valid = false;

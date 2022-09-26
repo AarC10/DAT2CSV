@@ -34,9 +34,9 @@ import java.net.URLConnection;
 
 import javax.swing.*;
 
-import src.Files.DatConLog;
-import src.Files.Persist;
-import src.apps.DatCon;
+import Files.DatConLog;
+import Files.Persist;
+import apps.DatCon;
 
 public class CheckUpdates implements ActionListener {
 

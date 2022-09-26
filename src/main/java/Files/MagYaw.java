@@ -1,6 +1,6 @@
 package Files;
 
-import src.DatConRecs.RecIMU;
+import DatConRecs.RecIMU;
 
 public class MagYaw {
 

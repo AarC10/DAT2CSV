@@ -25,7 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import src.apps.DatCon;
+import apps.DatCon;
 
 public class DatConLog {
     private static PrintWriter dotdatPW = null;

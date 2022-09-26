@@ -11,7 +11,7 @@ import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
-import src.Files.DatConLog;
+import Files.DatConLog;
 
 @SuppressWarnings("serial")
 public class LoggingPanel extends JScrollPane {
@@ -60,7 +60,7 @@ public class LoggingPanel extends JScrollPane {
     public void Info(String msg) {
         if (msg.length() > 0) {
             appendTo(msg + "\n", Color.BLACK);
-            src.Files.DatConLog.Log("MSG: " + msg);
+            Files.DatConLog.Log("MSG: " + msg);
         }
     }
 

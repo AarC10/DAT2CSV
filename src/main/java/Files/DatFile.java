@@ -32,11 +32,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 
-import src.DatConRecs.Record;
-import src.Files.Corrupted.Type;
-import src.Files.DatHeader.AcType;
-import src.V1.Files.DatFileV1;
-import src.V3.Files.DatFileV3;
+import DatConRecs.Record;
+import Files.Corrupted.Type;
+import Files.DatHeader.AcType;
+import V1.Files.DatFileV1;
+import V3.Files.DatFileV3;
 import apps.DatCon;
 
 public class DatFile {
@@ -71,7 +71,7 @@ public class DatFile {
 
     protected long numRecs = 0;
 
-    protected src.Files.AnalyzeDatResults results = null;
+    protected Files.AnalyzeDatResults results = null;
 
     public long startOfRecord = 0;
 
@@ -100,22 +100,22 @@ public class DatFile {
 
     double clockRate = 600;
 
-    private src.Files.DatHeader datHeader;
+    private Files.DatHeader datHeader;
 
-    private HashMap<Integer, src.Files.RecSpec> recsInDat = new HashMap<Integer, src.Files.RecSpec>();
+    private HashMap<Integer, Files.RecSpec> recsInDat = new HashMap<Integer, Files.RecSpec>();
 
     public long _tickNo = 0;
 
     public int _type = 0;
 
-    public HashMap<Integer, src.Files.RecSpec> getRecsInDat() {
+    public HashMap<Integer, Files.RecSpec> getRecsInDat() {
         return recsInDat;
     }
 
     public void addRecInDat(int type, int length) {
         Integer key = Integer.valueOf(type);
         if (!recsInDat.containsKey(key)) {
-            recsInDat.put(key, new src.Files.RecSpec(type, length));
+            recsInDat.put(key, new Files.RecSpec(type, length));
         }
     }
 
@@ -123,31 +123,31 @@ public class DatFile {
         recsInDat.clear();
     }
 
-    public DatFile(String fileName) throws IOException, src.Files.NotDatFile {
+    public DatFile(String fileName) throws IOException, Files.NotDatFile {
         this(new File(fileName));
     }
 
     public static DatFile createDatFile(String datFileName)
-            throws src.Files.NotDatFile, IOException {
+            throws Files.NotDatFile, IOException {
         byte arra[] = new byte[256];
         //if (true )return (new DatFileV3(datFileName));
-        src.Files.DatConLog.Log(" ");
-        src.Files.DatConLog.Log("createDatFile " + datFileName);
+        Files.DatConLog.Log(" ");
+        Files.DatConLog.Log("createDatFile " + datFileName);
         FileInputStream bfr = new FileInputStream(new File(datFileName));
         bfr.read(arra, 0, 256);
         bfr.close();
         String headerString = new String(arra, 0, 21);
         if (!(headerString.substring(16, 21).equals("BUILD"))) {
-            if (src.Files.Persist.invalidStructOK) {
-                src.Files.DatConLog.Log("createDatFile invalid header - proceeding");
+            if (Files.Persist.invalidStructOK) {
+                Files.DatConLog.Log("createDatFile invalid header - proceeding");
                 datFile = new DatFileV3(datFileName);
                 datFile.setStartOfRecords(256);
                 return datFile;
             }
             if (headerString.substring(0, 4).equals("LOGH")) {
-                throw new src.Files.NotDatFile("Probably an encrypted .DAT");
+                throw new Files.NotDatFile("Probably an encrypted .DAT");
             }
-            throw new src.Files.NotDatFile();
+            throw new Files.NotDatFile();
         }
         if ((new String(arra, 242, 10).equals("DJI_LOG_V3"))) {
             datFile = new DatFileV3(datFileName);
@@ -174,9 +174,9 @@ public class DatFile {
     }
 
     public static DatFile createDatFile(String datFileName, final DatCon datCon)
-            throws src.Files.NotDatFile, IOException {
-        if (src.Files.DJIAssistantFile.isDJIDat(new File(datFileName))) {
-            if (src.Files.Persist.autoTransDJIAFiles) {
+            throws Files.NotDatFile, IOException {
+        if (Files.DJIAssistantFile.isDJIDat(new File(datFileName))) {
+            if (Files.Persist.autoTransDJIAFiles) {
                 int lastSlash = datFileName.lastIndexOf("\\");
                 String tempDirName = datFileName.substring(0, lastSlash + 1);
                 Color bgColor = datCon.goButton.getBackground();
@@ -188,15 +188,15 @@ public class DatFile {
                 datCon.goButton.setEnabled(false);
                 datCon.goButton.setText("Extracting .DAT");
                 try {
-                    src.Files.DatConLog.Log("DJIAssistantFile.extractFirst(" + datFileName
+                    Files.DatConLog.Log("DJIAssistantFile.extractFirst(" + datFileName
                             + ", " + tempDirName + ")");
-                    src.Files.DJIAssistantFile.ExtractResult result = src.Files.DJIAssistantFile
+                    Files.DJIAssistantFile.ExtractResult result = Files.DJIAssistantFile
                             .extractFirst(datFileName, tempDirName);
                     if (result.moreThanOne()) {
                         //                    if (true) {
-                        src.Files.DatConLog.Log(
+                        Files.DatConLog.Log(
                                 "DJIAssistantFile.extractFirst:moreThanOne");
-                        boolean moreThanOnePopup = src.Files.DatConPopups
+                        boolean moreThanOnePopup = Files.DatConPopups
                                 .moreThanOne(DatCon.frame);
                         if (moreThanOnePopup) {
                             return new DatFileV3(result.getFile());
@@ -204,11 +204,11 @@ public class DatFile {
                             return null;
                         }
                     } else if (result.none()) {
-                        src.Files.DatConLog.Log("DJIAssistantFile.extractFirst:none");
-                        src.Files.DatConPopups.none(DatCon.frame);
+                        Files.DatConLog.Log("DJIAssistantFile.extractFirst:none");
+                        Files.DatConPopups.none(DatCon.frame);
                         return null;
                     }
-                    src.Files.DatConLog.Log("DJIAssistantFile.extractFirst:one");
+                    Files.DatConLog.Log("DJIAssistantFile.extractFirst:one");
                     return new DatFileV3(result.getFile());
                 } finally {
                     datCon.goButton.setBackground(bgColor);
@@ -221,10 +221,10 @@ public class DatFile {
         return createDatFile(datFileName);
     }
 
-    public DatFile(File _file) throws src.Files.NotDatFile, FileNotFoundException {
-        datHeader = new src.Files.DatHeader(this);
+    public DatFile(File _file) throws Files.NotDatFile, FileNotFoundException {
+        datHeader = new Files.DatHeader(this);
         file = _file;
-        results = new src.Files.AnalyzeDatResults();
+        results = new Files.AnalyzeDatResults();
         fileLength = file.length();
         inputStream = new FileInputStream(file);
         _channel = inputStream.getChannel();
@@ -241,8 +241,8 @@ public class DatFile {
     public DatFile() {
     }
 
-    public src.Files.ConvertDat createConVertDat() {
-        return (new src.Files.ConvertDat(this));
+    public Files.ConvertDat createConVertDat() {
+        return (new Files.ConvertDat(this));
     }
 
     public void close() {
@@ -262,12 +262,12 @@ public class DatFile {
         System.runFinalization();
     }
 
-    public void reset() throws IOException, src.Files.FileEnd {
+    public void reset() throws IOException, Files.FileEnd {
         // tickGroups[0].reset();
         // tickGroups[1].reset();
         // tgIndex = 1;
         numCorrupted = 0;
-        results = new src.Files.AnalyzeDatResults();
+        results = new Files.AnalyzeDatResults();
         if (inputStream == null) {
             inputStream = new FileInputStream(file);
             _channel = inputStream.getChannel();
@@ -290,10 +290,10 @@ public class DatFile {
         return file.getName();
     }
 
-    public void setPosition(final long pos) throws src.Files.FileEnd, IOException {
+    public void setPosition(final long pos) throws Files.FileEnd, IOException {
         filePos = pos;
         if (filePos > fileLength)
-            throw (new src.Files.FileEnd());
+            throw (new Files.FileEnd());
         _channel.position(pos);
     }
 
@@ -309,9 +309,9 @@ public class DatFile {
         return memory.get((int) filePos);
     }
 
-    public int getByte(long fp) throws src.Files.FileEnd {
+    public int getByte(long fp) throws Files.FileEnd {
         if (fp >= fileLength)
-            throw (new src.Files.FileEnd());
+            throw (new Files.FileEnd());
         return memory.get((int) fp);
     }
 
@@ -341,9 +341,9 @@ public class DatFile {
                 + 256 * (int) (0xff & memory.get((int) (filePos + 1)));
     }
 
-    protected int getUnsignedShort(long fp) throws src.Files.FileEnd {
+    protected int getUnsignedShort(long fp) throws Files.FileEnd {
         if (fp > fileLength - 2)
-            throw (new src.Files.FileEnd());
+            throw (new Files.FileEnd());
         return (int) (0xff & memory.get((int) fp))
                 + 256 * (int) (0xff & memory.get((int) (fp + 1)));
     }
@@ -352,13 +352,13 @@ public class DatFile {
         return memory.getInt((int) filePos);
     }
 
-    public long getUnsignedInt() throws src.Files.FileEnd {
+    public long getUnsignedInt() throws Files.FileEnd {
         return getUnsignedInt(filePos);
     }
 
-    public long getUnsignedInt(long fp) throws src.Files.FileEnd {
+    public long getUnsignedInt(long fp) throws Files.FileEnd {
         if (fp > fileLength - 4)
-            throw (new src.Files.FileEnd());
+            throw (new Files.FileEnd());
         return (long) (0xff & memory.get((int) fp))
                 + (256 * (long) (0xff & memory.get((int) (fp + 1))))
                 + (65536 * (long) (0xff & memory.get((int) (fp + 2))))
@@ -377,7 +377,7 @@ public class DatFile {
         return memory.getDouble((int) filePos);
     }
 
-    public src.Files.AnalyzeDatResults getResults() {
+    public Files.AnalyzeDatResults getResults() {
         return results;
     }
 
@@ -417,7 +417,7 @@ public class DatFile {
         return ((long) (clockRate * time.doubleValue())) + offset;
     }
 
-    public void preAnalyze() throws src.Files.NotDatFile {
+    public void preAnalyze() throws Files.NotDatFile {
         switch (acType) {
         case I1:
             numBattCells = 6;
@@ -460,11 +460,11 @@ public class DatFile {
             break;
         case UNKNOWN:
             numBattCells = 4;
-            src.Files.DatConLog.Log("Assuming 4 cellls per battery");
+            Files.DatConLog.Log("Assuming 4 cellls per battery");
             break;
         default:
             numBattCells = 4;
-            src.Files.DatConLog.Log("Assuming 4 cellls per battery");
+            Files.DatConLog.Log("Assuming 4 cellls per battery");
             break;
         }
     }
@@ -484,11 +484,11 @@ public class DatFile {
         return acTypeName;
     }
 
-    public src.Files.RecSpec getRecId(int _type) {
-        src.Files.RecSpec retv = null;
-        Iterator<src.Files.RecSpec> iter = recsInDat.values().iterator();
+    public Files.RecSpec getRecId(int _type) {
+        Files.RecSpec retv = null;
+        Iterator<Files.RecSpec> iter = recsInDat.values().iterator();
         while (iter.hasNext()) {
-            src.Files.RecSpec tst = iter.next();
+            Files.RecSpec tst = iter.next();
             if (tst.getId() == _type) {
                 if (retv != null) {
                     return null;
@@ -500,10 +500,10 @@ public class DatFile {
     }
 
     public void printTypes() {
-        Iterator<src.Files.RecSpec> iter = recsInDat.values().iterator();
+        Iterator<Files.RecSpec> iter = recsInDat.values().iterator();
         while (iter.hasNext()) {
-            src.Files.RecSpec tst = iter.next();
-            src.Files.DatConLog.Log(tst.getDescription() + " Type " + tst.getId());
+            Files.RecSpec tst = iter.next();
+            Files.DatConLog.Log(tst.getDescription() + " Type " + tst.getId());
         }
     }
 
@@ -625,7 +625,7 @@ public class DatFile {
     }
 
     public double getCRCRatio() {
-        double ratio = (double) src.Files.Corrupted.getNum(Type.CRC)
+        double ratio = (double) Files.Corrupted.getNum(Type.CRC)
                 / (double) numRecs;
         return ratio;
     }
@@ -633,10 +633,10 @@ public class DatFile {
     public double getErrorRatio(Type _type) {
         switch (_type) {
         case CRC:
-            return (double) src.Files.Corrupted.getNum(Type.CRC)
+            return (double) Files.Corrupted.getNum(Type.CRC)
                     / (double) numRecs;
         case Other:
-            return (double) src.Files.Corrupted.getNum(Type.Other)
+            return (double) Files.Corrupted.getNum(Type.Other)
                     / (double) numRecs;
         default:
             return 0.0;

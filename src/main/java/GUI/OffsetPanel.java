@@ -32,9 +32,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 
-import src.Files.DatFile;
-import src.Files.Persist;
-import src.Files.DatConLog;
+import Files.DatFile;
+import Files.Persist;
+import Files.DatConLog;
 
 public class OffsetPanel extends JPanel implements ActionListener {
 
