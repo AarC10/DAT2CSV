@@ -26,7 +26,7 @@ import Files.ConvertDat;
 import Files.DatConLog;
 import Files.ConvertDat.lineType;
 
-public class Record_ModuleName_65532 extends java.lang.Record {
+public class Record_ModuleName_65532 extends Record {
 
     public static Record_ModuleName_65532 current = null;
 
