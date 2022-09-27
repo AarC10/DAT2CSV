@@ -78,13 +78,11 @@ public class Dictionary {
     public static Record getRecordInst(List<RecClassSpec> entries,
                                        RecSpec recInDat, ConvertDat convertDat, boolean strictLength) {
         Record retv = null;
-        Iterator<E> iter = entries.iterator();
-        while (iter.hasNext()) {
-            E recClassSpec = iter.next();
+        for (RecClassSpec recClassSpec : entries) {
             if (recClassSpec.getId() == recInDat.getId()) {
                 if ((recClassSpec.lengthOK(recInDat.getLength()))
                         || (!strictLength && recClassSpec.getLength() < recInDat
-                                .getLength())) {
+                        .getLength())) {
                     Class<?> recordClass = recClassSpec.getRecClass();
                     if (recordClass != null) {
                         try {
@@ -93,9 +91,9 @@ public class Dictionary {
                                     .newInstance(convertDat);
                             return retv;
                         } catch (InstantiationException | IllegalAccessException
-                                | IllegalArgumentException
-                                | InvocationTargetException
-                                | NoSuchMethodException | SecurityException e) {
+                                 | IllegalArgumentException
+                                 | InvocationTargetException
+                                 | NoSuchMethodException | SecurityException e) {
                             DatConLog.Exception(e);
                             if (Persist.EXPERIMENTAL_DEV) {
                                 e.printStackTrace();

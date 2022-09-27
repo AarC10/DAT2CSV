@@ -48,8 +48,8 @@ public class RecBatt38_5002 extends RecBatt38_500X {
                 volt[i] = (float) (((float) (payloadBB.getShort(19 + (2 * i))))
                         / 1000.0);
             }
-            float voltMax = maxVolts(volt);
-            float voltMin = minVolts(volt);
+            double voltMax = maxVolts(volt);
+            double voltMin = minVolts(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {

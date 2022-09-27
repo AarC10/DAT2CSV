@@ -11,9 +11,9 @@ public class RecBatt45_17 extends RecBatt {
         super(convertDat, 17, 45, 0);
     }
 
-    protected float maxVolt(float... floatVolts) {
-        float retv = -Float.MAX_VALUE;
-        for (float volts : floatVolts) {
+    protected double maxVolt(double... floatVolts) {
+        double retv = -Float.MAX_VALUE;
+        for (double volts : floatVolts) {
             if (volts > retv) {
                 retv = volts;
             }
@@ -21,9 +21,9 @@ public class RecBatt45_17 extends RecBatt {
         return retv;
     }
 
-    protected float minVolt(float... floatVolts) {
-        float retv = Float.MAX_VALUE;
-        for (float volts : floatVolts) {
+    protected double minVolt(double... floatVolts) {
+        double retv = Float.MAX_VALUE;
+        for (double volts : floatVolts) {
             if (volts < retv) {
                 retv = volts;
             }
@@ -47,13 +47,13 @@ public class RecBatt45_17 extends RecBatt {
         totalVolts = payloadBB.getShort(6) / 1000.0;
         crrnt = -payload.getUnsignedShort(8) - 65536 / 1000.0;
         batteryPercent = payloadBB.get(11);
-        temp = (float) (((float) (payloadBB.get(12))));
+        temp = payloadBB.get(12);
         for (int i = 0; i < numCells; i++) {
             volt[i] = (float) (((float) (payloadBB.getShort(18 + (2 * i))))
                     / 1000.0);
         }
-        float voltMax = maxVolt(volt);
-        float voltMin = minVolt(volt);
+        double voltMax = maxVolt(volt);
+        double voltMin = minVolt(volt);
         voltDiff = voltMax - voltMin;
         processComputedBatt();
     }

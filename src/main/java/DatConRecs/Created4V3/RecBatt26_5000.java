@@ -73,8 +73,8 @@ public class RecBatt26_5000 extends RecBatt {
                 volt[i] = (float) (((float) (payloadBB.getShort(18 + (2 * i))))
                         / 1000.0);
             }
-            float voltMax = maxVolt(volt);
-            float voltMin = minVolt(volt);
+            double voltMax = maxVolt(volt);
+            double voltMin = minVolt(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {

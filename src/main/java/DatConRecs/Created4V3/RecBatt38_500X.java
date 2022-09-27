@@ -70,8 +70,8 @@ public class RecBatt38_500X extends RecBatt {
             status3 = payloadBB.get(16);
             status4 = payloadBB.get(17);
 
-            float voltMax = maxVolt(volt);
-            float voltMin = minVolt(volt);
+            double voltMax = maxVolt(volt);
+            double voltMin = minVolt(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {
