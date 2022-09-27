@@ -412,7 +412,7 @@ public class OpConfig {
 
         printStream.println("protected boolean valid = false;");
         printStream.println("");
-        Vector<Field> fields = record.getFields();
+        List<Field> fields = record.getFields();
         for (int i = 0; i < fields.size(); i++) {
             Field field = fields.get(i);
             printStream.println(field.getJavaDeclaration());
