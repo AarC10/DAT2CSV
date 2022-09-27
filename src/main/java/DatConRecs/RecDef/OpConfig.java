@@ -1,14 +1,10 @@
 package DatConRecs.RecDef;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Vector;
+import java.text.ParseException;
+import java.util.*;
 
 import DatConRecs.RecDef.Field.FieldType;
 import files.DatConLog;
@@ -18,43 +14,26 @@ import files.RecSpec;
 public class OpConfig {
 
     enum State {
-        backup1, ConfigSeen, spin, NameSeen, TypeSeen, FtypeSeen, StringSeen, StringNameSeen, StringTypeSeen
+        BACKUP, CONFIG_SEEN, SPIN, NAME_SEEN, TYPE_SEEN, F_TYPE_SEEN, STRING_SEEN, STRING_NAME_SEEN, STRING_TYPE_SEEN
     }
 
     enum RecType {
-        normal, string, none;
+        NORMAL, STRING, NONE
     }
 
-    private Vector<RecordDef> records = new Vector<RecordDef>();
+    private final List<RecordDef> records = new ArrayList<>();
+    private final Set<String> varNames = new HashSet<>(200);
 
-    @SuppressWarnings("serial")
-    public static class ParseError extends Exception {
+    int varNameExtension = 0;
 
-        private State _state = null;
-
-        private Line _line;
-
-        private int _lineNum;
-
-        public ParseError(Line line, int lineNum, State state) {
-            _line = line;
-            _lineNum = lineNum;
-            _state = state;
-        }
-
-        public String toString() {
-            return "State " + _state + " Line " + _line + " lineNum "
-                    + _lineNum;
-        }
-    }
 
     public static class Line {
-        Vector<String> tokens = new Vector<String>();
+        List<String> tokens = new ArrayList<>();
 
         public Line(String opLine) {
-            String tkns[] = opLine.split("\\s+");
-            for (int i = 0; i < tkns.length; i++) {
-                addToken(tkns[i]);
+            String[] lineTokens = opLine.split("\\s+");
+            for (String token : lineTokens) {
+                addToken(token);
             }
         }
 
@@ -62,39 +41,33 @@ public class OpConfig {
             tokens.add(token);
         }
 
-        public Vector<String> getTokens() {
+        public List<String> getTokens() {
             return tokens;
         }
 
         public String toString() {
-            String retv = "";
-            for (int i = 0; i < tokens.size(); i++) {
-                retv = retv + tokens.get(i) + " ";
+            StringBuilder str = new StringBuilder();
+            for (String token : tokens) {
+                str.append(token).append(" ");
             }
-            return retv;
+            return str.toString();
         }
     }
 
-    private int recId;
-
-    HashSet<String> varNames = new HashSet<String>(200);
-
-    int varNameExtension = 0;
 
     public OpConfig(List<Line> lines) {
-
-        State state = State.backup1;
+        State state = State.BACKUP;
         String recName = "";
-        FieldType fieldType = null;
-        String varName = "";
-        RecordDef record = null;
-        Field field = null;
-        Line line = null;
-        Vector<String> tokens = null;
-        String firstToken = null;
+        FieldType fieldType;
+        String varName;
+        RecordDef recordDef = null;
+        Field field;
+        Line line;
+        List<String> tokens;
+        String firstToken;
         int defaultValue = 0;
         int lineNum = 1;
-        int numTokens = 0;
+        int numTokens;
         try {
             while (lineNum < lines.size()) {
                 line = lines.get(lineNum);
@@ -103,185 +76,169 @@ public class OpConfig {
                 if (numTokens > 0) {
                     firstToken = tokens.get(0);
                 } else {
-                    throw new ParseError(line, lineNum, state);
+                    throw new ParseException(line.toString(), lineNum);
                 }
 
+                int recId;
                 switch (state) {
-                case backup1:
-                    lineNum--;
-                    line = lines.get(lineNum);
-                    tokens = line.getTokens();
-                    numTokens = tokens.size();
-                    if (numTokens > 0) {
-                        firstToken = tokens.get(0);
+                    case BACKUP:
+                        lineNum--;
+                        line = lines.get(lineNum);
+                        tokens = line.getTokens();
+                        numTokens = tokens.size();
+                        if (numTokens > 0) {
+                            firstToken = tokens.get(0);
+                            if (firstToken.equalsIgnoreCase("Op.[config]")) {
+                                state = State.CONFIG_SEEN;
+                            } else if (firstToken.equalsIgnoreCase("Op.[string]")) {
+                                state = State.STRING_SEEN;
+                            } else {
+                                state = State.SPIN;
+                            }
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        break;
+                    case SPIN:
                         if (firstToken.equalsIgnoreCase("Op.[config]")) {
-                            state = State.ConfigSeen;
+                            state = State.CONFIG_SEEN;
                         } else if (firstToken.equalsIgnoreCase("Op.[string]")) {
-                            state = State.StringSeen;
-                        } else {
-                            //System.out.println(tokens);
-                            state = State.spin;
+                            state = State.STRING_SEEN;
                         }
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    break;
-                case spin:
-                    if (firstToken.equalsIgnoreCase("Op.[config]")) {
-                        state = State.ConfigSeen;
-                    } else if (firstToken.equalsIgnoreCase("Op.[string]")) {
-                        state = State.StringSeen;
-                    } else if (firstToken.equalsIgnoreCase("Op.expr")) {
-                        state = State.spin;
-                    } else {
-                        //System.out.println(tokens);
-                        state = State.spin;
-                    }
-                    break;
-                case ConfigSeen:
-                    if (firstToken.equalsIgnoreCase("name") && numTokens > 1) {
-                        state = State.NameSeen;
-                        recName = conCatTokens(tokens, 1);
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    break;
-                case NameSeen:
-                    if (firstToken.equalsIgnoreCase("type")) {
-                        if (isNumber(tokens.get(1))) {
-                            recId = Integer.parseInt(tokens.get(1));
-                            record = new RecordDef(recName, recId,
-                                    RecSpec.RecType.BINARY);
-                            varNames.clear();
-                            varNameExtension = 0;
-                            state = State.TypeSeen;
-                            break;
+                        break;
+                    case CONFIG_SEEN:
+                        if (firstToken.equalsIgnoreCase("name") && numTokens > 1) {
+                            state = State.NAME_SEEN;
+                            recName = conCatTokens(tokens);
                         } else {
-                            //System.out.println(tokens);
-                            state = State.spin;
+                            throw new ParseException(line.toString(), lineNum);
                         }
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    break;
+                        break;
+                    case NAME_SEEN:
+                        if (firstToken.equalsIgnoreCase("type")) {
+                            if (isNumber(tokens.get(1))) {
+                                recId = Integer.parseInt(tokens.get(1));
+                                recordDef = new RecordDef(recName, recId, RecSpec.RecType.BINARY);
+                                varNames.clear();
+                                varNameExtension = 0;
+                                state = State.TYPE_SEEN;
+                                break;
+                            } else {
+                                state = State.SPIN;
+                            }
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        break;
 
-                case TypeSeen:
-                    fieldType = Field.getFieldType(firstToken);
-                    if (fieldType == null) {
-                        records.add(record);
-                        state = State.backup1;
-                        break;
-                    }
-                    if (numTokens > 1) {
-                        varName = normalizeVarName(getVarName(tokens, 1));
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    if (fieldType == FieldType.expr) {
-                        if (numTokens == 3 && !isNumber(tokens.get(2))) {
-                            String exprRHS = tokens.get(2);
-                            field = new Field(fieldType, varName, exprRHS);
-                        }
-                        state = State.TypeSeen;
-                        break;
-                    }
-                    if (numTokens > 2
-                            && isNumber(tokens.get(tokens.size() - 1))) {
-                        defaultValue = Integer
-                                .parseInt(tokens.get(tokens.size() - 1));
-                    }
-                    field = new Field(fieldType, varName, defaultValue);
-                    record.addField(field);
-                    state = State.TypeSeen;
-                    break;
-                case FtypeSeen:
-                    fieldType = Field.getFieldType(firstToken);
-                    if (fieldType == null) {
-                        state = State.backup1;
-                        break;
-                    }
-                    if (numTokens > 1) {
-                        varName = normalizeVarName(tokens.get(1));
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    if (numTokens > 2 && isNumber(tokens.get(2))) {
-                        defaultValue = Integer.parseInt(tokens.get(2));
-                    }
-                    break;
-                case StringSeen:
-                    if (firstToken.equalsIgnoreCase("name") && numTokens > 1) {
-                        state = State.StringNameSeen;
-                        recName = tokens.get(1);
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                    break;
-                case StringNameSeen:
-                    if (firstToken.equalsIgnoreCase("type")) {
-                        if (isNumber(tokens.get(1))) {
-                            recId = Integer.parseInt(tokens.get(1));
-                            record = new RecordDef(recName, recId,
-                                    RecSpec.RecType.STRING);
-                            state = State.StringTypeSeen;
+                    case TYPE_SEEN:
+                        fieldType = Field.getFieldType(firstToken);
+                        if (fieldType == null) {
+                            records.add(recordDef);
+                            state = State.BACKUP;
                             break;
                         }
-                    } else {
-                        throw new ParseError(line, lineNum, state);
-                    }
-                case StringTypeSeen:
-                    records.add(record);
-                    state = State.backup1;
-                    break;
-                default:
-                    break;
+                        if (numTokens > 1) {
+                            varName = normalizeVarName(getVarName(tokens));
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        if (fieldType == FieldType.expr) {
+                            break;
+                        }
+                        if (numTokens > 2 && isNumber(tokens.get(tokens.size() - 1))) {
+                            defaultValue = Integer.parseInt(tokens.get(tokens.size() - 1));
+                        }
+                        field = new Field(fieldType, varName, defaultValue);
+                        recordDef.addField(field);
+                        break;
+                    case F_TYPE_SEEN:
+                        fieldType = Field.getFieldType(firstToken);
+                        if (fieldType == null) {
+                            state = State.BACKUP;
+                            break;
+                        }
+                        if (numTokens > 1) {
+                            normalizeVarName(tokens.get(1));
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        if (numTokens > 2 && isNumber(tokens.get(2))) {
+                            defaultValue = Integer.parseInt(tokens.get(2));
+                        }
+                        break;
+                    case STRING_SEEN:
+                        if (firstToken.equalsIgnoreCase("name") && numTokens > 1) {
+                            state = State.STRING_NAME_SEEN;
+                            recName = tokens.get(1);
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        break;
+                    case STRING_NAME_SEEN:
+                        if (firstToken.equalsIgnoreCase("type")) {
+                            if (isNumber(tokens.get(1))) {
+                                recId = Integer.parseInt(tokens.get(1));
+                                recordDef = new RecordDef(recName, recId, RecSpec.RecType.STRING);
+                                state = State.STRING_TYPE_SEEN;
+                                break;
+                            }
+                        } else {
+                            throw new ParseException(line.toString(), lineNum);
+                        }
+                        break;
+                    case STRING_TYPE_SEEN:
+                        records.add(recordDef);
+                        state = State.BACKUP;
+                        break;
+                    default:
+                        break;
                 }
                 lineNum++;
             }
-            if (record != null && record.getNumFields() > 0) {
-                records.add(record);
+            if (recordDef != null && recordDef.getNumFields() > 0) {
+                records.add(recordDef);
             }
-        } catch (ParseError pe) {
+        } catch (ParseException pe) {
             if (Persist.EXPERIMENTAL_DEV) {
-                System.out.println("ParseError " + pe);
+                System.out.println("ParseException " + pe);
                 pe.printStackTrace();
             } else {
-                DatConLog.Exception(pe, "ParseError " + pe);
+                DatConLog.Exception(pe, "ParseException " + pe);
             }
         }
     }
 
-    private String getVarName(Vector<String> tokens, int i) {
-        String retv = "";
+    private String getVarName(List<String> tokens) {
+        StringBuilder varName = new StringBuilder();
         int length = tokens.size();
-        if (i < length) {
-            retv = tokens.get(i);
-            for (int j = i + 1; j < length; j++) {
-                if (!isNumber(tokens.get(j)))
-                    retv += "_" + tokens.get(j);
+        if (1 < length) {
+            varName = new StringBuilder(tokens.get(1));
+            for (int j = 1 + 1; j < length; j++) {
+                if (!isNumber(tokens.get(j))) varName.append("_").append(tokens.get(j));
             }
         }
-        return retv;
+        return varName.toString();
     }
 
-    private String conCatTokens(Vector<String> tokens, int i) {
-        String retv = "";
+    private String conCatTokens(List<String> tokens) {
+        StringBuilder tokenString = new StringBuilder();
         int length = tokens.size();
-        if (i < length) {
-            retv = tokens.get(i);
-            for (int j = i + 1; j < length; j++) {
-                retv += "_" + tokens.get(j);
+        if (1 < length) {
+            tokenString = new StringBuilder(tokens.get(1));
+            for (int j = 1 + 1; j < length; j++) {
+                tokenString.append("_").append(tokens.get(j));
             }
         }
-        return retv;
+        return tokenString.toString();
     }
 
     private String normalizeVarName(String name) {
         String newName = name;
         newName = newName.replaceAll("\\(%\\)", "_pcnt");
-        if (newName.indexOf("[") >= 0) {
+        if (newName.contains("[")) {
             newName = newName.replaceAll("\\[", "_");
-            newName = newName.replaceAll("\\]", "");
+            newName = newName.replaceAll("]", "");
         }
         newName = newName.replaceAll("\\.", "_");
         newName = newName.replaceAll("^1", "One_");
@@ -303,101 +260,44 @@ public class OpConfig {
         return newName;
     }
 
-    public static void createJavaFiles(String dirName, String opFileName)
-            throws IOException {
-        BufferedReader in = null;
-        try {
-            in = new BufferedReader(new FileReader(opFileName));
-            String opLine = "";
-            Vector<Line> lines = new Vector<Line>();
-            while ((opLine = in.readLine()) != null) {
-                Line line = new Line(opLine);
-                lines.add(line);
-            }
-            File dictFile = new File(System.getProperty("user.dir")
-                    + "/DatConRecs/" + dirName + "/" + "Dictionary.java");
-            PrintStream dictPrintStream = new PrintStream(dictFile);
-            dictPrintStream.println("package DatConRecs." + dirName + ";");
-            dictPrintStream.println("import java.util.Vector;");
-            dictPrintStream.println("import Files.RecClassSpec;");
-            dictPrintStream.println("public class Dictionary {");
-            dictPrintStream.println(
-                    " public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();");
-            dictPrintStream.println("static {");
-
-            OpConfig opConfig = new OpConfig(lines);
-            Vector<RecordDef> records = opConfig.getRecords();
-            //opConfig.printRecords();
-            for (int i = 0; i < records.size(); i++) {
-                RecordDef record = records.get(i);
-                createJavaFile(dirName, record);
-                dictPrintStream.println("entries.add(new RecClassSpec("
-                        + record.getNameWithLengthAndId() + ".class,"
-                        + record.getId() + ", " + record.getLength() + "));");
-            }
-            dictPrintStream.println("}");
-            dictPrintStream.println("}");
-            dictPrintStream.println("");
-            dictPrintStream.close();
-
-        } finally {
-            if (in != null) {
-                in.close();
-            }
-        }
-    }
-
-    private static void createJavaFile(String dirName, RecordDef record)
-            throws FileNotFoundException {
-        File file = new File(System.getProperty("user.dir") + "/DatConRecs/"
-                + dirName + "/" + record.getNameWithLengthAndId() + ".java");
-        PrintStream printStream = new PrintStream(file);
-        try {
+    private static void createJavaFile(String dirName, RecordDef record) throws FileNotFoundException {
+        File file = new File(System.getProperty("user.dir") + "/DatConRecs/" + dirName + "/" + record.getNameWithLengthAndId() + ".java");
+        try (PrintStream printStream = new PrintStream(file)) {
             if (record.getRecType() == RecSpec.RecType.BINARY) {
                 createJavaFileBinary(printStream, dirName, record);
             } else if (record.getRecType() == RecSpec.RecType.STRING) {
                 createJavaFileString(printStream, dirName, record);
             }
-        } finally {
-            printStream.close();
         }
     }
 
-    private static void createJavaFileString(PrintStream printStream,
-            String dirName, RecordDef record) {
+    private static void createJavaFileString(PrintStream printStream, String dirName, RecordDef record) {
         printStream.println("package DatConRecs." + dirName + ";");
         printStream.println("import DatConRecs.*;");
         printStream.println("import Files.ConvertDat;");
         printStream.println("import Files.ConvertDat.lineType;");
         printStream.println("import Files.DatConLog;");
 
-        printStream.println("public class " + record.getNameWithLengthAndId()
-                + " extends Record {");
+        printStream.println("public class " + record.getNameWithLengthAndId() + " extends Record {");
         printStream.println(" String text = \"\";");
-        printStream.println("");
-        printStream.println(" public " + record.getNameWithLengthAndId()
-                + "(ConvertDat convertDat) {");
+        printStream.println();
+        printStream.println(" public " + record.getNameWithLengthAndId() + "(ConvertDat convertDat) {");
         printStream.println("  super(convertDat, " + record.getId() + ",-1);");
 
         printStream.println("}");
 
-        printStream.println(
-                "@Override\n" + "  public void process(Payload _payload) {\n"
-                        + "      super.process(_payload);\n" + "        try {");
+        printStream.println("@Override\n  public void process(Payload _payload) {\n      super.process(_payload);\n        try {");
 
         printStream.println("} catch (Exception e) {RecordException(e);}}");
-        printStream.println("");
-        printStream.println("");
-        printStream.println(
-                "   public void printCols(lineType lineT) {\n" + "try {\n");
+        printStream.println();
+        printStream.println();
+        printStream.println("   public void printCols(lineType lineT) {\ntry {\n");
 
-        printStream.println(" } catch (Exception e) {\n"
-                + "DatConLog.Exception(e);\n" + "}\n" + "}\n");
+        printStream.println(" } catch (Exception e) {\nDatConLog.Exception(e);\n}\n}\n");
         printStream.println("   }");
     }
 
-    private static void createJavaFileBinary(PrintStream printStream,
-            String dirName, RecordDef record) {
+    private static void createJavaFileBinary(PrintStream printStream, String dirName, RecordDef recordDef) {
         printStream.println("package DatConRecs." + dirName + ";");
         printStream.println("import DatConRecs.*;");
         printStream.println("import Files.ConvertDat;");
@@ -405,77 +305,51 @@ public class OpConfig {
         printStream.println("import Files.DatConLog;");
         printStream.println("import Files.Signal;");
         printStream.println("import Files.Units;");
-        printStream.println("");
-        printStream.println("");
-        printStream.println("public class " + record.getNameWithLengthAndId()
-                + " extends Record {");
+        printStream.println();
+        printStream.println();
+        printStream.println("public class " + recordDef.getNameWithLengthAndId() + " extends Record {");
 
         printStream.println("protected boolean valid = false;");
         printStream.println("");
-        List<Field> fields = record.getFields();
-        for (int i = 0; i < fields.size(); i++) {
-            Field field = fields.get(i);
+        List<Field> fields = recordDef.getFields();
+        for (Field field : fields) {
             printStream.println(field.getJavaDeclaration());
         }
-        printStream.println("");
-        printStream.println("      public " + record.getNameWithLengthAndId()
-                + "(ConvertDat convertDat) {");
-        printStream.println("           super(convertDat, " + record.getId()
-                + ", " + record.getLength() + ");");
+        printStream.println();
+        printStream.println("      public " + recordDef.getNameWithLengthAndId() + "(ConvertDat convertDat) {");
+        printStream.println("           super(convertDat, " + recordDef.getId() + ", " + recordDef.getLength() + ");");
         printStream.println("       }");
-        printStream.println("");
-        printStream.println(
-                "@Override\n" + "  public void process(Payload _payload) {\n"
-                        + "      super.process(_payload);\n" + "        try {\n"
-                        + "      valid = true;\n");
+        printStream.println();
+        printStream.println("@Override\n  public void process(Payload _payload) {\n      super.process(_payload);\n        try {\n      valid = true;\n");
         int offset = 0;
-        for (int i = 0; i < fields.size(); i++) {
-            Field field = fields.get(i);
-            String assgnment = String.format(field.getJavaAssnFormat(),
-                    field.name, offset);
+        for (Field field : fields) {
+            String assgnment = String.format(field.getJavaAssnFormat(), field.name, offset);
             printStream.println(assgnment);
             offset += field.getSize();
         }
         printStream.println("} catch (Exception e) {RecordException(e);}}");
-        printStream.println("");
-        printStream.println("");
-        printStream.println("    protected static Signal " + record.getName()
-                + "IntSig = Signal\n" + ".SeriesInt(\"" + record.getName()
-                + "\", \"\", null, Units.noUnits);");
-        printStream.println("    protected static Signal " + record.getName()
-                + "FloatSig = Signal\n" + ".SeriesFloat(\"" + record.getName()
-                + "\", \"\", null, Units.noUnits);");
-        printStream.println("    protected static Signal " + record.getName()
-                + "DoubleSig = Signal\n" + ".SeriesDouble(\"" + record.getName()
-                + "\", \"\", null, Units.noUnits);");
-        printStream.println("");
-        printStream.println(
-                "   public void printCols(lineType lineT) {\n" + "try {\n");
-        for (int i = 0; i < fields.size(); i++) {
-            Field field = fields.get(i);
-            String printCsvLine = String.format(
-                    field.getJavaPrintCsvLineFormat(), field.name,
-                    record.getName(), field.name);
+        printStream.println();
+        printStream.println();
+        printStream.println("    protected static Signal " + recordDef.getName() + "IntSig = Signal\n" + ".SeriesInt(\"" + recordDef.getName() + "\", \"\", null, Units.noUnits);");
+        printStream.println("    protected static Signal " + recordDef.getName() + "FloatSig = Signal\n" + ".SeriesFloat(\"" + recordDef.getName() + "\", \"\", null, Units.noUnits);");
+        printStream.println("    protected static Signal " + recordDef.getName() + "DoubleSig = Signal\n" + ".SeriesDouble(\"" + recordDef.getName() + "\", \"\", null, Units.noUnits);");
+        printStream.println();
+        printStream.println("   public void printCols(lineType lineT) {\ntry {\n");
+        for (Field field : fields) {
+            String printCsvLine = String.format(field.getJavaPrintCsvLineFormat(), field.name, recordDef.getName(), field.name);
             printStream.println(printCsvLine);
             offset += field.getSize();
         }
-        printStream.println(" } catch (Exception e) {\n"
-                + "DatConLog.Exception(e);\n" + "}\n" + "}\n");
+        printStream.println(" } catch (Exception e) {\nDatConLog.Exception(e);\n}\n}\n");
         printStream.println("   }");
 
     }
 
-    public Vector<RecordDef> getRecords() {
+    public List<RecordDef> getRecords() {
         return records;
     }
 
     private static boolean isNumber(String token) {
-        try {
-            @SuppressWarnings("unused")
-            Integer number = Integer.parseInt(token);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
+        return token.matches("-?\\d+(\\.\\d+)?");
     }
 }
