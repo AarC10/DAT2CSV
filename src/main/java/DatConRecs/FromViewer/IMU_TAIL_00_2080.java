@@ -47,12 +47,12 @@ protected float w_z_00 = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(wa_x_00, IMU_TAIL_00FloatSig, "wa_x_00",lineT, valid);
- printCsvValue(wa_y_00, IMU_TAIL_00FloatSig, "wa_y_00",lineT, valid);
- printCsvValue(wa_z_00, IMU_TAIL_00FloatSig, "wa_z_00",lineT, valid);
- printCsvValue(w_x_00, IMU_TAIL_00FloatSig, "w_x_00",lineT, valid);
- printCsvValue(w_y_00, IMU_TAIL_00FloatSig, "w_y_00",lineT, valid);
- printCsvValue(w_z_00, IMU_TAIL_00FloatSig, "w_z_00",lineT, valid);
+ printCSVValue(wa_x_00, IMU_TAIL_00FloatSig, "wa_x_00",lineT, valid);
+ printCSVValue(wa_y_00, IMU_TAIL_00FloatSig, "wa_y_00",lineT, valid);
+ printCSVValue(wa_z_00, IMU_TAIL_00FloatSig, "wa_z_00",lineT, valid);
+ printCSVValue(w_x_00, IMU_TAIL_00FloatSig, "w_x_00",lineT, valid);
+ printCSVValue(w_y_00, IMU_TAIL_00FloatSig, "w_y_00",lineT, valid);
+ printCSVValue(w_z_00, IMU_TAIL_00FloatSig, "w_z_00",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

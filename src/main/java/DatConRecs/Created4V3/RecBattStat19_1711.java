@@ -91,7 +91,7 @@ public class RecBattStat19_1711 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(status, batteryStatusSig, "", lineT, true);
+            printCSVValue(status, batteryStatusSig, "", lineT, true);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

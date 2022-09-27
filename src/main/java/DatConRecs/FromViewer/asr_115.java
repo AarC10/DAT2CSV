@@ -37,7 +37,7 @@ protected long lead = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(lead, asrIntSig, "lead",lineT, valid);
+ printCSVValue(lead, asrIntSig, "lead",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -47,12 +47,12 @@ protected short course_lock_torsion = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(osd_lon, osd_homeDoubleSig, "osd_lon",lineT, valid);
- printCsvValue(osd_lat, osd_homeDoubleSig, "osd_lat",lineT, valid);
- printCsvValue(osd_alt, osd_homeFloatSig, "osd_alt",lineT, valid);
- printCsvValue(osd_home_state, osd_homeIntSig, "osd_home_state",lineT, valid);
- printCsvValue(fixed_altitedue, osd_homeIntSig, "fixed_altitedue",lineT, valid);
- printCsvValue(course_lock_torsion, osd_homeIntSig, "course_lock_torsion",lineT, valid);
+ printCSVValue(osd_lon, osd_homeDoubleSig, "osd_lon",lineT, valid);
+ printCSVValue(osd_lat, osd_homeDoubleSig, "osd_lat",lineT, valid);
+ printCSVValue(osd_alt, osd_homeFloatSig, "osd_alt",lineT, valid);
+ printCSVValue(osd_home_state, osd_homeIntSig, "osd_home_state",lineT, valid);
+ printCSVValue(fixed_altitedue, osd_homeIntSig, "fixed_altitedue",lineT, valid);
+ printCSVValue(course_lock_torsion, osd_homeIntSig, "course_lock_torsion",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

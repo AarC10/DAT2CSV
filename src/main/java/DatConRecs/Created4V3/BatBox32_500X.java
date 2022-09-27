@@ -93,26 +93,26 @@ public class BatBox32_500X extends RecBatt {
 
         try {
             for (int i = 1; i <= _datFile.getNumBattCells(); i++) {
-                printCsvValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
+                printCSVValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
                         valid);
             }
-            printCsvValue(crrnt, currentSig, "current", lineT, valid);
-            printCsvValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
+            printCSVValue(crrnt, currentSig, "current", lineT, valid);
+            printCSVValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
             //printCsvValue(temp, batteryTempSig, "Temp", lineT, valid);
-            printCsvValue(batteryPercent, battPercent, "battery%", lineT,
+            printCSVValue(batteryPercent, battPercent, "battery%", lineT,
                     valid);
             //printCsvValue(fcc, batteryFCC, "FullChargeCap", lineT, valid);
             //printCsvValue(remcap, batteryRemCap, "RemainingCap", lineT, valid);
             printComputedBattCols(lineT);
-            printCsvValue(time, BatBoxIntSig, "time", lineT, valid);
-            printCsvValue(rec_data, BatBoxIntSig, "rec_data", lineT, valid);
+            printCSVValue(time, BatBoxIntSig, "time", lineT, valid);
+            printCSVValue(rec_data, BatBoxIntSig, "rec_data", lineT, valid);
 
-            printCsvValue(pro_curr, BatBoxIntSig, "pro_curr", lineT, valid);
-            printCsvValue(current, BatBoxIntSig, "current", lineT, valid);
+            printCSVValue(pro_curr, BatBoxIntSig, "pro_curr", lineT, valid);
+            printCSVValue(current, BatBoxIntSig, "current", lineT, valid);
             //printCsvValue(pack_vol, bat1_boxIntSig, "pack_vol", lineT, valid);
-            printCsvValue(temp1, BatBoxIntSig, "temp1", lineT, valid);
-            printCsvValue(temp2, BatBoxIntSig, "temp2", lineT, valid);
-            printCsvValue(flag, BatBoxIntSig, "flag", lineT, valid);
+            printCSVValue(temp1, BatBoxIntSig, "temp1", lineT, valid);
+            printCSVValue(temp2, BatBoxIntSig, "temp2", lineT, valid);
+            printCSVValue(flag, BatBoxIntSig, "flag", lineT, valid);
             //printCsvValue(user_def, BatBoxIntSig, "user_def", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

@@ -41,9 +41,9 @@ usonic_cnt = _payload.getUnsignedByte(3);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(usonic_h, usonicIntSig, "usonic_h",lineT, valid);
- printCsvValue(usonic_flag, usonicIntSig, "usonic_flag",lineT, valid);
- printCsvValue(usonic_cnt, usonicIntSig, "usonic_cnt",lineT, valid);
+ printCSVValue(usonic_h, usonicIntSig, "usonic_h",lineT, valid);
+ printCSVValue(usonic_flag, usonicIntSig, "usonic_flag",lineT, valid);
+ printCSVValue(usonic_cnt, usonicIntSig, "usonic_cnt",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

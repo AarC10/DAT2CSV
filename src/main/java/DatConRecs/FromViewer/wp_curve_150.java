@@ -53,15 +53,15 @@ wp_state = _payload.getUnsignedByte(32);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(px, wp_curveFloatSig, "px",lineT, valid);
- printCsvValue(py, wp_curveFloatSig, "py",lineT, valid);
- printCsvValue(pz, wp_curveFloatSig, "pz",lineT, valid);
- printCsvValue(vx, wp_curveFloatSig, "vx",lineT, valid);
- printCsvValue(vy, wp_curveFloatSig, "vy",lineT, valid);
- printCsvValue(vz, wp_curveFloatSig, "vz",lineT, valid);
- printCsvValue(v_norm, wp_curveFloatSig, "v_norm",lineT, valid);
- printCsvValue(T, wp_curveFloatSig, "T",lineT, valid);
- printCsvValue(wp_state, wp_curveIntSig, "wp_state",lineT, valid);
+ printCSVValue(px, wp_curveFloatSig, "px",lineT, valid);
+ printCSVValue(py, wp_curveFloatSig, "py",lineT, valid);
+ printCSVValue(pz, wp_curveFloatSig, "pz",lineT, valid);
+ printCSVValue(vx, wp_curveFloatSig, "vx",lineT, valid);
+ printCSVValue(vy, wp_curveFloatSig, "vy",lineT, valid);
+ printCSVValue(vz, wp_curveFloatSig, "vz",lineT, valid);
+ printCSVValue(v_norm, wp_curveFloatSig, "v_norm",lineT, valid);
+ printCSVValue(T, wp_curveFloatSig, "T",lineT, valid);
+ printCSVValue(wp_state, wp_curveIntSig, "wp_state",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

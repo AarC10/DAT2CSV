@@ -77,11 +77,11 @@ public class MagGroup extends Record {
                     magYaw = MagYaw.compute(magX, magY, magZ, magMod);
                 }
 
-                printCsvValue(magX, magSig, "X", lineT, valid);
-                printCsvValue(magY, magSig, "Y", lineT, valid);
-                printCsvValue(magZ, magSig, "Z", lineT, valid);
-                printCsvValue(magMod, magSig, "Mod", lineT, valid);
-                printCsvValue(magYaw, magYawSig, "magYaw", lineT, valid);
+                printCSVValue(magX, magSig, "X", lineT, valid);
+                printCSVValue(magY, magSig, "Y", lineT, valid);
+                printCSVValue(magZ, magSig, "Z", lineT, valid);
+                printCSVValue(magMod, magSig, "Mod", lineT, valid);
+                printCSVValue(magYaw, magYawSig, "magYaw", lineT, valid);
 
                 double diff = 0.0;
                 double yaw = Math.toDegrees(RecIMU.current.getYawRadians());
@@ -92,7 +92,7 @@ public class MagGroup extends Record {
                 } else {
                     diff = magYaw - yaw;
                 }
-                printCsvValue(diff, magYawSig, "Yaw-magYaw", lineT, valid);
+                printCSVValue(diff, magYawSig, "Yaw-magYaw", lineT, valid);
             } catch (Exception e) {
                 DatConLog.Exception(e);
             }

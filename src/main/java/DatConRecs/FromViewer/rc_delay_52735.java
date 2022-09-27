@@ -37,7 +37,7 @@ protected long dly_ns = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(dly_ns, rc_delayIntSig, "dly_ns",lineT, valid);
+ printCSVValue(dly_ns, rc_delayIntSig, "dly_ns",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

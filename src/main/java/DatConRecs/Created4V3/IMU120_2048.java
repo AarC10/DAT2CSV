@@ -26,24 +26,24 @@ public class IMU120_2048 extends RecIMU {
         super.printCols(lineT);
         try {
             if (GoTxt50_12.current != null) {
-                printCsvValue(GoTxt50_12.current.flightTime, flightTimeSig, "",
+                printCSVValue(GoTxt50_12.current.flightTime, flightTimeSig, "",
                         lineT, GoTxt50_12.current.valid);
             }
 
             if (GoTxt50_12.current != null) {
-                printCsvValue(GoTxt50_12.current.gpsLevel, gpsHealthSig, "",
+                printCSVValue(GoTxt50_12.current.gpsLevel, gpsHealthSig, "",
                         lineT, GoTxt50_12.current.valid);
             }
 
             if (GoTxt50_12.current != null) {
-                printCsvValue(GoTxt50_12.current.vpsHeight, heightSig,
+                printCSVValue(GoTxt50_12.current.vpsHeight, heightSig,
                         "vpsHeight", lineT,
                         GoTxt50_12.current.valid & GoTxt50_12.current.waveWork);
             }
-            printCsvValue(convertDat.getRelativeHeight(), heightSig,
+            printCSVValue(convertDat.getRelativeHeight(), heightSig,
                     "relativeHeight", lineT, convertDat.isRelativeHeightOK());
 
-            printCsvValue(convertDat.getAbsoluteHeight(), heightSig,
+            printCSVValue(convertDat.getAbsoluteHeight(), heightSig,
                     "absoluteHeight", lineT, convertDat.absoluteHeightValid);
 
         } catch (Exception e) {

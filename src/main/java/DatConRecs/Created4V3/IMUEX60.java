@@ -58,11 +58,11 @@ public class IMUEX60 extends IMUEX {
     public void printCols(lineType lineT) {
         try {
             super.printCols(lineT);
-            printCsvValue(Math.toDegrees(rtk_long), coordSig, "rtk_Longitude",
+            printCSVValue(Math.toDegrees(rtk_long), coordSig, "rtk_Longitude",
                     lineT, valid);
-            printCsvValue(Math.toDegrees(rtk_lati), coordSig, "rtk_Latitude",
+            printCSVValue(Math.toDegrees(rtk_lati), coordSig, "rtk_Latitude",
                     lineT, valid);
-            printCsvValue(rtk_alti, altiSig, "rtk_Alti", lineT, valid);
+            printCSVValue(rtk_alti, altiSig, "rtk_Alti", lineT, valid);
 
         } catch (Exception e) {
             DatConLog.Exception(e);

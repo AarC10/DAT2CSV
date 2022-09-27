@@ -109,10 +109,10 @@ public class RecBatt38_500X extends RecBatt {
             //            printCsvValue(fcc, batteryFCC, "", lineT, valid);
             //            printCsvValue(remcap, batteryRemCap, "", lineT, valid);
             //printCsvValue(temp, batteryTempSig, "", lineT, valid);
-            printCsvValue(status1, statusSig, "status1", lineT, true);
-            printCsvValue(status2, statusSig, "status2", lineT, true);
-            printCsvValue(status3, statusSig, "status3", lineT, true);
-            printCsvValue(status4, statusSig, "status4", lineT, true);
+            printCSVValue(status1, statusSig, "status1", lineT, true);
+            printCSVValue(status2, statusSig, "status2", lineT, true);
+            printCSVValue(status3, statusSig, "status3", lineT, true);
+            printCSVValue(status4, statusSig, "status4", lineT, true);
 
         } catch (Exception e) {
             DatConLog.Exception(e);

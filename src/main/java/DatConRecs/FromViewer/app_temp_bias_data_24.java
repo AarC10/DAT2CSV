@@ -51,14 +51,14 @@ flag = _payload.getUnsignedByte(28);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(bw_x, app_temp_bias_dataFloatSig, "bw_x",lineT, valid);
- printCsvValue(bw_y, app_temp_bias_dataFloatSig, "bw_y",lineT, valid);
- printCsvValue(bw_z, app_temp_bias_dataFloatSig, "bw_z",lineT, valid);
- printCsvValue(ba_x, app_temp_bias_dataFloatSig, "ba_x",lineT, valid);
- printCsvValue(ba_y, app_temp_bias_dataFloatSig, "ba_y",lineT, valid);
- printCsvValue(ba_z, app_temp_bias_dataFloatSig, "ba_z",lineT, valid);
- printCsvValue(temp, app_temp_bias_dataFloatSig, "temp",lineT, valid);
- printCsvValue(flag, app_temp_bias_dataIntSig, "flag",lineT, valid);
+ printCSVValue(bw_x, app_temp_bias_dataFloatSig, "bw_x",lineT, valid);
+ printCSVValue(bw_y, app_temp_bias_dataFloatSig, "bw_y",lineT, valid);
+ printCSVValue(bw_z, app_temp_bias_dataFloatSig, "bw_z",lineT, valid);
+ printCSVValue(ba_x, app_temp_bias_dataFloatSig, "ba_x",lineT, valid);
+ printCSVValue(ba_y, app_temp_bias_dataFloatSig, "ba_y",lineT, valid);
+ printCSVValue(ba_z, app_temp_bias_dataFloatSig, "ba_z",lineT, valid);
+ printCSVValue(temp, app_temp_bias_dataFloatSig, "temp",lineT, valid);
+ printCSVValue(flag, app_temp_bias_dataIntSig, "flag",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

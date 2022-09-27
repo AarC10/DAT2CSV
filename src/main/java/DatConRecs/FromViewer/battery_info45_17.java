@@ -103,39 +103,39 @@ public class battery_info45_17 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(design_capacity, battery_infoIntSig,
+            printCSVValue(design_capacity, battery_infoIntSig,
                     "design_capacity", lineT, valid);
-            printCsvValue(full_charge_capacity, battery_infoIntSig,
+            printCSVValue(full_charge_capacity, battery_infoIntSig,
                     "full_charge_capacity", lineT, valid);
-            printCsvValue(remaining_capacity, battery_infoIntSig,
+            printCSVValue(remaining_capacity, battery_infoIntSig,
                     "remaining_capacity", lineT, valid);
-            printCsvValue(pack_voltage, battery_infoIntSig, "pack_voltage",
+            printCSVValue(pack_voltage, battery_infoIntSig, "pack_voltage",
                     lineT, valid);
-            printCsvValue(current, battery_infoIntSig, "current", lineT, valid);
-            printCsvValue(life_percentage, battery_infoIntSig,
+            printCSVValue(current, battery_infoIntSig, "current", lineT, valid);
+            printCSVValue(life_percentage, battery_infoIntSig,
                     "life_percentage", lineT, valid);
-            printCsvValue(capacity_percentage, battery_infoIntSig,
+            printCSVValue(capacity_percentage, battery_infoIntSig,
                     "capacity_percentage", lineT, valid);
-            printCsvValue(temperature, battery_infoIntSig, "temperature", lineT,
+            printCSVValue(temperature, battery_infoIntSig, "temperature", lineT,
                     valid);
-            printCsvValue(cycle_count, battery_infoIntSig, "cycle_count", lineT,
+            printCSVValue(cycle_count, battery_infoIntSig, "cycle_count", lineT,
                     valid);
-            printCsvValue(serial_number, battery_infoIntSig, "serial_number",
+            printCSVValue(serial_number, battery_infoIntSig, "serial_number",
                     lineT, valid);
-            printCsvValue(cell1, battery_infoIntSig, "cell1", lineT, valid);
-            printCsvValue(cell2, battery_infoIntSig, "cell2", lineT, valid);
-            printCsvValue(cell3, battery_infoIntSig, "cell3", lineT, valid);
-            printCsvValue(cell4, battery_infoIntSig, "cell4", lineT, valid);
-            printCsvValue(cell5, battery_infoIntSig, "cell5", lineT, valid);
-            printCsvValue(cell6, battery_infoIntSig, "cell6", lineT, valid);
-            printCsvValue(average_current, battery_infoIntSig,
+            printCSVValue(cell1, battery_infoIntSig, "cell1", lineT, valid);
+            printCSVValue(cell2, battery_infoIntSig, "cell2", lineT, valid);
+            printCSVValue(cell3, battery_infoIntSig, "cell3", lineT, valid);
+            printCSVValue(cell4, battery_infoIntSig, "cell4", lineT, valid);
+            printCSVValue(cell5, battery_infoIntSig, "cell5", lineT, valid);
+            printCSVValue(cell6, battery_infoIntSig, "cell6", lineT, valid);
+            printCSVValue(average_current, battery_infoIntSig,
                     "average_current", lineT, valid);
-            printCsvValue(right, battery_infoIntSig, "right", lineT, valid);
-            printCsvValue(error_count, battery_infoIntSig, "error_count", lineT,
+            printCSVValue(right, battery_infoIntSig, "right", lineT, valid);
+            printCSVValue(error_count, battery_infoIntSig, "error_count", lineT,
                     valid);
-            printCsvValue(n_discharge_times, battery_infoIntSig,
+            printCSVValue(n_discharge_times, battery_infoIntSig,
                     "n_discharge_times", lineT, valid);
-            printCsvValue(current_status, battery_infoIntSig, "current_status",
+            printCSVValue(current_status, battery_infoIntSig, "current_status",
                     lineT, valid);
             //printCsvValue(vol_main, battery_infoIntSig, "vol_main",lineT, valid);
         } catch (Exception e) {

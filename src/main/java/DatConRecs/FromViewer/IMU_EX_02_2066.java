@@ -59,18 +59,18 @@ protected int imu_ex_cnt_02 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(vo_vx_02, IMU_EX_02FloatSig, "vo_vx_02",lineT, valid);
- printCsvValue(vo_vy_02, IMU_EX_02FloatSig, "vo_vy_02",lineT, valid);
- printCsvValue(vo_vz_02, IMU_EX_02FloatSig, "vo_vz_02",lineT, valid);
- printCsvValue(vo_px_02, IMU_EX_02FloatSig, "vo_px_02",lineT, valid);
- printCsvValue(vo_py_02, IMU_EX_02FloatSig, "vo_py_02",lineT, valid);
- printCsvValue(vo_pz_02, IMU_EX_02FloatSig, "vo_pz_02",lineT, valid);
- printCsvValue(us_v_02, IMU_EX_02FloatSig, "us_v_02",lineT, valid);
- printCsvValue(us_p_02, IMU_EX_02FloatSig, "us_p_02",lineT, valid);
- printCsvValue(vo_flag_navi_02, IMU_EX_02IntSig, "vo_flag_navi_02",lineT, valid);
- printCsvValue(imu_err_flag_02, IMU_EX_02IntSig, "imu_err_flag_02",lineT, valid);
- printCsvValue(vo_flag_rsv_02, IMU_EX_02IntSig, "vo_flag_rsv_02",lineT, valid);
- printCsvValue(imu_ex_cnt_02, IMU_EX_02IntSig, "imu_ex_cnt_02",lineT, valid);
+ printCSVValue(vo_vx_02, IMU_EX_02FloatSig, "vo_vx_02",lineT, valid);
+ printCSVValue(vo_vy_02, IMU_EX_02FloatSig, "vo_vy_02",lineT, valid);
+ printCSVValue(vo_vz_02, IMU_EX_02FloatSig, "vo_vz_02",lineT, valid);
+ printCSVValue(vo_px_02, IMU_EX_02FloatSig, "vo_px_02",lineT, valid);
+ printCSVValue(vo_py_02, IMU_EX_02FloatSig, "vo_py_02",lineT, valid);
+ printCSVValue(vo_pz_02, IMU_EX_02FloatSig, "vo_pz_02",lineT, valid);
+ printCSVValue(us_v_02, IMU_EX_02FloatSig, "us_v_02",lineT, valid);
+ printCSVValue(us_p_02, IMU_EX_02FloatSig, "us_p_02",lineT, valid);
+ printCSVValue(vo_flag_navi_02, IMU_EX_02IntSig, "vo_flag_navi_02",lineT, valid);
+ printCSVValue(imu_err_flag_02, IMU_EX_02IntSig, "imu_err_flag_02",lineT, valid);
+ printCSVValue(vo_flag_rsv_02, IMU_EX_02IntSig, "vo_flag_rsv_02",lineT, valid);
+ printCSVValue(imu_ex_cnt_02, IMU_EX_02IntSig, "imu_ex_cnt_02",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

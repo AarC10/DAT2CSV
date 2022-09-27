@@ -182,35 +182,35 @@ public class RecBatt extends Record {
     }
 
     protected void printComputedBattCols(lineType lineT) throws Exception {
-        printCsvValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
-        printCsvValue(watts, wattsSig, "watts", lineT, valid);
-        printCsvValue(minCurrent, currentSig, "minCurrent", lineT, valid);
-        printCsvValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
-        printCsvValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
+        printCSVValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
+        printCSVValue(watts, wattsSig, "watts", lineT, valid);
+        printCSVValue(minCurrent, currentSig, "minCurrent", lineT, valid);
+        printCSVValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
+        printCSVValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
 
-        printCsvValue(minVolts, voltsSig, "minVolts", lineT, valid);
-        printCsvValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
-        printCsvValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
+        printCSVValue(minVolts, voltsSig, "minVolts", lineT, valid);
+        printCSVValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
+        printCSVValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
 
-        printCsvValue(minWatts, wattsSig, "minWatts", lineT, valid);
-        printCsvValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
-        printCsvValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
+        printCSVValue(minWatts, wattsSig, "minWatts", lineT, valid);
+        printCSVValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
+        printCSVValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
     }
 
     @Override
     public void printCols(lineType lineT) {
         try {
             for (int i = 1; i <= _datFile.getNumBattCells(); i++) {
-                printCsvValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
+                printCSVValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
                         valid);
             }
-            printCsvValue(crrnt, currentSig, "current", lineT, valid);
-            printCsvValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
-            printCsvValue(temp, batteryTempSig, "Temp", lineT, valid);
-            printCsvValue(batteryPercent, battPercent, "battery%", lineT,
+            printCSVValue(crrnt, currentSig, "current", lineT, valid);
+            printCSVValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
+            printCSVValue(temp, batteryTempSig, "Temp", lineT, valid);
+            printCSVValue(batteryPercent, battPercent, "battery%", lineT,
                     valid);
-            printCsvValue(fcc, batteryFCC, "FullChargeCap", lineT, valid);
-            printCsvValue(remcap, batteryRemCap, "RemainingCap", lineT, valid);
+            printCSVValue(fcc, batteryFCC, "FullChargeCap", lineT, valid);
+            printCSVValue(remcap, batteryRemCap, "RemainingCap", lineT, valid);
             printComputedBattCols(lineT);
 
         } catch (Exception e) {

@@ -67,22 +67,22 @@ protected long gear = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(battery, fmu_device_run_timeIntSig, "battery",lineT, valid);
- printCsvValue(led, fmu_device_run_timeIntSig, "led",lineT, valid);
- printCsvValue(baromter, fmu_device_run_timeIntSig, "baromter",lineT, valid);
- printCsvValue(gyro_acc, fmu_device_run_timeIntSig, "gyro_acc",lineT, valid);
- printCsvValue(imu, fmu_device_run_timeIntSig, "imu",lineT, valid);
- printCsvValue(vo, fmu_device_run_timeIntSig, "vo",lineT, valid);
- printCsvValue(ultrasonic, fmu_device_run_timeIntSig, "ultrasonic",lineT, valid);
- printCsvValue(pmu, fmu_device_run_timeIntSig, "pmu",lineT, valid);
- printCsvValue(esc, fmu_device_run_timeIntSig, "esc",lineT, valid);
- printCsvValue(mc, fmu_device_run_timeIntSig, "mc",lineT, valid);
- printCsvValue(camera, fmu_device_run_timeIntSig, "camera",lineT, valid);
- printCsvValue(gps, fmu_device_run_timeIntSig, "gps",lineT, valid);
- printCsvValue(Compass, fmu_device_run_timeIntSig, "Compass",lineT, valid);
- printCsvValue(gimbal, fmu_device_run_timeIntSig, "gimbal",lineT, valid);
- printCsvValue(rc, fmu_device_run_timeIntSig, "rc",lineT, valid);
- printCsvValue(gear, fmu_device_run_timeIntSig, "gear",lineT, valid);
+ printCSVValue(battery, fmu_device_run_timeIntSig, "battery",lineT, valid);
+ printCSVValue(led, fmu_device_run_timeIntSig, "led",lineT, valid);
+ printCSVValue(baromter, fmu_device_run_timeIntSig, "baromter",lineT, valid);
+ printCSVValue(gyro_acc, fmu_device_run_timeIntSig, "gyro_acc",lineT, valid);
+ printCSVValue(imu, fmu_device_run_timeIntSig, "imu",lineT, valid);
+ printCSVValue(vo, fmu_device_run_timeIntSig, "vo",lineT, valid);
+ printCSVValue(ultrasonic, fmu_device_run_timeIntSig, "ultrasonic",lineT, valid);
+ printCSVValue(pmu, fmu_device_run_timeIntSig, "pmu",lineT, valid);
+ printCSVValue(esc, fmu_device_run_timeIntSig, "esc",lineT, valid);
+ printCSVValue(mc, fmu_device_run_timeIntSig, "mc",lineT, valid);
+ printCSVValue(camera, fmu_device_run_timeIntSig, "camera",lineT, valid);
+ printCSVValue(gps, fmu_device_run_timeIntSig, "gps",lineT, valid);
+ printCSVValue(Compass, fmu_device_run_timeIntSig, "Compass",lineT, valid);
+ printCSVValue(gimbal, fmu_device_run_timeIntSig, "gimbal",lineT, valid);
+ printCSVValue(rc, fmu_device_run_timeIntSig, "rc",lineT, valid);
+ printCSVValue(gear, fmu_device_run_timeIntSig, "gear",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

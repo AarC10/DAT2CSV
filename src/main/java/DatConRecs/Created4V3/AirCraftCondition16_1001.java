@@ -40,9 +40,9 @@ public class AirCraftCondition16_1001 extends AirCraftCondition {
     public void printCols(lineType lineT) {
         super.printCols(lineT);
         try {
-            printCsvValue(UP_acc_t, aircraft_conditionFloatSig, "UP_acc_t",
+            printCSVValue(UP_acc_t, aircraft_conditionFloatSig, "UP_acc_t",
                     lineT, valid);
-            printCsvValue(UP_TF_t, aircraft_conditionFloatSig, "UP_TF_t", lineT,
+            printCSVValue(UP_TF_t, aircraft_conditionFloatSig, "UP_TF_t", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

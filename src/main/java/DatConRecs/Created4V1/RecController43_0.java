@@ -42,13 +42,13 @@ public class RecController43_0 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(aileron, AxesAndSigs.aileronSig, "", lineT,
+            printCSVValue(aileron, AxesAndSigs.aileronSig, "", lineT,
                     sticksValid);
-            printCsvValue(elevator, AxesAndSigs.elevatorSig, "", lineT,
+            printCSVValue(elevator, AxesAndSigs.elevatorSig, "", lineT,
                     sticksValid);
-            printCsvValue(rudder, AxesAndSigs.rudderSig, "", lineT,
+            printCSVValue(rudder, AxesAndSigs.rudderSig, "", lineT,
                     sticksValid);
-            printCsvValue(throttle, AxesAndSigs.throttleSig, "", lineT,
+            printCSVValue(throttle, AxesAndSigs.throttleSig, "", lineT,
                     sticksValid);
         } catch (Exception e) {
             DatConLog.Exception(e);

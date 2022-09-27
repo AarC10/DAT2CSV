@@ -51,14 +51,14 @@ protected int M8 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(M1, PWM_OUTPUTIntSig, "M1",lineT, valid);
- printCsvValue(M2, PWM_OUTPUTIntSig, "M2",lineT, valid);
- printCsvValue(M3, PWM_OUTPUTIntSig, "M3",lineT, valid);
- printCsvValue(M4, PWM_OUTPUTIntSig, "M4",lineT, valid);
- printCsvValue(M5, PWM_OUTPUTIntSig, "M5",lineT, valid);
- printCsvValue(M6, PWM_OUTPUTIntSig, "M6",lineT, valid);
- printCsvValue(M7, PWM_OUTPUTIntSig, "M7",lineT, valid);
- printCsvValue(M8, PWM_OUTPUTIntSig, "M8",lineT, valid);
+ printCSVValue(M1, PWM_OUTPUTIntSig, "M1",lineT, valid);
+ printCSVValue(M2, PWM_OUTPUTIntSig, "M2",lineT, valid);
+ printCSVValue(M3, PWM_OUTPUTIntSig, "M3",lineT, valid);
+ printCSVValue(M4, PWM_OUTPUTIntSig, "M4",lineT, valid);
+ printCSVValue(M5, PWM_OUTPUTIntSig, "M5",lineT, valid);
+ printCSVValue(M6, PWM_OUTPUTIntSig, "M6",lineT, valid);
+ printCSVValue(M7, PWM_OUTPUTIntSig, "M7",lineT, valid);
+ printCSVValue(M8, PWM_OUTPUTIntSig, "M8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

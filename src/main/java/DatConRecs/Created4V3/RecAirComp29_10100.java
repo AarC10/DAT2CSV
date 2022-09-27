@@ -72,14 +72,14 @@ public class RecAirComp29_10100 extends RecAirComp {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(vbx, vbSig, "X", lineT, valid);
-            printCsvValue(vby, vbSig, "Y", lineT, valid);
-            printCsvValue(compAlti, compAltiSig, "", lineT, valid);
-            printCsvValue(windSpeed, windSpeedSig, "", lineT, valid);
-            printCsvValue(windX, windSig, "X", lineT, valid);
-            printCsvValue(windY, windSig, "Y", lineT, valid);
-            printCsvValue(motorSpeed, motorSpeedSig, "", lineT, valid);
-            printCsvValue(velLevel, velLevelSig, "", lineT, valid);
+            printCSVValue(vbx, vbSig, "X", lineT, valid);
+            printCSVValue(vby, vbSig, "Y", lineT, valid);
+            printCSVValue(compAlti, compAltiSig, "", lineT, valid);
+            printCSVValue(windSpeed, windSpeedSig, "", lineT, valid);
+            printCSVValue(windX, windSig, "X", lineT, valid);
+            printCSVValue(windY, windSig, "Y", lineT, valid);
+            printCSVValue(motorSpeed, motorSpeedSig, "", lineT, valid);
+            printCSVValue(velLevel, velLevelSig, "", lineT, valid);
             if (Persist.EXPERIMENTAL_FIELDS) {
                 super.printWindComps(lineT);
             }

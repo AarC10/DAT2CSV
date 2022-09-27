@@ -390,17 +390,17 @@ public class GoTxt_12 extends Record {
         try {
             setStateStrings();
             //printCsvValue(flyc_state, "flycState", lineT, valid);
-            printCsvValue(FLCS, flyCStateSig, "", lineT, valid);
-            printCsvValue(FLYCCOMMAND, flyCCommandSig, "", lineT, valid);
-            printCsvValue(FLACTION, flightActionSig, "", lineT, valid);
-            printCsvValue(NGPE, nonGPSCauseSig, "", lineT, valid);
+            printCSVValue(FLCS, flyCStateSig, "", lineT, valid);
+            printCSVValue(FLYCCOMMAND, flyCCommandSig, "", lineT, valid);
+            printCSVValue(FLACTION, flightActionSig, "", lineT, valid);
+            printCSVValue(NGPE, nonGPSCauseSig, "", lineT, valid);
             //printCsvValue("compassError", compassErrorSig, lineT, valid);
-            printCsvValue(ConnectedToRCString, connectedToRCSig, "", lineT,
+            printCSVValue(ConnectedToRCString, connectedToRCSig, "", lineT,
                     valid);
-            printCsvValue(LowVoltage, lowVoltageSig, "", lineT, valid);
-            printCsvValue(ModeSwitch, rcModeSwitchSig, "", lineT, true);
-            printCsvValue(gpsUsedString, gpsUsedSig, "", lineT, valid);
-            printCsvValue(visionUsedString, visionUsedSig, "", lineT, valid);
+            printCSVValue(LowVoltage, lowVoltageSig, "", lineT, valid);
+            printCSVValue(ModeSwitch, rcModeSwitchSig, "", lineT, true);
+            printCSVValue(gpsUsedString, gpsUsedSig, "", lineT, valid);
+            printCSVValue(visionUsedString, visionUsedSig, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

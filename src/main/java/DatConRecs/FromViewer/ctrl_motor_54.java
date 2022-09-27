@@ -73,25 +73,25 @@ horiz_motor_feedback_id = _payload.getUnsignedByte(2);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(horiz_motor_status, ctrl_motorIntSig, "horiz_motor_status",lineT, valid);
- printCsvValue(horiz_motor_cmd_id, ctrl_motorIntSig, "horiz_motor_cmd_id",lineT, valid);
- printCsvValue(horiz_motor_feedback_id, ctrl_motorIntSig, "horiz_motor_feedback_id",lineT, valid);
- printCsvValue(thrust_1, ctrl_motorIntSig, "thrust_1",lineT, valid);
- printCsvValue(thrust_2, ctrl_motorIntSig, "thrust_2",lineT, valid);
- printCsvValue(thrust_3, ctrl_motorIntSig, "thrust_3",lineT, valid);
- printCsvValue(thrust_4, ctrl_motorIntSig, "thrust_4",lineT, valid);
- printCsvValue(thrust_5, ctrl_motorIntSig, "thrust_5",lineT, valid);
- printCsvValue(thrust_6, ctrl_motorIntSig, "thrust_6",lineT, valid);
- printCsvValue(thrust_7, ctrl_motorIntSig, "thrust_7",lineT, valid);
- printCsvValue(thrust_8, ctrl_motorIntSig, "thrust_8",lineT, valid);
- printCsvValue(pwm_1, ctrl_motorIntSig, "pwm_1",lineT, valid);
- printCsvValue(pwm_2, ctrl_motorIntSig, "pwm_2",lineT, valid);
- printCsvValue(pwm_3, ctrl_motorIntSig, "pwm_3",lineT, valid);
- printCsvValue(pwm_4, ctrl_motorIntSig, "pwm_4",lineT, valid);
- printCsvValue(pwm_5, ctrl_motorIntSig, "pwm_5",lineT, valid);
- printCsvValue(pwm_6, ctrl_motorIntSig, "pwm_6",lineT, valid);
- printCsvValue(pwm_7, ctrl_motorIntSig, "pwm_7",lineT, valid);
- printCsvValue(pwm_8, ctrl_motorIntSig, "pwm_8",lineT, valid);
+ printCSVValue(horiz_motor_status, ctrl_motorIntSig, "horiz_motor_status",lineT, valid);
+ printCSVValue(horiz_motor_cmd_id, ctrl_motorIntSig, "horiz_motor_cmd_id",lineT, valid);
+ printCSVValue(horiz_motor_feedback_id, ctrl_motorIntSig, "horiz_motor_feedback_id",lineT, valid);
+ printCSVValue(thrust_1, ctrl_motorIntSig, "thrust_1",lineT, valid);
+ printCSVValue(thrust_2, ctrl_motorIntSig, "thrust_2",lineT, valid);
+ printCSVValue(thrust_3, ctrl_motorIntSig, "thrust_3",lineT, valid);
+ printCSVValue(thrust_4, ctrl_motorIntSig, "thrust_4",lineT, valid);
+ printCSVValue(thrust_5, ctrl_motorIntSig, "thrust_5",lineT, valid);
+ printCSVValue(thrust_6, ctrl_motorIntSig, "thrust_6",lineT, valid);
+ printCSVValue(thrust_7, ctrl_motorIntSig, "thrust_7",lineT, valid);
+ printCSVValue(thrust_8, ctrl_motorIntSig, "thrust_8",lineT, valid);
+ printCSVValue(pwm_1, ctrl_motorIntSig, "pwm_1",lineT, valid);
+ printCSVValue(pwm_2, ctrl_motorIntSig, "pwm_2",lineT, valid);
+ printCSVValue(pwm_3, ctrl_motorIntSig, "pwm_3",lineT, valid);
+ printCSVValue(pwm_4, ctrl_motorIntSig, "pwm_4",lineT, valid);
+ printCSVValue(pwm_5, ctrl_motorIntSig, "pwm_5",lineT, valid);
+ printCSVValue(pwm_6, ctrl_motorIntSig, "pwm_6",lineT, valid);
+ printCSVValue(pwm_7, ctrl_motorIntSig, "pwm_7",lineT, valid);
+ printCSVValue(pwm_8, ctrl_motorIntSig, "pwm_8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

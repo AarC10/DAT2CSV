@@ -50,9 +50,9 @@ public class RecTabletLoc179_43 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(longitudeTablet, tabletGPSSig, "Longitude", lineT,
+            printCSVValue(longitudeTablet, tabletGPSSig, "Longitude", lineT,
                     valid);
-            printCsvValue(latitudeTablet, tabletGPSSig, "Latitude", lineT,
+            printCSVValue(latitudeTablet, tabletGPSSig, "Latitude", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

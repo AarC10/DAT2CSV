@@ -94,22 +94,22 @@ public class pwm_output_76_20001 extends Record {
 
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(OUT_M1, pwm_outputIntSig, "OUT_M1", lineT, valid);
-            printCsvValue(OUT_M2, pwm_outputIntSig, "OUT_M2", lineT, valid);
-            printCsvValue(OUT_M3, pwm_outputIntSig, "OUT_M3", lineT, valid);
-            printCsvValue(OUT_M4, pwm_outputIntSig, "OUT_M4", lineT, valid);
-            printCsvValue(OUT_M5, pwm_outputIntSig, "OUT_M5", lineT, valid);
-            printCsvValue(OUT_M6, pwm_outputIntSig, "OUT_M6", lineT, valid);
-            printCsvValue(OUT_M7, pwm_outputIntSig, "OUT_M7", lineT, valid);
-            printCsvValue(OUT_M8, pwm_outputIntSig, "OUT_M8", lineT, valid);
-            printCsvValue(OUT_F1, pwm_outputIntSig, "OUT_F1", lineT, valid);
-            printCsvValue(OUT_F2, pwm_outputIntSig, "OUT_F2", lineT, valid);
-            printCsvValue(OUT_F3, pwm_outputIntSig, "OUT_F3", lineT, valid);
-            printCsvValue(OUT_F4, pwm_outputIntSig, "OUT_F4", lineT, valid);
-            printCsvValue(OUT_F5, pwm_outputIntSig, "OUT_F5", lineT, valid);
-            printCsvValue(OUT_F6, pwm_outputIntSig, "OUT_F6", lineT, valid);
-            printCsvValue(OUT_F7, pwm_outputIntSig, "OUT_F7", lineT, valid);
-            printCsvValue(OUT_F8, pwm_outputIntSig, "OUT_F8", lineT, valid);
+            printCSVValue(OUT_M1, pwm_outputIntSig, "OUT_M1", lineT, valid);
+            printCSVValue(OUT_M2, pwm_outputIntSig, "OUT_M2", lineT, valid);
+            printCSVValue(OUT_M3, pwm_outputIntSig, "OUT_M3", lineT, valid);
+            printCSVValue(OUT_M4, pwm_outputIntSig, "OUT_M4", lineT, valid);
+            printCSVValue(OUT_M5, pwm_outputIntSig, "OUT_M5", lineT, valid);
+            printCSVValue(OUT_M6, pwm_outputIntSig, "OUT_M6", lineT, valid);
+            printCSVValue(OUT_M7, pwm_outputIntSig, "OUT_M7", lineT, valid);
+            printCSVValue(OUT_M8, pwm_outputIntSig, "OUT_M8", lineT, valid);
+            printCSVValue(OUT_F1, pwm_outputIntSig, "OUT_F1", lineT, valid);
+            printCSVValue(OUT_F2, pwm_outputIntSig, "OUT_F2", lineT, valid);
+            printCSVValue(OUT_F3, pwm_outputIntSig, "OUT_F3", lineT, valid);
+            printCSVValue(OUT_F4, pwm_outputIntSig, "OUT_F4", lineT, valid);
+            printCSVValue(OUT_F5, pwm_outputIntSig, "OUT_F5", lineT, valid);
+            printCSVValue(OUT_F6, pwm_outputIntSig, "OUT_F6", lineT, valid);
+            printCSVValue(OUT_F7, pwm_outputIntSig, "OUT_F7", lineT, valid);
+            printCSVValue(OUT_F8, pwm_outputIntSig, "OUT_F8", lineT, valid);
 //            printCsvValue(OUT_TEMP_CTRL_0, pwm_outputIntSig, "OUT_TEMP_CTRL_0",
 //                    lineT, valid);
 //            printCsvValue(OUT_TEMP_CTRL_1, pwm_outputIntSig, "OUT_TEMP_CTRL_1",

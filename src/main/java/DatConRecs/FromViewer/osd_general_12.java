@@ -83,30 +83,30 @@ product_type = _payload.getUnsignedByte(48);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(longtitude, osd_generalDoubleSig, "longtitude",lineT, valid);
- printCsvValue(latitude, osd_generalDoubleSig, "latitude",lineT, valid);
- printCsvValue(relative_height, osd_generalIntSig, "relative_height",lineT, valid);
- printCsvValue(vgx, osd_generalIntSig, "vgx",lineT, valid);
- printCsvValue(vgy, osd_generalIntSig, "vgy",lineT, valid);
- printCsvValue(vgz, osd_generalIntSig, "vgz",lineT, valid);
- printCsvValue(pitch, osd_generalIntSig, "pitch",lineT, valid);
- printCsvValue(roll, osd_generalIntSig, "roll",lineT, valid);
- printCsvValue(yaw, osd_generalIntSig, "yaw",lineT, valid);
- printCsvValue(mode1, osd_generalIntSig, "mode1",lineT, valid);
- printCsvValue(latest_cmd, osd_generalIntSig, "latest_cmd",lineT, valid);
- printCsvValue(controller_state, osd_generalIntSig, "controller_state",lineT, valid);
- printCsvValue(gps_nums, osd_generalIntSig, "gps_nums",lineT, valid);
- printCsvValue(gohome_landing_reason, osd_generalIntSig, "gohome_landing_reason",lineT, valid);
- printCsvValue(start_fail_reason, osd_generalIntSig, "start_fail_reason",lineT, valid);
- printCsvValue(controller_state_ext, osd_generalIntSig, "controller_state_ext",lineT, valid);
- printCsvValue(rsvd2, osd_generalIntSig, "rsvd2",lineT, valid);
- printCsvValue(ultrasonic_height, osd_generalIntSig, "ultrasonic_height",lineT, valid);
- printCsvValue(motor_startup_time, osd_generalIntSig, "motor_startup_time",lineT, valid);
- printCsvValue(motor_startup_times, osd_generalIntSig, "motor_startup_times",lineT, valid);
- printCsvValue(bat_alarm1, osd_generalIntSig, "bat_alarm1",lineT, valid);
- printCsvValue(bat_alarm2, osd_generalIntSig, "bat_alarm2",lineT, valid);
- printCsvValue(version_match, osd_generalIntSig, "version_match",lineT, valid);
- printCsvValue(product_type, osd_generalIntSig, "product_type",lineT, valid);
+ printCSVValue(longtitude, osd_generalDoubleSig, "longtitude",lineT, valid);
+ printCSVValue(latitude, osd_generalDoubleSig, "latitude",lineT, valid);
+ printCSVValue(relative_height, osd_generalIntSig, "relative_height",lineT, valid);
+ printCSVValue(vgx, osd_generalIntSig, "vgx",lineT, valid);
+ printCSVValue(vgy, osd_generalIntSig, "vgy",lineT, valid);
+ printCSVValue(vgz, osd_generalIntSig, "vgz",lineT, valid);
+ printCSVValue(pitch, osd_generalIntSig, "pitch",lineT, valid);
+ printCSVValue(roll, osd_generalIntSig, "roll",lineT, valid);
+ printCSVValue(yaw, osd_generalIntSig, "yaw",lineT, valid);
+ printCSVValue(mode1, osd_generalIntSig, "mode1",lineT, valid);
+ printCSVValue(latest_cmd, osd_generalIntSig, "latest_cmd",lineT, valid);
+ printCSVValue(controller_state, osd_generalIntSig, "controller_state",lineT, valid);
+ printCSVValue(gps_nums, osd_generalIntSig, "gps_nums",lineT, valid);
+ printCSVValue(gohome_landing_reason, osd_generalIntSig, "gohome_landing_reason",lineT, valid);
+ printCSVValue(start_fail_reason, osd_generalIntSig, "start_fail_reason",lineT, valid);
+ printCSVValue(controller_state_ext, osd_generalIntSig, "controller_state_ext",lineT, valid);
+ printCSVValue(rsvd2, osd_generalIntSig, "rsvd2",lineT, valid);
+ printCSVValue(ultrasonic_height, osd_generalIntSig, "ultrasonic_height",lineT, valid);
+ printCSVValue(motor_startup_time, osd_generalIntSig, "motor_startup_time",lineT, valid);
+ printCSVValue(motor_startup_times, osd_generalIntSig, "motor_startup_times",lineT, valid);
+ printCSVValue(bat_alarm1, osd_generalIntSig, "bat_alarm1",lineT, valid);
+ printCSVValue(bat_alarm2, osd_generalIntSig, "bat_alarm2",lineT, valid);
+ printCSVValue(version_match, osd_generalIntSig, "version_match",lineT, valid);
+ printCSVValue(product_type, osd_generalIntSig, "product_type",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

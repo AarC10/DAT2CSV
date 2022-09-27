@@ -99,7 +99,7 @@ public class RecFlyLog_32768 extends Record {
         try {
             if (convertDat.csvEventLogOutput) {
                 String noComma = text.replaceAll(",", ".");
-                printCsvValue(noComma, "eventLog", lineT, true);
+                printCSVValue(noComma, "eventLog", lineT, true);
             }
             text = "";
         } catch (Exception e) {

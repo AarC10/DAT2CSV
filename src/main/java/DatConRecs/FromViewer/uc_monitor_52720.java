@@ -77,27 +77,27 @@ protected int pend_cnt_d = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(cpu_usage_pcnt, uc_monitorIntSig, "cpu_usage_pcnt",lineT, valid);
- printCsvValue(cpu_usage_task_b_pcnt, uc_monitorIntSig, "cpu_usage_task_b_pcnt",lineT, valid);
- printCsvValue(cpu_usage_task_a_pcnt, uc_monitorIntSig, "cpu_usage_task_a_pcnt",lineT, valid);
- printCsvValue(uc_resv0, uc_monitorIntSig, "uc_resv0",lineT, valid);
- printCsvValue(max_time_workqueue, uc_monitorIntSig, "max_time_workqueue",lineT, valid);
- printCsvValue(max_time_task_b, uc_monitorIntSig, "max_time_task_b",lineT, valid);
- printCsvValue(max_time_task_a, uc_monitorIntSig, "max_time_task_a",lineT, valid);
- printCsvValue(max_time_task_c, uc_monitorIntSig, "max_time_task_c",lineT, valid);
- printCsvValue(max_time_task_d, uc_monitorIntSig, "max_time_task_d",lineT, valid);
- printCsvValue(uc_resv1, uc_monitorIntSig, "uc_resv1",lineT, valid);
- printCsvValue(stack_usage_irq_pcnt, uc_monitorIntSig, "stack_usage_irq_pcnt",lineT, valid);
- printCsvValue(stack_usage_workqueue_pcnt, uc_monitorIntSig, "stack_usage_workqueue_pcnt",lineT, valid);
- printCsvValue(stack_usage_b_pcnt, uc_monitorIntSig, "stack_usage_b_pcnt",lineT, valid);
- printCsvValue(stack_usage_a_pcnt, uc_monitorIntSig, "stack_usage_a_pcnt",lineT, valid);
- printCsvValue(stack_usage_c_pcnt, uc_monitorIntSig, "stack_usage_c_pcnt",lineT, valid);
- printCsvValue(stack_usage_d_pcnt, uc_monitorIntSig, "stack_usage_d_pcnt",lineT, valid);
- printCsvValue(uc_resv2, uc_monitorIntSig, "uc_resv2",lineT, valid);
- printCsvValue(pend_cnt_a, uc_monitorIntSig, "pend_cnt_a",lineT, valid);
- printCsvValue(pend_cnt_b, uc_monitorIntSig, "pend_cnt_b",lineT, valid);
- printCsvValue(pend_cnt_c, uc_monitorIntSig, "pend_cnt_c",lineT, valid);
- printCsvValue(pend_cnt_d, uc_monitorIntSig, "pend_cnt_d",lineT, valid);
+ printCSVValue(cpu_usage_pcnt, uc_monitorIntSig, "cpu_usage_pcnt",lineT, valid);
+ printCSVValue(cpu_usage_task_b_pcnt, uc_monitorIntSig, "cpu_usage_task_b_pcnt",lineT, valid);
+ printCSVValue(cpu_usage_task_a_pcnt, uc_monitorIntSig, "cpu_usage_task_a_pcnt",lineT, valid);
+ printCSVValue(uc_resv0, uc_monitorIntSig, "uc_resv0",lineT, valid);
+ printCSVValue(max_time_workqueue, uc_monitorIntSig, "max_time_workqueue",lineT, valid);
+ printCSVValue(max_time_task_b, uc_monitorIntSig, "max_time_task_b",lineT, valid);
+ printCSVValue(max_time_task_a, uc_monitorIntSig, "max_time_task_a",lineT, valid);
+ printCSVValue(max_time_task_c, uc_monitorIntSig, "max_time_task_c",lineT, valid);
+ printCSVValue(max_time_task_d, uc_monitorIntSig, "max_time_task_d",lineT, valid);
+ printCSVValue(uc_resv1, uc_monitorIntSig, "uc_resv1",lineT, valid);
+ printCSVValue(stack_usage_irq_pcnt, uc_monitorIntSig, "stack_usage_irq_pcnt",lineT, valid);
+ printCSVValue(stack_usage_workqueue_pcnt, uc_monitorIntSig, "stack_usage_workqueue_pcnt",lineT, valid);
+ printCSVValue(stack_usage_b_pcnt, uc_monitorIntSig, "stack_usage_b_pcnt",lineT, valid);
+ printCSVValue(stack_usage_a_pcnt, uc_monitorIntSig, "stack_usage_a_pcnt",lineT, valid);
+ printCSVValue(stack_usage_c_pcnt, uc_monitorIntSig, "stack_usage_c_pcnt",lineT, valid);
+ printCSVValue(stack_usage_d_pcnt, uc_monitorIntSig, "stack_usage_d_pcnt",lineT, valid);
+ printCSVValue(uc_resv2, uc_monitorIntSig, "uc_resv2",lineT, valid);
+ printCSVValue(pend_cnt_a, uc_monitorIntSig, "pend_cnt_a",lineT, valid);
+ printCSVValue(pend_cnt_b, uc_monitorIntSig, "pend_cnt_b",lineT, valid);
+ printCSVValue(pend_cnt_c, uc_monitorIntSig, "pend_cnt_c",lineT, valid);
+ printCSVValue(pend_cnt_d, uc_monitorIntSig, "pend_cnt_d",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

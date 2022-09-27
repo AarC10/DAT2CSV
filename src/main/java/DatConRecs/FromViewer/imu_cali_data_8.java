@@ -67,22 +67,22 @@ g_cali_state = _payload.getUnsignedByte(38);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(gyrox_temp, imu_cali_dataFloatSig, "gyrox_temp",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_bw_0, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_0",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_bw_1, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_1",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_bw_2, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_2",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_ba_0, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_0",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_ba_1, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_1",lineT, valid);
- printCsvValue(g_cfg_temper_bias_bias_ba_2, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_2",lineT, valid);
- printCsvValue(g_cfg_temper_bias_flag, imu_cali_dataIntSig, "g_cfg_temper_bias_flag",lineT, valid);
- printCsvValue(g_cfg_temper_bias_cali, imu_cali_dataIntSig, "g_cfg_temper_bias_cali",lineT, valid);
- printCsvValue(g_cfg_gyro_bias_flag, imu_cali_dataIntSig, "g_cfg_gyro_bias_flag",lineT, valid);
- printCsvValue(g_cfg_gyro_bias_cali, imu_cali_dataIntSig, "g_cfg_gyro_bias_cali",lineT, valid);
- printCsvValue(imu_cali_bias_sta_flag, imu_cali_dataIntSig, "imu_cali_bias_sta_flag",lineT, valid);
- printCsvValue(imu_cali_bias_sta_cnt, imu_cali_dataIntSig, "imu_cali_bias_sta_cnt",lineT, valid);
- printCsvValue(g_cali_state, imu_cali_dataIntSig, "g_cali_state",lineT, valid);
- printCsvValue(clock, imu_cali_dataIntSig, "clock",lineT, valid);
- printCsvValue(time, imu_cali_dataIntSig, "time",lineT, valid);
+ printCSVValue(gyrox_temp, imu_cali_dataFloatSig, "gyrox_temp",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_bw_0, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_0",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_bw_1, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_1",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_bw_2, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_bw_2",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_ba_0, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_0",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_ba_1, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_1",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_bias_ba_2, imu_cali_dataFloatSig, "g_cfg_temper_bias_bias_ba_2",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_flag, imu_cali_dataIntSig, "g_cfg_temper_bias_flag",lineT, valid);
+ printCSVValue(g_cfg_temper_bias_cali, imu_cali_dataIntSig, "g_cfg_temper_bias_cali",lineT, valid);
+ printCSVValue(g_cfg_gyro_bias_flag, imu_cali_dataIntSig, "g_cfg_gyro_bias_flag",lineT, valid);
+ printCSVValue(g_cfg_gyro_bias_cali, imu_cali_dataIntSig, "g_cfg_gyro_bias_cali",lineT, valid);
+ printCSVValue(imu_cali_bias_sta_flag, imu_cali_dataIntSig, "imu_cali_bias_sta_flag",lineT, valid);
+ printCSVValue(imu_cali_bias_sta_cnt, imu_cali_dataIntSig, "imu_cali_bias_sta_cnt",lineT, valid);
+ printCSVValue(g_cali_state, imu_cali_dataIntSig, "g_cali_state",lineT, valid);
+ printCSVValue(clock, imu_cali_dataIntSig, "clock",lineT, valid);
+ printCSVValue(time, imu_cali_dataIntSig, "time",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

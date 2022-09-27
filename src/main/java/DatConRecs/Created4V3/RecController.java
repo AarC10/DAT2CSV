@@ -57,14 +57,14 @@ public class RecController extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(ctrl_roll, AxesAndSigs.aileronSig, "", lineT, valid);
-            printCsvValue(ctrl_pitch, AxesAndSigs.elevatorSig, "", lineT,
+            printCSVValue(ctrl_roll, AxesAndSigs.aileronSig, "", lineT, valid);
+            printCSVValue(ctrl_pitch, AxesAndSigs.elevatorSig, "", lineT,
                     valid);
-            printCsvValue(ctrl_yaw, AxesAndSigs.rudderSig, "", lineT, valid);
-            printCsvValue(ctrl_thr, AxesAndSigs.throttleSig, "", lineT, valid);
-            printCsvValue(sig_level, ControllerIntSig, "gpsLevel", lineT,
+            printCSVValue(ctrl_yaw, AxesAndSigs.rudderSig, "", lineT, valid);
+            printCSVValue(ctrl_thr, AxesAndSigs.throttleSig, "", lineT, valid);
+            printCSVValue(sig_level, ControllerIntSig, "gpsLevel", lineT,
                     valid);
-            printCsvValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
+            printCSVValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

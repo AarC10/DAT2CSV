@@ -188,19 +188,19 @@ public class RecBatt extends Record {
     }
 
     protected void printComputedBattCols(lineType lineT) throws Exception {
-        printCsvValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
-        printCsvValue(watts, wattsSig, "watts", lineT, valid);
-        printCsvValue(minCurrent, currentSig, "minCurrent", lineT, valid);
-        printCsvValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
-        printCsvValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
+        printCSVValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
+        printCSVValue(watts, wattsSig, "watts", lineT, valid);
+        printCSVValue(minCurrent, currentSig, "minCurrent", lineT, valid);
+        printCSVValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
+        printCSVValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
 
-        printCsvValue(minVolts, voltsSig, "minVolts", lineT, valid);
-        printCsvValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
-        printCsvValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
+        printCSVValue(minVolts, voltsSig, "minVolts", lineT, valid);
+        printCSVValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
+        printCSVValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
 
-        printCsvValue(minWatts, wattsSig, "minWatts", lineT, valid);
-        printCsvValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
-        printCsvValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
+        printCSVValue(minWatts, wattsSig, "minWatts", lineT, valid);
+        printCSVValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
+        printCSVValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
     }
 
     //    protected void printComputedBattCols(lineType lineT) throws Exception {

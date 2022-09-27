@@ -119,11 +119,11 @@ public class RCStatus extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(fSafe, RCStateSig, "failSafe", lineT, statusValid);
-            printCsvValue(data_lost, RCStateSig, "dataLost", lineT,
+            printCSVValue(fSafe, RCStateSig, "failSafe", lineT, statusValid);
+            printCSVValue(data_lost, RCStateSig, "dataLost", lineT,
                     statusValid);
-            printCsvValue(app_lost, RCStateSig, "appLost", lineT, statusValid);
-            printCsvValue(sStrength, sigStrengthSig, "", lineT, statusValid);
+            printCSVValue(app_lost, RCStateSig, "appLost", lineT, statusValid);
+            printCSVValue(sStrength, sigStrengthSig, "", lineT, statusValid);
             //printCsvValue(rec_cnt, rcDebugSig, "rec_cnt", lineT, statusValid);
             //            printCsvValue(connected, connectedSig, "", lineT,
             //                    statusValid);

@@ -45,30 +45,30 @@ public class MotorControl extends Record {
     public void printCols(lineType lineT) {
         try {
             if (status) {
-                printCsvValue(motor_status, motorCtrlStatusSig, "", lineT,
+                printCSVValue(motor_status, motorCtrlStatusSig, "", lineT,
                         valid);
             }
             if (convertDat.getNumMotors() == 6) {
-                printCsvValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
+                printCSVValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
                         lineT, valid);
-                printCsvValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
+                printCSVValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
                         lineT, valid);
-                printCsvValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LSide", lineT,
+                printCSVValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LSide", lineT,
                         valid);
-                printCsvValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
+                printCSVValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
                         valid);
-                printCsvValue(pwm5, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
+                printCSVValue(pwm5, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
                         valid);
-                printCsvValue(pwm6, AxesAndSigs.motorCtrlPWMSig, "RSide", lineT,
+                printCSVValue(pwm6, AxesAndSigs.motorCtrlPWMSig, "RSide", lineT,
                         valid);
             } else {
-                printCsvValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
+                printCSVValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
                         lineT, valid);
-                printCsvValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
+                printCSVValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
                         lineT, valid);
-                printCsvValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
+                printCSVValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
                         valid);
-                printCsvValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
+                printCSVValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
                         valid);
             }
         } catch (Exception e) {

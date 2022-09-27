@@ -338,36 +338,36 @@ public class RecIMU extends Record {
                 convertDat.processCoordsNoGoTxt(longitudeDegrees,
                         latitudeDegrees, baroRaw);
             }
-            printCsvValue(longitudeDegrees, coordSig, "Longitude", lineT,
+            printCSVValue(longitudeDegrees, coordSig, "Longitude", lineT,
                     convertDat.gpsCoordsOK);
-            printCsvValue(latitudeDegrees, coordSig, "Latitude", lineT,
+            printCSVValue(latitudeDegrees, coordSig, "Latitude", lineT,
                     convertDat.gpsCoordsOK);
-            printCsvValue(numSats, numSatsSig, "numSats", lineT, valid);
+            printCSVValue(numSats, numSatsSig, "numSats", lineT, valid);
 
-            printCsvValue(baroRaw, barometerSig, "barometer:Raw", lineT, valid);
-            printCsvValue(baroSmooth, barometerSig, "barometer:Smooth", lineT,
+            printCSVValue(baroRaw, barometerSig, "barometer:Raw", lineT, valid);
+            printCSVValue(baroSmooth, barometerSig, "barometer:Smooth", lineT,
                     valid);
 
-            printCsvValue(accelX, accelSig, "accel:X", lineT, valid);
-            printCsvValue(accelY, accelSig, "accel:Y", lineT, valid);
-            printCsvValue(accelZ, accelSig, "accel:Z", lineT, valid);
-            printCsvValue(accel, accelSig, "accel:Composite", lineT, valid);
+            printCSVValue(accelX, accelSig, "accel:X", lineT, valid);
+            printCSVValue(accelY, accelSig, "accel:Y", lineT, valid);
+            printCSVValue(accelZ, accelSig, "accel:Z", lineT, valid);
+            printCSVValue(accel, accelSig, "accel:Composite", lineT, valid);
 
-            printCsvValue(gyroX, gyroSig, "gyro:X", lineT, valid);
-            printCsvValue(gyroY, gyroSig, "gyro:Y", lineT, valid);
-            printCsvValue(gyroZ, gyroSig, "gyro:Z", lineT, valid);
-            printCsvValue(gyro, gyroSig, "gyro:Composite", lineT, valid);
+            printCSVValue(gyroX, gyroSig, "gyro:X", lineT, valid);
+            printCSVValue(gyroY, gyroSig, "gyro:Y", lineT, valid);
+            printCSVValue(gyroZ, gyroSig, "gyro:Z", lineT, valid);
+            printCSVValue(gyro, gyroSig, "gyro:Composite", lineT, valid);
 
-            printCsvValue(magX, magSig, "mag:X", lineT, valid);
-            printCsvValue(magY, magSig, "mag:Y", lineT, valid);
-            printCsvValue(magZ, magSig, "mag:Z", lineT, valid);
-            printCsvValue(magMod, magSig, "mag:Mod", lineT, valid);
+            printCSVValue(magX, magSig, "mag:X", lineT, valid);
+            printCSVValue(magY, magSig, "mag:Y", lineT, valid);
+            printCSVValue(magZ, magSig, "mag:Z", lineT, valid);
+            printCSVValue(magMod, magSig, "mag:Mod", lineT, valid);
 
-            printCsvValue(velN, velocitySig, "velN", lineT, valid);
-            printCsvValue(velE, velocitySig, "velE", lineT, valid);
-            printCsvValue(velD, velocitySig, "velD", lineT, valid);
-            printCsvValue(vel, velocitySig, "velComposite", lineT, valid);
-            printCsvValue(velH, velocitySig, "velH", lineT, valid);
+            printCSVValue(velN, velocitySig, "velN", lineT, valid);
+            printCSVValue(velE, velocitySig, "velE", lineT, valid);
+            printCSVValue(velD, velocitySig, "velD", lineT, valid);
+            printCSVValue(vel, velocitySig, "velComposite", lineT, valid);
+            printCSVValue(velH, velocitySig, "velH", lineT, valid);
 
             double velGPS = 0.0;
             if (notFirstLine) {
@@ -381,24 +381,24 @@ public class RecIMU extends Record {
 
             lastLatRad = latRad;
             lastLongRad = longRad;
-            printCsvValue(velGPS - velH, velocitySig, "GPS-H", lineT, valid);
+            printCSVValue(velGPS - velH, velocitySig, "GPS-H", lineT, valid);
 
-            printCsvValue(quatW, quaternionSig, "quatW", lineT, valid);
-            printCsvValue(quatX, quaternionSig, "quatX", lineT, valid);
-            printCsvValue(quatY, quaternionSig, "quatY", lineT, valid);
-            printCsvValue(quatZ, quaternionSig, "quatZ", lineT, valid);
+            printCSVValue(quatW, quaternionSig, "quatW", lineT, valid);
+            printCSVValue(quatX, quaternionSig, "quatX", lineT, valid);
+            printCSVValue(quatY, quaternionSig, "quatY", lineT, valid);
+            printCSVValue(quatZ, quaternionSig, "quatZ", lineT, valid);
 
-            printCsvValue(roll, attitudeSig, "roll", lineT, valid);
-            printCsvValue(pitch, attitudeSig, "pitch", lineT, valid);
-            printCsvValue(yaw, attitudeSig, "yaw", lineT, valid);
-            printCsvValue(((yaw + 360.0) % 360.0), attitudeSig, "yaw360", lineT,
+            printCSVValue(roll, attitudeSig, "roll", lineT, valid);
+            printCSVValue(pitch, attitudeSig, "pitch", lineT, valid);
+            printCSVValue(yaw, attitudeSig, "yaw", lineT, valid);
+            printCSVValue(((yaw + 360.0) % 360.0), attitudeSig, "yaw360", lineT,
                     valid);
 
-            printCsvValue(totalZGyro, totalGyroSig, "totalGyro:Z", lineT,
+            printCSVValue(totalZGyro, totalGyroSig, "totalGyro:Z", lineT,
                     valid);
-            printCsvValue(totalXGyro, totalGyroSig, "totalGyro:X", lineT,
+            printCSVValue(totalXGyro, totalGyroSig, "totalGyro:X", lineT,
                     valid);
-            printCsvValue(totalYGyro, totalGyroSig, "totalGyro:Y", lineT,
+            printCSVValue(totalYGyro, totalGyroSig, "totalGyro:Y", lineT,
                     valid);
             if (lineT == lineType.LINE) {
                 notFirstLine = true;
@@ -419,7 +419,7 @@ public class RecIMU extends Record {
                 distanceHP = Util.distance(latRad, longRad,
                         convertDat.getHPLatRad(), convertDat.getHPLongRad());
             }
-            printCsvValue(magYaw.getDegrees(), magSig, "magYaw", lineT, valid);
+            printCSVValue(magYaw.getDegrees(), magSig, "magYaw", lineT, valid);
             if (Persist.magCalcs) {
                 double diff = 0.0;
                 if (yaw > magYaw.getDegrees() + 180) {
@@ -429,27 +429,27 @@ public class RecIMU extends Record {
                 } else {
                     diff = magYaw.getDegrees() - yaw;
                 }
-                printCsvValue(diff, magSig, "Yaw-magYaw", lineT, valid);
+                printCSVValue(diff, magSig, "Yaw-magYaw", lineT, valid);
             }
             if (Persist.inertialOnlyCalcs) {
                 imuCalcs.printCols(lineT, valid);
             }
-            printCsvValue(distanceHP, distanceSig, "distanceHP", lineT,
+            printCSVValue(distanceHP, distanceSig, "distanceHP", lineT,
                     convertDat.isHpValid());
-            printCsvValue(distanceTravelled, distanceSig, "distanceTravelled",
+            printCSVValue(distanceTravelled, distanceSig, "distanceTravelled",
                     lineT, valid);
-            printCsvValue(bearingDeclined, directionSig,
+            printCSVValue(bearingDeclined, directionSig,
                     "directionOfTravel[mag]", lineT, bearingValid);
-            printCsvValue(bearingTrue, directionSig, "directionOfTravel[true]",
+            printCSVValue(bearingTrue, directionSig, "directionOfTravel[true]",
                     lineT, bearingValid);
-            printCsvValue(imuTemp, imuTempSig, "temperature", lineT, valid);
+            printCSVValue(imuTemp, imuTempSig, "temperature", lineT, valid);
             if (Persist.EXPERIMENTAL_FIELDS) {
-                printCsvValue(ag_X, experimentalSig, "ag_X", lineT, valid);
-                printCsvValue(ag_Y, experimentalSig, "ag_Y", lineT, valid);
-                printCsvValue(ag_Z, experimentalSig, "ag_Z", lineT, valid);
-                printCsvValue(gb_X, experimentalSig, "gb_X", lineT, valid);
-                printCsvValue(gb_Y, experimentalSig, "gb_Y", lineT, valid);
-                printCsvValue(gb_Z, experimentalSig, "gb_Z", lineT, valid);
+                printCSVValue(ag_X, experimentalSig, "ag_X", lineT, valid);
+                printCSVValue(ag_Y, experimentalSig, "ag_Y", lineT, valid);
+                printCSVValue(ag_Z, experimentalSig, "ag_Z", lineT, valid);
+                printCSVValue(gb_X, experimentalSig, "gb_X", lineT, valid);
+                printCSVValue(gb_Y, experimentalSig, "gb_Y", lineT, valid);
+                printCSVValue(gb_Z, experimentalSig, "gb_Z", lineT, valid);
             }
         } catch (Exception e) {
             DatConLog.Exception(e);

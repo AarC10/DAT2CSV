@@ -40,7 +40,7 @@ public class ns_data_component_10086 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(ns_cmpnt, ns_data_componentIntSig, "ns_cmpnt", lineT,
+            printCSVValue(ns_cmpnt, ns_data_componentIntSig, "ns_cmpnt", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

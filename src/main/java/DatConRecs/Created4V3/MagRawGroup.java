@@ -48,10 +48,10 @@ public class MagRawGroup extends Record {
             try {
                 float magMod = (int) Math
                         .sqrt(magX * magX + magY * magY + magZ * magZ);
-                printCsvValue(magX, magRawSig, "rawX", lineT, valid);
-                printCsvValue(magY, magRawSig, "rawY", lineT, valid);
-                printCsvValue(magZ, magRawSig, "rawZ", lineT, valid);
-                printCsvValue(magMod, magRawSig, "rawMod", lineT, valid);
+                printCSVValue(magX, magRawSig, "rawX", lineT, valid);
+                printCSVValue(magY, magRawSig, "rawY", lineT, valid);
+                printCSVValue(magZ, magRawSig, "rawZ", lineT, valid);
+                printCSVValue(magMod, magRawSig, "rawMod", lineT, valid);
                 //            printCsvValue(magYaw, AxesAndSigs.magYawSig, "(" + index + ")",
                 //                    lineT, valid);
             } catch (Exception e) {

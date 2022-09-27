@@ -41,9 +41,9 @@ protected float adxl278_az = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(adxl278_ax, adxl278_raw_dataFloatSig, "adxl278_ax",lineT, valid);
- printCsvValue(adxl278_ay, adxl278_raw_dataFloatSig, "adxl278_ay",lineT, valid);
- printCsvValue(adxl278_az, adxl278_raw_dataFloatSig, "adxl278_az",lineT, valid);
+ printCSVValue(adxl278_ax, adxl278_raw_dataFloatSig, "adxl278_ax",lineT, valid);
+ printCSVValue(adxl278_ay, adxl278_raw_dataFloatSig, "adxl278_ay",lineT, valid);
+ printCSVValue(adxl278_az, adxl278_raw_dataFloatSig, "adxl278_az",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

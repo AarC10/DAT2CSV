@@ -73,25 +73,25 @@ protected long gyro_hf_cnt = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(raw_w_x, IMU_TAILIntSig, "raw_w_x",lineT, valid);
- printCsvValue(raw_w_y, IMU_TAILIntSig, "raw_w_y",lineT, valid);
- printCsvValue(raw_w_z, IMU_TAILIntSig, "raw_w_z",lineT, valid);
- printCsvValue(raw_a_x, IMU_TAILIntSig, "raw_a_x",lineT, valid);
- printCsvValue(raw_a_y, IMU_TAILIntSig, "raw_a_y",lineT, valid);
- printCsvValue(raw_a_z, IMU_TAILIntSig, "raw_a_z",lineT, valid);
- printCsvValue(raw_wa_x, IMU_TAILIntSig, "raw_wa_x",lineT, valid);
- printCsvValue(raw_wa_y, IMU_TAILIntSig, "raw_wa_y",lineT, valid);
- printCsvValue(raw_wa_z, IMU_TAILIntSig, "raw_wa_z",lineT, valid);
- printCsvValue(iir_w_x, IMU_TAILIntSig, "iir_w_x",lineT, valid);
- printCsvValue(iir_w_y, IMU_TAILIntSig, "iir_w_y",lineT, valid);
- printCsvValue(iir_w_z, IMU_TAILIntSig, "iir_w_z",lineT, valid);
- printCsvValue(iir_a_x, IMU_TAILIntSig, "iir_a_x",lineT, valid);
- printCsvValue(iir_a_y, IMU_TAILIntSig, "iir_a_y",lineT, valid);
- printCsvValue(iir_a_z, IMU_TAILIntSig, "iir_a_z",lineT, valid);
- printCsvValue(iir_wa_x, IMU_TAILIntSig, "iir_wa_x",lineT, valid);
- printCsvValue(iir_wa_y, IMU_TAILIntSig, "iir_wa_y",lineT, valid);
- printCsvValue(iir_wa_z, IMU_TAILIntSig, "iir_wa_z",lineT, valid);
- printCsvValue(gyro_hf_cnt, IMU_TAILIntSig, "gyro_hf_cnt",lineT, valid);
+ printCSVValue(raw_w_x, IMU_TAILIntSig, "raw_w_x",lineT, valid);
+ printCSVValue(raw_w_y, IMU_TAILIntSig, "raw_w_y",lineT, valid);
+ printCSVValue(raw_w_z, IMU_TAILIntSig, "raw_w_z",lineT, valid);
+ printCSVValue(raw_a_x, IMU_TAILIntSig, "raw_a_x",lineT, valid);
+ printCSVValue(raw_a_y, IMU_TAILIntSig, "raw_a_y",lineT, valid);
+ printCSVValue(raw_a_z, IMU_TAILIntSig, "raw_a_z",lineT, valid);
+ printCSVValue(raw_wa_x, IMU_TAILIntSig, "raw_wa_x",lineT, valid);
+ printCSVValue(raw_wa_y, IMU_TAILIntSig, "raw_wa_y",lineT, valid);
+ printCSVValue(raw_wa_z, IMU_TAILIntSig, "raw_wa_z",lineT, valid);
+ printCSVValue(iir_w_x, IMU_TAILIntSig, "iir_w_x",lineT, valid);
+ printCSVValue(iir_w_y, IMU_TAILIntSig, "iir_w_y",lineT, valid);
+ printCSVValue(iir_w_z, IMU_TAILIntSig, "iir_w_z",lineT, valid);
+ printCSVValue(iir_a_x, IMU_TAILIntSig, "iir_a_x",lineT, valid);
+ printCSVValue(iir_a_y, IMU_TAILIntSig, "iir_a_y",lineT, valid);
+ printCSVValue(iir_a_z, IMU_TAILIntSig, "iir_a_z",lineT, valid);
+ printCSVValue(iir_wa_x, IMU_TAILIntSig, "iir_wa_x",lineT, valid);
+ printCSVValue(iir_wa_y, IMU_TAILIntSig, "iir_wa_y",lineT, valid);
+ printCSVValue(iir_wa_z, IMU_TAILIntSig, "iir_wa_z",lineT, valid);
+ printCSVValue(gyro_hf_cnt, IMU_TAILIntSig, "gyro_hf_cnt",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

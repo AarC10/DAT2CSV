@@ -53,13 +53,13 @@ public class ofdm_cnt_1999 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(recv_total, ofdm_cntIntSig, "recv_total", lineT,
+            printCSVValue(recv_total, ofdm_cntIntSig, "recv_total", lineT,
                     valid);
-            printCsvValue(header_error, ofdm_cntIntSig, "header_error", lineT,
+            printCSVValue(header_error, ofdm_cntIntSig, "header_error", lineT,
                     valid);
-            printCsvValue(v1_error, ofdm_cntIntSig, "v1_error", lineT, valid);
-            printCsvValue(v0_error, ofdm_cntIntSig, "v0_error", lineT, valid);
-            printCsvValue(seccuss, ofdm_cntIntSig, "seccuss", lineT, valid);
+            printCSVValue(v1_error, ofdm_cntIntSig, "v1_error", lineT, valid);
+            printCSVValue(v0_error, ofdm_cntIntSig, "v0_error", lineT, valid);
+            printCSVValue(seccuss, ofdm_cntIntSig, "seccuss", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

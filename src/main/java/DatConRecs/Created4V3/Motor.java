@@ -185,187 +185,187 @@ public class Motor extends Record {
     public void printCols(lineType lineT) {
         try {
             if (convertDat.getNumMotors() == 4) {
-                printCsvValue(rfSpeed, AxesAndSigs.motorSpeedSig, "RFront",
+                printCSVValue(rfSpeed, AxesAndSigs.motorSpeedSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfSpeed, AxesAndSigs.motorSpeedSig, "LFront",
+                printCSVValue(lfSpeed, AxesAndSigs.motorSpeedSig, "LFront",
                         lineT, valid);
-                printCsvValue(lbSpeed, AxesAndSigs.motorSpeedSig, "LBack",
+                printCSVValue(lbSpeed, AxesAndSigs.motorSpeedSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbSpeed, AxesAndSigs.motorSpeedSig, "RBack",
-                        lineT, valid);
-
-                printCsvValue(rfTemp, AxesAndSigs.motorEscTempSig, "RFront",
-                        lineT, valid);
-                printCsvValue(lfTemp, AxesAndSigs.motorEscTempSig, "LFront",
-                        lineT, valid);
-                printCsvValue(lbTemp, AxesAndSigs.motorEscTempSig, "LBack",
-                        lineT, valid);
-                printCsvValue(rbTemp, AxesAndSigs.motorEscTempSig, "RBack",
+                printCSVValue(rbSpeed, AxesAndSigs.motorSpeedSig, "RBack",
                         lineT, valid);
 
-                printCsvValue(rfPPM_recv, AxesAndSigs.motorPPMrecvSig, "RFront",
+                printCSVValue(rfTemp, AxesAndSigs.motorEscTempSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfPPM_recv, AxesAndSigs.motorPPMrecvSig, "LFront",
+                printCSVValue(lfTemp, AxesAndSigs.motorEscTempSig, "LFront",
                         lineT, valid);
-                printCsvValue(lbPPM_recv, AxesAndSigs.motorPPMrecvSig, "LBack",
+                printCSVValue(lbTemp, AxesAndSigs.motorEscTempSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbPPM_recv, AxesAndSigs.motorPPMrecvSig, "RBack",
+                printCSVValue(rbTemp, AxesAndSigs.motorEscTempSig, "RBack",
+                        lineT, valid);
+
+                printCSVValue(rfPPM_recv, AxesAndSigs.motorPPMrecvSig, "RFront",
+                        lineT, valid);
+                printCSVValue(lfPPM_recv, AxesAndSigs.motorPPMrecvSig, "LFront",
+                        lineT, valid);
+                printCSVValue(lbPPM_recv, AxesAndSigs.motorPPMrecvSig, "LBack",
+                        lineT, valid);
+                printCSVValue(rbPPM_recv, AxesAndSigs.motorPPMrecvSig, "RBack",
                         lineT, valid);
 
                 if (PPMsend) {
-                    printCsvValue(rfPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(rfPPM_send, AxesAndSigs.motorPPMsendSig,
                             "RFront", lineT, valid);
-                    printCsvValue(lfPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(lfPPM_send, AxesAndSigs.motorPPMsendSig,
                             "LFront", lineT, valid);
-                    printCsvValue(lbPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(lbPPM_send, AxesAndSigs.motorPPMsendSig,
                             "LBack", lineT, valid);
-                    printCsvValue(rbPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(rbPPM_send, AxesAndSigs.motorPPMsendSig,
                             "RBack", lineT, valid);
                 }
 
-                printCsvValue(rfV_out, AxesAndSigs.motorVoutSig, "RFront",
+                printCSVValue(rfV_out, AxesAndSigs.motorVoutSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfV_out, AxesAndSigs.motorVoutSig, "LFront",
+                printCSVValue(lfV_out, AxesAndSigs.motorVoutSig, "LFront",
                         lineT, valid);
-                printCsvValue(lbV_out, AxesAndSigs.motorVoutSig, "LBack", lineT,
+                printCSVValue(lbV_out, AxesAndSigs.motorVoutSig, "LBack", lineT,
                         valid);
-                printCsvValue(rbV_out, AxesAndSigs.motorVoutSig, "RBack", lineT,
+                printCSVValue(rbV_out, AxesAndSigs.motorVoutSig, "RBack", lineT,
                         valid);
 
-                printCsvValue(rfVolts, AxesAndSigs.motorVoltsSig, "RFront",
+                printCSVValue(rfVolts, AxesAndSigs.motorVoltsSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfVolts, AxesAndSigs.motorVoltsSig, "LFront",
+                printCSVValue(lfVolts, AxesAndSigs.motorVoltsSig, "LFront",
                         lineT, valid);
-                printCsvValue(lbVolts, AxesAndSigs.motorVoltsSig, "LBack",
+                printCSVValue(lbVolts, AxesAndSigs.motorVoltsSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbVolts, AxesAndSigs.motorVoltsSig, "RBack",
-                        lineT, valid);
-
-                printCsvValue(rfCurrent, AxesAndSigs.motorCurrentSig, "RFront",
-                        lineT, valid);
-                printCsvValue(lfCurrent, AxesAndSigs.motorCurrentSig, "LFront",
-                        lineT, valid);
-                printCsvValue(lbCurrent, AxesAndSigs.motorCurrentSig, "LBack",
-                        lineT, valid);
-                printCsvValue(rbCurrent, AxesAndSigs.motorCurrentSig, "RBack",
+                printCSVValue(rbVolts, AxesAndSigs.motorVoltsSig, "RBack",
                         lineT, valid);
 
-                printCsvValue(rfStatus, AxesAndSigs.motorStatusSig, "RFront",
+                printCSVValue(rfCurrent, AxesAndSigs.motorCurrentSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfStatus, AxesAndSigs.motorStatusSig, "LFront",
+                printCSVValue(lfCurrent, AxesAndSigs.motorCurrentSig, "LFront",
                         lineT, valid);
-                printCsvValue(lbStatus, AxesAndSigs.motorStatusSig, "LBack",
+                printCSVValue(lbCurrent, AxesAndSigs.motorCurrentSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbStatus, AxesAndSigs.motorStatusSig, "RBack",
+                printCSVValue(rbCurrent, AxesAndSigs.motorCurrentSig, "RBack",
                         lineT, valid);
 
-                printCsvValue(thrustTheta, AxesAndSigs.thrustThetaSig, "",
+                printCSVValue(rfStatus, AxesAndSigs.motorStatusSig, "RFront",
+                        lineT, valid);
+                printCSVValue(lfStatus, AxesAndSigs.motorStatusSig, "LFront",
+                        lineT, valid);
+                printCSVValue(lbStatus, AxesAndSigs.motorStatusSig, "LBack",
+                        lineT, valid);
+                printCSVValue(rbStatus, AxesAndSigs.motorStatusSig, "RBack",
+                        lineT, valid);
+
+                printCSVValue(thrustTheta, AxesAndSigs.thrustThetaSig, "",
                         lineT, valid);
                 printPower(lineT, valid);
             } else if (convertDat.getNumMotors() == 6) {
-                printCsvValue(rfStatus, AxesAndSigs.motorStatusSig, "RFront",
+                printCSVValue(rfStatus, AxesAndSigs.motorStatusSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfStatus, AxesAndSigs.motorStatusSig, "LFront",
+                printCSVValue(lfStatus, AxesAndSigs.motorStatusSig, "LFront",
                         lineT, valid);
-                printCsvValue(lsStatus, AxesAndSigs.motorStatusSig, "LSide",
+                printCSVValue(lsStatus, AxesAndSigs.motorStatusSig, "LSide",
                         lineT, valid);
-                printCsvValue(lbStatus, AxesAndSigs.motorStatusSig, "LBack",
+                printCSVValue(lbStatus, AxesAndSigs.motorStatusSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbStatus, AxesAndSigs.motorStatusSig, "RBack",
+                printCSVValue(rbStatus, AxesAndSigs.motorStatusSig, "RBack",
                         lineT, valid);
-                printCsvValue(rsStatus, AxesAndSigs.motorStatusSig, "RSide",
-                        lineT, valid);
-
-                printCsvValue(rfSpeed, AxesAndSigs.motorSpeedSig, "RFront",
-                        lineT, valid);
-                printCsvValue(lfSpeed, AxesAndSigs.motorSpeedSig, "LFront",
-                        lineT, valid);
-                printCsvValue(lsSpeed, AxesAndSigs.motorSpeedSig, "LSide",
-                        lineT, valid);
-                printCsvValue(lbSpeed, AxesAndSigs.motorSpeedSig, "LBack",
-                        lineT, valid);
-                printCsvValue(rbSpeed, AxesAndSigs.motorSpeedSig, "RBack",
-                        lineT, valid);
-                printCsvValue(rsSpeed, AxesAndSigs.motorSpeedSig, "RSide",
+                printCSVValue(rsStatus, AxesAndSigs.motorStatusSig, "RSide",
                         lineT, valid);
 
-                printCsvValue(rfVolts, AxesAndSigs.motorVoltsSig, "RFront",
+                printCSVValue(rfSpeed, AxesAndSigs.motorSpeedSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfVolts, AxesAndSigs.motorVoltsSig, "LFront",
+                printCSVValue(lfSpeed, AxesAndSigs.motorSpeedSig, "LFront",
                         lineT, valid);
-                printCsvValue(lsVolts, AxesAndSigs.motorVoltsSig, "LSide",
+                printCSVValue(lsSpeed, AxesAndSigs.motorSpeedSig, "LSide",
                         lineT, valid);
-                printCsvValue(lbVolts, AxesAndSigs.motorVoltsSig, "LBack",
+                printCSVValue(lbSpeed, AxesAndSigs.motorSpeedSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbVolts, AxesAndSigs.motorVoltsSig, "RBack",
+                printCSVValue(rbSpeed, AxesAndSigs.motorSpeedSig, "RBack",
                         lineT, valid);
-                printCsvValue(rsVolts, AxesAndSigs.motorVoltsSig, "RSide",
-                        lineT, valid);
-
-                printCsvValue(rfTemp, AxesAndSigs.motorEscTempSig, "RFront",
-                        lineT, valid);
-                printCsvValue(lfTemp, AxesAndSigs.motorEscTempSig, "LFront",
-                        lineT, valid);
-                printCsvValue(lsTemp, AxesAndSigs.motorEscTempSig, "LSide",
-                        lineT, valid);
-                printCsvValue(lbTemp, AxesAndSigs.motorEscTempSig, "LBack",
-                        lineT, valid);
-                printCsvValue(rbTemp, AxesAndSigs.motorEscTempSig, "RBack",
-                        lineT, valid);
-                printCsvValue(rsTemp, AxesAndSigs.motorEscTempSig, "RSide",
+                printCSVValue(rsSpeed, AxesAndSigs.motorSpeedSig, "RSide",
                         lineT, valid);
 
-                printCsvValue(rfPPM_recv, AxesAndSigs.motorPPMrecvSig, "RFront",
+                printCSVValue(rfVolts, AxesAndSigs.motorVoltsSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfPPM_recv, AxesAndSigs.motorPPMrecvSig, "LFront",
+                printCSVValue(lfVolts, AxesAndSigs.motorVoltsSig, "LFront",
                         lineT, valid);
-                printCsvValue(lsPPM_recv, AxesAndSigs.motorPPMrecvSig, "LSide",
+                printCSVValue(lsVolts, AxesAndSigs.motorVoltsSig, "LSide",
                         lineT, valid);
-                printCsvValue(lbPPM_recv, AxesAndSigs.motorPPMrecvSig, "LBack",
+                printCSVValue(lbVolts, AxesAndSigs.motorVoltsSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbPPM_recv, AxesAndSigs.motorPPMrecvSig, "RBack",
+                printCSVValue(rbVolts, AxesAndSigs.motorVoltsSig, "RBack",
                         lineT, valid);
-                printCsvValue(rsPPM_recv, AxesAndSigs.motorPPMrecvSig, "RSide",
+                printCSVValue(rsVolts, AxesAndSigs.motorVoltsSig, "RSide",
+                        lineT, valid);
+
+                printCSVValue(rfTemp, AxesAndSigs.motorEscTempSig, "RFront",
+                        lineT, valid);
+                printCSVValue(lfTemp, AxesAndSigs.motorEscTempSig, "LFront",
+                        lineT, valid);
+                printCSVValue(lsTemp, AxesAndSigs.motorEscTempSig, "LSide",
+                        lineT, valid);
+                printCSVValue(lbTemp, AxesAndSigs.motorEscTempSig, "LBack",
+                        lineT, valid);
+                printCSVValue(rbTemp, AxesAndSigs.motorEscTempSig, "RBack",
+                        lineT, valid);
+                printCSVValue(rsTemp, AxesAndSigs.motorEscTempSig, "RSide",
+                        lineT, valid);
+
+                printCSVValue(rfPPM_recv, AxesAndSigs.motorPPMrecvSig, "RFront",
+                        lineT, valid);
+                printCSVValue(lfPPM_recv, AxesAndSigs.motorPPMrecvSig, "LFront",
+                        lineT, valid);
+                printCSVValue(lsPPM_recv, AxesAndSigs.motorPPMrecvSig, "LSide",
+                        lineT, valid);
+                printCSVValue(lbPPM_recv, AxesAndSigs.motorPPMrecvSig, "LBack",
+                        lineT, valid);
+                printCSVValue(rbPPM_recv, AxesAndSigs.motorPPMrecvSig, "RBack",
+                        lineT, valid);
+                printCSVValue(rsPPM_recv, AxesAndSigs.motorPPMrecvSig, "RSide",
                         lineT, valid);
                 if (PPMsend) {
-                    printCsvValue(rfPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(rfPPM_send, AxesAndSigs.motorPPMsendSig,
                             "RFront", lineT, valid);
-                    printCsvValue(lfPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(lfPPM_send, AxesAndSigs.motorPPMsendSig,
                             "LFront", lineT, valid);
-                    printCsvValue(lsPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(lsPPM_send, AxesAndSigs.motorPPMsendSig,
                             "LSide", lineT, valid);
-                    printCsvValue(lbPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(lbPPM_send, AxesAndSigs.motorPPMsendSig,
                             "LBack", lineT, valid);
-                    printCsvValue(rbPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(rbPPM_send, AxesAndSigs.motorPPMsendSig,
                             "RBack", lineT, valid);
-                    printCsvValue(rsPPM_send, AxesAndSigs.motorPPMsendSig,
+                    printCSVValue(rsPPM_send, AxesAndSigs.motorPPMsendSig,
                             "RSide", lineT, valid);
                 }
 
-                printCsvValue(rfV_out, AxesAndSigs.motorVoutSig, "RFront",
+                printCSVValue(rfV_out, AxesAndSigs.motorVoutSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfV_out, AxesAndSigs.motorVoutSig, "LFront",
+                printCSVValue(lfV_out, AxesAndSigs.motorVoutSig, "LFront",
                         lineT, valid);
-                printCsvValue(lsV_out, AxesAndSigs.motorVoutSig, "LSide", lineT,
+                printCSVValue(lsV_out, AxesAndSigs.motorVoutSig, "LSide", lineT,
                         valid);
-                printCsvValue(lbV_out, AxesAndSigs.motorVoutSig, "LBack", lineT,
+                printCSVValue(lbV_out, AxesAndSigs.motorVoutSig, "LBack", lineT,
                         valid);
-                printCsvValue(rbV_out, AxesAndSigs.motorVoutSig, "RBack", lineT,
+                printCSVValue(rbV_out, AxesAndSigs.motorVoutSig, "RBack", lineT,
                         valid);
-                printCsvValue(rsV_out, AxesAndSigs.motorVoutSig, "RSide", lineT,
+                printCSVValue(rsV_out, AxesAndSigs.motorVoutSig, "RSide", lineT,
                         valid);
 
-                printCsvValue(rfCurrent, AxesAndSigs.motorCurrentSig, "RFront",
+                printCSVValue(rfCurrent, AxesAndSigs.motorCurrentSig, "RFront",
                         lineT, valid);
-                printCsvValue(lfCurrent, AxesAndSigs.motorCurrentSig, "LFront",
+                printCSVValue(lfCurrent, AxesAndSigs.motorCurrentSig, "LFront",
                         lineT, valid);
-                printCsvValue(lsCurrent, AxesAndSigs.motorCurrentSig, "LSide",
+                printCSVValue(lsCurrent, AxesAndSigs.motorCurrentSig, "LSide",
                         lineT, valid);
-                printCsvValue(lbCurrent, AxesAndSigs.motorCurrentSig, "LBack",
+                printCSVValue(lbCurrent, AxesAndSigs.motorCurrentSig, "LBack",
                         lineT, valid);
-                printCsvValue(rbCurrent, AxesAndSigs.motorCurrentSig, "RBack",
+                printCSVValue(rbCurrent, AxesAndSigs.motorCurrentSig, "RBack",
                         lineT, valid);
-                printCsvValue(rsCurrent, AxesAndSigs.motorCurrentSig, "RSide",
+                printCSVValue(rsCurrent, AxesAndSigs.motorCurrentSig, "RSide",
                         lineT, valid);
             }
         } catch (Exception e) {
@@ -508,67 +508,67 @@ public class Motor extends Record {
                     }
                 }
                 avgVolts = avgVolts / ((double) convertDat.getNumMotors());
-                printCsvValue(voltsAvgPerMotor[0], motorVoltsAvgSig, "RFront",
+                printCSVValue(voltsAvgPerMotor[0], motorVoltsAvgSig, "RFront",
                         lineT, valid);
-                printCsvValue(voltsAvgPerMotor[1], motorVoltsAvgSig, "LFront",
+                printCSVValue(voltsAvgPerMotor[1], motorVoltsAvgSig, "LFront",
                         lineT, valid);
-                printCsvValue(voltsAvgPerMotor[2], motorVoltsAvgSig, "LBack",
+                printCSVValue(voltsAvgPerMotor[2], motorVoltsAvgSig, "LBack",
                         lineT, valid);
-                printCsvValue(voltsAvgPerMotor[3], motorVoltsAvgSig, "RBack",
+                printCSVValue(voltsAvgPerMotor[3], motorVoltsAvgSig, "RBack",
                         lineT, valid);
-                printCsvValue(avgVolts, motorVoltsAvgSig, "All", lineT, valid);
+                printCSVValue(avgVolts, motorVoltsAvgSig, "All", lineT, valid);
 
-                printCsvValue(currentAvgPerMotor[0], motorCurrentAvgSig,
+                printCSVValue(currentAvgPerMotor[0], motorCurrentAvgSig,
                         "RFront", lineT, valid);
-                printCsvValue(currentAvgPerMotor[1], motorCurrentAvgSig,
+                printCSVValue(currentAvgPerMotor[1], motorCurrentAvgSig,
                         "LFront", lineT, valid);
-                printCsvValue(currentAvgPerMotor[2], motorCurrentAvgSig,
+                printCSVValue(currentAvgPerMotor[2], motorCurrentAvgSig,
                         "LBack", lineT, valid);
-                printCsvValue(currentAvgPerMotor[3], motorCurrentAvgSig,
+                printCSVValue(currentAvgPerMotor[3], motorCurrentAvgSig,
                         "RBack", lineT, valid);
-                printCsvValue(totalCurrent, motorCurrentAvgSig, "All", lineT,
+                printCSVValue(totalCurrent, motorCurrentAvgSig, "All", lineT,
                         valid);
                 for (int i = 0; i < convertDat.getNumMotors(); i++) {
                     wattsAvgPerMotor[i] = voltsAvgPerMotor[i]
                             * currentAvgPerMotor[i];
                 }
-                printCsvValue(wattsAvgPerMotor[0], motorWattsAvgSig, "RFront",
+                printCSVValue(wattsAvgPerMotor[0], motorWattsAvgSig, "RFront",
                         lineT, valid);
-                printCsvValue(wattsAvgPerMotor[1], motorWattsAvgSig, "LFront",
+                printCSVValue(wattsAvgPerMotor[1], motorWattsAvgSig, "LFront",
                         lineT, valid);
-                printCsvValue(wattsAvgPerMotor[2], motorWattsAvgSig, "LBack",
+                printCSVValue(wattsAvgPerMotor[2], motorWattsAvgSig, "LBack",
                         lineT, valid);
-                printCsvValue(wattsAvgPerMotor[3], motorWattsAvgSig, "RBack",
+                printCSVValue(wattsAvgPerMotor[3], motorWattsAvgSig, "RBack",
                         lineT, valid);
-                printCsvValue(avgVolts * totalCurrent, motorWattsAvgSig, "All",
+                printCSVValue(avgVolts * totalCurrent, motorWattsAvgSig, "All",
                         lineT, valid);
 
-                printCsvValue(wattSecsPerMotor[0], motorWattsSecsSig, "RFront",
+                printCSVValue(wattSecsPerMotor[0], motorWattsSecsSig, "RFront",
                         lineT, valid);
-                printCsvValue(wattSecsPerMotor[1], motorWattsSecsSig, "LFront",
+                printCSVValue(wattSecsPerMotor[1], motorWattsSecsSig, "LFront",
                         lineT, valid);
-                printCsvValue(wattSecsPerMotor[2], motorWattsSecsSig, "LBack",
+                printCSVValue(wattSecsPerMotor[2], motorWattsSecsSig, "LBack",
                         lineT, valid);
-                printCsvValue(wattSecsPerMotor[3], motorWattsSecsSig, "RBack",
+                printCSVValue(wattSecsPerMotor[3], motorWattsSecsSig, "RBack",
                         lineT, valid);
-                printCsvValue(
+                printCSVValue(
                         wattSecsPerMotor[0] + wattSecsPerMotor[1]
                                 + wattSecsPerMotor[2] + wattSecsPerMotor[3],
                         motorWattsSecsSig, "All", lineT, valid);
 
-                printCsvValue(wattSecsPerDTAvgPerMotor[0],
+                printCSVValue(wattSecsPerDTAvgPerMotor[0],
                         motorWattsSecsPerDistSig, "RFront", lineT,
                         !(Double.isNaN(wattSecsPerDTAvgPerMotor[0])));
-                printCsvValue(wattSecsPerDTAvgPerMotor[1],
+                printCSVValue(wattSecsPerDTAvgPerMotor[1],
                         motorWattsSecsPerDistSig, "LFront", lineT,
                         !(Double.isNaN(wattSecsPerDTAvgPerMotor[1])));
-                printCsvValue(wattSecsPerDTAvgPerMotor[2],
+                printCSVValue(wattSecsPerDTAvgPerMotor[2],
                         motorWattsSecsPerDistSig, "LBack", lineT,
                         !(Double.isNaN(wattSecsPerDTAvgPerMotor[2])));
-                printCsvValue(wattSecsPerDTAvgPerMotor[3],
+                printCSVValue(wattSecsPerDTAvgPerMotor[3],
                         motorWattsSecsPerDistSig, "RBack", lineT,
                         !(Double.isNaN(wattSecsPerDTAvgPerMotor[3])));
-                printCsvValue(
+                printCSVValue(
                         wattSecsPerDTAvgPerMotor[0]
                                 + wattSecsPerDTAvgPerMotor[1]
                                 + wattSecsPerDTAvgPerMotor[2]
@@ -579,19 +579,19 @@ public class Motor extends Record {
                                 + wattSecsPerDTAvgPerMotor[2]
                                 + wattSecsPerDTAvgPerMotor[3])));
 
-                printCsvValue(wattSecsPerTotalDistPerMotor[0],
+                printCSVValue(wattSecsPerTotalDistPerMotor[0],
                         motorWattSecsPerTotalDistSig, "RFront", lineT,
                         !(Double.isNaN(wattSecsPerTotalDistPerMotor[0])));
-                printCsvValue(wattSecsPerTotalDistPerMotor[1],
+                printCSVValue(wattSecsPerTotalDistPerMotor[1],
                         motorWattSecsPerTotalDistSig, "LFront", lineT,
                         !(Double.isNaN(wattSecsPerTotalDistPerMotor[1])));
-                printCsvValue(wattSecsPerTotalDistPerMotor[2],
+                printCSVValue(wattSecsPerTotalDistPerMotor[2],
                         motorWattSecsPerTotalDistSig, "LBack", lineT,
                         !(Double.isNaN(wattSecsPerTotalDistPerMotor[2])));
-                printCsvValue(wattSecsPerTotalDistPerMotor[3],
+                printCSVValue(wattSecsPerTotalDistPerMotor[3],
                         motorWattSecsPerTotalDistSig, "RBack", lineT,
                         !(Double.isNaN(wattSecsPerTotalDistPerMotor[3])));
-                printCsvValue(
+                printCSVValue(
                         wattSecsPerTotalDistPerMotor[0]
                                 + wattSecsPerTotalDistPerMotor[1]
                                 + wattSecsPerTotalDistPerMotor[2]
@@ -603,15 +603,15 @@ public class Motor extends Record {
                                 + wattSecsPerTotalDistPerMotor[3])));
 
                 double VelH = RecIMU.current.getVh();
-                printCsvValue(wattsAvgPerMotor[0] / VelH, motorWattsPerVelHSig,
+                printCSVValue(wattsAvgPerMotor[0] / VelH, motorWattsPerVelHSig,
                         "RFront", lineT, (valid && (VelH != 0.0)));
-                printCsvValue(wattsAvgPerMotor[1] / VelH, motorWattsPerVelHSig,
+                printCSVValue(wattsAvgPerMotor[1] / VelH, motorWattsPerVelHSig,
                         "LFront", lineT, (valid && (VelH != 0.0)));
-                printCsvValue(wattsAvgPerMotor[2] / VelH, motorWattsPerVelHSig,
+                printCSVValue(wattsAvgPerMotor[2] / VelH, motorWattsPerVelHSig,
                         "LBack", lineT, (valid && (VelH != 0.0)));
-                printCsvValue(wattsAvgPerMotor[3] / VelH, motorWattsPerVelHSig,
+                printCSVValue(wattsAvgPerMotor[3] / VelH, motorWattsPerVelHSig,
                         "RBack", lineT, (valid && (VelH != 0.0)));
-                printCsvValue(
+                printCSVValue(
                         (wattsAvgPerMotor[0] + wattsAvgPerMotor[1]
                                 + wattsAvgPerMotor[2] + wattsAvgPerMotor[3])
                                 / VelH,
@@ -619,15 +619,15 @@ public class Motor extends Record {
                         (valid && (VelH != 0.0)));
 
                 double VelD = RecIMU.current.getVd();
-                printCsvValue(wattsAvgPerMotor[0] / VelD, motorWattsPerVelDSig,
+                printCSVValue(wattsAvgPerMotor[0] / VelD, motorWattsPerVelDSig,
                         "RFront", lineT, (valid && (VelD != 0.0)));
-                printCsvValue(wattsAvgPerMotor[1] / VelD, motorWattsPerVelDSig,
+                printCSVValue(wattsAvgPerMotor[1] / VelD, motorWattsPerVelDSig,
                         "LFront", lineT, (valid && (VelD != 0.0)));
-                printCsvValue(wattsAvgPerMotor[2] / VelD, motorWattsPerVelDSig,
+                printCSVValue(wattsAvgPerMotor[2] / VelD, motorWattsPerVelDSig,
                         "LBack", lineT, (valid && (VelD != 0.0)));
-                printCsvValue(wattsAvgPerMotor[3] / VelD, motorWattsPerVelDSig,
+                printCSVValue(wattsAvgPerMotor[3] / VelD, motorWattsPerVelDSig,
                         "RBack", lineT, (valid && (VelD != 0.0)));
-                printCsvValue(
+                printCSVValue(
                         (wattsAvgPerMotor[0] + wattsAvgPerMotor[1]
                                 + wattsAvgPerMotor[2] + wattsAvgPerMotor[3])
                                 / VelD,

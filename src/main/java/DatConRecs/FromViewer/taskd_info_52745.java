@@ -41,9 +41,9 @@ protected int pending3 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(period_jitter3, taskd_infoIntSig, "period_jitter3",lineT, valid);
- printCsvValue(exec_time3, taskd_infoIntSig, "exec_time3",lineT, valid);
- printCsvValue(pending3, taskd_infoIntSig, "pending3",lineT, valid);
+ printCSVValue(period_jitter3, taskd_infoIntSig, "period_jitter3",lineT, valid);
+ printCSVValue(exec_time3, taskd_infoIntSig, "exec_time3",lineT, valid);
+ printCSVValue(pending3, taskd_infoIntSig, "pending3",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

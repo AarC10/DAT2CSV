@@ -87,17 +87,17 @@ public class IMUEX extends Record {
 
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(vo_vx, vovSig, "vo_vx", lineT, valid);
-            printCsvValue(vo_vy, vovSig, "vo_vy", lineT, valid);
-            printCsvValue(vo_vz, vovSig, "vo_vz", lineT, valid);
-            printCsvValue(vo_px, vopSig, "vo_px", lineT, valid);
-            printCsvValue(vo_py, vopSig, "vo_py", lineT, valid);
-            printCsvValue(vo_pz, vopSig, "vo_pz", lineT, valid);
-            printCsvValue(us_v, usSig, "us_v", lineT, valid);
-            printCsvValue(us_p, usSig, "us_p", lineT, valid);
-            printCsvValue(vo_flag_navi, intSig, "vo_flag_Navi", lineT, valid);
-            printCsvValue(errString, errSig, "err", lineT, valid);
-            printCsvValue(ex_cnt, intSig, "cnt", lineT, valid);
+            printCSVValue(vo_vx, vovSig, "vo_vx", lineT, valid);
+            printCSVValue(vo_vy, vovSig, "vo_vy", lineT, valid);
+            printCSVValue(vo_vz, vovSig, "vo_vz", lineT, valid);
+            printCSVValue(vo_px, vopSig, "vo_px", lineT, valid);
+            printCSVValue(vo_py, vopSig, "vo_py", lineT, valid);
+            printCSVValue(vo_pz, vopSig, "vo_pz", lineT, valid);
+            printCSVValue(us_v, usSig, "us_v", lineT, valid);
+            printCSVValue(us_p, usSig, "us_p", lineT, valid);
+            printCSVValue(vo_flag_navi, intSig, "vo_flag_Navi", lineT, valid);
+            printCSVValue(errString, errSig, "err", lineT, valid);
+            printCSVValue(ex_cnt, intSig, "cnt", lineT, valid);
 
         } catch (Exception e) {
             DatConLog.Exception(e);

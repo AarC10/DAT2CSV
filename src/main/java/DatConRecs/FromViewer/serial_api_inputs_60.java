@@ -61,19 +61,19 @@ user_flight_cmd_ack = _payload.getUnsignedByte(24);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(user_req_ctrl_flag, serial_api_inputsIntSig, "user_req_ctrl_flag",lineT, valid);
- printCsvValue(user_req_roll_or_x, serial_api_inputsFloatSig, "user_req_roll_or_x",lineT, valid);
- printCsvValue(user_req_pitch_or_y, serial_api_inputsFloatSig, "user_req_pitch_or_y",lineT, valid);
- printCsvValue(user_req_thr_z, serial_api_inputsFloatSig, "user_req_thr_z",lineT, valid);
- printCsvValue(user_req_yaw, serial_api_inputsFloatSig, "user_req_yaw",lineT, valid);
- printCsvValue(nav_cur_dev, serial_api_inputsIntSig, "nav_cur_dev",lineT, valid);
- printCsvValue(api_cur_sub_mode, serial_api_inputsIntSig, "api_cur_sub_mode",lineT, valid);
- printCsvValue(api_user_ctrl_data_health, serial_api_inputsIntSig, "api_user_ctrl_data_health",lineT, valid);
- printCsvValue(api_app_ctrl_data_health, serial_api_inputsIntSig, "api_app_ctrl_data_health",lineT, valid);
- printCsvValue(user_open_close_req, serial_api_inputsIntSig, "user_open_close_req",lineT, valid);
- printCsvValue(user_open_close_ack, serial_api_inputsIntSig, "user_open_close_ack",lineT, valid);
- printCsvValue(user_flight_cmd_req, serial_api_inputsIntSig, "user_flight_cmd_req",lineT, valid);
- printCsvValue(user_flight_cmd_ack, serial_api_inputsIntSig, "user_flight_cmd_ack",lineT, valid);
+ printCSVValue(user_req_ctrl_flag, serial_api_inputsIntSig, "user_req_ctrl_flag",lineT, valid);
+ printCSVValue(user_req_roll_or_x, serial_api_inputsFloatSig, "user_req_roll_or_x",lineT, valid);
+ printCSVValue(user_req_pitch_or_y, serial_api_inputsFloatSig, "user_req_pitch_or_y",lineT, valid);
+ printCSVValue(user_req_thr_z, serial_api_inputsFloatSig, "user_req_thr_z",lineT, valid);
+ printCSVValue(user_req_yaw, serial_api_inputsFloatSig, "user_req_yaw",lineT, valid);
+ printCSVValue(nav_cur_dev, serial_api_inputsIntSig, "nav_cur_dev",lineT, valid);
+ printCSVValue(api_cur_sub_mode, serial_api_inputsIntSig, "api_cur_sub_mode",lineT, valid);
+ printCSVValue(api_user_ctrl_data_health, serial_api_inputsIntSig, "api_user_ctrl_data_health",lineT, valid);
+ printCSVValue(api_app_ctrl_data_health, serial_api_inputsIntSig, "api_app_ctrl_data_health",lineT, valid);
+ printCSVValue(user_open_close_req, serial_api_inputsIntSig, "user_open_close_req",lineT, valid);
+ printCSVValue(user_open_close_ack, serial_api_inputsIntSig, "user_open_close_ack",lineT, valid);
+ printCSVValue(user_flight_cmd_req, serial_api_inputsIntSig, "user_flight_cmd_req",lineT, valid);
+ printCSVValue(user_flight_cmd_ack, serial_api_inputsIntSig, "user_flight_cmd_ack",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

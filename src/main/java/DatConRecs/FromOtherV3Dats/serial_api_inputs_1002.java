@@ -89,39 +89,39 @@ public class serial_api_inputs_1002 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(sdk_ctrl_F, serial_api_inputsIntSig, "sdk_ctrl_F",
+            printCSVValue(sdk_ctrl_F, serial_api_inputsIntSig, "sdk_ctrl_F",
                     lineT, valid);
-            printCsvValue(sdk_roll_x, serial_api_inputsIntSig, "sdk_roll_x",
+            printCSVValue(sdk_roll_x, serial_api_inputsIntSig, "sdk_roll_x",
                     lineT, valid);
-            printCsvValue(sdk_pitch_y, serial_api_inputsIntSig, "sdk_pitch_y",
+            printCSVValue(sdk_pitch_y, serial_api_inputsIntSig, "sdk_pitch_y",
                     lineT, valid);
-            printCsvValue(sdk_thr_z, serial_api_inputsIntSig, "sdk_thr_z",
+            printCSVValue(sdk_thr_z, serial_api_inputsIntSig, "sdk_thr_z",
                     lineT, valid);
-            printCsvValue(sdk_yaw, serial_api_inputsIntSig, "sdk_yaw", lineT,
+            printCSVValue(sdk_yaw, serial_api_inputsIntSig, "sdk_yaw", lineT,
                     valid);
-            printCsvValue(sdk_fdfd_x, serial_api_inputsIntSig, "sdk_fdfd_x",
+            printCSVValue(sdk_fdfd_x, serial_api_inputsIntSig, "sdk_fdfd_x",
                     lineT, valid);
-            printCsvValue(sdk_fdfd_y, serial_api_inputsIntSig, "sdk_fdfd_y",
+            printCSVValue(sdk_fdfd_y, serial_api_inputsIntSig, "sdk_fdfd_y",
                     lineT, valid);
-            printCsvValue(ctrl_dev, serial_api_inputsIntSig, "ctrl_dev", lineT,
+            printCSVValue(ctrl_dev, serial_api_inputsIntSig, "ctrl_dev", lineT,
                     valid);
-            printCsvValue(sub_mode, serial_api_inputsIntSig, "sub_mode", lineT,
+            printCSVValue(sub_mode, serial_api_inputsIntSig, "sub_mode", lineT,
                     valid);
-            printCsvValue(open_req, serial_api_inputsIntSig, "open_req", lineT,
+            printCSVValue(open_req, serial_api_inputsIntSig, "open_req", lineT,
                     valid);
-            printCsvValue(open_ack, serial_api_inputsIntSig, "open_ack", lineT,
+            printCSVValue(open_ack, serial_api_inputsIntSig, "open_ack", lineT,
                     valid);
-            printCsvValue(cmd_req, serial_api_inputsIntSig, "cmd_req", lineT,
+            printCSVValue(cmd_req, serial_api_inputsIntSig, "cmd_req", lineT,
                     valid);
-            printCsvValue(cmd_ack, serial_api_inputsIntSig, "cmd_ack", lineT,
+            printCSVValue(cmd_ack, serial_api_inputsIntSig, "cmd_ack", lineT,
                     valid);
-            printCsvValue(avoid_E, serial_api_inputsIntSig, "avoid_E", lineT,
+            printCSVValue(avoid_E, serial_api_inputsIntSig, "avoid_E", lineT,
                     valid);
-            printCsvValue(bit_S, serial_api_inputsIntSig, "bit_S", lineT,
+            printCSVValue(bit_S, serial_api_inputsIntSig, "bit_S", lineT,
                     valid);
-            printCsvValue(fact_cnt, serial_api_inputsIntSig, "fact_cnt", lineT,
+            printCSVValue(fact_cnt, serial_api_inputsIntSig, "fact_cnt", lineT,
                     valid);
-            printCsvValue(f_test, serial_api_inputsIntSig, "f_test", lineT,
+            printCSVValue(f_test, serial_api_inputsIntSig, "f_test", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

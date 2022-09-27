@@ -76,34 +76,34 @@ public class AirCraftCondition48_1001 extends AirCraftCondition {
     public void printCols(lineType lineT) {
         try {
             super.printCols(lineT);
-            printCsvValue(launch_state, aircraft_conditionIntSig,
+            printCSVValue(launch_state, aircraft_conditionIntSig,
                     "launch_state", lineT, valid);
-            printCsvValue(launch_acc_dur, aircraft_conditionFloatSig,
+            printCSVValue(launch_acc_dur, aircraft_conditionFloatSig,
                     "launch_acc_dur", lineT, valid);
-            printCsvValue(launch_delta_v, aircraft_conditionFloatSig,
+            printCSVValue(launch_delta_v, aircraft_conditionFloatSig,
                     "launch_delta_v", lineT, valid);
-            printCsvValue(launch_free_fall_dur, aircraft_conditionFloatSig,
+            printCSVValue(launch_free_fall_dur, aircraft_conditionFloatSig,
                     "launch_free_fall_dur", lineT, valid);
-            printCsvValue(launch_free_fall_delta_v, aircraft_conditionFloatSig,
+            printCSVValue(launch_free_fall_delta_v, aircraft_conditionFloatSig,
                     "launch_free_fall_delta_v", lineT, valid);
-            printCsvValue(thrust, aircraft_conditionIntSig, "thrust", lineT,
+            printCSVValue(thrust, aircraft_conditionIntSig, "thrust", lineT,
                     valid);
-            printCsvValue(gyro, aircraft_conditionIntSig, "gyro", lineT, valid);
-            printCsvValue(land_dur_press, aircraft_conditionFloatSig,
+            printCSVValue(gyro, aircraft_conditionIntSig, "gyro", lineT, valid);
+            printCSVValue(land_dur_press, aircraft_conditionFloatSig,
                     "land_dur_press", lineT, valid);
-            printCsvValue(land_dur_sonic, aircraft_conditionFloatSig,
+            printCSVValue(land_dur_sonic, aircraft_conditionFloatSig,
                     "land_dur_sonic", lineT, valid);
-            printCsvValue(thrust_body, aircraft_conditionIntSig, "thrust_body",
+            printCSVValue(thrust_body, aircraft_conditionIntSig, "thrust_body",
                     lineT, valid);
-            printCsvValue(thrust_gnd, aircraft_conditionIntSig, "thrust_gnd",
+            printCSVValue(thrust_gnd, aircraft_conditionIntSig, "thrust_gnd",
                     lineT, valid);
-            printCsvValue(thrust_gnd_compen, aircraft_conditionIntSig,
+            printCSVValue(thrust_gnd_compen, aircraft_conditionIntSig,
                     "thrust_gnd_compen", lineT, valid);
-            printCsvValue(safe_tilt_raw, aircraft_conditionIntSig,
+            printCSVValue(safe_tilt_raw, aircraft_conditionIntSig,
                     "safe_tilt_raw", lineT, valid);
-            printCsvValue(safe_tilt, aircraft_conditionIntSig, "safe_tilt",
+            printCSVValue(safe_tilt, aircraft_conditionIntSig, "safe_tilt",
                     lineT, valid);
-            printCsvValue(sat_timer, aircraft_conditionFloatSig, "sat_timer",
+            printCSVValue(sat_timer, aircraft_conditionFloatSig, "sat_timer",
                     lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

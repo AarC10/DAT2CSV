@@ -47,12 +47,12 @@ protected float mpu6500_wz = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(mpu6500_ax, mpu6500_raw_dataFloatSig, "mpu6500_ax",lineT, valid);
- printCsvValue(mpu6500_ay, mpu6500_raw_dataFloatSig, "mpu6500_ay",lineT, valid);
- printCsvValue(mpu6500_az, mpu6500_raw_dataFloatSig, "mpu6500_az",lineT, valid);
- printCsvValue(mpu6500_wx, mpu6500_raw_dataFloatSig, "mpu6500_wx",lineT, valid);
- printCsvValue(mpu6500_wy, mpu6500_raw_dataFloatSig, "mpu6500_wy",lineT, valid);
- printCsvValue(mpu6500_wz, mpu6500_raw_dataFloatSig, "mpu6500_wz",lineT, valid);
+ printCSVValue(mpu6500_ax, mpu6500_raw_dataFloatSig, "mpu6500_ax",lineT, valid);
+ printCSVValue(mpu6500_ay, mpu6500_raw_dataFloatSig, "mpu6500_ay",lineT, valid);
+ printCSVValue(mpu6500_az, mpu6500_raw_dataFloatSig, "mpu6500_az",lineT, valid);
+ printCSVValue(mpu6500_wx, mpu6500_raw_dataFloatSig, "mpu6500_wx",lineT, valid);
+ printCSVValue(mpu6500_wy, mpu6500_raw_dataFloatSig, "mpu6500_wy",lineT, valid);
+ printCSVValue(mpu6500_wz, mpu6500_raw_dataFloatSig, "mpu6500_wz",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

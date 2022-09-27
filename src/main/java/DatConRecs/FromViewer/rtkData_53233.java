@@ -67,22 +67,22 @@ protected long cntRTK = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(Lat, rtkDataIntSig, "Lat",lineT, valid);
- printCsvValue(Lon, rtkDataIntSig, "Lon",lineT, valid);
- printCsvValue(Height, rtkDataIntSig, "Height",lineT, valid);
- printCsvValue(satNum, rtkDataIntSig, "satNum",lineT, valid);
- printCsvValue(posType, rtkDataIntSig, "posType",lineT, valid);
- printCsvValue(reserve1, rtkDataIntSig, "reserve1",lineT, valid);
- printCsvValue(reserve2, rtkDataIntSig, "reserve2",lineT, valid);
- printCsvValue(reserve3, rtkDataIntSig, "reserve3",lineT, valid);
- printCsvValue(reserve4, rtkDataIntSig, "reserve4",lineT, valid);
- printCsvValue(reserve5, rtkDataIntSig, "reserve5",lineT, valid);
- printCsvValue(reserve6, rtkDataIntSig, "reserve6",lineT, valid);
- printCsvValue(reserve7, rtkDataIntSig, "reserve7",lineT, valid);
- printCsvValue(reserve8, rtkDataIntSig, "reserve8",lineT, valid);
- printCsvValue(reserve9, rtkDataIntSig, "reserve9",lineT, valid);
- printCsvValue(reserve10, rtkDataIntSig, "reserve10",lineT, valid);
- printCsvValue(cntRTK, rtkDataIntSig, "cntRTK",lineT, valid);
+ printCSVValue(Lat, rtkDataIntSig, "Lat",lineT, valid);
+ printCSVValue(Lon, rtkDataIntSig, "Lon",lineT, valid);
+ printCSVValue(Height, rtkDataIntSig, "Height",lineT, valid);
+ printCSVValue(satNum, rtkDataIntSig, "satNum",lineT, valid);
+ printCSVValue(posType, rtkDataIntSig, "posType",lineT, valid);
+ printCSVValue(reserve1, rtkDataIntSig, "reserve1",lineT, valid);
+ printCSVValue(reserve2, rtkDataIntSig, "reserve2",lineT, valid);
+ printCSVValue(reserve3, rtkDataIntSig, "reserve3",lineT, valid);
+ printCSVValue(reserve4, rtkDataIntSig, "reserve4",lineT, valid);
+ printCSVValue(reserve5, rtkDataIntSig, "reserve5",lineT, valid);
+ printCSVValue(reserve6, rtkDataIntSig, "reserve6",lineT, valid);
+ printCSVValue(reserve7, rtkDataIntSig, "reserve7",lineT, valid);
+ printCSVValue(reserve8, rtkDataIntSig, "reserve8",lineT, valid);
+ printCSVValue(reserve9, rtkDataIntSig, "reserve9",lineT, valid);
+ printCSVValue(reserve10, rtkDataIntSig, "reserve10",lineT, valid);
+ printCSVValue(cntRTK, rtkDataIntSig, "cntRTK",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

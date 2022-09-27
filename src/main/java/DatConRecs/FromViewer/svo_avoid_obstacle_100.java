@@ -49,13 +49,13 @@ SVO_cnt = _payload.getUnsignedByte(10);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(SVO_stop_flag, svo_avoid_obstacleIntSig, "SVO_stop_flag",lineT, valid);
- printCsvValue(SVO_p_front, svo_avoid_obstacleIntSig, "SVO_p_front",lineT, valid);
- printCsvValue(SVO_p_right, svo_avoid_obstacleIntSig, "SVO_p_right",lineT, valid);
- printCsvValue(SVO_p_back, svo_avoid_obstacleIntSig, "SVO_p_back",lineT, valid);
- printCsvValue(SVO_p_left, svo_avoid_obstacleIntSig, "SVO_p_left",lineT, valid);
- printCsvValue(SVO_v_limit, svo_avoid_obstacleIntSig, "SVO_v_limit",lineT, valid);
- printCsvValue(SVO_cnt, svo_avoid_obstacleIntSig, "SVO_cnt",lineT, valid);
+ printCSVValue(SVO_stop_flag, svo_avoid_obstacleIntSig, "SVO_stop_flag",lineT, valid);
+ printCSVValue(SVO_p_front, svo_avoid_obstacleIntSig, "SVO_p_front",lineT, valid);
+ printCSVValue(SVO_p_right, svo_avoid_obstacleIntSig, "SVO_p_right",lineT, valid);
+ printCSVValue(SVO_p_back, svo_avoid_obstacleIntSig, "SVO_p_back",lineT, valid);
+ printCSVValue(SVO_p_left, svo_avoid_obstacleIntSig, "SVO_p_left",lineT, valid);
+ printCSVValue(SVO_v_limit, svo_avoid_obstacleIntSig, "SVO_v_limit",lineT, valid);
+ printCSVValue(SVO_cnt, svo_avoid_obstacleIntSig, "SVO_cnt",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -61,19 +61,19 @@ dyn_ccpm_saturation_flag = _payload.getUnsignedByte(48);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(dyn_ccpm_raw_lift, ctrl_ccpmFloatSig, "dyn_ccpm_raw_lift",lineT, valid);
- printCsvValue(dyn_ccpm_raw_tilt_x, ctrl_ccpmFloatSig, "dyn_ccpm_raw_tilt_x",lineT, valid);
- printCsvValue(dyn_ccpm_raw_tilt_y, ctrl_ccpmFloatSig, "dyn_ccpm_raw_tilt_y",lineT, valid);
- printCsvValue(dyn_ccpm_raw_torsion, ctrl_ccpmFloatSig, "dyn_ccpm_raw_torsion",lineT, valid);
- printCsvValue(dyn_ccpm_fix_lift, ctrl_ccpmFloatSig, "dyn_ccpm_fix_lift",lineT, valid);
- printCsvValue(dyn_ccpm_fix_tilt_x, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_x",lineT, valid);
- printCsvValue(dyn_ccpm_fix_tilt_y, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_y",lineT, valid);
- printCsvValue(dyn_ccpm_fix_torsion, ctrl_ccpmFloatSig, "dyn_ccpm_fix_torsion",lineT, valid);
- printCsvValue(dyn_ccpm_fix_lift_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_lift_scale",lineT, valid);
- printCsvValue(dyn_ccpm_fix_tilt_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_scale",lineT, valid);
- printCsvValue(dyn_ccpm_fix_torsion_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_torsion_scale",lineT, valid);
- printCsvValue(dyn_ccpm_saturation_value, ctrl_ccpmFloatSig, "dyn_ccpm_saturation_value",lineT, valid);
- printCsvValue(dyn_ccpm_saturation_flag, ctrl_ccpmIntSig, "dyn_ccpm_saturation_flag",lineT, valid);
+ printCSVValue(dyn_ccpm_raw_lift, ctrl_ccpmFloatSig, "dyn_ccpm_raw_lift",lineT, valid);
+ printCSVValue(dyn_ccpm_raw_tilt_x, ctrl_ccpmFloatSig, "dyn_ccpm_raw_tilt_x",lineT, valid);
+ printCSVValue(dyn_ccpm_raw_tilt_y, ctrl_ccpmFloatSig, "dyn_ccpm_raw_tilt_y",lineT, valid);
+ printCSVValue(dyn_ccpm_raw_torsion, ctrl_ccpmFloatSig, "dyn_ccpm_raw_torsion",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_lift, ctrl_ccpmFloatSig, "dyn_ccpm_fix_lift",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_tilt_x, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_x",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_tilt_y, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_y",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_torsion, ctrl_ccpmFloatSig, "dyn_ccpm_fix_torsion",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_lift_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_lift_scale",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_tilt_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_tilt_scale",lineT, valid);
+ printCSVValue(dyn_ccpm_fix_torsion_scale, ctrl_ccpmFloatSig, "dyn_ccpm_fix_torsion_scale",lineT, valid);
+ printCSVValue(dyn_ccpm_saturation_value, ctrl_ccpmFloatSig, "dyn_ccpm_saturation_value",lineT, valid);
+ printCSVValue(dyn_ccpm_saturation_flag, ctrl_ccpmIntSig, "dyn_ccpm_saturation_flag",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

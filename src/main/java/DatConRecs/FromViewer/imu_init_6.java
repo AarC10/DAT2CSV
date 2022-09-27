@@ -67,22 +67,22 @@ o_sw = _payload.getUnsignedByte(27);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(imu_offset_x, imu_initFloatSig, "imu_offset_x",lineT, valid);
- printCsvValue(imu_offset_y, imu_initFloatSig, "imu_offset_y",lineT, valid);
- printCsvValue(imu_offset_z, imu_initFloatSig, "imu_offset_z",lineT, valid);
- printCsvValue(gps_offset_x, imu_initFloatSig, "gps_offset_x",lineT, valid);
- printCsvValue(gps_offset_y, imu_initFloatSig, "gps_offset_y",lineT, valid);
- printCsvValue(gps_offset_z, imu_initFloatSig, "gps_offset_z",lineT, valid);
- printCsvValue(imu_dir, imu_initIntSig, "imu_dir",lineT, valid);
- printCsvValue(imu_key, imu_initIntSig, "imu_key",lineT, valid);
- printCsvValue(o_sw, imu_initIntSig, "o_sw",lineT, valid);
- printCsvValue(mag_bias_x, imu_initFloatSig, "mag_bias_x",lineT, valid);
- printCsvValue(mag_bias_y, imu_initFloatSig, "mag_bias_y",lineT, valid);
- printCsvValue(mag_bias_z, imu_initFloatSig, "mag_bias_z",lineT, valid);
- printCsvValue(mag_scale_x, imu_initFloatSig, "mag_scale_x",lineT, valid);
- printCsvValue(mag_scale_y, imu_initFloatSig, "mag_scale_y",lineT, valid);
- printCsvValue(mag_scale_z, imu_initFloatSig, "mag_scale_z",lineT, valid);
- printCsvValue(init_counter, imu_initIntSig, "init_counter",lineT, valid);
+ printCSVValue(imu_offset_x, imu_initFloatSig, "imu_offset_x",lineT, valid);
+ printCSVValue(imu_offset_y, imu_initFloatSig, "imu_offset_y",lineT, valid);
+ printCSVValue(imu_offset_z, imu_initFloatSig, "imu_offset_z",lineT, valid);
+ printCSVValue(gps_offset_x, imu_initFloatSig, "gps_offset_x",lineT, valid);
+ printCSVValue(gps_offset_y, imu_initFloatSig, "gps_offset_y",lineT, valid);
+ printCSVValue(gps_offset_z, imu_initFloatSig, "gps_offset_z",lineT, valid);
+ printCSVValue(imu_dir, imu_initIntSig, "imu_dir",lineT, valid);
+ printCSVValue(imu_key, imu_initIntSig, "imu_key",lineT, valid);
+ printCSVValue(o_sw, imu_initIntSig, "o_sw",lineT, valid);
+ printCSVValue(mag_bias_x, imu_initFloatSig, "mag_bias_x",lineT, valid);
+ printCSVValue(mag_bias_y, imu_initFloatSig, "mag_bias_y",lineT, valid);
+ printCSVValue(mag_bias_z, imu_initFloatSig, "mag_bias_z",lineT, valid);
+ printCSVValue(mag_scale_x, imu_initFloatSig, "mag_scale_x",lineT, valid);
+ printCSVValue(mag_scale_y, imu_initFloatSig, "mag_scale_y",lineT, valid);
+ printCSVValue(mag_scale_z, imu_initFloatSig, "mag_scale_z",lineT, valid);
+ printCSVValue(init_counter, imu_initIntSig, "init_counter",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -106,19 +106,19 @@ public class RecAirComp extends Record {
 
     protected void printWindComps(lineType lineT) {
         try {
-            printCsvValue(Math.toDegrees(yawRadians), experimentalSig,
+            printCSVValue(Math.toDegrees(yawRadians), experimentalSig,
                     "yawDegrees", lineT, valid);
-            printCsvValue(Math.toDegrees(alpha), experimentalSig,
+            printCSVValue(Math.toDegrees(alpha), experimentalSig,
                     "alphaDegrees", lineT, valid);
-            printCsvValue(theta, experimentalSig, "theta", lineT, valid);
-            printCsvValue(Vh, experimentalSig, "Vh", lineT, valid);
-            printCsvValue(gX, experimentalSig, "gX", lineT, valid);
-            printCsvValue(gY, experimentalSig, "gY", lineT, valid);
-            printCsvValue(wX, experimentalSig, "wX", lineT, valid);
-            printCsvValue(wY, experimentalSig, "wY", lineT, valid);
-            printCsvValue(windHeading, windHeadingSig, "", lineT, valid);
-            printCsvValue(windMag, windMagSig, "", lineT, valid);
-            printCsvValue(windMag2, windMagSig, "2", lineT, valid);
+            printCSVValue(theta, experimentalSig, "theta", lineT, valid);
+            printCSVValue(Vh, experimentalSig, "Vh", lineT, valid);
+            printCSVValue(gX, experimentalSig, "gX", lineT, valid);
+            printCSVValue(gY, experimentalSig, "gY", lineT, valid);
+            printCSVValue(wX, experimentalSig, "wX", lineT, valid);
+            printCSVValue(wY, experimentalSig, "wY", lineT, valid);
+            printCSVValue(windHeading, windHeadingSig, "", lineT, valid);
+            printCSVValue(windMag, windMagSig, "", lineT, valid);
+            printCSVValue(windMag2, windMagSig, "2", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

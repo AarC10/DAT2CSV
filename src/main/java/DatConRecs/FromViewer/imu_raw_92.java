@@ -65,21 +65,21 @@ protected short xxbaro_temp = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(gyro_x_used, imu_rawIntSig, "gyro_x_used",lineT, valid);
- printCsvValue(gyro_y_used, imu_rawIntSig, "gyro_y_used",lineT, valid);
- printCsvValue(gyro_z_used, imu_rawIntSig, "gyro_z_used",lineT, valid);
- printCsvValue(acc_x_used, imu_rawIntSig, "acc_x_used",lineT, valid);
- printCsvValue(acc_y_used, imu_rawIntSig, "acc_y_used",lineT, valid);
- printCsvValue(acc_z_used, imu_rawIntSig, "acc_z_used",lineT, valid);
- printCsvValue(gyro_x_unused, imu_rawIntSig, "gyro_x_unused",lineT, valid);
- printCsvValue(gyro_y_unused, imu_rawIntSig, "gyro_y_unused",lineT, valid);
- printCsvValue(gyro_z_unused, imu_rawIntSig, "gyro_z_unused",lineT, valid);
- printCsvValue(acc_x_unused, imu_rawIntSig, "acc_x_unused",lineT, valid);
- printCsvValue(acc_y_unused, imu_rawIntSig, "acc_y_unused",lineT, valid);
- printCsvValue(acc_z_unused, imu_rawIntSig, "acc_z_unused",lineT, valid);
- printCsvValue(xxxxcnt, imu_rawIntSig, "xxxxcnt",lineT, valid);
- printCsvValue(xxbaro, imu_rawIntSig, "xxbaro",lineT, valid);
- printCsvValue(xxbaro_temp, imu_rawIntSig, "xxbaro_temp",lineT, valid);
+ printCSVValue(gyro_x_used, imu_rawIntSig, "gyro_x_used",lineT, valid);
+ printCSVValue(gyro_y_used, imu_rawIntSig, "gyro_y_used",lineT, valid);
+ printCSVValue(gyro_z_used, imu_rawIntSig, "gyro_z_used",lineT, valid);
+ printCSVValue(acc_x_used, imu_rawIntSig, "acc_x_used",lineT, valid);
+ printCSVValue(acc_y_used, imu_rawIntSig, "acc_y_used",lineT, valid);
+ printCSVValue(acc_z_used, imu_rawIntSig, "acc_z_used",lineT, valid);
+ printCSVValue(gyro_x_unused, imu_rawIntSig, "gyro_x_unused",lineT, valid);
+ printCSVValue(gyro_y_unused, imu_rawIntSig, "gyro_y_unused",lineT, valid);
+ printCSVValue(gyro_z_unused, imu_rawIntSig, "gyro_z_unused",lineT, valid);
+ printCSVValue(acc_x_unused, imu_rawIntSig, "acc_x_unused",lineT, valid);
+ printCSVValue(acc_y_unused, imu_rawIntSig, "acc_y_unused",lineT, valid);
+ printCSVValue(acc_z_unused, imu_rawIntSig, "acc_z_unused",lineT, valid);
+ printCSVValue(xxxxcnt, imu_rawIntSig, "xxxxcnt",lineT, valid);
+ printCSVValue(xxbaro, imu_rawIntSig, "xxbaro",lineT, valid);
+ printCSVValue(xxbaro_temp, imu_rawIntSig, "xxbaro_temp",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

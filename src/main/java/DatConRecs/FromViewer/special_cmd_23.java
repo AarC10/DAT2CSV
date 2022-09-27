@@ -53,15 +53,15 @@ byte7 = _payload.getUnsignedByte(9);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(byte1, special_cmdIntSig, "byte1",lineT, valid);
- printCsvValue(byte2, special_cmdIntSig, "byte2",lineT, valid);
- printCsvValue(word1, special_cmdIntSig, "word1",lineT, valid);
- printCsvValue(byte3, special_cmdIntSig, "byte3",lineT, valid);
- printCsvValue(ctrl_action, special_cmdIntSig, "ctrl_action",lineT, valid);
- printCsvValue(byte4, special_cmdIntSig, "byte4",lineT, valid);
- printCsvValue(byte5, special_cmdIntSig, "byte5",lineT, valid);
- printCsvValue(byte6, special_cmdIntSig, "byte6",lineT, valid);
- printCsvValue(byte7, special_cmdIntSig, "byte7",lineT, valid);
+ printCSVValue(byte1, special_cmdIntSig, "byte1",lineT, valid);
+ printCSVValue(byte2, special_cmdIntSig, "byte2",lineT, valid);
+ printCSVValue(word1, special_cmdIntSig, "word1",lineT, valid);
+ printCSVValue(byte3, special_cmdIntSig, "byte3",lineT, valid);
+ printCSVValue(ctrl_action, special_cmdIntSig, "ctrl_action",lineT, valid);
+ printCSVValue(byte4, special_cmdIntSig, "byte4",lineT, valid);
+ printCSVValue(byte5, special_cmdIntSig, "byte5",lineT, valid);
+ printCSVValue(byte6, special_cmdIntSig, "byte6",lineT, valid);
+ printCSVValue(byte7, special_cmdIntSig, "byte7",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -59,18 +59,18 @@ protected float imu_Ref = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(imu_gyro_tempX, imu_dataFloatSig, "imu_gyro_tempX",lineT, valid);
- printCsvValue(imu_gyro_tempY, imu_dataFloatSig, "imu_gyro_tempY",lineT, valid);
- printCsvValue(imu_gyro_tempZ, imu_dataFloatSig, "imu_gyro_tempZ",lineT, valid);
- printCsvValue(imu_gyro_x, imu_dataFloatSig, "imu_gyro_x",lineT, valid);
- printCsvValue(imu_gyro_y, imu_dataFloatSig, "imu_gyro_y",lineT, valid);
- printCsvValue(imu_gyro_z, imu_dataFloatSig, "imu_gyro_z",lineT, valid);
- printCsvValue(imu_acc_x, imu_dataFloatSig, "imu_acc_x",lineT, valid);
- printCsvValue(imu_acc_y, imu_dataFloatSig, "imu_acc_y",lineT, valid);
- printCsvValue(imu_acc_z, imu_dataFloatSig, "imu_acc_z",lineT, valid);
- printCsvValue(imu_airpress, imu_dataFloatSig, "imu_airpress",lineT, valid);
- printCsvValue(imu_Vin, imu_dataFloatSig, "imu_Vin",lineT, valid);
- printCsvValue(imu_Ref, imu_dataFloatSig, "imu_Ref",lineT, valid);
+ printCSVValue(imu_gyro_tempX, imu_dataFloatSig, "imu_gyro_tempX",lineT, valid);
+ printCSVValue(imu_gyro_tempY, imu_dataFloatSig, "imu_gyro_tempY",lineT, valid);
+ printCSVValue(imu_gyro_tempZ, imu_dataFloatSig, "imu_gyro_tempZ",lineT, valid);
+ printCSVValue(imu_gyro_x, imu_dataFloatSig, "imu_gyro_x",lineT, valid);
+ printCSVValue(imu_gyro_y, imu_dataFloatSig, "imu_gyro_y",lineT, valid);
+ printCSVValue(imu_gyro_z, imu_dataFloatSig, "imu_gyro_z",lineT, valid);
+ printCSVValue(imu_acc_x, imu_dataFloatSig, "imu_acc_x",lineT, valid);
+ printCSVValue(imu_acc_y, imu_dataFloatSig, "imu_acc_y",lineT, valid);
+ printCSVValue(imu_acc_z, imu_dataFloatSig, "imu_acc_z",lineT, valid);
+ printCSVValue(imu_airpress, imu_dataFloatSig, "imu_airpress",lineT, valid);
+ printCSVValue(imu_Vin, imu_dataFloatSig, "imu_Vin",lineT, valid);
+ printCSVValue(imu_Ref, imu_dataFloatSig, "imu_Ref",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

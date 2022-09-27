@@ -51,14 +51,14 @@ mvo_flag = _payload.getUnsignedByte(19);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(mvo_px, mvoFloatSig, "mvo_px",lineT, valid);
- printCsvValue(mvo_py, mvoFloatSig, "mvo_py",lineT, valid);
- printCsvValue(mvo_pz, mvoFloatSig, "mvo_pz",lineT, valid);
- printCsvValue(mvo_vx, mvoIntSig, "mvo_vx",lineT, valid);
- printCsvValue(mvo_vy, mvoIntSig, "mvo_vy",lineT, valid);
- printCsvValue(mvo_vz, mvoIntSig, "mvo_vz",lineT, valid);
- printCsvValue(mvo_cnt, mvoIntSig, "mvo_cnt",lineT, valid);
- printCsvValue(mvo_flag, mvoIntSig, "mvo_flag",lineT, valid);
+ printCSVValue(mvo_px, mvoFloatSig, "mvo_px",lineT, valid);
+ printCSVValue(mvo_py, mvoFloatSig, "mvo_py",lineT, valid);
+ printCSVValue(mvo_pz, mvoFloatSig, "mvo_pz",lineT, valid);
+ printCSVValue(mvo_vx, mvoIntSig, "mvo_vx",lineT, valid);
+ printCSVValue(mvo_vy, mvoIntSig, "mvo_vy",lineT, valid);
+ printCSVValue(mvo_vz, mvoIntSig, "mvo_vz",lineT, valid);
+ printCSVValue(mvo_cnt, mvoIntSig, "mvo_cnt",lineT, valid);
+ printCSVValue(mvo_flag, mvoIntSig, "mvo_flag",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

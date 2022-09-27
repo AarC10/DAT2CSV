@@ -83,25 +83,25 @@ public class IMU_EX_3 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(vo_vx, IMU_EXFloatSig, "vo_vx", lineT, valid);
-            printCsvValue(vo_vy, IMU_EXFloatSig, "vo_vy", lineT, valid);
-            printCsvValue(vo_vz, IMU_EXFloatSig, "vo_vz", lineT, valid);
-            printCsvValue(vo_px, IMU_EXFloatSig, "vo_px", lineT, valid);
-            printCsvValue(vo_py, IMU_EXFloatSig, "vo_py", lineT, valid);
-            printCsvValue(vo_pz, IMU_EXFloatSig, "vo_pz", lineT, valid);
-            printCsvValue(us_v, IMU_EXFloatSig, "us_v", lineT, valid);
-            printCsvValue(us_p, IMU_EXFloatSig, "us_p", lineT, valid);
-            printCsvValue(rtk_longti, IMU_EXDoubleSig, "rtk_longti", lineT,
+            printCSVValue(vo_vx, IMU_EXFloatSig, "vo_vx", lineT, valid);
+            printCSVValue(vo_vy, IMU_EXFloatSig, "vo_vy", lineT, valid);
+            printCSVValue(vo_vz, IMU_EXFloatSig, "vo_vz", lineT, valid);
+            printCSVValue(vo_px, IMU_EXFloatSig, "vo_px", lineT, valid);
+            printCSVValue(vo_py, IMU_EXFloatSig, "vo_py", lineT, valid);
+            printCSVValue(vo_pz, IMU_EXFloatSig, "vo_pz", lineT, valid);
+            printCSVValue(us_v, IMU_EXFloatSig, "us_v", lineT, valid);
+            printCSVValue(us_p, IMU_EXFloatSig, "us_p", lineT, valid);
+            printCSVValue(rtk_longti, IMU_EXDoubleSig, "rtk_longti", lineT,
                     valid);
-            printCsvValue(rtk_lati, IMU_EXDoubleSig, "rtk_lati", lineT, valid);
-            printCsvValue(rtk_alti, IMU_EXFloatSig, "rtk_alti", lineT, valid);
-            printCsvValue(vo_flag_navi, IMU_EXIntSig, "vo_flag_navi", lineT,
+            printCSVValue(rtk_lati, IMU_EXDoubleSig, "rtk_lati", lineT, valid);
+            printCSVValue(rtk_alti, IMU_EXFloatSig, "rtk_alti", lineT, valid);
+            printCSVValue(vo_flag_navi, IMU_EXIntSig, "vo_flag_navi", lineT,
                     valid);
-            printCsvValue(imu_err_flag, IMU_EXIntSig, "imu_err_flag", lineT,
+            printCSVValue(imu_err_flag, IMU_EXIntSig, "imu_err_flag", lineT,
                     valid);
-            printCsvValue(vo_flag_rsv, IMU_EXIntSig, "vo_flag_rsv", lineT,
+            printCSVValue(vo_flag_rsv, IMU_EXIntSig, "vo_flag_rsv", lineT,
                     valid);
-            printCsvValue(imu_ex_cnt, IMU_EXIntSig, "imu_ex_cnt", lineT, valid);
+            printCSVValue(imu_ex_cnt, IMU_EXIntSig, "imu_ex_cnt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

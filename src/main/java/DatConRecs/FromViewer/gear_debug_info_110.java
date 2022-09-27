@@ -63,20 +63,20 @@ gear_app_cmd = _payload.getUnsignedByte(15);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(gear_mode, gear_debug_infoIntSig, "gear_mode",lineT, valid);
- printCsvValue(gear_state, gear_debug_infoIntSig, "gear_state",lineT, valid);
- printCsvValue(gear_cmd, gear_debug_infoIntSig, "gear_cmd",lineT, valid);
- printCsvValue(gear_speed, gear_debug_infoIntSig, "gear_speed",lineT, valid);
- printCsvValue(gear_counter, gear_debug_infoIntSig, "gear_counter",lineT, valid);
- printCsvValue(gear_pack_flag, gear_debug_infoIntSig, "gear_pack_flag",lineT, valid);
- printCsvValue(gear_pack_req, gear_debug_infoIntSig, "gear_pack_req",lineT, valid);
- printCsvValue(gear_pack_type, gear_debug_infoIntSig, "gear_pack_type",lineT, valid);
- printCsvValue(gear_pack_state, gear_debug_infoIntSig, "gear_pack_state",lineT, valid);
- printCsvValue(gear_pack_manual_cmd, gear_debug_infoIntSig, "gear_pack_manual_cmd",lineT, valid);
- printCsvValue(gear_rc_cmd, gear_debug_infoIntSig, "gear_rc_cmd",lineT, valid);
- printCsvValue(gear_app_req, gear_debug_infoIntSig, "gear_app_req",lineT, valid);
- printCsvValue(gear_app_cmd, gear_debug_infoIntSig, "gear_app_cmd",lineT, valid);
- printCsvValue(gear_rc_raw_input, gear_debug_infoIntSig, "gear_rc_raw_input",lineT, valid);
+ printCSVValue(gear_mode, gear_debug_infoIntSig, "gear_mode",lineT, valid);
+ printCSVValue(gear_state, gear_debug_infoIntSig, "gear_state",lineT, valid);
+ printCSVValue(gear_cmd, gear_debug_infoIntSig, "gear_cmd",lineT, valid);
+ printCSVValue(gear_speed, gear_debug_infoIntSig, "gear_speed",lineT, valid);
+ printCSVValue(gear_counter, gear_debug_infoIntSig, "gear_counter",lineT, valid);
+ printCSVValue(gear_pack_flag, gear_debug_infoIntSig, "gear_pack_flag",lineT, valid);
+ printCSVValue(gear_pack_req, gear_debug_infoIntSig, "gear_pack_req",lineT, valid);
+ printCSVValue(gear_pack_type, gear_debug_infoIntSig, "gear_pack_type",lineT, valid);
+ printCSVValue(gear_pack_state, gear_debug_infoIntSig, "gear_pack_state",lineT, valid);
+ printCSVValue(gear_pack_manual_cmd, gear_debug_infoIntSig, "gear_pack_manual_cmd",lineT, valid);
+ printCSVValue(gear_rc_cmd, gear_debug_infoIntSig, "gear_rc_cmd",lineT, valid);
+ printCSVValue(gear_app_req, gear_debug_infoIntSig, "gear_app_req",lineT, valid);
+ printCSVValue(gear_app_cmd, gear_debug_infoIntSig, "gear_app_cmd",lineT, valid);
+ printCSVValue(gear_rc_raw_input, gear_debug_infoIntSig, "gear_rc_raw_input",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

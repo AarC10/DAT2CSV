@@ -71,24 +71,24 @@ public class BattInfo_44_1710 extends BattInfo {
 
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(ad_v, BattVoltSig, "Ad_v", lineT, valid);
-            printCsvValue(r_time, BattInfo.battInfoRemainTimeSig, "r_time",
+            printCSVValue(ad_v, BattVoltSig, "Ad_v", lineT, valid);
+            printCSVValue(r_time, BattInfo.battInfoRemainTimeSig, "r_time",
                     lineT, valid);
-            printCsvValue(ave_I, currentSig, "AvgCurrent", lineT, valid);
-            printCsvValue(vol_t, battery_infoFloatSig, "vol_t", lineT, valid);
-            printCsvValue(pack_ve, BattVoltSig, "Pack_ve", lineT, valid);
-            printCsvValue(I, currentSig, "Current", lineT, valid);
-            printCsvValue(r_cap, batteryCap, "RemainingCap", lineT, valid);
-            printCsvValue(cap_per, batteryCapPrcnt, "Remaining%", lineT, valid);
-            printCsvValue(temp, batteryTempSig, "Temp", lineT, valid);
-            printCsvValue(right, battery_infoIntSig, "right", lineT, valid);
-            printCsvValue(l_cell, battery_infoIntSig, "l_cell", lineT, valid);
-            printCsvValue(dyna_cnt, battery_infoIntSig, "dyna_cnt", lineT,
+            printCSVValue(ave_I, currentSig, "AvgCurrent", lineT, valid);
+            printCSVValue(vol_t, battery_infoFloatSig, "vol_t", lineT, valid);
+            printCSVValue(pack_ve, BattVoltSig, "Pack_ve", lineT, valid);
+            printCSVValue(I, currentSig, "Current", lineT, valid);
+            printCSVValue(r_cap, batteryCap, "RemainingCap", lineT, valid);
+            printCSVValue(cap_per, batteryCapPrcnt, "Remaining%", lineT, valid);
+            printCSVValue(temp, batteryTempSig, "Temp", lineT, valid);
+            printCSVValue(right, battery_infoIntSig, "right", lineT, valid);
+            printCSVValue(l_cell, battery_infoIntSig, "l_cell", lineT, valid);
+            printCSVValue(dyna_cnt, battery_infoIntSig, "dyna_cnt", lineT,
                     valid);
-            printCsvValue(FullCap, batteryCap, "FullCap", lineT, valid);
-            printCsvValue(out_ctl, battery_infoFloatSig, "out_ctl", lineT,
+            printCSVValue(FullCap, batteryCap, "FullCap", lineT, valid);
+            printCSVValue(out_ctl, battery_infoFloatSig, "out_ctl", lineT,
                     valid);
-            printCsvValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f", lineT,
+            printCSVValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

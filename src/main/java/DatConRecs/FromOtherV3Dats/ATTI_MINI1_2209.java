@@ -68,16 +68,16 @@ public class ATTI_MINI1_2209 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(s_qw1, ATTI_MINI1FloatSig, "s_qw1", lineT, valid);
-            printCsvValue(s_qx1, ATTI_MINI1FloatSig, "s_qx1", lineT, valid);
-            printCsvValue(s_qy1, ATTI_MINI1FloatSig, "s_qy1", lineT, valid);
-            printCsvValue(s_qz1, ATTI_MINI1FloatSig, "s_qz1", lineT, valid);
-            printCsvValue(s_pgz1, ATTI_MINI1FloatSig, "s_pgz1", lineT, valid);
-            printCsvValue(s_vgz1, ATTI_MINI1FloatSig, "s_vgz1", lineT, valid);
-            printCsvValue(s_agz1, ATTI_MINI1FloatSig, "s_agz1", lineT, valid);
-            printCsvValue(s_rsv01, ATTI_MINI1IntSig, "s_rsv01", lineT, valid);
-            printCsvValue(s_rsv11, ATTI_MINI1IntSig, "s_rsv11", lineT, valid);
-            printCsvValue(s_cnt1, ATTI_MINI1IntSig, "s_cnt1", lineT, valid);
+            printCSVValue(s_qw1, ATTI_MINI1FloatSig, "s_qw1", lineT, valid);
+            printCSVValue(s_qx1, ATTI_MINI1FloatSig, "s_qx1", lineT, valid);
+            printCSVValue(s_qy1, ATTI_MINI1FloatSig, "s_qy1", lineT, valid);
+            printCSVValue(s_qz1, ATTI_MINI1FloatSig, "s_qz1", lineT, valid);
+            printCSVValue(s_pgz1, ATTI_MINI1FloatSig, "s_pgz1", lineT, valid);
+            printCSVValue(s_vgz1, ATTI_MINI1FloatSig, "s_vgz1", lineT, valid);
+            printCSVValue(s_agz1, ATTI_MINI1FloatSig, "s_agz1", lineT, valid);
+            printCSVValue(s_rsv01, ATTI_MINI1IntSig, "s_rsv01", lineT, valid);
+            printCSVValue(s_rsv11, ATTI_MINI1IntSig, "s_rsv11", lineT, valid);
+            printCSVValue(s_cnt1, ATTI_MINI1IntSig, "s_cnt1", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

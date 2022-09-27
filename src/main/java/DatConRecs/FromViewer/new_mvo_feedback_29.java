@@ -85,31 +85,31 @@ reserved4 = _payload.getUnsignedByte(79);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(visionObservationCount, new_mvo_feedbackIntSig, "visionObservationCount",lineT, valid);
- printCsvValue(Vel_X, new_mvo_feedbackIntSig, "Vel_X",lineT, valid);
- printCsvValue(Vel_Y, new_mvo_feedbackIntSig, "Vel_Y",lineT, valid);
- printCsvValue(Vel_Z, new_mvo_feedbackIntSig, "Vel_Z",lineT, valid);
- printCsvValue(Pos_X, new_mvo_feedbackFloatSig, "Pos_X",lineT, valid);
- printCsvValue(Pos_Y, new_mvo_feedbackFloatSig, "Pos_Y",lineT, valid);
- printCsvValue(Pos_Z, new_mvo_feedbackFloatSig, "Pos_Z",lineT, valid);
- printCsvValue(hoverPointUncertainty1, new_mvo_feedbackFloatSig, "hoverPointUncertainty1",lineT, valid);
- printCsvValue(hoverPointUncertainty2, new_mvo_feedbackFloatSig, "hoverPointUncertainty2",lineT, valid);
- printCsvValue(hoverPointUncertainty3, new_mvo_feedbackFloatSig, "hoverPointUncertainty3",lineT, valid);
- printCsvValue(hoverPointUncertainty4, new_mvo_feedbackFloatSig, "hoverPointUncertainty4",lineT, valid);
- printCsvValue(hoverPointUncertainty5, new_mvo_feedbackFloatSig, "hoverPointUncertainty5",lineT, valid);
- printCsvValue(hoverPointUncertainty6, new_mvo_feedbackFloatSig, "hoverPointUncertainty6",lineT, valid);
- printCsvValue(velocityUncertainty1, new_mvo_feedbackFloatSig, "velocityUncertainty1",lineT, valid);
- printCsvValue(velocityUncertainty2, new_mvo_feedbackFloatSig, "velocityUncertainty2",lineT, valid);
- printCsvValue(velocityUncertainty3, new_mvo_feedbackFloatSig, "velocityUncertainty3",lineT, valid);
- printCsvValue(velocityUncertainty4, new_mvo_feedbackFloatSig, "velocityUncertainty4",lineT, valid);
- printCsvValue(velocityUncertainty5, new_mvo_feedbackFloatSig, "velocityUncertainty5",lineT, valid);
- printCsvValue(velocityUncertainty6, new_mvo_feedbackFloatSig, "velocityUncertainty6",lineT, valid);
- printCsvValue(height, new_mvo_feedbackFloatSig, "height",lineT, valid);
- printCsvValue(heightUncertainty, new_mvo_feedbackFloatSig, "heightUncertainty",lineT, valid);
- printCsvValue(reserved1, new_mvo_feedbackIntSig, "reserved1",lineT, valid);
- printCsvValue(reserved2, new_mvo_feedbackIntSig, "reserved2",lineT, valid);
- printCsvValue(reserved3, new_mvo_feedbackIntSig, "reserved3",lineT, valid);
- printCsvValue(reserved4, new_mvo_feedbackIntSig, "reserved4",lineT, valid);
+ printCSVValue(visionObservationCount, new_mvo_feedbackIntSig, "visionObservationCount",lineT, valid);
+ printCSVValue(Vel_X, new_mvo_feedbackIntSig, "Vel_X",lineT, valid);
+ printCSVValue(Vel_Y, new_mvo_feedbackIntSig, "Vel_Y",lineT, valid);
+ printCSVValue(Vel_Z, new_mvo_feedbackIntSig, "Vel_Z",lineT, valid);
+ printCSVValue(Pos_X, new_mvo_feedbackFloatSig, "Pos_X",lineT, valid);
+ printCSVValue(Pos_Y, new_mvo_feedbackFloatSig, "Pos_Y",lineT, valid);
+ printCSVValue(Pos_Z, new_mvo_feedbackFloatSig, "Pos_Z",lineT, valid);
+ printCSVValue(hoverPointUncertainty1, new_mvo_feedbackFloatSig, "hoverPointUncertainty1",lineT, valid);
+ printCSVValue(hoverPointUncertainty2, new_mvo_feedbackFloatSig, "hoverPointUncertainty2",lineT, valid);
+ printCSVValue(hoverPointUncertainty3, new_mvo_feedbackFloatSig, "hoverPointUncertainty3",lineT, valid);
+ printCSVValue(hoverPointUncertainty4, new_mvo_feedbackFloatSig, "hoverPointUncertainty4",lineT, valid);
+ printCSVValue(hoverPointUncertainty5, new_mvo_feedbackFloatSig, "hoverPointUncertainty5",lineT, valid);
+ printCSVValue(hoverPointUncertainty6, new_mvo_feedbackFloatSig, "hoverPointUncertainty6",lineT, valid);
+ printCSVValue(velocityUncertainty1, new_mvo_feedbackFloatSig, "velocityUncertainty1",lineT, valid);
+ printCSVValue(velocityUncertainty2, new_mvo_feedbackFloatSig, "velocityUncertainty2",lineT, valid);
+ printCSVValue(velocityUncertainty3, new_mvo_feedbackFloatSig, "velocityUncertainty3",lineT, valid);
+ printCSVValue(velocityUncertainty4, new_mvo_feedbackFloatSig, "velocityUncertainty4",lineT, valid);
+ printCSVValue(velocityUncertainty5, new_mvo_feedbackFloatSig, "velocityUncertainty5",lineT, valid);
+ printCSVValue(velocityUncertainty6, new_mvo_feedbackFloatSig, "velocityUncertainty6",lineT, valid);
+ printCSVValue(height, new_mvo_feedbackFloatSig, "height",lineT, valid);
+ printCSVValue(heightUncertainty, new_mvo_feedbackFloatSig, "heightUncertainty",lineT, valid);
+ printCSVValue(reserved1, new_mvo_feedbackIntSig, "reserved1",lineT, valid);
+ printCSVValue(reserved2, new_mvo_feedbackIntSig, "reserved2",lineT, valid);
+ printCSVValue(reserved3, new_mvo_feedbackIntSig, "reserved3",lineT, valid);
+ printCSVValue(reserved4, new_mvo_feedbackIntSig, "reserved4",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

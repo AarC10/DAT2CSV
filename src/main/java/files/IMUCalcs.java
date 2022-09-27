@@ -195,24 +195,24 @@ public class IMUCalcs {
 
     public void printCols(lineType lineT, boolean valid) throws IOException {
 
-        recIMU.printCsvValue(vgN, imuCalcsSig, "VelN", lineT, valid);
-        recIMU.printCsvValue(vgE, imuCalcsSig, "VelE", lineT, valid);
-        recIMU.printCsvValue(vgD, imuCalcsSig, "VelD", lineT, valid);
-        recIMU.printCsvValue(pgX, imuCalcsSig, "PosN", lineT, valid);
-        recIMU.printCsvValue(pgY, imuCalcsSig, "PosE", lineT, valid);
-        recIMU.printCsvValue(pgZ, imuCalcsSig, "PosD", lineT, valid);
-        recIMU.printCsvValue(agN, imuCalcsSig, "agX", lineT, valid);
-        recIMU.printCsvValue(agE, imuCalcsSig, "agY", lineT, valid);
-        recIMU.printCsvValue(agD, imuCalcsSig, "agZ", lineT, valid);
-        recIMU.printCsvValue(abX, imuCalcsSig, "abX", lineT, valid);
-        recIMU.printCsvValue(abY, imuCalcsSig, "abY", lineT, valid);
-        recIMU.printCsvValue(abZ, imuCalcsSig, "abZ", lineT, valid);
+        recIMU.printCSVValue(vgN, imuCalcsSig, "VelN", lineT, valid);
+        recIMU.printCSVValue(vgE, imuCalcsSig, "VelE", lineT, valid);
+        recIMU.printCSVValue(vgD, imuCalcsSig, "VelD", lineT, valid);
+        recIMU.printCSVValue(pgX, imuCalcsSig, "PosN", lineT, valid);
+        recIMU.printCSVValue(pgY, imuCalcsSig, "PosE", lineT, valid);
+        recIMU.printCSVValue(pgZ, imuCalcsSig, "PosD", lineT, valid);
+        recIMU.printCSVValue(agN, imuCalcsSig, "agX", lineT, valid);
+        recIMU.printCSVValue(agE, imuCalcsSig, "agY", lineT, valid);
+        recIMU.printCSVValue(agD, imuCalcsSig, "agZ", lineT, valid);
+        recIMU.printCSVValue(abX, imuCalcsSig, "abX", lineT, valid);
+        recIMU.printCSVValue(abY, imuCalcsSig, "abY", lineT, valid);
+        recIMU.printCSVValue(abZ, imuCalcsSig, "abZ", lineT, valid);
 
-        recIMU.printCsvValue(recIMU.getVn() - vgN, imuCalcsSig,
+        recIMU.printCSVValue(recIMU.getVn() - vgN, imuCalcsSig,
                 "getVelN() - vgX", lineT, valid);
-        recIMU.printCsvValue(recIMU.getVe() - vgE, imuCalcsSig, "getVE() - vgY",
+        recIMU.printCSVValue(recIMU.getVe() - vgE, imuCalcsSig, "getVE() - vgY",
                 lineT, valid);
-        recIMU.printCsvValue(recIMU.getVd() - vgD, imuCalcsSig, "getVd() - vgZ",
+        recIMU.printCSVValue(recIMU.getVd() - vgD, imuCalcsSig, "getVd() - vgZ",
                 lineT, valid);
     }
 

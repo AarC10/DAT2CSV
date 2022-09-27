@@ -127,37 +127,37 @@ public class RecordDef extends Record {
                 Field field = fields.get(fieldNum);
                 switch (field.getType()) {
                 case duble:
-                    printCsvValue(values[fieldNum], DoubleSignal,
+                    printCSVValue(values[fieldNum], DoubleSignal,
                             field.getName(), lineT, valid);
                     break;
                 case expr:
                     break;
                 case fp32:
-                    printCsvValue(values[fieldNum], FloatSignal,
+                    printCSVValue(values[fieldNum], FloatSignal,
                             field.getName(), lineT, valid);
                     break;
                 case int16_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 case int32_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 case int8_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 case uint16_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 case uint32_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 case uint8_t:
-                    printCsvValue(values[fieldNum], IntSignal, field.getName(),
+                    printCSVValue(values[fieldNum], IntSignal, field.getName(),
                             lineT, valid);
                     break;
                 default:

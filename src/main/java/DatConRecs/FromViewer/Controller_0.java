@@ -83,30 +83,30 @@ gps_ctrl_levels = _payload.getUnsignedByte(42);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(g_real_clock, ControllerIntSig, "g_real_clock",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_AILERON, ControllerIntSig, "g_real_input_channel_COMMAND_AILERON",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_ELEVATOR, ControllerIntSig, "g_real_input_channel_COMMAND_ELEVATOR",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_THROTTLE, ControllerIntSig, "g_real_input_channel_COMMAND_THROTTLE",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_RUDDER, ControllerIntSig, "g_real_input_channel_COMMAND_RUDDER",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_MODE, ControllerIntSig, "g_real_input_channel_COMMAND_MODE",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_IOC, ControllerIntSig, "g_real_input_channel_COMMAND_IOC",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_GO_HOME, ControllerIntSig, "g_real_input_channel_COMMAND_GO_HOME",lineT, valid);
- printCsvValue(g_real_input_channel_COMMAND_D4, ControllerIntSig, "g_real_input_channel_COMMAND_D4",lineT, valid);
- printCsvValue(g_real_input_control_core_pitch, ControllerIntSig, "g_real_input_control_core_pitch",lineT, valid);
- printCsvValue(g_real_input_control_core_roll, ControllerIntSig, "g_real_input_control_core_roll",lineT, valid);
- printCsvValue(g_real_input_control_core_alti, ControllerIntSig, "g_real_input_control_core_alti",lineT, valid);
- printCsvValue(g_real_input_control_core_tail, ControllerIntSig, "g_real_input_control_core_tail",lineT, valid);
- printCsvValue(g_real_status_cotrol_command_mode, ControllerIntSig, "g_real_status_cotrol_command_mode",lineT, valid);
- printCsvValue(g_real_status_control_real_mode, ControllerIntSig, "g_real_status_control_real_mode",lineT, valid);
- printCsvValue(g_real_status_ioc_control_command_mode, ControllerIntSig, "g_real_status_ioc_control_command_mode",lineT, valid);
- printCsvValue(g_real_status_rc_state, ControllerIntSig, "g_real_status_rc_state",lineT, valid);
- printCsvValue(g_real_status_motor_status, ControllerIntSig, "g_real_status_motor_status",lineT, valid);
- printCsvValue(imu_package_lost_count, ControllerIntSig, "imu_package_lost_count",lineT, valid);
- printCsvValue(g_real_status_main_batery_voltage, ControllerIntSig, "g_real_status_main_batery_voltage",lineT, valid);
- printCsvValue(imu_temp_real_ctl_out_per, ControllerIntSig, "imu_temp_real_ctl_out_per",lineT, valid);
- printCsvValue(us_fail_flag, ControllerIntSig, "us_fail_flag",lineT, valid);
- printCsvValue(gps_signal_levels, ControllerIntSig, "gps_signal_levels",lineT, valid);
- printCsvValue(gps_ctrl_levels, ControllerIntSig, "gps_ctrl_levels",lineT, valid);
+ printCSVValue(g_real_clock, ControllerIntSig, "g_real_clock",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_AILERON, ControllerIntSig, "g_real_input_channel_COMMAND_AILERON",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_ELEVATOR, ControllerIntSig, "g_real_input_channel_COMMAND_ELEVATOR",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_THROTTLE, ControllerIntSig, "g_real_input_channel_COMMAND_THROTTLE",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_RUDDER, ControllerIntSig, "g_real_input_channel_COMMAND_RUDDER",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_MODE, ControllerIntSig, "g_real_input_channel_COMMAND_MODE",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_IOC, ControllerIntSig, "g_real_input_channel_COMMAND_IOC",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_GO_HOME, ControllerIntSig, "g_real_input_channel_COMMAND_GO_HOME",lineT, valid);
+ printCSVValue(g_real_input_channel_COMMAND_D4, ControllerIntSig, "g_real_input_channel_COMMAND_D4",lineT, valid);
+ printCSVValue(g_real_input_control_core_pitch, ControllerIntSig, "g_real_input_control_core_pitch",lineT, valid);
+ printCSVValue(g_real_input_control_core_roll, ControllerIntSig, "g_real_input_control_core_roll",lineT, valid);
+ printCSVValue(g_real_input_control_core_alti, ControllerIntSig, "g_real_input_control_core_alti",lineT, valid);
+ printCSVValue(g_real_input_control_core_tail, ControllerIntSig, "g_real_input_control_core_tail",lineT, valid);
+ printCSVValue(g_real_status_cotrol_command_mode, ControllerIntSig, "g_real_status_cotrol_command_mode",lineT, valid);
+ printCSVValue(g_real_status_control_real_mode, ControllerIntSig, "g_real_status_control_real_mode",lineT, valid);
+ printCSVValue(g_real_status_ioc_control_command_mode, ControllerIntSig, "g_real_status_ioc_control_command_mode",lineT, valid);
+ printCSVValue(g_real_status_rc_state, ControllerIntSig, "g_real_status_rc_state",lineT, valid);
+ printCSVValue(g_real_status_motor_status, ControllerIntSig, "g_real_status_motor_status",lineT, valid);
+ printCSVValue(imu_package_lost_count, ControllerIntSig, "imu_package_lost_count",lineT, valid);
+ printCSVValue(g_real_status_main_batery_voltage, ControllerIntSig, "g_real_status_main_batery_voltage",lineT, valid);
+ printCSVValue(imu_temp_real_ctl_out_per, ControllerIntSig, "imu_temp_real_ctl_out_per",lineT, valid);
+ printCSVValue(us_fail_flag, ControllerIntSig, "us_fail_flag",lineT, valid);
+ printCSVValue(gps_signal_levels, ControllerIntSig, "gps_signal_levels",lineT, valid);
+ printCSVValue(gps_ctrl_levels, ControllerIntSig, "gps_ctrl_levels",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

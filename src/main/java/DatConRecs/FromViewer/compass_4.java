@@ -49,10 +49,10 @@ public class compass_4 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(magx, compassIntSig, "magx", lineT, valid);
-            printCsvValue(magy, compassIntSig, "magy", lineT, valid);
-            printCsvValue(magz, compassIntSig, "magz", lineT, valid);
-            printCsvValue(mag_cnt, compassIntSig, "mag_cnt", lineT, valid);
+            printCSVValue(magx, compassIntSig, "magx", lineT, valid);
+            printCSVValue(magy, compassIntSig, "magy", lineT, valid);
+            printCSVValue(magz, compassIntSig, "magz", lineT, valid);
+            printCSVValue(mag_cnt, compassIntSig, "mag_cnt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

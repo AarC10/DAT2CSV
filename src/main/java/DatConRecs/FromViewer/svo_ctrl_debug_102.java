@@ -83,30 +83,30 @@ svo_avoid_debug3_limit_en = _payload.getUnsignedByte(63);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(svo_avoid_debug0_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug0_limit_en",lineT, valid);
- printCsvValue(svo_avoid_debug0_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug0_d_craft2edge",lineT, valid);
- printCsvValue(svo_avoid_debug0_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_direct_0",lineT, valid);
- printCsvValue(svo_avoid_debug0_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_direct_1",lineT, valid);
- printCsvValue(svo_avoid_debug0_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_norm",lineT, valid);
- printCsvValue(svo_avoid_debug0_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug0_damping_scale",lineT, valid);
- printCsvValue(svo_avoid_debug1_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug1_limit_en",lineT, valid);
- printCsvValue(svo_avoid_debug1_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug1_d_craft2edge",lineT, valid);
- printCsvValue(svo_avoid_debug1_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_direct_0",lineT, valid);
- printCsvValue(svo_avoid_debug1_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_direct_1",lineT, valid);
- printCsvValue(svo_avoid_debug1_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_norm",lineT, valid);
- printCsvValue(svo_avoid_debug1_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug1_damping_scale",lineT, valid);
- printCsvValue(svo_avoid_debug2_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug2_limit_en",lineT, valid);
- printCsvValue(svo_avoid_debug2_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug2_d_craft2edge",lineT, valid);
- printCsvValue(svo_avoid_debug2_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_direct_0",lineT, valid);
- printCsvValue(svo_avoid_debug2_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_direct_1",lineT, valid);
- printCsvValue(svo_avoid_debug2_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_norm",lineT, valid);
- printCsvValue(svo_avoid_debug2_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug2_damping_scale",lineT, valid);
- printCsvValue(svo_avoid_debug3_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug3_limit_en",lineT, valid);
- printCsvValue(svo_avoid_debug3_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug3_d_craft2edge",lineT, valid);
- printCsvValue(svo_avoid_debug3_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_direct_0",lineT, valid);
- printCsvValue(svo_avoid_debug3_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_direct_1",lineT, valid);
- printCsvValue(svo_avoid_debug3_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_norm",lineT, valid);
- printCsvValue(svo_avoid_debug3_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug3_damping_scale",lineT, valid);
+ printCSVValue(svo_avoid_debug0_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug0_limit_en",lineT, valid);
+ printCSVValue(svo_avoid_debug0_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug0_d_craft2edge",lineT, valid);
+ printCSVValue(svo_avoid_debug0_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_direct_0",lineT, valid);
+ printCSVValue(svo_avoid_debug0_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_direct_1",lineT, valid);
+ printCSVValue(svo_avoid_debug0_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug0_limit_norm",lineT, valid);
+ printCSVValue(svo_avoid_debug0_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug0_damping_scale",lineT, valid);
+ printCSVValue(svo_avoid_debug1_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug1_limit_en",lineT, valid);
+ printCSVValue(svo_avoid_debug1_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug1_d_craft2edge",lineT, valid);
+ printCSVValue(svo_avoid_debug1_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_direct_0",lineT, valid);
+ printCSVValue(svo_avoid_debug1_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_direct_1",lineT, valid);
+ printCSVValue(svo_avoid_debug1_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug1_limit_norm",lineT, valid);
+ printCSVValue(svo_avoid_debug1_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug1_damping_scale",lineT, valid);
+ printCSVValue(svo_avoid_debug2_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug2_limit_en",lineT, valid);
+ printCSVValue(svo_avoid_debug2_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug2_d_craft2edge",lineT, valid);
+ printCSVValue(svo_avoid_debug2_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_direct_0",lineT, valid);
+ printCSVValue(svo_avoid_debug2_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_direct_1",lineT, valid);
+ printCSVValue(svo_avoid_debug2_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug2_limit_norm",lineT, valid);
+ printCSVValue(svo_avoid_debug2_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug2_damping_scale",lineT, valid);
+ printCSVValue(svo_avoid_debug3_limit_en, svo_ctrl_debugIntSig, "svo_avoid_debug3_limit_en",lineT, valid);
+ printCSVValue(svo_avoid_debug3_d_craft2edge, svo_ctrl_debugFloatSig, "svo_avoid_debug3_d_craft2edge",lineT, valid);
+ printCSVValue(svo_avoid_debug3_limit_direct_0, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_direct_0",lineT, valid);
+ printCSVValue(svo_avoid_debug3_limit_direct_1, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_direct_1",lineT, valid);
+ printCSVValue(svo_avoid_debug3_limit_norm, svo_ctrl_debugFloatSig, "svo_avoid_debug3_limit_norm",lineT, valid);
+ printCSVValue(svo_avoid_debug3_damping_scale, svo_ctrl_debugFloatSig, "svo_avoid_debug3_damping_scale",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

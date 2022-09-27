@@ -57,7 +57,7 @@ public class RecRCStat18_1700 extends RCStatus {
     public void printCols(lineType lineT) {
         super.printCols(lineT);
         try {
-            printCsvValue(connected, RCStateSig, "connected", lineT,
+            printCSVValue(connected, RCStateSig, "connected", lineT,
                     statusValid);
         } catch (Exception e) {
             DatConLog.Exception(e);

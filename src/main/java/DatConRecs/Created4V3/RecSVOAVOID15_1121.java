@@ -150,19 +150,19 @@ public class RecSVOAVOID15_1121 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(avoidObst, avoidObstSig, "", lineT, valid);
-            printCsvValue(emergBrake, emergBrakeSig, "", lineT, valid);
-            printCsvValue(radiusLimit, radiusLimitSig, "", lineT, valid);
-            printCsvValue(airportLimit, airportLimitSig, "", lineT, valid);
-            printCsvValue(groundForceLanding, groundForceLandingSig, "", lineT,
+            printCSVValue(avoidObst, avoidObstSig, "", lineT, valid);
+            printCSVValue(emergBrake, emergBrakeSig, "", lineT, valid);
+            printCSVValue(radiusLimit, radiusLimitSig, "", lineT, valid);
+            printCSVValue(airportLimit, airportLimitSig, "", lineT, valid);
+            printCSVValue(groundForceLanding, groundForceLandingSig, "", lineT,
                     valid);
-            printCsvValue(horizNearBoundary, horizNearBoundarySig, "", lineT,
+            printCSVValue(horizNearBoundary, horizNearBoundarySig, "", lineT,
                     valid);
-            printCsvValue(vertLowLimit, vertLowLimitSig, "", lineT, valid);
-            printCsvValue(vertAirportLimit, vertAirportLimitSig, "", lineT,
+            printCSVValue(vertLowLimit, vertLowLimitSig, "", lineT, valid);
+            printCSVValue(vertAirportLimit, vertAirportLimitSig, "", lineT,
                     valid);
-            printCsvValue(roofLimit, roofLimitSig, "", lineT, valid);
-            printCsvValue(hitGroundLimit, hitGroundLimitSig, "", lineT, valid);
+            printCSVValue(roofLimit, roofLimitSig, "", lineT, valid);
+            printCSVValue(hitGroundLimit, hitGroundLimitSig, "", lineT, valid);
 
         } catch (Exception e) {
             DatConLog.Exception(e);

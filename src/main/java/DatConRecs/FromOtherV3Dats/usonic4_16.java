@@ -47,7 +47,7 @@ public class usonic4_16 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(usonic_h, usonicFloatSig, "usonic_h", lineT,
+            printCSVValue(usonic_h, usonicFloatSig, "usonic_h", lineT,
                     (usonic_flag > 0));
             //            printCsvValue(usonic_flag, usonicIntSig, "usonic_flag", lineT,
             //                    valid);

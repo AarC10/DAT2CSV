@@ -82,11 +82,11 @@ public class HomePoint24_13 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(convertDat.getHPLongDeg(), AxesAndSigs.hpLongitudeSig,
+            printCSVValue(convertDat.getHPLongDeg(), AxesAndSigs.hpLongitudeSig,
                     "", lineT, valid);
-            printCsvValue(convertDat.getHPLatDeg(), AxesAndSigs.hpLatitudeSig,
+            printCSVValue(convertDat.getHPLatDeg(), AxesAndSigs.hpLatitudeSig,
                     "", lineT, valid);
-            printCsvValue(rthHeight, AxesAndSigs.rthHeightSig, "", lineT,
+            printCSVValue(rthHeight, AxesAndSigs.rthHeightSig, "", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

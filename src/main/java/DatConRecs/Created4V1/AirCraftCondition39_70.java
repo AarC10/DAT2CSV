@@ -64,28 +64,28 @@ public class AirCraftCondition39_70 extends AirCraftCondition {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(craft_flight_mode, aircraft_conditionIntSig,
+            printCSVValue(craft_flight_mode, aircraft_conditionIntSig,
                     "craft_flight_mode", lineT, valid);
-            printCsvValue(nearGrnd, nearGndSig, "", lineT, valid);
-            printCsvValue(launch_acc_duration, aircraft_conditionFloatSig,
+            printCSVValue(nearGrnd, nearGndSig, "", lineT, valid);
+            printCSVValue(launch_acc_duration, aircraft_conditionFloatSig,
                     "launch_acc_duration", lineT, valid);
-            printCsvValue(launch_delta_v, aircraft_conditionFloatSig,
+            printCSVValue(launch_delta_v, aircraft_conditionFloatSig,
                     "launch_delta_v", lineT, valid);
-            printCsvValue(launch_state, aircraft_conditionIntSig,
+            printCSVValue(launch_state, aircraft_conditionIntSig,
                     "launch_state", lineT, valid);
-            printCsvValue(thrust_proj_gnd, aircraft_conditionFloatSig,
+            printCSVValue(thrust_proj_gnd, aircraft_conditionFloatSig,
                     "thrust_proj_gnd", lineT, valid);
-            printCsvValue(thrust_proj_gnd_compen, aircraft_conditionFloatSig,
+            printCSVValue(thrust_proj_gnd_compen, aircraft_conditionFloatSig,
                     "thrust_proj_gnd_compen", lineT, valid);
-            printCsvValue(thrust_compensator, aircraft_conditionFloatSig,
+            printCSVValue(thrust_compensator, aircraft_conditionFloatSig,
                     "thrust_compensator", lineT, valid);
-            printCsvValue(hover_thrust, aircraft_conditionFloatSig,
+            printCSVValue(hover_thrust, aircraft_conditionFloatSig,
                     "hover_thrust", lineT, valid);
-            printCsvValue(dynamic_thrust, aircraft_conditionFloatSig,
+            printCSVValue(dynamic_thrust, aircraft_conditionFloatSig,
                     "dynamic_thrust", lineT, valid);
-            printCsvValue(cos_safe_tilt, aircraft_conditionFloatSig,
+            printCSVValue(cos_safe_tilt, aircraft_conditionFloatSig,
                     "cos_safe_tilt", lineT, valid);
-            printCsvValue(safe_tilt, aircraft_conditionFloatSig, "safe_tilt",
+            printCSVValue(safe_tilt, aircraft_conditionFloatSig, "safe_tilt",
                     lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

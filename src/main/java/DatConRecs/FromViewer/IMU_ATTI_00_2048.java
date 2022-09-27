@@ -137,63 +137,63 @@ public class IMU_ATTI_00_2048 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(longti_00, IMU_ATTI_00DoubleSig, "longti_00", lineT,
+            printCSVValue(longti_00, IMU_ATTI_00DoubleSig, "longti_00", lineT,
                     valid);
-            printCsvValue(lati_00, IMU_ATTI_00DoubleSig, "lati_00", lineT,
+            printCSVValue(lati_00, IMU_ATTI_00DoubleSig, "lati_00", lineT,
                     valid);
-            printCsvValue(alti_00, IMU_ATTI_00FloatSig, "alti_00", lineT,
+            printCSVValue(alti_00, IMU_ATTI_00FloatSig, "alti_00", lineT,
                     valid);
-            printCsvValue(acc_x_00, IMU_ATTI_00FloatSig, "acc_x_00", lineT,
+            printCSVValue(acc_x_00, IMU_ATTI_00FloatSig, "acc_x_00", lineT,
                     valid);
-            printCsvValue(acc_y_00, IMU_ATTI_00FloatSig, "acc_y_00", lineT,
+            printCSVValue(acc_y_00, IMU_ATTI_00FloatSig, "acc_y_00", lineT,
                     valid);
-            printCsvValue(acc_z_00, IMU_ATTI_00FloatSig, "acc_z_00", lineT,
+            printCSVValue(acc_z_00, IMU_ATTI_00FloatSig, "acc_z_00", lineT,
                     valid);
-            printCsvValue(gyro_x_00, IMU_ATTI_00FloatSig, "gyro_x_00", lineT,
+            printCSVValue(gyro_x_00, IMU_ATTI_00FloatSig, "gyro_x_00", lineT,
                     valid);
-            printCsvValue(gyro_y_00, IMU_ATTI_00FloatSig, "gyro_y_00", lineT,
+            printCSVValue(gyro_y_00, IMU_ATTI_00FloatSig, "gyro_y_00", lineT,
                     valid);
-            printCsvValue(gyro_z_00, IMU_ATTI_00FloatSig, "gyro_z_00", lineT,
+            printCSVValue(gyro_z_00, IMU_ATTI_00FloatSig, "gyro_z_00", lineT,
                     valid);
-            printCsvValue(press_00, IMU_ATTI_00FloatSig, "press_00", lineT,
+            printCSVValue(press_00, IMU_ATTI_00FloatSig, "press_00", lineT,
                     valid);
-            printCsvValue(q0_00, IMU_ATTI_00FloatSig, "q0_00", lineT, valid);
-            printCsvValue(q1_00, IMU_ATTI_00FloatSig, "q1_00", lineT, valid);
-            printCsvValue(q2_00, IMU_ATTI_00FloatSig, "q2_00", lineT, valid);
-            printCsvValue(q3_00, IMU_ATTI_00FloatSig, "q3_00", lineT, valid);
-            printCsvValue(ag_x_00, IMU_ATTI_00FloatSig, "ag_x_00", lineT,
+            printCSVValue(q0_00, IMU_ATTI_00FloatSig, "q0_00", lineT, valid);
+            printCSVValue(q1_00, IMU_ATTI_00FloatSig, "q1_00", lineT, valid);
+            printCSVValue(q2_00, IMU_ATTI_00FloatSig, "q2_00", lineT, valid);
+            printCSVValue(q3_00, IMU_ATTI_00FloatSig, "q3_00", lineT, valid);
+            printCSVValue(ag_x_00, IMU_ATTI_00FloatSig, "ag_x_00", lineT,
                     valid);
-            printCsvValue(ag_y_00, IMU_ATTI_00FloatSig, "ag_y_00", lineT,
+            printCSVValue(ag_y_00, IMU_ATTI_00FloatSig, "ag_y_00", lineT,
                     valid);
-            printCsvValue(ag_z_00, IMU_ATTI_00FloatSig, "ag_z_00", lineT,
+            printCSVValue(ag_z_00, IMU_ATTI_00FloatSig, "ag_z_00", lineT,
                     valid);
-            printCsvValue(vg_x_00, IMU_ATTI_00FloatSig, "vg_x_00", lineT,
+            printCSVValue(vg_x_00, IMU_ATTI_00FloatSig, "vg_x_00", lineT,
                     valid);
-            printCsvValue(vg_y_00, IMU_ATTI_00FloatSig, "vg_y_00", lineT,
+            printCSVValue(vg_y_00, IMU_ATTI_00FloatSig, "vg_y_00", lineT,
                     valid);
-            printCsvValue(vg_z_00, IMU_ATTI_00FloatSig, "vg_z_00", lineT,
+            printCSVValue(vg_z_00, IMU_ATTI_00FloatSig, "vg_z_00", lineT,
                     valid);
-            printCsvValue(gb_x_00, IMU_ATTI_00FloatSig, "gb_x_00", lineT,
+            printCSVValue(gb_x_00, IMU_ATTI_00FloatSig, "gb_x_00", lineT,
                     valid);
-            printCsvValue(gb_y_00, IMU_ATTI_00FloatSig, "gb_y_00", lineT,
+            printCSVValue(gb_y_00, IMU_ATTI_00FloatSig, "gb_y_00", lineT,
                     valid);
-            printCsvValue(gb_z_00, IMU_ATTI_00FloatSig, "gb_z_00", lineT,
+            printCSVValue(gb_z_00, IMU_ATTI_00FloatSig, "gb_z_00", lineT,
                     valid);
-            printCsvValue(m_x_00, IMU_ATTI_00IntSig, "m_x_00", lineT, valid);
-            printCsvValue(m_y_00, IMU_ATTI_00IntSig, "m_y_00", lineT, valid);
-            printCsvValue(m_z_00, IMU_ATTI_00IntSig, "m_z_00", lineT, valid);
-            printCsvValue(temp_x_00, IMU_ATTI_00IntSig, "temp_x_00", lineT,
+            printCSVValue(m_x_00, IMU_ATTI_00IntSig, "m_x_00", lineT, valid);
+            printCSVValue(m_y_00, IMU_ATTI_00IntSig, "m_y_00", lineT, valid);
+            printCSVValue(m_z_00, IMU_ATTI_00IntSig, "m_z_00", lineT, valid);
+            printCSVValue(temp_x_00, IMU_ATTI_00IntSig, "temp_x_00", lineT,
                     valid);
-            printCsvValue(temp_y_00, IMU_ATTI_00IntSig, "temp_y_00", lineT,
+            printCSVValue(temp_y_00, IMU_ATTI_00IntSig, "temp_y_00", lineT,
                     valid);
-            printCsvValue(temp_z_00, IMU_ATTI_00IntSig, "temp_z_00", lineT,
+            printCSVValue(temp_z_00, IMU_ATTI_00IntSig, "temp_z_00", lineT,
                     valid);
-            printCsvValue(sensor_monitor_00, IMU_ATTI_00IntSig,
+            printCSVValue(sensor_monitor_00, IMU_ATTI_00IntSig,
                     "sensor_monitor_00", lineT, valid);
-            printCsvValue(filter_status_00, IMU_ATTI_00IntSig,
+            printCSVValue(filter_status_00, IMU_ATTI_00IntSig,
                     "filter_status_00", lineT, valid);
-            printCsvValue(svn_00, IMU_ATTI_00IntSig, "svn_00", lineT, valid);
-            printCsvValue(cnt_atti_00, IMU_ATTI_00IntSig, "cnt_atti_00", lineT,
+            printCSVValue(svn_00, IMU_ATTI_00IntSig, "svn_00", lineT, valid);
+            printCSVValue(cnt_atti_00, IMU_ATTI_00IntSig, "cnt_atti_00", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

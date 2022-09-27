@@ -143,52 +143,52 @@ public class err_code_112 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(imu1_break, err_codeIntSig, "imu1_break", lineT,
+            printCSVValue(imu1_break, err_codeIntSig, "imu1_break", lineT,
                     valid);
-            printCsvValue(imu2_break, err_codeIntSig, "imu2_break", lineT,
+            printCSVValue(imu2_break, err_codeIntSig, "imu2_break", lineT,
                     valid);
-            printCsvValue(gcm0_break, err_codeIntSig, "gcm0_break", lineT,
+            printCSVValue(gcm0_break, err_codeIntSig, "gcm0_break", lineT,
                     valid);
-            printCsvValue(gcm1_break, err_codeIntSig, "gcm1_break", lineT,
+            printCSVValue(gcm1_break, err_codeIntSig, "gcm1_break", lineT,
                     valid);
-            printCsvValue(gcm2_break, err_codeIntSig, "gcm2_break", lineT,
+            printCSVValue(gcm2_break, err_codeIntSig, "gcm2_break", lineT,
                     valid);
-            printCsvValue(imu0_fault, err_codeIntSig, "imu0_fault", lineT,
+            printCSVValue(imu0_fault, err_codeIntSig, "imu0_fault", lineT,
                     valid);
-            printCsvValue(imu1_fault, err_codeIntSig, "imu1_fault", lineT,
+            printCSVValue(imu1_fault, err_codeIntSig, "imu1_fault", lineT,
                     valid);
-            printCsvValue(imu2_fault, err_codeIntSig, "imu2_fault", lineT,
+            printCSVValue(imu2_fault, err_codeIntSig, "imu2_fault", lineT,
                     valid);
-            printCsvValue(gcm0_fault, err_codeIntSig, "gcm0_fault", lineT,
+            printCSVValue(gcm0_fault, err_codeIntSig, "gcm0_fault", lineT,
                     valid);
-            printCsvValue(gcm1_fault, err_codeIntSig, "gcm1_fault", lineT,
+            printCSVValue(gcm1_fault, err_codeIntSig, "gcm1_fault", lineT,
                     valid);
-            printCsvValue(gcm2_fault, err_codeIntSig, "gcm2_fault", lineT,
+            printCSVValue(gcm2_fault, err_codeIntSig, "gcm2_fault", lineT,
                     valid);
-            printCsvValue(mc_fault, err_codeIntSig, "mc_fault", lineT, valid);
-            printCsvValue(mc_dev, err_codeIntSig, "mc_dev", lineT, valid);
-            printCsvValue(mc_err, err_codeIntSig, "mc_err", lineT, valid);
-            printCsvValue(mc_act, err_codeIntSig, "mc_act", lineT, valid);
-            printCsvValue(imu_stat, err_codeIntSig, "imu_stat", lineT, valid);
-            printCsvValue(mag_stat, err_codeIntSig, "mag_stat", lineT, valid);
-            printCsvValue(imu0_dev, err_codeIntSig, "imu0_dev", lineT, valid);
-            printCsvValue(imu0_err, err_codeIntSig, "imu0_err", lineT, valid);
-            printCsvValue(imu0_act, err_codeIntSig, "imu0_act", lineT, valid);
-            printCsvValue(imu1_dev, err_codeIntSig, "imu1_dev", lineT, valid);
-            printCsvValue(imu1_err, err_codeIntSig, "imu1_err", lineT, valid);
-            printCsvValue(imu1_act, err_codeIntSig, "imu1_act", lineT, valid);
-            printCsvValue(imu2_dev, err_codeIntSig, "imu2_dev", lineT, valid);
-            printCsvValue(imu2_err, err_codeIntSig, "imu2_err", lineT, valid);
-            printCsvValue(imu2_act, err_codeIntSig, "imu2_act", lineT, valid);
-            printCsvValue(gcm0_dev, err_codeIntSig, "gcm0_dev", lineT, valid);
-            printCsvValue(gcm0_err, err_codeIntSig, "gcm0_err", lineT, valid);
-            printCsvValue(gcm0_act, err_codeIntSig, "gcm0_act", lineT, valid);
-            printCsvValue(gcm1_dev, err_codeIntSig, "gcm1_dev", lineT, valid);
-            printCsvValue(gcm1_err, err_codeIntSig, "gcm1_err", lineT, valid);
-            printCsvValue(gcm1_act, err_codeIntSig, "gcm1_act", lineT, valid);
-            printCsvValue(gcm2_dev, err_codeIntSig, "gcm2_dev", lineT, valid);
-            printCsvValue(gcm2_err, err_codeIntSig, "gcm2_err", lineT, valid);
-            printCsvValue(gcm2_act, err_codeIntSig, "gcm2_act", lineT, valid);
+            printCSVValue(mc_fault, err_codeIntSig, "mc_fault", lineT, valid);
+            printCSVValue(mc_dev, err_codeIntSig, "mc_dev", lineT, valid);
+            printCSVValue(mc_err, err_codeIntSig, "mc_err", lineT, valid);
+            printCSVValue(mc_act, err_codeIntSig, "mc_act", lineT, valid);
+            printCSVValue(imu_stat, err_codeIntSig, "imu_stat", lineT, valid);
+            printCSVValue(mag_stat, err_codeIntSig, "mag_stat", lineT, valid);
+            printCSVValue(imu0_dev, err_codeIntSig, "imu0_dev", lineT, valid);
+            printCSVValue(imu0_err, err_codeIntSig, "imu0_err", lineT, valid);
+            printCSVValue(imu0_act, err_codeIntSig, "imu0_act", lineT, valid);
+            printCSVValue(imu1_dev, err_codeIntSig, "imu1_dev", lineT, valid);
+            printCSVValue(imu1_err, err_codeIntSig, "imu1_err", lineT, valid);
+            printCSVValue(imu1_act, err_codeIntSig, "imu1_act", lineT, valid);
+            printCSVValue(imu2_dev, err_codeIntSig, "imu2_dev", lineT, valid);
+            printCSVValue(imu2_err, err_codeIntSig, "imu2_err", lineT, valid);
+            printCSVValue(imu2_act, err_codeIntSig, "imu2_act", lineT, valid);
+            printCSVValue(gcm0_dev, err_codeIntSig, "gcm0_dev", lineT, valid);
+            printCSVValue(gcm0_err, err_codeIntSig, "gcm0_err", lineT, valid);
+            printCSVValue(gcm0_act, err_codeIntSig, "gcm0_act", lineT, valid);
+            printCSVValue(gcm1_dev, err_codeIntSig, "gcm1_dev", lineT, valid);
+            printCSVValue(gcm1_err, err_codeIntSig, "gcm1_err", lineT, valid);
+            printCSVValue(gcm1_act, err_codeIntSig, "gcm1_act", lineT, valid);
+            printCSVValue(gcm2_dev, err_codeIntSig, "gcm2_dev", lineT, valid);
+            printCSVValue(gcm2_err, err_codeIntSig, "gcm2_err", lineT, valid);
+            printCSVValue(gcm2_act, err_codeIntSig, "gcm2_act", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

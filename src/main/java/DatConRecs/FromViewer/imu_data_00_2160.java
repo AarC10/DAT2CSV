@@ -59,18 +59,18 @@ protected float imu_Ref_00 = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(imu_gyro_tempX_00, imu_data_00FloatSig, "imu_gyro_tempX_00",lineT, valid);
- printCsvValue(imu_gyro_tempY_00, imu_data_00FloatSig, "imu_gyro_tempY_00",lineT, valid);
- printCsvValue(imu_gyro_tempZ_00, imu_data_00FloatSig, "imu_gyro_tempZ_00",lineT, valid);
- printCsvValue(imu_gyro_x_00, imu_data_00FloatSig, "imu_gyro_x_00",lineT, valid);
- printCsvValue(imu_gyro_y_00, imu_data_00FloatSig, "imu_gyro_y_00",lineT, valid);
- printCsvValue(imu_gyro_z_00, imu_data_00FloatSig, "imu_gyro_z_00",lineT, valid);
- printCsvValue(imu_acc_x_00, imu_data_00FloatSig, "imu_acc_x_00",lineT, valid);
- printCsvValue(imu_acc_y_00, imu_data_00FloatSig, "imu_acc_y_00",lineT, valid);
- printCsvValue(imu_acc_z_00, imu_data_00FloatSig, "imu_acc_z_00",lineT, valid);
- printCsvValue(imu_airpress_00, imu_data_00FloatSig, "imu_airpress_00",lineT, valid);
- printCsvValue(imu_Vin_00, imu_data_00FloatSig, "imu_Vin_00",lineT, valid);
- printCsvValue(imu_Ref_00, imu_data_00FloatSig, "imu_Ref_00",lineT, valid);
+ printCSVValue(imu_gyro_tempX_00, imu_data_00FloatSig, "imu_gyro_tempX_00",lineT, valid);
+ printCSVValue(imu_gyro_tempY_00, imu_data_00FloatSig, "imu_gyro_tempY_00",lineT, valid);
+ printCSVValue(imu_gyro_tempZ_00, imu_data_00FloatSig, "imu_gyro_tempZ_00",lineT, valid);
+ printCSVValue(imu_gyro_x_00, imu_data_00FloatSig, "imu_gyro_x_00",lineT, valid);
+ printCSVValue(imu_gyro_y_00, imu_data_00FloatSig, "imu_gyro_y_00",lineT, valid);
+ printCSVValue(imu_gyro_z_00, imu_data_00FloatSig, "imu_gyro_z_00",lineT, valid);
+ printCSVValue(imu_acc_x_00, imu_data_00FloatSig, "imu_acc_x_00",lineT, valid);
+ printCSVValue(imu_acc_y_00, imu_data_00FloatSig, "imu_acc_y_00",lineT, valid);
+ printCSVValue(imu_acc_z_00, imu_data_00FloatSig, "imu_acc_z_00",lineT, valid);
+ printCSVValue(imu_airpress_00, imu_data_00FloatSig, "imu_airpress_00",lineT, valid);
+ printCSVValue(imu_Vin_00, imu_data_00FloatSig, "imu_Vin_00",lineT, valid);
+ printCSVValue(imu_Ref_00, imu_data_00FloatSig, "imu_Ref_00",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

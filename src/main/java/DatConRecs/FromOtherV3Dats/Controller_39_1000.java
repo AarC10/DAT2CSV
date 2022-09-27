@@ -110,44 +110,44 @@ public class Controller_39_1000 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(ctrl_tick, ControllerIntSig, "ctrl_tick", lineT,
+            printCSVValue(ctrl_tick, ControllerIntSig, "ctrl_tick", lineT,
                     valid);
-            printCsvValue(ctrl_pitch, ControllerIntSig, "ctrl_pitch", lineT,
+            printCSVValue(ctrl_pitch, ControllerIntSig, "ctrl_pitch", lineT,
                     valid);
-            printCsvValue(ctrl_roll, ControllerIntSig, "ctrl_roll", lineT,
+            printCSVValue(ctrl_roll, ControllerIntSig, "ctrl_roll", lineT,
                     valid);
-            printCsvValue(ctrl_yaw, ControllerIntSig, "ctrl_yaw", lineT, valid);
-            printCsvValue(ctrl_thr, ControllerIntSig, "ctrl_thr", lineT, valid);
-            printCsvValue(ctrl_mode, ControllerIntSig, "ctrl_mode", lineT,
+            printCSVValue(ctrl_yaw, ControllerIntSig, "ctrl_yaw", lineT, valid);
+            printCSVValue(ctrl_thr, ControllerIntSig, "ctrl_thr", lineT, valid);
+            printCSVValue(ctrl_mode, ControllerIntSig, "ctrl_mode", lineT,
                     valid);
-            printCsvValue(mode_switch, ControllerIntSig, "mode_switch", lineT,
+            printCSVValue(mode_switch, ControllerIntSig, "mode_switch", lineT,
                     valid);
-            printCsvValue(motor_state, ControllerIntSig, "motor_state", lineT,
+            printCSVValue(motor_state, ControllerIntSig, "motor_state", lineT,
                     valid);
-            printCsvValue(sig_level, ControllerIntSig, "sig_level", lineT,
+            printCSVValue(sig_level, ControllerIntSig, "sig_level", lineT,
                     valid);
-            printCsvValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
+            printCSVValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
                     valid);
-            printCsvValue(sim_model, ControllerIntSig, "sim_model", lineT,
+            printCSVValue(sim_model, ControllerIntSig, "sim_model", lineT,
                     valid);
-            printCsvValue(max_height, ControllerIntSig, "max_height", lineT,
+            printCSVValue(max_height, ControllerIntSig, "max_height", lineT,
                     valid);
-            printCsvValue(max_radius, ControllerIntSig, "max_radius", lineT,
+            printCSVValue(max_radius, ControllerIntSig, "max_radius", lineT,
                     valid);
-            printCsvValue(D2H_x, ControllerFloatSig, "D2H_x", lineT, valid);
-            printCsvValue(D2H_y, ControllerFloatSig, "D2H_y", lineT, valid);
-            printCsvValue(act_req_id, ControllerIntSig, "act_req_id", lineT,
+            printCSVValue(D2H_x, ControllerFloatSig, "D2H_x", lineT, valid);
+            printCSVValue(D2H_y, ControllerFloatSig, "D2H_y", lineT, valid);
+            printCSVValue(act_req_id, ControllerIntSig, "act_req_id", lineT,
                     valid);
-            printCsvValue(act_act_id, ControllerIntSig, "act_act_id", lineT,
+            printCSVValue(act_act_id, ControllerIntSig, "act_act_id", lineT,
                     valid);
-            printCsvValue(cmd_mod, ControllerIntSig, "cmd_mod", lineT, valid);
-            printCsvValue(mod_req_id, ControllerIntSig, "mod_req_id", lineT,
+            printCSVValue(cmd_mod, ControllerIntSig, "cmd_mod", lineT, valid);
+            printCSVValue(mod_req_id, ControllerIntSig, "mod_req_id", lineT,
                     valid);
-            printCsvValue(fw_flag, ControllerIntSig, "fw_flag", lineT, valid);
-            printCsvValue(mot_sta, ControllerIntSig, "mot_sta", lineT, valid);
-            printCsvValue(OH_take, ControllerIntSig, "OH_take", lineT, valid);
-            printCsvValue(rc_cnt, ControllerIntSig, "rc_cnt", lineT, valid);
-            printCsvValue(sup_rc, ControllerIntSig, "sup_rc", lineT, valid);
+            printCSVValue(fw_flag, ControllerIntSig, "fw_flag", lineT, valid);
+            printCSVValue(mot_sta, ControllerIntSig, "mot_sta", lineT, valid);
+            printCSVValue(OH_take, ControllerIntSig, "OH_take", lineT, valid);
+            printCSVValue(rc_cnt, ControllerIntSig, "rc_cnt", lineT, valid);
+            printCSVValue(sup_rc, ControllerIntSig, "sup_rc", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

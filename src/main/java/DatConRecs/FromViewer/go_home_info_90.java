@@ -43,10 +43,10 @@ go_home_stage = _payload.getUnsignedByte(0);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(go_home_stage, go_home_infoIntSig, "go_home_stage",lineT, valid);
- printCsvValue(go_home_timer, go_home_infoFloatSig, "go_home_timer",lineT, valid);
- printCsvValue(dis_to_home_x, go_home_infoFloatSig, "dis_to_home_x",lineT, valid);
- printCsvValue(dis_to_home_y, go_home_infoFloatSig, "dis_to_home_y",lineT, valid);
+ printCSVValue(go_home_stage, go_home_infoIntSig, "go_home_stage",lineT, valid);
+ printCSVValue(go_home_timer, go_home_infoFloatSig, "go_home_timer",lineT, valid);
+ printCSVValue(dis_to_home_x, go_home_infoFloatSig, "dis_to_home_x",lineT, valid);
+ printCSVValue(dis_to_home_y, go_home_infoFloatSig, "dis_to_home_y",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

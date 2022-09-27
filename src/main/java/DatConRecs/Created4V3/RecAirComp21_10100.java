@@ -39,13 +39,13 @@ public class RecAirComp21_10100 extends RecAirComp {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(vbx, vbSig, "X", lineT, valid);
-            printCsvValue(vby, vbSig, "Y", lineT, valid);
-            printCsvValue(compAlti, compAltiSig, "", lineT, valid);
-            printCsvValue(velNorm, velNormSig, "", lineT, valid);
-            printCsvValue(velLevel1Time, velLevelTimeSig, "1", lineT, valid);
-            printCsvValue(velLevel2Time, velLevelTimeSig, "2", lineT, valid);
-            printCsvValue(velLevel, velLevelSig, "", lineT, valid);
+            printCSVValue(vbx, vbSig, "X", lineT, valid);
+            printCSVValue(vby, vbSig, "Y", lineT, valid);
+            printCSVValue(compAlti, compAltiSig, "", lineT, valid);
+            printCSVValue(velNorm, velNormSig, "", lineT, valid);
+            printCSVValue(velLevel1Time, velLevelTimeSig, "1", lineT, valid);
+            printCSVValue(velLevel2Time, velLevelTimeSig, "2", lineT, valid);
+            printCSVValue(velLevel, velLevelSig, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

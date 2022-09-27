@@ -98,26 +98,26 @@ public class ns_data_debug_10085 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(d00, ns_data_debugFloatSig, "d00", lineT, valid);
-            printCsvValue(d01, ns_data_debugFloatSig, "d01", lineT, valid);
-            printCsvValue(d02, ns_data_debugFloatSig, "d02", lineT, valid);
-            printCsvValue(d03, ns_data_debugFloatSig, "d03", lineT, valid);
-            printCsvValue(d04, ns_data_debugFloatSig, "d04", lineT, valid);
-            printCsvValue(d05, ns_data_debugFloatSig, "d05", lineT, valid);
-            printCsvValue(d06, ns_data_debugFloatSig, "d06", lineT, valid);
-            printCsvValue(d07, ns_data_debugFloatSig, "d07", lineT, valid);
-            printCsvValue(d08, ns_data_debugFloatSig, "d08", lineT, valid);
-            printCsvValue(d09, ns_data_debugFloatSig, "d09", lineT, valid);
-            printCsvValue(d10, ns_data_debugFloatSig, "d10", lineT, valid);
-            printCsvValue(d11, ns_data_debugFloatSig, "d11", lineT, valid);
-            printCsvValue(d12, ns_data_debugFloatSig, "d12", lineT, valid);
-            printCsvValue(d13, ns_data_debugFloatSig, "d13", lineT, valid);
-            printCsvValue(d14, ns_data_debugFloatSig, "d14", lineT, valid);
-            printCsvValue(d15, ns_data_debugFloatSig, "d15", lineT, valid);
-            printCsvValue(d16, ns_data_debugFloatSig, "d16", lineT, valid);
-            printCsvValue(d17, ns_data_debugFloatSig, "d17", lineT, valid);
-            printCsvValue(d18, ns_data_debugFloatSig, "d18", lineT, valid);
-            printCsvValue(d19, ns_data_debugFloatSig, "d19", lineT, valid);
+            printCSVValue(d00, ns_data_debugFloatSig, "d00", lineT, valid);
+            printCSVValue(d01, ns_data_debugFloatSig, "d01", lineT, valid);
+            printCSVValue(d02, ns_data_debugFloatSig, "d02", lineT, valid);
+            printCSVValue(d03, ns_data_debugFloatSig, "d03", lineT, valid);
+            printCSVValue(d04, ns_data_debugFloatSig, "d04", lineT, valid);
+            printCSVValue(d05, ns_data_debugFloatSig, "d05", lineT, valid);
+            printCSVValue(d06, ns_data_debugFloatSig, "d06", lineT, valid);
+            printCSVValue(d07, ns_data_debugFloatSig, "d07", lineT, valid);
+            printCSVValue(d08, ns_data_debugFloatSig, "d08", lineT, valid);
+            printCSVValue(d09, ns_data_debugFloatSig, "d09", lineT, valid);
+            printCSVValue(d10, ns_data_debugFloatSig, "d10", lineT, valid);
+            printCSVValue(d11, ns_data_debugFloatSig, "d11", lineT, valid);
+            printCSVValue(d12, ns_data_debugFloatSig, "d12", lineT, valid);
+            printCSVValue(d13, ns_data_debugFloatSig, "d13", lineT, valid);
+            printCSVValue(d14, ns_data_debugFloatSig, "d14", lineT, valid);
+            printCSVValue(d15, ns_data_debugFloatSig, "d15", lineT, valid);
+            printCSVValue(d16, ns_data_debugFloatSig, "d16", lineT, valid);
+            printCSVValue(d17, ns_data_debugFloatSig, "d17", lineT, valid);
+            printCSVValue(d18, ns_data_debugFloatSig, "d18", lineT, valid);
+            printCSVValue(d19, ns_data_debugFloatSig, "d19", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

@@ -66,11 +66,11 @@ public class RecSmartBatt10_1712 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT, valid);
-            printCsvValue(landBatt, AxesAndSigs.battLand, "", lineT, valid);
-            printCsvValue(goHomeTime, AxesAndSigs.battGoHomeTime, "", lineT,
+            printCSVValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT, valid);
+            printCSVValue(landBatt, AxesAndSigs.battLand, "", lineT, valid);
+            printCSVValue(goHomeTime, AxesAndSigs.battGoHomeTime, "", lineT,
                     valid);
-            printCsvValue(landTime, AxesAndSigs.battLandTime, "", lineT, valid);
+            printCSVValue(landTime, AxesAndSigs.battLandTime, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

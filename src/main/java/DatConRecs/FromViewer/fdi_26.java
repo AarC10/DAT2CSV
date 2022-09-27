@@ -47,12 +47,12 @@ gyro_bias_raw_flag = _payload.getUnsignedByte(8);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(ns_abnormal_all, fdiIntSig, "ns_abnormal_all",lineT, valid);
- printCsvValue(history_ns_abnormal_all, fdiIntSig, "history_ns_abnormal_all",lineT, valid);
- printCsvValue(gyro_bias_raw_flag, fdiIntSig, "gyro_bias_raw_flag",lineT, valid);
- printCsvValue(gyrox_bias_raw, fdiFloatSig, "gyrox_bias_raw",lineT, valid);
- printCsvValue(gyroy_bias_raw, fdiFloatSig, "gyroy_bias_raw",lineT, valid);
- printCsvValue(gyroz_bias_raw, fdiFloatSig, "gyroz_bias_raw",lineT, valid);
+ printCSVValue(ns_abnormal_all, fdiIntSig, "ns_abnormal_all",lineT, valid);
+ printCSVValue(history_ns_abnormal_all, fdiIntSig, "history_ns_abnormal_all",lineT, valid);
+ printCSVValue(gyro_bias_raw_flag, fdiIntSig, "gyro_bias_raw_flag",lineT, valid);
+ printCSVValue(gyrox_bias_raw, fdiFloatSig, "gyrox_bias_raw",lineT, valid);
+ printCSVValue(gyroy_bias_raw, fdiFloatSig, "gyroy_bias_raw",lineT, valid);
+ printCSVValue(gyroz_bias_raw, fdiFloatSig, "gyroz_bias_raw",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

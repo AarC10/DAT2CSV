@@ -65,21 +65,21 @@ right = _payload.getUnsignedByte(25);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(ad_v, battery_infoIntSig, "ad_v",lineT, valid);
- printCsvValue(r_time, battery_infoIntSig, "r_time",lineT, valid);
- printCsvValue(ave_I, battery_infoFloatSig, "ave_I",lineT, valid);
- printCsvValue(vol_t, battery_infoFloatSig, "vol_t",lineT, valid);
- printCsvValue(pack_ve, battery_infoIntSig, "pack_ve",lineT, valid);
- printCsvValue(I, battery_infoIntSig, "I",lineT, valid);
- printCsvValue(r_cap, battery_infoIntSig, "r_cap",lineT, valid);
- printCsvValue(cap_per, battery_infoIntSig, "cap_per",lineT, valid);
- printCsvValue(temp, battery_infoIntSig, "temp",lineT, valid);
- printCsvValue(right, battery_infoIntSig, "right",lineT, valid);
- printCsvValue(l_cell, battery_infoIntSig, "l_cell",lineT, valid);
- printCsvValue(dyna_cnt, battery_infoIntSig, "dyna_cnt",lineT, valid);
- printCsvValue(f_cap, battery_infoIntSig, "f_cap",lineT, valid);
- printCsvValue(out_ctl, battery_infoFloatSig, "out_ctl",lineT, valid);
- printCsvValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f",lineT, valid);
+ printCSVValue(ad_v, battery_infoIntSig, "ad_v",lineT, valid);
+ printCSVValue(r_time, battery_infoIntSig, "r_time",lineT, valid);
+ printCSVValue(ave_I, battery_infoFloatSig, "ave_I",lineT, valid);
+ printCSVValue(vol_t, battery_infoFloatSig, "vol_t",lineT, valid);
+ printCSVValue(pack_ve, battery_infoIntSig, "pack_ve",lineT, valid);
+ printCSVValue(I, battery_infoIntSig, "I",lineT, valid);
+ printCSVValue(r_cap, battery_infoIntSig, "r_cap",lineT, valid);
+ printCSVValue(cap_per, battery_infoIntSig, "cap_per",lineT, valid);
+ printCSVValue(temp, battery_infoIntSig, "temp",lineT, valid);
+ printCSVValue(right, battery_infoIntSig, "right",lineT, valid);
+ printCSVValue(l_cell, battery_infoIntSig, "l_cell",lineT, valid);
+ printCSVValue(dyna_cnt, battery_infoIntSig, "dyna_cnt",lineT, valid);
+ printCSVValue(f_cap, battery_infoIntSig, "f_cap",lineT, valid);
+ printCSVValue(out_ctl, battery_infoFloatSig, "out_ctl",lineT, valid);
+ printCSVValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

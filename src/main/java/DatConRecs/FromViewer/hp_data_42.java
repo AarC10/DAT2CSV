@@ -63,20 +63,20 @@ protected float head_error = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(tgt_hp_alti, hp_dataFloatSig, "tgt_hp_alti",lineT, valid);
- printCsvValue(tgt_ang_rate, hp_dataFloatSig, "tgt_ang_rate",lineT, valid);
- printCsvValue(tgt_radius, hp_dataFloatSig, "tgt_radius",lineT, valid);
- printCsvValue(distance_to_hp, hp_dataFloatSig, "distance_to_hp",lineT, valid);
- printCsvValue(cosine_angle, hp_dataFloatSig, "cosine_angle",lineT, valid);
- printCsvValue(angle_rate, hp_dataFloatSig, "angle_rate",lineT, valid);
- printCsvValue(radius, hp_dataFloatSig, "radius",lineT, valid);
- printCsvValue(pos_error_x, hp_dataFloatSig, "pos_error_x",lineT, valid);
- printCsvValue(pos_error_y, hp_dataFloatSig, "pos_error_y",lineT, valid);
- printCsvValue(pos_error_z, hp_dataFloatSig, "pos_error_z",lineT, valid);
- printCsvValue(vel_error_x, hp_dataFloatSig, "vel_error_x",lineT, valid);
- printCsvValue(vel_error_y, hp_dataFloatSig, "vel_error_y",lineT, valid);
- printCsvValue(vel_error_z, hp_dataFloatSig, "vel_error_z",lineT, valid);
- printCsvValue(head_error, hp_dataFloatSig, "head_error",lineT, valid);
+ printCSVValue(tgt_hp_alti, hp_dataFloatSig, "tgt_hp_alti",lineT, valid);
+ printCSVValue(tgt_ang_rate, hp_dataFloatSig, "tgt_ang_rate",lineT, valid);
+ printCSVValue(tgt_radius, hp_dataFloatSig, "tgt_radius",lineT, valid);
+ printCSVValue(distance_to_hp, hp_dataFloatSig, "distance_to_hp",lineT, valid);
+ printCSVValue(cosine_angle, hp_dataFloatSig, "cosine_angle",lineT, valid);
+ printCSVValue(angle_rate, hp_dataFloatSig, "angle_rate",lineT, valid);
+ printCSVValue(radius, hp_dataFloatSig, "radius",lineT, valid);
+ printCSVValue(pos_error_x, hp_dataFloatSig, "pos_error_x",lineT, valid);
+ printCSVValue(pos_error_y, hp_dataFloatSig, "pos_error_y",lineT, valid);
+ printCSVValue(pos_error_z, hp_dataFloatSig, "pos_error_z",lineT, valid);
+ printCSVValue(vel_error_x, hp_dataFloatSig, "vel_error_x",lineT, valid);
+ printCSVValue(vel_error_y, hp_dataFloatSig, "vel_error_y",lineT, valid);
+ printCSVValue(vel_error_z, hp_dataFloatSig, "vel_error_z",lineT, valid);
+ printCSVValue(head_error, hp_dataFloatSig, "head_error",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

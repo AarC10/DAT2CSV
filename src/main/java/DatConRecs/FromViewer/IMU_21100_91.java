@@ -49,13 +49,13 @@ protected long cnt_21100 = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(gyro_x_21100, IMU_21100IntSig, "gyro_x_21100",lineT, valid);
- printCsvValue(gyro_y_21100, IMU_21100IntSig, "gyro_y_21100",lineT, valid);
- printCsvValue(gyro_z_21100, IMU_21100IntSig, "gyro_z_21100",lineT, valid);
- printCsvValue(acc_x_21100, IMU_21100IntSig, "acc_x_21100",lineT, valid);
- printCsvValue(acc_y_21100, IMU_21100IntSig, "acc_y_21100",lineT, valid);
- printCsvValue(acc_z_21100, IMU_21100IntSig, "acc_z_21100",lineT, valid);
- printCsvValue(cnt_21100, IMU_21100IntSig, "cnt_21100",lineT, valid);
+ printCSVValue(gyro_x_21100, IMU_21100IntSig, "gyro_x_21100",lineT, valid);
+ printCSVValue(gyro_y_21100, IMU_21100IntSig, "gyro_y_21100",lineT, valid);
+ printCSVValue(gyro_z_21100, IMU_21100IntSig, "gyro_z_21100",lineT, valid);
+ printCSVValue(acc_x_21100, IMU_21100IntSig, "acc_x_21100",lineT, valid);
+ printCSVValue(acc_y_21100, IMU_21100IntSig, "acc_y_21100",lineT, valid);
+ printCSVValue(acc_z_21100, IMU_21100IntSig, "acc_z_21100",lineT, valid);
+ printCSVValue(cnt_21100, IMU_21100IntSig, "cnt_21100",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

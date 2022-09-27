@@ -57,7 +57,7 @@ public class RecOA27_100 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCsvValue(OAfrontDistance, oAFrontDistanceSig, "", lineT,
+            printCSVValue(OAfrontDistance, oAFrontDistanceSig, "", lineT,
                     frontDistanceIsValid());
         } catch (Exception e) {
             DatConLog.Exception(e);

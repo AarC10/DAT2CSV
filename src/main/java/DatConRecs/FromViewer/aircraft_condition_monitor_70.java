@@ -75,32 +75,32 @@ public class aircraft_condition_monitor_70 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(craft_flight_mode, aircraft_condition_monitorIntSig,
+            printCSVValue(craft_flight_mode, aircraft_condition_monitorIntSig,
                     "craft_flight_mode", lineT, valid);
-            printCsvValue(near_gnd_state, aircraft_condition_monitorIntSig,
+            printCSVValue(near_gnd_state, aircraft_condition_monitorIntSig,
                     "near_gnd_state", lineT, valid);
-            printCsvValue(launch_acc_duration,
+            printCSVValue(launch_acc_duration,
                     aircraft_condition_monitorFloatSig, "launch_acc_duration",
                     lineT, valid);
-            printCsvValue(launch_delta_v, aircraft_condition_monitorFloatSig,
+            printCSVValue(launch_delta_v, aircraft_condition_monitorFloatSig,
                     "launch_delta_v", lineT, valid);
-            printCsvValue(launch_state, aircraft_condition_monitorIntSig,
+            printCSVValue(launch_state, aircraft_condition_monitorIntSig,
                     "launch_state", lineT, valid);
-            printCsvValue(thrust_proj_gnd, aircraft_condition_monitorFloatSig,
+            printCSVValue(thrust_proj_gnd, aircraft_condition_monitorFloatSig,
                     "thrust_proj_gnd", lineT, valid);
-            printCsvValue(thrust_proj_gnd_compen,
+            printCSVValue(thrust_proj_gnd_compen,
                     aircraft_condition_monitorFloatSig,
                     "thrust_proj_gnd_compen", lineT, valid);
-            printCsvValue(thrust_compensator,
+            printCSVValue(thrust_compensator,
                     aircraft_condition_monitorFloatSig, "thrust_compensator",
                     lineT, valid);
-            printCsvValue(hover_thrust, aircraft_condition_monitorFloatSig,
+            printCSVValue(hover_thrust, aircraft_condition_monitorFloatSig,
                     "hover_thrust", lineT, valid);
-            printCsvValue(dynamic_thrust, aircraft_condition_monitorFloatSig,
+            printCSVValue(dynamic_thrust, aircraft_condition_monitorFloatSig,
                     "dynamic_thrust", lineT, valid);
-            printCsvValue(cos_safe_tilt, aircraft_condition_monitorFloatSig,
+            printCSVValue(cos_safe_tilt, aircraft_condition_monitorFloatSig,
                     "cos_safe_tilt", lineT, valid);
-            printCsvValue(safe_tilt, aircraft_condition_monitorFloatSig,
+            printCSVValue(safe_tilt, aircraft_condition_monitorFloatSig,
                     "safe_tilt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

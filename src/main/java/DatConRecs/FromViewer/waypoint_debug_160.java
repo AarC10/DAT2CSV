@@ -41,9 +41,9 @@ wp_cur_num = _payload.getUnsignedByte(1);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(wp_mission_status, waypoint_debugIntSig, "wp_mission_status",lineT, valid);
- printCsvValue(wp_cur_num, waypoint_debugIntSig, "wp_cur_num",lineT, valid);
- printCsvValue(wp_tgt_vel, waypoint_debugIntSig, "wp_tgt_vel",lineT, valid);
+ printCSVValue(wp_mission_status, waypoint_debugIntSig, "wp_mission_status",lineT, valid);
+ printCSVValue(wp_cur_num, waypoint_debugIntSig, "wp_cur_num",lineT, valid);
+ printCSVValue(wp_tgt_vel, waypoint_debugIntSig, "wp_tgt_vel",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

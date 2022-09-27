@@ -55,16 +55,16 @@ protected int fa = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(bias_gyrox, sensor_cfg_tempFloatSig, "bias_gyrox",lineT, valid);
- printCsvValue(bias_gyroy, sensor_cfg_tempFloatSig, "bias_gyroy",lineT, valid);
- printCsvValue(bias_gyroz, sensor_cfg_tempFloatSig, "bias_gyroz",lineT, valid);
- printCsvValue(bias_accx, sensor_cfg_tempFloatSig, "bias_accx",lineT, valid);
- printCsvValue(bias_accy, sensor_cfg_tempFloatSig, "bias_accy",lineT, valid);
- printCsvValue(bias_accz, sensor_cfg_tempFloatSig, "bias_accz",lineT, valid);
- printCsvValue(tw, sensor_cfg_tempFloatSig, "tw",lineT, valid);
- printCsvValue(ta, sensor_cfg_tempFloatSig, "ta",lineT, valid);
- printCsvValue(fw, sensor_cfg_tempIntSig, "fw",lineT, valid);
- printCsvValue(fa, sensor_cfg_tempIntSig, "fa",lineT, valid);
+ printCSVValue(bias_gyrox, sensor_cfg_tempFloatSig, "bias_gyrox",lineT, valid);
+ printCSVValue(bias_gyroy, sensor_cfg_tempFloatSig, "bias_gyroy",lineT, valid);
+ printCSVValue(bias_gyroz, sensor_cfg_tempFloatSig, "bias_gyroz",lineT, valid);
+ printCSVValue(bias_accx, sensor_cfg_tempFloatSig, "bias_accx",lineT, valid);
+ printCSVValue(bias_accy, sensor_cfg_tempFloatSig, "bias_accy",lineT, valid);
+ printCSVValue(bias_accz, sensor_cfg_tempFloatSig, "bias_accz",lineT, valid);
+ printCSVValue(tw, sensor_cfg_tempFloatSig, "tw",lineT, valid);
+ printCSVValue(ta, sensor_cfg_tempFloatSig, "ta",lineT, valid);
+ printCSVValue(fw, sensor_cfg_tempIntSig, "fw",lineT, valid);
+ printCSVValue(fa, sensor_cfg_tempIntSig, "fa",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

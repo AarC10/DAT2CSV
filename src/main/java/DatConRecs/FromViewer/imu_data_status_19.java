@@ -39,8 +39,8 @@ led_status = _payload.getUnsignedByte(1);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(start_fan, imu_data_statusIntSig, "start_fan",lineT, valid);
- printCsvValue(led_status, imu_data_statusIntSig, "led_status",lineT, valid);
+ printCSVValue(start_fan, imu_data_statusIntSig, "start_fan",lineT, valid);
+ printCSVValue(led_status, imu_data_statusIntSig, "led_status",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

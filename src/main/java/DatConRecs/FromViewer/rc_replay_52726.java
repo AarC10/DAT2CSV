@@ -51,14 +51,14 @@ protected short CMD_D4 = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(CMD_ALIERON, rc_replayIntSig, "CMD_ALIERON",lineT, valid);
- printCsvValue(CMD_ELEVATOR, rc_replayIntSig, "CMD_ELEVATOR",lineT, valid);
- printCsvValue(CMD_THROTTLE, rc_replayIntSig, "CMD_THROTTLE",lineT, valid);
- printCsvValue(CMD_RUDDER, rc_replayIntSig, "CMD_RUDDER",lineT, valid);
- printCsvValue(CMD_MODE, rc_replayIntSig, "CMD_MODE",lineT, valid);
- printCsvValue(CMD_IOC, rc_replayIntSig, "CMD_IOC",lineT, valid);
- printCsvValue(CMD_GO_HOME, rc_replayIntSig, "CMD_GO_HOME",lineT, valid);
- printCsvValue(CMD_D4, rc_replayIntSig, "CMD_D4",lineT, valid);
+ printCSVValue(CMD_ALIERON, rc_replayIntSig, "CMD_ALIERON",lineT, valid);
+ printCSVValue(CMD_ELEVATOR, rc_replayIntSig, "CMD_ELEVATOR",lineT, valid);
+ printCSVValue(CMD_THROTTLE, rc_replayIntSig, "CMD_THROTTLE",lineT, valid);
+ printCSVValue(CMD_RUDDER, rc_replayIntSig, "CMD_RUDDER",lineT, valid);
+ printCSVValue(CMD_MODE, rc_replayIntSig, "CMD_MODE",lineT, valid);
+ printCSVValue(CMD_IOC, rc_replayIntSig, "CMD_IOC",lineT, valid);
+ printCSVValue(CMD_GO_HOME, rc_replayIntSig, "CMD_GO_HOME",lineT, valid);
+ printCSVValue(CMD_D4, rc_replayIntSig, "CMD_D4",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

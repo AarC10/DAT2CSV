@@ -67,22 +67,22 @@ t_finish_00 = _payload.getUnsignedByte(21);
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(dst_value_00, temp_ctl_data_00IntSig, "dst_value_00",lineT, valid);
- printCsvValue(cur_dst_temp_00, temp_ctl_data_00IntSig, "cur_dst_temp_00",lineT, valid);
- printCsvValue(p_00, temp_ctl_data_00IntSig, "p_00",lineT, valid);
- printCsvValue(i_00, temp_ctl_data_00IntSig, "i_00",lineT, valid);
- printCsvValue(d_00, temp_ctl_data_00IntSig, "d_00",lineT, valid);
- printCsvValue(dl_err_00, temp_ctl_data_00IntSig, "dl_err_00",lineT, valid);
- printCsvValue(real_ctl_out_per_00, temp_ctl_data_00IntSig, "real_ctl_out_per_00",lineT, valid);
- printCsvValue(slope_type_00, temp_ctl_data_00IntSig, "slope_type_00",lineT, valid);
- printCsvValue(temp_ctl_slope_00, temp_ctl_data_00IntSig, "temp_ctl_slope_00",lineT, valid);
- printCsvValue(t_finish_00, temp_ctl_data_00IntSig, "t_finish_00",lineT, valid);
- printCsvValue(err_last_00, temp_ctl_data_00IntSig, "err_last_00",lineT, valid);
- printCsvValue(ctl_out_value_00, temp_ctl_data_00IntSig, "ctl_out_value_00",lineT, valid);
- printCsvValue(real_ctl_out_value_00, temp_ctl_data_00IntSig, "real_ctl_out_value_00",lineT, valid);
- printCsvValue(i_small_00, temp_ctl_data_00IntSig, "i_small_00",lineT, valid);
- printCsvValue(out_00, temp_ctl_data_00IntSig, "out_00",lineT, valid);
- printCsvValue(cnt_00, temp_ctl_data_00IntSig, "cnt_00",lineT, valid);
+ printCSVValue(dst_value_00, temp_ctl_data_00IntSig, "dst_value_00",lineT, valid);
+ printCSVValue(cur_dst_temp_00, temp_ctl_data_00IntSig, "cur_dst_temp_00",lineT, valid);
+ printCSVValue(p_00, temp_ctl_data_00IntSig, "p_00",lineT, valid);
+ printCSVValue(i_00, temp_ctl_data_00IntSig, "i_00",lineT, valid);
+ printCSVValue(d_00, temp_ctl_data_00IntSig, "d_00",lineT, valid);
+ printCSVValue(dl_err_00, temp_ctl_data_00IntSig, "dl_err_00",lineT, valid);
+ printCSVValue(real_ctl_out_per_00, temp_ctl_data_00IntSig, "real_ctl_out_per_00",lineT, valid);
+ printCSVValue(slope_type_00, temp_ctl_data_00IntSig, "slope_type_00",lineT, valid);
+ printCSVValue(temp_ctl_slope_00, temp_ctl_data_00IntSig, "temp_ctl_slope_00",lineT, valid);
+ printCSVValue(t_finish_00, temp_ctl_data_00IntSig, "t_finish_00",lineT, valid);
+ printCSVValue(err_last_00, temp_ctl_data_00IntSig, "err_last_00",lineT, valid);
+ printCSVValue(ctl_out_value_00, temp_ctl_data_00IntSig, "ctl_out_value_00",lineT, valid);
+ printCSVValue(real_ctl_out_value_00, temp_ctl_data_00IntSig, "real_ctl_out_value_00",lineT, valid);
+ printCSVValue(i_small_00, temp_ctl_data_00IntSig, "i_small_00",lineT, valid);
+ printCSVValue(out_00, temp_ctl_data_00IntSig, "out_00",lineT, valid);
+ printCSVValue(cnt_00, temp_ctl_data_00IntSig, "cnt_00",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

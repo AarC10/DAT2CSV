@@ -67,22 +67,22 @@ protected int uart_rx8 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(uart_tx1, uart_cntIntSig, "uart_tx1",lineT, valid);
- printCsvValue(uart_rx1, uart_cntIntSig, "uart_rx1",lineT, valid);
- printCsvValue(uart_tx2, uart_cntIntSig, "uart_tx2",lineT, valid);
- printCsvValue(uart_rx2, uart_cntIntSig, "uart_rx2",lineT, valid);
- printCsvValue(uart_tx3, uart_cntIntSig, "uart_tx3",lineT, valid);
- printCsvValue(uart_rx3, uart_cntIntSig, "uart_rx3",lineT, valid);
- printCsvValue(uart_tx4, uart_cntIntSig, "uart_tx4",lineT, valid);
- printCsvValue(uart_rx4, uart_cntIntSig, "uart_rx4",lineT, valid);
- printCsvValue(uart_tx5, uart_cntIntSig, "uart_tx5",lineT, valid);
- printCsvValue(uart_rx5, uart_cntIntSig, "uart_rx5",lineT, valid);
- printCsvValue(uart_tx6, uart_cntIntSig, "uart_tx6",lineT, valid);
- printCsvValue(uart_rx6, uart_cntIntSig, "uart_rx6",lineT, valid);
- printCsvValue(uart_tx7, uart_cntIntSig, "uart_tx7",lineT, valid);
- printCsvValue(uart_rx7, uart_cntIntSig, "uart_rx7",lineT, valid);
- printCsvValue(uart_tx8, uart_cntIntSig, "uart_tx8",lineT, valid);
- printCsvValue(uart_rx8, uart_cntIntSig, "uart_rx8",lineT, valid);
+ printCSVValue(uart_tx1, uart_cntIntSig, "uart_tx1",lineT, valid);
+ printCSVValue(uart_rx1, uart_cntIntSig, "uart_rx1",lineT, valid);
+ printCSVValue(uart_tx2, uart_cntIntSig, "uart_tx2",lineT, valid);
+ printCSVValue(uart_rx2, uart_cntIntSig, "uart_rx2",lineT, valid);
+ printCSVValue(uart_tx3, uart_cntIntSig, "uart_tx3",lineT, valid);
+ printCSVValue(uart_rx3, uart_cntIntSig, "uart_rx3",lineT, valid);
+ printCSVValue(uart_tx4, uart_cntIntSig, "uart_tx4",lineT, valid);
+ printCSVValue(uart_rx4, uart_cntIntSig, "uart_rx4",lineT, valid);
+ printCSVValue(uart_tx5, uart_cntIntSig, "uart_tx5",lineT, valid);
+ printCSVValue(uart_rx5, uart_cntIntSig, "uart_rx5",lineT, valid);
+ printCSVValue(uart_tx6, uart_cntIntSig, "uart_tx6",lineT, valid);
+ printCSVValue(uart_rx6, uart_cntIntSig, "uart_rx6",lineT, valid);
+ printCSVValue(uart_tx7, uart_cntIntSig, "uart_tx7",lineT, valid);
+ printCSVValue(uart_rx7, uart_cntIntSig, "uart_rx7",lineT, valid);
+ printCSVValue(uart_tx8, uart_cntIntSig, "uart_tx8",lineT, valid);
+ printCSVValue(uart_rx8, uart_cntIntSig, "uart_rx8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -37,7 +37,7 @@ protected int ppm = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(ppm, sweepIntSig, "ppm",lineT, valid);
+ printCSVValue(ppm, sweepIntSig, "ppm",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

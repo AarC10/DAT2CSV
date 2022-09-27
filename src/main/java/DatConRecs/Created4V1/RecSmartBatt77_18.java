@@ -108,11 +108,11 @@ public class RecSmartBatt77_18 extends Record {
         try {
             String batStat = batStatString(batteryStatus);
             String batGHStat = batGHStatString(batteryGoHomeStatus);
-            printCsvValue(batStat, batteryStatusSig, "", lineT, valid);
-            printCsvValue(batGHStat, batteryGHStatusSig, "", lineT, valid);
-            printCsvValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT,
+            printCSVValue(batStat, batteryStatusSig, "", lineT, valid);
+            printCSVValue(batGHStat, batteryGHStatusSig, "", lineT, valid);
+            printCSVValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT,
                     validGHB);
-            printCsvValue(voltagePercent, voltagePercentSig, "", lineT,
+            printCSVValue(voltagePercent, voltagePercentSig, "", lineT,
                     validVP);
         } catch (Exception e) {
             DatConLog.Exception(e);

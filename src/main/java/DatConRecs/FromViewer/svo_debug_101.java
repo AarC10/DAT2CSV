@@ -51,14 +51,14 @@ protected float VisionDebug8 = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCsvValue(VisionDebug1, svo_debugFloatSig, "VisionDebug1",lineT, valid);
- printCsvValue(VisionDebug2, svo_debugFloatSig, "VisionDebug2",lineT, valid);
- printCsvValue(VisionDebug3, svo_debugFloatSig, "VisionDebug3",lineT, valid);
- printCsvValue(VisionDebug4, svo_debugFloatSig, "VisionDebug4",lineT, valid);
- printCsvValue(VisionDebug5, svo_debugFloatSig, "VisionDebug5",lineT, valid);
- printCsvValue(VisionDebug6, svo_debugFloatSig, "VisionDebug6",lineT, valid);
- printCsvValue(VisionDebug7, svo_debugFloatSig, "VisionDebug7",lineT, valid);
- printCsvValue(VisionDebug8, svo_debugFloatSig, "VisionDebug8",lineT, valid);
+ printCSVValue(VisionDebug1, svo_debugFloatSig, "VisionDebug1",lineT, valid);
+ printCSVValue(VisionDebug2, svo_debugFloatSig, "VisionDebug2",lineT, valid);
+ printCSVValue(VisionDebug3, svo_debugFloatSig, "VisionDebug3",lineT, valid);
+ printCSVValue(VisionDebug4, svo_debugFloatSig, "VisionDebug4",lineT, valid);
+ printCSVValue(VisionDebug5, svo_debugFloatSig, "VisionDebug5",lineT, valid);
+ printCSVValue(VisionDebug6, svo_debugFloatSig, "VisionDebug6",lineT, valid);
+ printCSVValue(VisionDebug7, svo_debugFloatSig, "VisionDebug7",lineT, valid);
+ printCSVValue(VisionDebug8, svo_debugFloatSig, "VisionDebug8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

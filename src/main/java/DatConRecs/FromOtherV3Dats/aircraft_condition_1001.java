@@ -59,19 +59,19 @@ public class aircraft_condition_1001 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCsvValue(int_fsm, aircraft_conditionIntSig, "int_fsm", lineT,
+            printCSVValue(int_fsm, aircraft_conditionIntSig, "int_fsm", lineT,
                     valid);
-            printCsvValue(fsm_state, aircraft_conditionIntSig, "fsm_state",
+            printCSVValue(fsm_state, aircraft_conditionIntSig, "fsm_state",
                     lineT, valid);
-            printCsvValue(last_fsm, aircraft_conditionIntSig, "last_fsm", lineT,
+            printCSVValue(last_fsm, aircraft_conditionIntSig, "last_fsm", lineT,
                     valid);
-            printCsvValue(near_gnd, aircraft_conditionIntSig, "near_gnd", lineT,
+            printCSVValue(near_gnd, aircraft_conditionIntSig, "near_gnd", lineT,
                     valid);
-            printCsvValue(UP_state, aircraft_conditionIntSig, "UP_state", lineT,
+            printCSVValue(UP_state, aircraft_conditionIntSig, "UP_state", lineT,
                     valid);
-            printCsvValue(land_state, aircraft_conditionIntSig, "land_state",
+            printCSVValue(land_state, aircraft_conditionIntSig, "land_state",
                     lineT, valid);
-            printCsvValue(safe_fltr, aircraft_conditionIntSig, "safe_fltr",
+            printCSVValue(safe_fltr, aircraft_conditionIntSig, "safe_fltr",
                     lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
