@@ -8,7 +8,7 @@ import files.ConvertDat.lineType;
 import files.DatConLog;
 import files.Signal;
 import files.Units;
-import V3.files.ConvertDatV3;
+import files.ConvertDatV3;
 
 public class RecordDef extends Record {
 

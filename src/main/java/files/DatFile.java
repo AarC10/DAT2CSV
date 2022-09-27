@@ -23,7 +23,6 @@ import DatConRecs.RecDef.OpConfig;
 import DatConRecs.RecDef.RecordDef;
 import files.Corrupted.Type;
 import files.DatHeader.AcType;
-import V1.files.DatFileV1;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -521,7 +520,7 @@ public class DatFile {
     }
 
     public ConvertDat createConVertDat() {
-        return (new V3.files.ConvertDatV3(this));
+        return (new ConvertDatV3(this));
     }
 
     public void reset() throws IOException {
