@@ -2,7 +2,7 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.Created4V3.MagRawGroup;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class Mag8_4 extends MagRawGroup {
 

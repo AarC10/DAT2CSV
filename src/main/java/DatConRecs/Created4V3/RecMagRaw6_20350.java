@@ -1,7 +1,7 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class RecMagRaw6_20350 extends MagRawGroup {
     public RecMagRaw6_20350(ConvertDat convertDat) {

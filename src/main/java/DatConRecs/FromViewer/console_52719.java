@@ -2,12 +2,10 @@ package DatConRecs.FromViewer;
 
 import DatConRecs.*;
 import DatConRecs.Record;
-import DatConRecs.*;
-import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Persist;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Persist;
 
 public class console_52719 extends Record {
     String text = "";

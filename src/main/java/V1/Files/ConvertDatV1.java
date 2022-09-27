@@ -6,13 +6,13 @@ import java.util.Vector;
 import DatConRecs.Dictionary;
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.AnalyzeDatResults;
-import Files.ConvertDat;
-import Files.Corrupted;
-import Files.DatConLog;
-import Files.FileEnd;
-import Files.Persist;
-import Files.RecSpec;
+import files.AnalyzeDatResults;
+import files.ConvertDat;
+import files.Corrupted;
+import files.DatConLog;
+import files.FileEnd;
+import files.Persist;
+import files.RecSpec;
 
 public class ConvertDatV1 extends ConvertDat {
 

@@ -2,10 +2,7 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.RecBatt;
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
 
 public class RecBatt45_17 extends RecBatt {
 

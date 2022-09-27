@@ -1,10 +1,9 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.RecSpec;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class RecRCStat17_1700 extends RCStatus {
     protected boolean valid = false;

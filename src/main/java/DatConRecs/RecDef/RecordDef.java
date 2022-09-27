@@ -4,11 +4,10 @@ import java.util.Vector;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.RecSpec;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
 import V3.Files.ConvertDatV3;
 
 public class RecordDef extends Record {

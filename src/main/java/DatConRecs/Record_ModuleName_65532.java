@@ -19,12 +19,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package DatConRecs;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.DatConLog;
+import files.ConvertDat.lineType;
 
 public class Record_ModuleName_65532 extends Record {
 

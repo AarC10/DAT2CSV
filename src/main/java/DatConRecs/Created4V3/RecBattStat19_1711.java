@@ -21,10 +21,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
 
 public class RecBattStat19_1711 extends Record {
 

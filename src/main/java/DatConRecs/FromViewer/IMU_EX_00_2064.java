@@ -2,11 +2,11 @@ package DatConRecs.FromViewer;
 
 import DatConRecs.*;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
 
 public class IMU_EX_00_2064 extends Record {
     protected boolean valid = false;

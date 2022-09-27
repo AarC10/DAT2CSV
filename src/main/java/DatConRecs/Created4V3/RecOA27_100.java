@@ -21,11 +21,11 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
+import files.ConvertDat.lineType;
 
 public class RecOA27_100 extends Record {
     public boolean frontDistanceIsValid() {

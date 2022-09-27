@@ -8,14 +8,14 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
 import DatConRecs.Payload;
-import Files.AnalyzeDatResults;
-import Files.ConvertDat;
-import Files.Corrupted;
-import Files.DatFile;
-import Files.DatHeader;
-import Files.FileEnd;
-import Files.NotDatFile;
-import Files.Persist;
+import files.AnalyzeDatResults;
+import files.ConvertDat;
+import files.Corrupted;
+import files.DatFile;
+import files.DatHeader;
+import files.FileEnd;
+import files.NotDatFile;
+import files.Persist;
 
 public class DatFileV1 extends DatFile {
 

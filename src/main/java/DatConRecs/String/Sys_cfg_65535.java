@@ -4,9 +4,9 @@ import java.nio.ByteBuffer;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class Sys_cfg_65535 extends Record {
 

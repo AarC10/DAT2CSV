@@ -1,16 +1,16 @@
 package DatConRecs;
 
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.MagYaw;
-import Files.IMUCalcs;
-import Files.Persist;
-import Files.Quaternion;
-import Files.Signal;
-import Files.Units;
-import Files.Util;
+import files.AxesAndSigs;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.MagYaw;
+import files.IMUCalcs;
+import files.Persist;
+import files.Quaternion;
+import files.Signal;
+import files.Units;
+import files.Util;
 
 public class RecIMU extends Record {
 

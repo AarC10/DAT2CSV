@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.TSAGeoMag;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.TSAGeoMag;
 
 public class RecFlyLog_32768 extends Record {
 

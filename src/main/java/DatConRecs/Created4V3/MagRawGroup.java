@@ -2,12 +2,12 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Persist;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Persist;
+import files.Signal;
+import files.Units;
 
 public class MagRawGroup extends Record {
 

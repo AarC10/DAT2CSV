@@ -5,11 +5,11 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import DatConRecs.Created4V1.RecBatt45_17;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.Persist;
-import Files.RecClassSpec;
-import Files.RecSpec;
+import files.ConvertDat;
+import files.DatConLog;
+import files.Persist;
+import files.RecClassSpec;
+import files.RecSpec;
 
 public class Dictionary {
 

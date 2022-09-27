@@ -20,10 +20,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.AxesAndSigs;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class HomePoint24_13 extends Record {
 

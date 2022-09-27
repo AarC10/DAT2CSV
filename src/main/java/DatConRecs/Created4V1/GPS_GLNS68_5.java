@@ -2,7 +2,7 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.GpsGroup;
 import DatConRecs.Payload;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class GPS_GLNS68_5 extends GpsGroup {
 

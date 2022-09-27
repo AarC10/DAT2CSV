@@ -2,7 +2,7 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.RecIMU;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class IMU120_2049 extends RecIMU {
     public IMU120_2049(ConvertDat convertDat) {

@@ -1,7 +1,7 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class RecMag6_2257 extends MagGroup {
 

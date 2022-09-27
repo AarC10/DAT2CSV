@@ -20,7 +20,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
+import files.ConvertDat;
 
 public class RecMotor152_10090 extends Motor {
 

@@ -1,11 +1,6 @@
 package DatConRecs.Created4V3;
 
-import DatConRecs.*;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
 
 public class BatBox32_5003 extends BatBox32_500X {
     

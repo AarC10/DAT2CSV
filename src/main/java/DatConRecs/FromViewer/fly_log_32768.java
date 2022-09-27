@@ -2,9 +2,9 @@ package DatConRecs.FromViewer;
 
 import DatConRecs.*;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class fly_log_32768 extends Record {
     String text = "";

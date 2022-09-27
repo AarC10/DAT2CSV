@@ -2,9 +2,9 @@ package DatConRecs;
 
 import java.nio.ByteBuffer;
 
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class svn_info_65534 extends Record {
 

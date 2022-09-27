@@ -21,10 +21,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.Signal;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.DatConLog;
+import files.Signal;
+import files.ConvertDat.lineType;
 
 public class RecSVOAVOID15_1121 extends Record {
     protected boolean valid = false;

@@ -1,6 +1,6 @@
 package apps;
 
-import Files.*;
+import files.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,10 +8,8 @@ import java.io.IOException;
 public class DATConCLI {
     public static void main(String[] args) throws NotDatFile, IOException, FileEnd {
         File iFile = new File("/home/aaron/Downloads/djiDatData/FLY000.DAT");
-        DatCon datCon = new DatCon();
 
-
-        DatFile datFile = DatFile.createDatFile(iFile.getAbsolutePath(), datCon);
+        DatFile datFile = DatFile.createDatFile(iFile.getAbsolutePath());
         datFile.reset();
         datFile.preAnalyze();
 

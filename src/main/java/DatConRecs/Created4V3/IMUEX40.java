@@ -2,8 +2,8 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.IMUEX;
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
 
 public class IMUEX40 extends IMUEX {
 

@@ -6,15 +6,15 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-import Files.Axis;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.CsvWriter;
-import Files.DatConLog;
-import Files.DatFile;
-import Files.Persist;
-import Files.RecSpec;
-import Files.Signal;
+import files.Axis;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.CsvWriter;
+import files.DatConLog;
+import files.DatFile;
+import files.Persist;
+import files.RecSpec;
+import files.Signal;
 
 public abstract class Record extends RecSpec {
 

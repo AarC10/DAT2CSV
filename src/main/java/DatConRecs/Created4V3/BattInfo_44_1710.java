@@ -2,9 +2,9 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.BattInfo;
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 public class BattInfo_44_1710 extends BattInfo {
     protected boolean valid = false;

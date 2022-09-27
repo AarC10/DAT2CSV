@@ -3,10 +3,10 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.ConvertDat.lineType;
+import files.AxesAndSigs;
+import files.ConvertDat;
+import files.DatConLog;
+import files.ConvertDat.lineType;
 
 public class RecController43_0 extends Record {
     

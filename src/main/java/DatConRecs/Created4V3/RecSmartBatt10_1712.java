@@ -20,10 +20,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.ConvertDat.lineType;
+import files.AxesAndSigs;
+import files.ConvertDat;
+import files.DatConLog;
+import files.ConvertDat.lineType;
 
 public class RecSmartBatt10_1712 extends Record {
 

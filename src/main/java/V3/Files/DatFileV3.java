@@ -9,18 +9,16 @@ import java.util.Vector;
 
 import DatConRecs.RecDef.OpConfig;
 import DatConRecs.RecDef.RecordDef;
-import Files.*;
+import files.*;
 import DatConRecs.Payload;
-import DatConRecs.RecDef.OpConfig;
-import DatConRecs.RecDef.RecordDef;
-import Files.AnalyzeDatResults;
-import Files.Corrupted;
-import Files.DatConLog;
-import Files.FileEnd;
-import Files.NotDatFile;
-import Files.Persist;
+import files.AnalyzeDatResults;
+import files.Corrupted;
+import files.DatConLog;
+import files.FileEnd;
+import files.NotDatFile;
+import files.Persist;
 
-public class DatFileV3 extends Files.DatFile {
+public class DatFileV3 extends files.DatFile {
 
     static boolean debug = true;
 

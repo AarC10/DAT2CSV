@@ -2,11 +2,11 @@ package DatConRecs.FromOtherV3Dats;
 
 import DatConRecs.*;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
 
 public class err_code_112 extends Record {
     protected boolean valid = false;

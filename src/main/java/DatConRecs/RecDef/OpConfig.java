@@ -10,9 +10,9 @@ import java.util.HashSet;
 import java.util.Vector;
 
 import DatConRecs.RecDef.Field.FieldType;
-import Files.DatConLog;
-import Files.Persist;
-import Files.RecSpec;
+import files.DatConLog;
+import files.Persist;
+import files.RecSpec;
 
 public class OpConfig {
 

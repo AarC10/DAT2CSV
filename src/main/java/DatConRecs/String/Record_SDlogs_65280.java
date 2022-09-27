@@ -21,10 +21,10 @@ package DatConRecs.String;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Persist;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Persist;
 
 public class Record_SDlogs_65280 extends Record {
 

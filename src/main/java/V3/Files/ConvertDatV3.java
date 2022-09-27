@@ -26,7 +26,7 @@ import DatConRecs.Dictionary;
 import DatConRecs.Payload;
 import DatConRecs.Record;
 import DatConRecs.RecDef.RecordDef;
-import Files.*;
+import files.*;
 
 public class ConvertDatV3 extends ConvertDat {
 

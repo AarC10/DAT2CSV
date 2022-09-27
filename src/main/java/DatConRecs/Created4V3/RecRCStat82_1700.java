@@ -19,8 +19,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
 
 public class RecRCStat82_1700 extends RCStatus {
 

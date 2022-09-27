@@ -1,9 +1,9 @@
 package DatConRecs;
 
-import Files.AxesAndSigs;
-import Files.ConvertDat;
-import Files.Signal;
-import Files.Units;
+import files.AxesAndSigs;
+import files.ConvertDat;
+import files.Signal;
+import files.Units;
 
 public class BattInfo extends Record {
     protected boolean valid = false;

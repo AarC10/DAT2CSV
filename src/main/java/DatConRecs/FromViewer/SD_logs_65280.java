@@ -1,11 +1,9 @@
 package DatConRecs.FromViewer;
 import DatConRecs.*;
 import DatConRecs.Record;
-import DatConRecs.*;
-import DatConRecs.Record;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 public class SD_logs_65280 extends Record {
  String text = "";
 

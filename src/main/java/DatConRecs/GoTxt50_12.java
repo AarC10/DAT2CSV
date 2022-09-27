@@ -1,11 +1,11 @@
 package DatConRecs;
 
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.RecSpec;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.RecSpec;
+import files.Signal;
+import files.Units;
 
 // Stuff that ends up in the .txt file produced by the Go App
 

@@ -1,10 +1,8 @@
 package apps;
 
-import Files.*;
+import files.*;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;

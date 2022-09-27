@@ -2,7 +2,7 @@ package DatConRecs.String;
 
 import java.util.Vector;
 
-import Files.RecClassSpec;
+import files.RecClassSpec;
 
 public class Dictionary {
 

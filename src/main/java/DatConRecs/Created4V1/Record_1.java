@@ -2,11 +2,11 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.GoTxt50_12;
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
 
 public class Record_1 extends DatConRecs.RecIMU {
     public Record_1(ConvertDat convertDat) {

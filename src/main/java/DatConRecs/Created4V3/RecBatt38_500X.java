@@ -20,9 +20,9 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.RecBatt;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
 
 // 50 HZ
 //length 47

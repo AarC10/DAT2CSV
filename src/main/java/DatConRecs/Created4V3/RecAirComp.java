@@ -4,11 +4,11 @@ package DatConRecs.Created4V3;
 import DatConRecs.Payload;
 import DatConRecs.Record;
 import DatConRecs.RecIMU;
-import Files.ConvertDat;
-import Files.ConvertDat.lineType;
-import Files.DatConLog;
-import Files.Signal;
-import Files.Units;
+import files.ConvertDat;
+import files.ConvertDat.lineType;
+import files.DatConLog;
+import files.Signal;
+import files.Units;
 
 public class RecAirComp extends Record {
     protected boolean valid = false;

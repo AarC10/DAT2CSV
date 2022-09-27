@@ -22,10 +22,9 @@ package DatConRecs.Created4V3;
 // 50 Hz
 
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.DatConLog;
-import Files.Persist;
-import Files.ConvertDat.lineType;
+import files.ConvertDat;
+import files.DatConLog;
+import files.ConvertDat.lineType;
 
 public class RecRCStat18_1700 extends RCStatus {
 

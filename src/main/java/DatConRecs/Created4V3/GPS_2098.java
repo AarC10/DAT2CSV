@@ -3,8 +3,7 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.GpsGroup;
 import DatConRecs.Payload;
-import Files.ConvertDat;
-import Files.RecSpec;
+import files.ConvertDat;
 
 public class GPS_2098 extends GpsGroup {
 
