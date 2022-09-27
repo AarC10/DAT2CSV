@@ -57,7 +57,7 @@ public class DatFile {
 
     protected FileInputStream inputStream = null;
 
-    protected FileChannel _channel = null;
+    protected FileChannel channel = null;
 
     protected long fileLength = 0;
 
@@ -178,9 +178,9 @@ public class DatFile {
         results = new files.AnalyzeDatResults();
         fileLength = file.length();
         inputStream = new FileInputStream(file);
-        _channel = inputStream.getChannel();
+        channel = inputStream.getChannel();
         try {
-            memory = _channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
+            memory = channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -213,7 +213,7 @@ public class DatFile {
         filePos = filePos + num;
         if (filePos > fileLength)
             throw (new IOException());
-        _channel.position(filePos);
+        channel.position(filePos);
     }
 
     public String toString() {
@@ -224,7 +224,7 @@ public class DatFile {
         filePos = pos;
         if (filePos > fileLength)
             throw (new files.FileEnd());
-        _channel.position(pos);
+        channel.position(pos);
     }
 
     public long getPos() {
@@ -527,8 +527,8 @@ public class DatFile {
         results = new AnalyzeDatResults();
         if (inputStream == null) {
             inputStream = new FileInputStream(file);
-            _channel = inputStream.getChannel();
-            memory = _channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
+            channel = inputStream.getChannel();
+            memory = channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
             memory.order(ByteOrder.LITTLE_ENDIAN);
         }
         startOfRecord = startOfRecords;
