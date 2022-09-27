@@ -235,23 +235,11 @@ public class DatFileV1 extends DatFile {
         System.runFinalization();
     }
 
-    public void reset() throws IOException, FileEnd {
+    public void reset() throws IOException {
         tickGroups[0].reset();
         tickGroups[1].reset();
         tgIndex = 1;
         super.reset();
-        //        numCorrupted = 0;
-        //        numRecs = 0;
-        //        Corrupted.reset();
-        //        results = new AnalyzeDatResults();
-        //        if (inputStream == null) {
-        //            inputStream = new FileInputStream(file);
-        //            _channel = inputStream.getChannel();
-        //            memory = _channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
-        //            memory.order(ByteOrder.LITTLE_ENDIAN);
-        //        }
-        //        startOfRecord = startOfRecords;
-        //        setPosition(startOfRecord);
     }
 
     public AnalyzeDatResults getResults() {

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class DATConCLI {
     public static void main(String[] args) throws NotDatFile, IOException, FileEnd {
-        File iFile = new File("/home/aaron/Downloads/djiDatData/FLY019.DAT");
+        File iFile = new File("/home/aaron/Downloads/djiDatData/FLY000.DAT");
         DatCon datCon = new DatCon();
 
 
@@ -16,7 +16,7 @@ public class DATConCLI {
         datFile.preAnalyze();
 
         ConvertDat convertDat = datFile.createConVertDat();
-        convertDat.csvWriter = new CsvWriter("/home/aaron/Downloads/djiDatData/FLY019.csv");
+        convertDat.csvWriter = new CsvWriter("/home/aaron/Downloads/djiDatData/FLY00.csv");
         convertDat.createRecordParsers();
 
         datFile.reset();

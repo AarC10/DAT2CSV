@@ -31,12 +31,15 @@ import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
+import java.util.Vector;
 
+import DatConRecs.Payload;
+import DatConRecs.RecDef.OpConfig;
+import DatConRecs.RecDef.RecordDef;
 import DatConRecs.Record;
 import Files.Corrupted.Type;
 import Files.DatHeader.AcType;
 import V1.Files.DatFileV1;
-import V3.Files.DatFileV3;
 import apps.DatCon;
 
 public class DatFile {
@@ -91,8 +94,6 @@ public class DatFile {
 
     public AcType acType = AcType.UNKNOWN;
 
-    protected long lastRecordTickNo = 0;
-
     public static DecimalFormat timeFormat = new DecimalFormat("###.000",
             new DecimalFormatSymbols(Locale.US));
 
@@ -110,6 +111,14 @@ public class DatFile {
 
     public HashMap<Integer, Files.RecSpec> getRecsInDat() {
         return recsInDat;
+    }
+
+    static boolean debug = true;
+
+    private Vector<RecordDef> recordDefs = null;
+
+    public Vector<RecordDef> getRecordDefs() {
+        return recordDefs;
     }
 
     public void addRecInDat(int type, int length) {
@@ -130,7 +139,6 @@ public class DatFile {
     public static DatFile createDatFile(String datFileName)
             throws Files.NotDatFile, IOException {
         byte arra[] = new byte[256];
-        //if (true )return (new DatFileV3(datFileName));
         Files.DatConLog.Log(" ");
         Files.DatConLog.Log("createDatFile " + datFileName);
         FileInputStream bfr = new FileInputStream(new File(datFileName));
@@ -140,7 +148,7 @@ public class DatFile {
         if (!(headerString.substring(16, 21).equals("BUILD"))) {
             if (Files.Persist.invalidStructOK) {
                 Files.DatConLog.Log("createDatFile invalid header - proceeding");
-                datFile = new DatFileV3(datFileName);
+                datFile = new DatFile(datFileName);
                 datFile.setStartOfRecords(256);
                 return datFile;
             }
@@ -150,7 +158,7 @@ public class DatFile {
             throw new Files.NotDatFile();
         }
         if ((new String(arra, 242, 10).equals("DJI_LOG_V3"))) {
-            datFile = new DatFileV3(datFileName);
+            datFile = new DatFile(datFileName);
             datFile.setStartOfRecords(256);
         } else {
             datFile = new DatFileV1(datFileName);
@@ -199,7 +207,7 @@ public class DatFile {
                         boolean moreThanOnePopup = Files.DatConPopups
                                 .moreThanOne(DatCon.frame);
                         if (moreThanOnePopup) {
-                            return new DatFileV3(result.getFile());
+                            return new DatFile(result.getFile());
                         } else {
                             return null;
                         }
@@ -209,7 +217,7 @@ public class DatFile {
                         return null;
                     }
                     Files.DatConLog.Log("DJIAssistantFile.extractFirst:one");
-                    return new DatFileV3(result.getFile());
+                    return new DatFile(result.getFile());
                 } finally {
                     datCon.goButton.setBackground(bgColor);
                     datCon.goButton.setForeground(fgColor);
@@ -241,10 +249,6 @@ public class DatFile {
     public DatFile() {
     }
 
-    public Files.ConvertDat createConVertDat() {
-        return (new Files.ConvertDat(this));
-    }
-
     public void close() {
         if (inputStream != null) {
             try {
@@ -260,23 +264,6 @@ public class DatFile {
         memory = null;
         System.gc();
         System.runFinalization();
-    }
-
-    public void reset() throws IOException, Files.FileEnd {
-        // tickGroups[0].reset();
-        // tickGroups[1].reset();
-        // tgIndex = 1;
-        numCorrupted = 0;
-        results = new Files.AnalyzeDatResults();
-        if (inputStream == null) {
-            inputStream = new FileInputStream(file);
-            _channel = inputStream.getChannel();
-            memory = _channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
-            memory.order(ByteOrder.LITTLE_ENDIAN);
-        }
-        startOfRecord = startOfRecords;
-        setPosition(startOfRecord);
-        Record.totalNumRecExceptions = 0;
     }
 
     public void skipOver(int num) throws IOException {
@@ -417,58 +404,6 @@ public class DatFile {
         return ((long) (clockRate * time.doubleValue())) + offset;
     }
 
-    public void preAnalyze() throws Files.NotDatFile {
-        switch (acType) {
-        case I1:
-            numBattCells = 6;
-            break;
-        case I2:
-            numBattCells = 6;
-            break;
-        case M100:
-            numBattCells = 6;
-            break;
-        case M600:
-            numBattCells = 6;
-            break;
-        case M200:
-            numBattCells = 6;
-            break;
-        case MavicPro:
-            numBattCells = 3;
-            break;
-        case MavicAir:
-            numBattCells = 3;
-            break;
-        case P3AP:
-            numBattCells = 4;
-            break;
-        case P3S:
-            numBattCells = 4;
-            break;
-        case P4:
-            numBattCells = 4;
-            break;
-        case P4A:
-            numBattCells = 4;
-            break;
-        case P4P:
-            numBattCells = 4;
-            break;
-        case SPARK:
-            numBattCells = 3;
-            break;
-        case UNKNOWN:
-            numBattCells = 4;
-            Files.DatConLog.Log("Assuming 4 cellls per battery");
-            break;
-        default:
-            numBattCells = 4;
-            Files.DatConLog.Log("Assuming 4 cellls per battery");
-            break;
-        }
-    }
-
     public int getNumBattCells() {
         return numBattCells;
     }
@@ -507,9 +442,6 @@ public class DatFile {
         }
     }
 
-    public boolean isTablet() {
-        return false;
-    }
 
     public AcType getACType() {
         return acType;
@@ -519,7 +451,7 @@ public class DatFile {
         return (((double) numCorrupted) / ((double) numRecs)) / 100.0;
     }
 
-    static short[] arr_2A103 = new short[] { 0x00, 0x5E, 0xBC, 0xE2, 0x61, 0x3F,
+    static short[] arr_2A103 = new short[]{0x00, 0x5E, 0xBC, 0xE2, 0x61, 0x3F,
             0xDD, 0x83, 0xC2, 0x9C, 0x7E, 0x20, 0xA3, 0xFD, 0x1F, 0x41, 0x9D,
             0xC3, 0x21, 0x7F, 0xFC, 0xA2, 0x40, 0x1E, 0x5F, 0x01, 0xE3, 0xBD,
             0x3E, 0x60, 0x82, 0xDC, 0x23, 0x7D, 0x9F, 0xC1, 0x42, 0x1C, 0xFE,
@@ -542,10 +474,10 @@ public class DatFile {
             0xD4, 0x95, 0xCB, 0x29, 0x77, 0xF4, 0xAA, 0x48, 0x16, 0xE9, 0xB7,
             0x55, 0x0B, 0x88, 0xD6, 0x34, 0x6A, 0x2B, 0x75, 0x97, 0xC9, 0x4A,
             0x14, 0xF6, 0xA8, 0x74, 0x2A, 0xC8, 0x96, 0x15, 0x4B, 0xA9, 0xF7,
-            0xB6, 0xE8, 0x0A, 0x54, 0xD7, 0x89, 0x6B, 0x35 };
+            0xB6, 0xE8, 0x0A, 0x54, 0xD7, 0x89, 0x6B, 0x35};
 
     public short calc_pkt55_hdr_checksum(byte seed, byte[] packet,
-            int plength) {
+                                         int plength) {
         short chksum = seed;
         for (int i = 0; i < plength; i++) {
             chksum = arr_2A103[((packet[i] ^ chksum) & 0xFF)];
@@ -553,7 +485,7 @@ public class DatFile {
         return chksum;
     }
 
-    static int[] crc = new int[] { 0x0000, 0x1189, 0x2312, 0x329b, 0x4624,
+    static int[] crc = new int[]{0x0000, 0x1189, 0x2312, 0x329b, 0x4624,
             0x57ad, 0x6536, 0x74bf, 0x8c48, 0x9dc1, 0xaf5a, 0xbed3, 0xca6c,
             0xdbe5, 0xe97e, 0xf8f7, 0x1081, 0x0108, 0x3393, 0x221a, 0x56a5,
             0x472c, 0x75b7, 0x643e, 0x9cc9, 0x8d40, 0xbfdb, 0xae52, 0xdaed,
@@ -585,10 +517,10 @@ public class DatFile {
             0xb0a3, 0x8238, 0x93b1, 0x6b46, 0x7acf, 0x4854, 0x59dd, 0x2d62,
             0x3ceb, 0x0e70, 0x1ff9, 0xf78f, 0xe606, 0xd49d, 0xc514, 0xb1ab,
             0xa022, 0x92b9, 0x8330, 0x7bc7, 0x6a4e, 0x58d5, 0x495c, 0x3de3,
-            0x2c6a, 0x1ef1, 0x0f78 };
+            0x2c6a, 0x1ef1, 0x0f78};
 
     public int calc_pkt55_checksum(short[] packet, byte[] bPacket,
-            short plength) {
+                                   short plength) {
         int v = 0x3692; //  # P3
         //        int vx = 0x3692; //  # P3
         for (int i = 0; i < plength; i++) {
@@ -611,7 +543,7 @@ public class DatFile {
     }
 
     protected int calc_checksum(MappedByteBuffer memory, long start,
-            short plength) {
+                                short plength) {
         int v = 0x3692; //  # P3
         for (int i = 0; i < plength; i++) {
             int vv = v >> 8;
@@ -632,16 +564,361 @@ public class DatFile {
 
     public double getErrorRatio(Type _type) {
         switch (_type) {
-        case CRC:
-            return (double) Files.Corrupted.getNum(Type.CRC)
-                    / (double) numRecs;
-        case Other:
-            return (double) Files.Corrupted.getNum(Type.Other)
-                    / (double) numRecs;
-        default:
-            return 0.0;
+            case CRC:
+                return (double) Files.Corrupted.getNum(Type.CRC)
+                        / (double) numRecs;
+            case Other:
+                return (double) Files.Corrupted.getNum(Type.Other)
+                        / (double) numRecs;
+            default:
+                return 0.0;
 
         }
     }
 
+    public ConvertDat createConVertDat() {
+        return (new V3.Files.ConvertDatV3(this));
+    }
+
+    public void reset() throws IOException {
+        results = new AnalyzeDatResults();
+        if (inputStream == null) {
+            inputStream = new FileInputStream(file);
+            _channel = inputStream.getChannel();
+            memory = _channel.map(FileChannel.MapMode.READ_ONLY, 0, fileLength);
+            memory.order(ByteOrder.LITTLE_ENDIAN);
+        }
+        startOfRecord = startOfRecords;
+        datRecTickNo = -1;
+        lastRecordTickNo = 0;
+        lastActualTickNo = 0;
+        presentOffset = 0;
+        inRollover = false;
+        numRolloverRecs = 0;
+        numRecs = 0;
+        numCorrupted = 0;
+        Corrupted.reset();
+        try {
+            setPosition(startOfRecord);
+        } catch (FileEnd | IOException e) {
+            throw new RuntimeException("reset:setPosition failed");
+        }
+    }
+
+    public int _payloadLength = 0;
+
+    public long _start;
+
+    static long datRecTickNo = -1;
+
+    long lastRecordTickNo = 0;
+
+    long presentOffset = 0;
+
+    long prevOffset = 0;
+
+    long lastActualTickNo = 0;
+
+    long upperTickLim = Long.parseLong("4292717296");
+
+    long tickNoBoundary = Long.parseLong("4294967296");
+
+    boolean inRollover = false;
+
+    int numRolloverRecs = 0;
+
+    public int lengthOfRecord = 0;
+
+    long xxxx = Long.parseLong("14156619143");
+
+    // filter - filter recId 208
+    // translate - translate into 255 recs
+    // sequence - remove recs out of sequence
+    // eofProcessing -
+    public boolean getNextDatRec(boolean filter, boolean translate,
+            boolean sequence, boolean eofProcessing) throws Corrupted, FileEnd {
+        boolean done = false;
+        long nextStartOfRecord = 0;
+        long actualTickNo = 0;
+        long offset = 0;
+        while (!done) {
+            try {
+                setPosition(startOfRecord);
+                // if positioned at a 0x00 then try to skip over the 0x00s , this from Spark .DAT
+                if (getByte(startOfRecord) == 0x00) {
+                    while (getByte(startOfRecord) == 0x00) {
+                        startOfRecord++;
+                        if (startOfRecord > fileLength)
+                            throw (new FileEnd());
+                    }
+                }
+                // if not positioned at next 0x55, then its corrupted
+                if (getByte(startOfRecord) != 0x55) {
+                    throw (new Corrupted(actualTickNo, startOfRecord));
+                }
+                lengthOfRecord = (0xFF & getByte(startOfRecord + 1));
+                byte always0 = (byte) getByte(startOfRecord + 2);
+                nextStartOfRecord = startOfRecord + lengthOfRecord;
+                if (nextStartOfRecord > fileLength)
+                    throw (new FileEnd());
+                //short hdrChksum = (short) (0xFF & getByte(startOfRecord + 3));
+                int type = getUnsignedShort(startOfRecord + 4);
+                long thisRecordTickNo = getUnsignedInt(startOfRecord + 6);
+                int calcChksum = calc_checksum(memory, startOfRecord,
+                        (short) (lengthOfRecord - 2));
+                int chksum = getUnsignedShort(
+                        startOfRecord + lengthOfRecord - 2);
+                if (calcChksum != chksum) {
+                    //                    if (Persist.EXPERIMENTAL_DEV) {
+                    //                        System.out.println("CCRC/CRC " + " Pos " + getPos()
+                    //                                + " tick# " + thisRecordTickNo + " Ratio "
+                    //                                + (double) thisRecordTickNo
+                    //                                        / (double) getPos());
+                    //                        int x = 1;
+                    //                    }
+                    throw (new Corrupted(thisRecordTickNo, startOfRecord + 1,
+                            Corrupted.Type.CRC));
+                }
+                //                if (Persist.EXPERIMENTAL_DEV) {
+                //                    System.out.println(" tick# " + thisRecordTickNo + " Pos "
+                //                            + getPos() + " Ratio "
+                //                            + (double) thisRecordTickNo / (double) getPos());
+                //                }
+                numRecs++;
+                if (always0 != 0) {
+                    throw (new Corrupted(thisRecordTickNo, startOfRecord + 1));
+                }
+
+                if (!inRollover && lastRecordTickNo > upperTickLim
+                        && thisRecordTickNo < 2225000) {
+                    prevOffset = presentOffset;
+                    presentOffset += tickNoBoundary;
+                    inRollover = true;
+                    numRolloverRecs = 0;
+                }
+                offset = presentOffset;
+                if (inRollover) {
+                    numRolloverRecs++;
+                    if (thisRecordTickNo > upperTickLim) {
+                        offset = prevOffset;
+                    }
+                    if (numRolloverRecs > 100) {
+                        inRollover = false;
+                        numRolloverRecs = 0;
+                    }
+                }
+                actualTickNo = thisRecordTickNo + offset;
+                lastRecordTickNo = thisRecordTickNo;
+
+                // look for large delta in tickNo
+                if (Math.abs(lastActualTickNo - actualTickNo) > 22000000) {
+                    if (eofProcessing && !isTablet()
+                            && (fileLength - nextStartOfRecord < 40000)) { // the end of the file is corrupted
+                        throw (new FileEnd());
+                    }
+                    // just this record is corrupted
+                    lastActualTickNo = actualTickNo;
+                    throw (new Corrupted(thisRecordTickNo, startOfRecord + 1));
+                }
+
+                if (lengthOfRecord == 0) {
+                    throw (new Corrupted(actualTickNo, startOfRecord + 1));
+                }
+
+                // if nextStartOfRecord not positioned at next 0x55, then this
+                // is corrupted, but if it's 0x00 let it be handled by the
+                // processing of the next record
+                if (getByte(nextStartOfRecord) != 0x55
+                        && getByte(nextStartOfRecord) != 0x00) {
+                    throw (new Corrupted(actualTickNo, nextStartOfRecord));
+                }
+                if (!sequence || (actualTickNo > lastActualTickNo)) {
+                    lastActualTickNo = actualTickNo;
+                    _type = type;
+                    _payloadLength = lengthOfRecord - headerLength
+                            - chksumLength;
+                    _tickNo = actualTickNo;
+                    _start = startOfRecord + headerLength;
+                    startOfRecord = nextStartOfRecord;
+                    return true;
+                }
+
+                startOfRecord = nextStartOfRecord;
+            } catch (Corrupted c) {
+                //                if (Persist.EXPERIMENTAL_DEV) {
+                //                    System.out.println("Corrupted " + getPos());
+                //                }
+                if (getPos() > fileLength - 600) {
+                    throw (new FileEnd());
+                }
+                numCorrupted++;
+                //                                                System.out.println("CR :" + numCorrupted + " "
+                //                                                        + (float) numCorrupted / (float) numRecs);
+                if ((numRecs > 1000)
+                        && ((float) numCorrupted / (float) numRecs) > 0.02) {
+                    throw (new Corrupted(actualTickNo, startOfRecord));
+                }
+                try {
+                    setPosition(c.filePos);
+                    byte fiftyfive = readByte();
+                    while (fiftyfive != 0X55) {
+                        if (getPos() > fileLength - 1000) {
+                            throw (new FileEnd());
+                        }
+                        fiftyfive = readByte();
+                    }
+                } catch (FileEnd f) {
+                    throw (f);
+                } catch (IOException e) {
+                    throw (new Corrupted(actualTickNo, nextStartOfRecord));
+                }
+                // set position right before the next 0x55
+                startOfRecord = getPos() - 1;
+            } catch (FileEnd f) {
+                throw (f);
+            } catch (Exception e) {
+                throw (new Corrupted(actualTickNo, startOfRecord));
+            }
+        }
+        return false;
+    }
+
+    Vector<OpConfig.Line> opLines = new Vector<OpConfig.Line>();
+
+    public void preAnalyze() throws NotDatFile {
+        switch (acType) {
+            case I1:
+                numBattCells = 6;
+                break;
+            case I2:
+                numBattCells = 6;
+                break;
+            case M100:
+                numBattCells = 6;
+                break;
+            case M600:
+                numBattCells = 6;
+                break;
+            case M200:
+                numBattCells = 6;
+                break;
+            case MavicPro:
+                numBattCells = 3;
+                break;
+            case MavicAir:
+                numBattCells = 3;
+                break;
+            case P3AP:
+                numBattCells = 4;
+                break;
+            case P3S:
+                numBattCells = 4;
+                break;
+            case P4:
+                numBattCells = 4;
+                break;
+            case P4A:
+                numBattCells = 4;
+                break;
+            case P4P:
+                numBattCells = 4;
+                break;
+            case SPARK:
+                numBattCells = 3;
+                break;
+            case UNKNOWN:
+                numBattCells = 4;
+                Files.DatConLog.Log("Assuming 4 cellls per battery");
+                break;
+            default:
+                numBattCells = 4;
+                Files.DatConLog.Log("Assuming 4 cellls per battery");
+                break;
+        }
+
+        try {
+            reset();
+            clearRecsInDat();
+            long tickNo = 0;
+            while (true) {
+                if (getPos() > fileLength - 8) {
+                    throw (new FileEnd());
+                }
+                //                getNextDatRec(true, true, true, true);
+                getNextDatRec(true, true, true, false);
+                if (_type == 0XFFFD) {
+                    Payload xorBB = new Payload(this, _start, _payloadLength,
+                            _type, _tickNo);
+                    String payloadString = xorBB.getAsString();
+                    String lines[] = payloadString.split("\\n");
+                    for (int i = 0; i < lines.length; i++) {
+                        opLines.add(new OpConfig.Line(lines[i]));
+                    }
+                }
+                addRecInDat(_type, _payloadLength);
+                tickNo = _tickNo;
+                if (lowestTickNo < 0) {
+                    lowestTickNo = tickNo;
+                }
+                if (tickNo > highestTickNo) {
+                    highestTickNo = tickNo;
+                }
+                if (_type == 0x8000) {
+                    Payload xorBB = new Payload(this, _start, _payloadLength,
+                            _type, tickNo);
+                    String payloadString = xorBB.getString();
+                    if (firstMotorStartTick == 0 && payloadString
+                            .indexOf("[L-FMU/MOTOR]Start.") > -1) {
+                        firstMotorStartTick = tickNo;
+                    }
+                    if (payloadString.indexOf("[L-FMU/MOTOR] Stop.") > -1) {
+                        lastMotorStopTick = tickNo;
+                    }
+                }
+
+                if (gpsLockTick == -1 && _type == 12) {
+                    Payload payload = new Payload(this, _start, _payloadLength,
+                            _type, tickNo);
+                    double longitude = Math.toDegrees(payload.getDouble(0));
+                    double latitude = Math.toDegrees(payload.getDouble(8));
+                    if (longitude != 0.0 && latitude != 0.0
+                            && Math.abs(longitude) > 0.0175
+                            && Math.abs(latitude) > 0.0175) {
+                        gpsLockTick = tickNo;
+                    }
+                }
+                if (flightStartTick == -1 && _type == 12) {
+                    Payload payload = new Payload(this, _start, _payloadLength,
+                            _type, tickNo);
+                    if (payload.getShort(42) > 0) {
+                        flightStartTick = tickNo - (long) (0.6f
+                                * ((float) (payload.getShort(42) * 100)));
+                    }
+                }
+            }
+        } catch (FileEnd ex) {
+        } catch (Corrupted ex) {
+        } catch (IOException e) {
+        } finally {
+            if (Persist.EXPERIMENTAL_DEV) {
+                printTypes();
+            }
+            try {
+                OpConfig opConfig = new OpConfig(opLines);
+                recordDefs = opConfig.getRecords();
+            } catch (Exception e) {
+                if (Persist.EXPERIMENTAL_DEV) {
+                    e.printStackTrace();
+                } else {
+                    DatConLog.Exception(e, "Can't create recDefs");
+                }
+            }
+            close();
+        }
+    }
+
+    public boolean isTablet() {
+        // for now just base this on existence of GoTxt (type == 12)
+        return (getRecId(12) == null);
+    }
 }

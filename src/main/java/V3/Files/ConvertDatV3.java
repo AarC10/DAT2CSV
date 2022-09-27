@@ -26,24 +26,18 @@ import DatConRecs.Dictionary;
 import DatConRecs.Payload;
 import DatConRecs.Record;
 import DatConRecs.RecDef.RecordDef;
-import Files.AnalyzeDatResults;
-import Files.ConvertDat;
-import Files.Corrupted;
-import Files.DatConLog;
-import Files.FileEnd;
-import Files.Persist;
-import Files.RecSpec;
+import Files.*;
 
 public class ConvertDatV3 extends ConvertDat {
 
-    public DatFileV3 _datFile = null;
+    public DatFile _datFile = null;
 
     @Override
-    public DatFileV3 getDatFile() {
+    public DatFile getDatFile() {
         return _datFile;
     }
 
-    public ConvertDatV3(DatFileV3 datFile) {
+    public ConvertDatV3(DatFile datFile) {
         super(datFile);
         _datFile = datFile;
     }

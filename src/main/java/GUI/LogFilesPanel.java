@@ -26,7 +26,6 @@ import Files.DatConLog;
 import Files.DatFile;
 import Files.FileBeingUsed;
 import Files.Persist;
-import V3.Files.DatFileV3;
 import apps.DatCon;
 
 @SuppressWarnings("serial")
@@ -154,7 +153,7 @@ public class LogFilesPanel extends JPanel
     }
 
     public void updateAfterPreAnalyze(DatFile datFile) {
-        recDefsFileButton.setEnabled(datFile instanceof DatFileV3);
+        recDefsFileButton.setEnabled(datFile != null);
     }
 
     public void reset() {

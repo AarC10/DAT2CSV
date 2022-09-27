@@ -15,7 +15,6 @@ import Files.DatFile;
 import Files.Persist;
 import Files.RecSpec;
 import Files.Signal;
-import V3.Files.DatFileV3;
 
 public abstract class Record extends RecSpec {
 
@@ -53,7 +52,7 @@ public abstract class Record extends RecSpec {
         this.csvWriter = convertDat.csvWriter;
     }
 
-    public Record(DatFileV3 datFile) {
+    public Record(DatFile datFile) {
         this._datFile = datFile;
     }
 
