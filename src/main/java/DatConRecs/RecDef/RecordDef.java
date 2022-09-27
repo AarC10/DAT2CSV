@@ -82,30 +82,30 @@ public class RecordDef extends Record {
             for (int fieldNum = 0; fieldNum < fields.size(); fieldNum++) {
                 Field field = fields.get(fieldNum);
                 switch (field.getType()) {
-                    case duble:
+                    case DOUBLE:
                         values[fieldNum] = payload.getDouble(offset);
                         break;
-                    case expr:
+                    case EXPR:
                         break;
-                    case fp32:
+                    case FP_32:
                         values[fieldNum] = payload.getFloat(offset);
                         break;
-                    case int16_t:
+                    case INT_16_T:
                         values[fieldNum] = payload.getShort(offset);
                         break;
-                    case int32_t:
+                    case INT_32_T:
                         values[fieldNum] = payload.getInt(offset);
                         break;
-                    case int8_t:
+                    case INT_8_T:
                         values[fieldNum] = payload.getByte(offset);
                         break;
-                    case uint16_t:
+                    case UINT_16_T:
                         values[fieldNum] = payload.getUnsignedShort(offset);
                         break;
-                    case uint32_t:
+                    case UINT_32_T:
                         values[fieldNum] = payload.getUnsignedInt(offset);
                         break;
-                    case uint8_t:
+                    case UINT_8_T:
                         values[fieldNum] = payload.getUnsignedByte(offset);
                         break;
                     default:
@@ -125,15 +125,15 @@ public class RecordDef extends Record {
             for (int fieldNum = 0; fieldNum < fields.size(); fieldNum++) {
                 Field field = fields.get(fieldNum);
                 switch (field.getType()) {
-                    case duble:
+                    case DOUBLE:
                         printCSVValue(values[fieldNum], doubleSignal, field.getName(), lineT, valid);
                         break;
-                    case expr:
+                    case EXPR:
                         break;
-                    case fp32:
+                    case FP_32:
                         printCSVValue(values[fieldNum], floatSignal, field.getName(), lineT, valid);
                         break;
-                    case uint8_t, uint32_t, uint16_t, int8_t, int16_t, int32_t:
+                    case UINT_8_T, UINT_32_T, UINT_16_T, INT_8_T, INT_16_T, INT_32_T:
                         printCSVValue(values[fieldNum], intSignal, field.getName(), lineT, valid);
                         break;
                     default:

@@ -143,7 +143,7 @@ public class OpConfig {
                         } else {
                             throw new ParseException(line.toString(), lineNum);
                         }
-                        if (fieldType == FieldType.expr) {
+                        if (fieldType == FieldType.EXPR) {
                             break;
                         }
                         if (numTokens > 2 && isNumber(tokens.get(tokens.size() - 1))) {
