@@ -8,35 +8,36 @@ import files.DatConLog;
 
 public class AirCraftCondition16_1001 extends AirCraftCondition {
 
-    protected float UP_acc_t = (float) 0;
+    protected double UP_acc_t = (float) 0;
 
-    protected float UP_TF_t = (float) 0;
+    protected double UP_TF_t = (float) 0;
 
     public AirCraftCondition16_1001(ConvertDat convertDat) {
         super(convertDat, 1001, 16);
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             valid = true;
 
-            intFlightState = _payload.getUnsignedByte(0);
-            flightState = _payload.getUnsignedByte(1);
-            lastFlightState = _payload.getUnsignedByte(2);
-            nearGndState = _payload.getUnsignedByte(3);
-            UP_state = _payload.getUnsignedByte(4);
-            UP_acc_t = _payload.getFloat(5);
-            UP_TF_t = _payload.getFloat(9);
-            landState = _payload.getUnsignedByte(13);
-            safe_fltr = _payload.getShort(14);
+            intFlightState = payload.getUnsignedByte(0);
+            flightState = payload.getUnsignedByte(1);
+            lastFlightState = payload.getUnsignedByte(2);
+            nearGndState = payload.getUnsignedByte(3);
+            UP_state = payload.getUnsignedByte(4);
+            UP_acc_t = payload.getFloat(5);
+            UP_TF_t = payload.getFloat(9);
+            landState = payload.getUnsignedByte(13);
+            safe_fltr = payload.getShort(14);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);
         }
     }
 
+    @Override
     public void printCols(lineType lineT) {
         super.printCols(lineT);
         try {

@@ -11,17 +11,17 @@ public class AirCraftCondition8_1001 extends AirCraftCondition {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             valid = true;
-            intFlightState = _payload.getUnsignedByte(0);
-            flightState = _payload.getUnsignedByte(1);
-            lastFlightState = _payload.getUnsignedByte(2);
-            nearGndState = _payload.getUnsignedByte(3);
-            UP_state = _payload.getUnsignedByte(4);
-            landState = _payload.getUnsignedByte(5);
-            safe_fltr = _payload.getShort(6);
+            intFlightState = payload.getUnsignedByte(0);
+            flightState = payload.getUnsignedByte(1);
+            lastFlightState = payload.getUnsignedByte(2);
+            nearGndState = payload.getUnsignedByte(3);
+            UP_state = payload.getUnsignedByte(4);
+            landState = payload.getUnsignedByte(5);
+            safe_fltr = payload.getShort(6);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);
