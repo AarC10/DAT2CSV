@@ -9,51 +9,51 @@ import files.ConvertDat.lineType;
 
 public class RecBatt extends Record {
 
-    public float crrnt = (float) 0.0;
+    public double crrnt = (float) 0.0;
 
     protected short batteryPercent = 0;
 
-    protected float fcc = 0.0f;
+    protected double fcc = 0.0f;
 
-    protected float remcap = 0.0f;
+    protected double remcap = 0.0f;
 
-    public float volt[];
+    public double volt[];
 
     protected int numCells = 0;
 
-    public float temp = (float) 0.0;;
+    public double temp = (float) 0.0;;
 
-    public float totalVolts = (float) 0.0;
+    public double totalVolts = (float) 0.0;
 
-    public float maxVolts = (float) 0.0;
+    public double maxVolts = (float) 0.0;
 
-    public float minVolts = (float) 0.0;
+    public double minVolts = (float) 0.0;
 
-    public float sumOfVolts = (float) 0.0;
+    public double sumOfVolts = (float) 0.0;
 
-    public float avgVolts = (float) 0.0;
+    public double avgVolts = (float) 0.0;
 
     protected long sumOfCurrents = 0;
 
     protected long numSamples = 0;
 
-    public float voltDiff = (float) 0.0;
+    public double voltDiff = (float) 0.0;
 
-    public float maxCurrent = (float) 0.0;
+    public double maxCurrent = (float) 0.0;
 
-    public float minCurrent = (float) 0.0;
+    public double minCurrent = (float) 0.0;
 
-    public float avgCurrent = (float) 0.0;
+    public double avgCurrent = (float) 0.0;
 
-    public float watts = (float) 0.0;
+    public double watts = (float) 0.0;
 
-    public float maxWatts = (float) 0.0;
+    public double maxWatts = (float) 0.0;
 
-    public float minWatts = (float) 0.0;
+    public double minWatts = (float) 0.0;
 
-    protected float sumOfWatts = (float) 0.0;
+    protected double sumOfWatts = (float) 0.0;
 
-    public float avgWatts = (float) 0.0;
+    public double avgWatts = (float) 0.0;
 
     public boolean valid = false;
 
@@ -78,7 +78,7 @@ public class RecBatt extends Record {
     public RecBatt(ConvertDat convertDat, int id, int length, int index) {
         super(convertDat, id, length);
         numCells = convertDat.getDatFile().getNumBattCells();
-        volt = new float[numCells];
+        volt = new double[numCells];
         for (int i = 0; i < numCells; i++) {
             volt[i] = 0.0f;
         }
@@ -119,8 +119,8 @@ public class RecBatt extends Record {
         minWatts = Float.MAX_VALUE;
     }
 
-    protected float maxVolt(float... floatVolts) {
-        float retv = -Float.MAX_VALUE;
+    protected double maxVolt(float... floatVolts) {
+        double retv = -Float.MAX_VALUE;
         for (float volts : floatVolts) {
             if (volts > retv) {
                 retv = volts;
@@ -129,8 +129,8 @@ public class RecBatt extends Record {
         return retv;
     }
 
-    protected float minVolt(float... floatVolts) {
-        float retv = Float.MAX_VALUE;
+    protected double minVolt(float... floatVolts) {
+        double retv = Float.MAX_VALUE;
         for (float volts : floatVolts) {
             if (volts < retv) {
                 retv = volts;
@@ -139,8 +139,8 @@ public class RecBatt extends Record {
         return retv;
     }
 
-    protected float minVolts(float[] volts) {
-        float min = Float.MAX_VALUE;
+    protected double minVolts(float[] volts) {
+        double min = Float.MAX_VALUE;
         for (int i = 0; i < volts.length; i++) {
             if (volts[i] < min)
                 min = volts[i];
@@ -148,8 +148,8 @@ public class RecBatt extends Record {
         return min;
     }
 
-    protected float maxVolts(float[] volts) {
-        float max = Float.MIN_VALUE;
+    protected double maxVolts(float[] volts) {
+        double max = Float.MIN_VALUE;
         for (int i = 0; i < volts.length; i++) {
             if (volts[i] > max)
                 max = volts[i];

@@ -7,86 +7,74 @@ import files.ConvertDat.lineType;
 import files.DatConLog;
 
 public class AirCraftCondition39_70 extends AirCraftCondition {
-    //    protected boolean valid = false;
 
-    protected short craft_flight_mode = (short) 0;
+    protected short craftFlightMode = (short) 0;
 
-    //protected short near_gnd_state = (short) 0;
 
-    protected float launch_acc_duration = (float) 0;
+    protected float launchAccDuration = (float) 0;
 
-    protected float launch_delta_v = (float) 0;
+    protected float launchDeltaV = (float) 0;
 
-    protected short launch_state = (short) 0;
+    protected short launchState = (short) 0;
 
-    protected float thrust_proj_gnd = (float) 0;
+    protected float thrustProjGnd = (float) 0;
 
-    protected float thrust_proj_gnd_compen = (float) 0;
+    protected float thrustProjGndCompen = (float) 0;
 
-    protected float thrust_compensator = (float) 0;
+    protected float thrustCompensator = (float) 0;
 
-    protected float hover_thrust = (float) 0;
+    protected float hoverThrust = (float) 0;
 
-    protected float dynamic_thrust = (float) 0;
+    protected float dynamicThrust = (float) 0;
 
-    protected float cos_safe_tilt = (float) 0;
+    protected float cosSafeTilt = (float) 0;
 
-    protected float safe_tilt = (float) 0;
+    protected float safeTilt = (float) 0;
 
     public AirCraftCondition39_70(ConvertDat convertDat) {
         super(convertDat, 70, 39);
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             valid = true;
 
-            craft_flight_mode = _payload.getUnsignedByte(0);
-            nearGndState = _payload.getUnsignedByte(1);
-            launch_acc_duration = _payload.getFloat(2);
-            launch_delta_v = _payload.getFloat(6);
-            launch_state = _payload.getUnsignedByte(10);
-            thrust_proj_gnd = _payload.getFloat(11);
-            thrust_proj_gnd_compen = _payload.getFloat(15);
-            thrust_compensator = _payload.getFloat(19);
-            hover_thrust = _payload.getFloat(23);
-            dynamic_thrust = _payload.getFloat(27);
-            cos_safe_tilt = _payload.getFloat(31);
-            safe_tilt = _payload.getFloat(35);
+            craftFlightMode = payload.getUnsignedByte(0);
+            nearGndState = payload.getUnsignedByte(1);
+            launchAccDuration = payload.getFloat(2);
+            launchDeltaV = payload.getFloat(6);
+            launchState = payload.getUnsignedByte(10);
+            thrustProjGnd = payload.getFloat(11);
+            thrustProjGndCompen = payload.getFloat(15);
+            thrustCompensator = payload.getFloat(19);
+            hoverThrust = payload.getFloat(23);
+            dynamicThrust = payload.getFloat(27);
+            cosSafeTilt = payload.getFloat(31);
+            safeTilt = payload.getFloat(35);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);
         }
     }
 
+    @Override
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(craft_flight_mode, aircraft_conditionIntSig,
-                    "craft_flight_mode", lineT, valid);
+            printCSVValue(craftFlightMode, aircraft_conditionIntSig, "craft_flight_mode", lineT, valid);
             printCSVValue(nearGrnd, nearGndSig, "", lineT, valid);
-            printCSVValue(launch_acc_duration, aircraft_conditionFloatSig,
-                    "launch_acc_duration", lineT, valid);
-            printCSVValue(launch_delta_v, aircraft_conditionFloatSig,
-                    "launch_delta_v", lineT, valid);
-            printCSVValue(launch_state, aircraft_conditionIntSig,
-                    "launch_state", lineT, valid);
-            printCSVValue(thrust_proj_gnd, aircraft_conditionFloatSig,
-                    "thrust_proj_gnd", lineT, valid);
-            printCSVValue(thrust_proj_gnd_compen, aircraft_conditionFloatSig,
-                    "thrust_proj_gnd_compen", lineT, valid);
-            printCSVValue(thrust_compensator, aircraft_conditionFloatSig,
-                    "thrust_compensator", lineT, valid);
-            printCSVValue(hover_thrust, aircraft_conditionFloatSig,
-                    "hover_thrust", lineT, valid);
-            printCSVValue(dynamic_thrust, aircraft_conditionFloatSig,
-                    "dynamic_thrust", lineT, valid);
-            printCSVValue(cos_safe_tilt, aircraft_conditionFloatSig,
-                    "cos_safe_tilt", lineT, valid);
-            printCSVValue(safe_tilt, aircraft_conditionFloatSig, "safe_tilt",
-                    lineT, valid);
+            printCSVValue(launchAccDuration, aircraft_conditionFloatSig, "launch_acc_duration", lineT, valid);
+            printCSVValue(launchDeltaV, aircraft_conditionFloatSig, "launch_delta_v", lineT, valid);
+            printCSVValue(launchState, aircraft_conditionIntSig, "launch_state", lineT, valid);
+            printCSVValue(thrustProjGnd, aircraft_conditionFloatSig, "thrust_proj_gnd", lineT, valid);
+            printCSVValue(thrustProjGndCompen, aircraft_conditionFloatSig, "thrust_proj_gnd_compen", lineT, valid);
+            printCSVValue(thrustCompensator, aircraft_conditionFloatSig, "thrust_compensator", lineT, valid);
+            printCSVValue(hoverThrust, aircraft_conditionFloatSig, "hover_thrust", lineT, valid);
+            printCSVValue(dynamicThrust, aircraft_conditionFloatSig, "dynamic_thrust", lineT, valid);
+            printCSVValue(cosSafeTilt, aircraft_conditionFloatSig, "cos_safe_tilt", lineT, valid);
+            printCSVValue(safeTilt, aircraft_conditionFloatSig, "safe_tilt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

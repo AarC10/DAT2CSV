@@ -2,6 +2,7 @@ package DatConRecs;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 import DatConRecs.Created4V1.RecBatt45_17;
@@ -74,12 +75,12 @@ public class Dictionary {
         //defaultOrder.add(Integer.valueOf());
     }
 
-    public static Record getRecordInst(Vector<RecClassSpec> entries,
-                                                 RecSpec recInDat, ConvertDat convertDat, boolean strictLength) {
+    public static Record getRecordInst(List<RecClassSpec> entries,
+                                       RecSpec recInDat, ConvertDat convertDat, boolean strictLength) {
         Record retv = null;
-        Iterator<RecClassSpec> iter = entries.iterator();
+        Iterator<E> iter = entries.iterator();
         while (iter.hasNext()) {
-            RecClassSpec recClassSpec = iter.next();
+            E recClassSpec = iter.next();
             if (recClassSpec.getId() == recInDat.getId()) {
                 if ((recClassSpec.lengthOK(recInDat.getLength()))
                         || (!strictLength && recClassSpec.getLength() < recInDat

@@ -1,11 +1,11 @@
 package DatConRecs.Created4V1;
 
-import java.util.Vector;
-
+import java.util.ArrayList;
+import java.util.List;
 import files.RecClassSpec;
 
 public class Dictionary {
-    public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();
+    public static final List<RecClassSpec> entries = new ArrayList<>();
     static {
         entries.add(new RecClassSpec(GPS_GLNS68_5.class, 5, 68));
         entries.add(new RecClassSpec(RecMotor76_52721.class, 52721, 76));
@@ -17,7 +17,6 @@ public class Dictionary {
         entries.add(new RecClassSpec(Mag8_4.class, 4, 8));
         entries.add(new RecClassSpec(AirCraftCondition39_70.class, 70, 39));
         entries.add(new RecClassSpec(IMUEX42_3.class, 3, 42));
-        entries.add(new RecClassSpec(Record_1.class, 1, 120));
-        //        entries.add(new RecClassSpec());
+        entries.add(new RecClassSpec(RecordOne.class, 1, 120));
     }
 }

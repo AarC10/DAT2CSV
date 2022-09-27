@@ -5,6 +5,7 @@ import DatConRecs.RecBatt;
 import files.ConvertDat;
 
 public class RecBatt45_17 extends RecBatt {
+    public double ratedCapacity = 0.0;
 
     public RecBatt45_17(ConvertDat convertDat) {
         super(convertDat, 17, 45, 0);
@@ -30,27 +31,21 @@ public class RecBatt45_17 extends RecBatt {
         return retv;
     }
 
-    //public float remainingCapacity = (float) 0.0;
 
-    public float ratedCapacity = (float) 0.0;
-
-    //public int capacityPercentage;
-
-    //protected int design_capacity = (int) 0;
-
-    public void process(Payload _payload) {
-        super.process(_payload);
+    @Override
+    public void process(Payload payload) {
+        super.process(payload);
         if (numSamples == 0) { // first time
             init();
         }
+
         valid = true;
         numSamples++;
-        fcc = _payload.getUnsignedShort(0);
-        ratedCapacity = (float) (((float) (payloadBB.getShort(2))));
-        remcap = (float) (((float) (payloadBB.getShort(4))));
-        totalVolts = (float) (((float) (payloadBB.getShort(6))) / 1000.0);
-        crrnt = -(float) (((float) (_payload.getUnsignedShort(8) - 65536))
-                / 1000.0);
+        fcc = payload.getUnsignedShort(0);
+        ratedCapacity = payloadBB.getShort(2);
+        remcap = payloadBB.getShort(4);
+        totalVolts = payloadBB.getShort(6) / 1000.0;
+        crrnt = -payload.getUnsignedShort(8) - 65536 / 1000.0;
         batteryPercent = payloadBB.get(11);
         temp = (float) (((float) (payloadBB.get(12))));
         for (int i = 0; i < numCells; i++) {

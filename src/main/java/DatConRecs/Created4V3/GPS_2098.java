@@ -1,11 +1,11 @@
 
 package DatConRecs.Created4V3;
 
-import DatConRecs.GpsGroup;
+import DatConRecs.GPSGroup;
 import DatConRecs.Payload;
 import files.ConvertDat;
 
-public class GPS_2098 extends GpsGroup {
+public class GPS_2098 extends GPSGroup {
 
     public GPS_2098(ConvertDat convertDat) {
         super(convertDat, 2, 2098, 66);

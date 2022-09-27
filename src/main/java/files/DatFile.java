@@ -580,7 +580,7 @@ public class DatFile {
     // sequence - remove recs out of sequence
     // eofProcessing -
     public boolean getNextDatRec(boolean filter, boolean translate,
-            boolean sequence, boolean eofProcessing) throws Corrupted, FileEnd {
+                                 boolean sequence, boolean eofProcessing) throws Corrupted, FileEnd {
         boolean done = false;
         long nextStartOfRecord = 0;
         long actualTickNo = 0;

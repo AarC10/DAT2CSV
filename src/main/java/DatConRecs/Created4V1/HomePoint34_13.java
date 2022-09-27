@@ -23,13 +23,14 @@ public class HomePoint34_13 extends Record {
         super(convertDat, 13, 34);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    @Override
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             double longRad = payloadBB.getDouble(0);
             double latRad = payloadBB.getDouble(8);
             height = payloadBB.getFloat(16);
-            //short homeState = payloadBB.getShort(20);
+
             rthHeight = payloadBB.getShort(22);
             longitudeHP = Math.toDegrees(longRad);
             latitudeHP = Math.toDegrees(latRad);

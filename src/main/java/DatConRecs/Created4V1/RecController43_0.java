@@ -26,8 +26,9 @@ public class RecController43_0 extends Record {
         super(convertDat, 0, 43);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    @Override
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             aileron = payloadBB.getShort(4);
             elevator = payloadBB.getShort(6);

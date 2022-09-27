@@ -10,9 +10,4 @@ public class IMUEX42_3 extends IMUEX40 {
         super(convertDat, 3, 42, 0);
     }
 
-    @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
-    }
-
 }
