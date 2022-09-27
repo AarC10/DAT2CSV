@@ -50,28 +50,28 @@ public class serial_api_inputs_1002 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            sdk_ctrl_F = _payload.getUnsignedByte(0);
-            sdk_roll_x = _payload.getShort(1);
-            sdk_pitch_y = _payload.getShort(3);
-            sdk_thr_z = _payload.getShort(5);
-            sdk_yaw = _payload.getShort(7);
-            sdk_fdfd_x = _payload.getShort(9);
-            sdk_fdfd_y = _payload.getShort(11);
-            ctrl_dev = _payload.getUnsignedByte(13);
-            sub_mode = _payload.getUnsignedByte(14);
-            open_req = _payload.getUnsignedByte(15);
-            open_ack = _payload.getUnsignedByte(16);
-            cmd_req = _payload.getUnsignedByte(17);
-            cmd_ack = _payload.getUnsignedByte(18);
-            avoid_E = _payload.getUnsignedByte(19);
-            bit_S = _payload.getUnsignedByte(20);
-            fact_cnt = _payload.getUnsignedByte(21);
-            f_test = _payload.getUnsignedByte(22);
+            sdk_ctrl_F = record.getUnsignedByte(0);
+            sdk_roll_x = record.getShort(1);
+            sdk_pitch_y = record.getShort(3);
+            sdk_thr_z = record.getShort(5);
+            sdk_yaw = record.getShort(7);
+            sdk_fdfd_x = record.getShort(9);
+            sdk_fdfd_y = record.getShort(11);
+            ctrl_dev = record.getUnsignedByte(13);
+            sub_mode = record.getUnsignedByte(14);
+            open_req = record.getUnsignedByte(15);
+            open_ack = record.getUnsignedByte(16);
+            cmd_req = record.getUnsignedByte(17);
+            cmd_ack = record.getUnsignedByte(18);
+            avoid_E = record.getUnsignedByte(19);
+            bit_S = record.getUnsignedByte(20);
+            fact_cnt = record.getUnsignedByte(21);
+            f_test = record.getUnsignedByte(22);
         } catch (Exception e) {
             RecordException(e);
         }

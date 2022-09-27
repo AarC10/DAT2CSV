@@ -23,17 +23,17 @@ protected float w_z_02 = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- wa_x_02 = _payload.getFloat(0);
- wa_y_02 = _payload.getFloat(4);
- wa_z_02 = _payload.getFloat(8);
- w_x_02 = _payload.getFloat(12);
- w_y_02 = _payload.getFloat(16);
- w_z_02 = _payload.getFloat(20);
+ wa_x_02 = record.getFloat(0);
+ wa_y_02 = record.getFloat(4);
+ wa_z_02 = record.getFloat(8);
+ w_x_02 = record.getFloat(12);
+ w_y_02 = record.getFloat(16);
+ w_z_02 = record.getFloat(20);
 } catch (Exception e) {RecordException(e);}}
 
 

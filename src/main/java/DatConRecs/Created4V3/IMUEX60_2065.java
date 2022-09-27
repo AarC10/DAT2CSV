@@ -10,8 +10,8 @@ public class IMUEX60_2065 extends IMUEX60 {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 
 }

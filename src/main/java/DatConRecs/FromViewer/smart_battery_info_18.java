@@ -57,51 +57,51 @@ protected float g_delt_I = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- rest_time = _payload.getUnsignedShort(0);
- need_time_for_gohome = _payload.getUnsignedShort(2);
- need_time_for_land = _payload.getUnsignedShort(4);
- gohome_battery_level = _payload.getUnsignedShort(6);
- land_battery_level = _payload.getUnsignedShort(8);
- radius_for_gohome = _payload.getFloat(10);
- request_gohome = _payload.getUnsignedShort(14);
- bat_dec_speed = _payload.getFloat(16);
- smart_battery_state = _payload.getUnsignedInt(20);
-level1_over_current = _payload.getUnsignedByte(24);
-level2_over_current = _payload.getUnsignedByte(25);
-level1_over_temp = _payload.getUnsignedByte(26);
-level2_under_temp = _payload.getUnsignedByte(27);
-level1_low_temp = _payload.getUnsignedByte(28);
-level2_low_temp = _payload.getUnsignedByte(29);
-short_cir = _payload.getUnsignedByte(30);
-low_vol_cells = _payload.getUnsignedByte(31);
-damage_cells = _payload.getUnsignedByte(32);
-exchange_cells = _payload.getUnsignedByte(33);
-user_gohome_level = _payload.getUnsignedByte(34);
-user_land_level = _payload.getUnsignedByte(35);
-user_action_for_gohome = _payload.getUnsignedByte(36);
-user_action_for_land = _payload.getUnsignedByte(37);
-user_use_smart_bat = _payload.getUnsignedByte(38);
-flag_main_vol_low_gohome = _payload.getUnsignedByte(39);
-flag_main_vol_low_land = _payload.getUnsignedByte(40);
-flag_user_gohome = _payload.getUnsignedByte(41);
-flag_user_land = _payload.getUnsignedByte(42);
-flag_smart_bat_gohome = _payload.getUnsignedByte(43);
-flag_smart_bat_land = _payload.getUnsignedByte(44);
-flag_cell_err = _payload.getUnsignedByte(45);
-flag_communite_err = _payload.getUnsignedByte(46);
- real_desc_speed = _payload.getFloat(47);
-flag_vol_very_low = _payload.getUnsignedByte(51);
-flag_temp_and_vol_low = _payload.getUnsignedByte(52);
-flag_first_charge_not_full = _payload.getUnsignedByte(53);
- g_filter_vol = _payload.getFloat(54);
- g_filter_I = _payload.getFloat(58);
- g_evl_vol = _payload.getFloat(62);
- g_delt_I = _payload.getFloat(66);
+ rest_time = record.getUnsignedShort(0);
+ need_time_for_gohome = record.getUnsignedShort(2);
+ need_time_for_land = record.getUnsignedShort(4);
+ gohome_battery_level = record.getUnsignedShort(6);
+ land_battery_level = record.getUnsignedShort(8);
+ radius_for_gohome = record.getFloat(10);
+ request_gohome = record.getUnsignedShort(14);
+ bat_dec_speed = record.getFloat(16);
+ smart_battery_state = record.getUnsignedInt(20);
+level1_over_current = record.getUnsignedByte(24);
+level2_over_current = record.getUnsignedByte(25);
+level1_over_temp = record.getUnsignedByte(26);
+level2_under_temp = record.getUnsignedByte(27);
+level1_low_temp = record.getUnsignedByte(28);
+level2_low_temp = record.getUnsignedByte(29);
+short_cir = record.getUnsignedByte(30);
+low_vol_cells = record.getUnsignedByte(31);
+damage_cells = record.getUnsignedByte(32);
+exchange_cells = record.getUnsignedByte(33);
+user_gohome_level = record.getUnsignedByte(34);
+user_land_level = record.getUnsignedByte(35);
+user_action_for_gohome = record.getUnsignedByte(36);
+user_action_for_land = record.getUnsignedByte(37);
+user_use_smart_bat = record.getUnsignedByte(38);
+flag_main_vol_low_gohome = record.getUnsignedByte(39);
+flag_main_vol_low_land = record.getUnsignedByte(40);
+flag_user_gohome = record.getUnsignedByte(41);
+flag_user_land = record.getUnsignedByte(42);
+flag_smart_bat_gohome = record.getUnsignedByte(43);
+flag_smart_bat_land = record.getUnsignedByte(44);
+flag_cell_err = record.getUnsignedByte(45);
+flag_communite_err = record.getUnsignedByte(46);
+ real_desc_speed = record.getFloat(47);
+flag_vol_very_low = record.getUnsignedByte(51);
+flag_temp_and_vol_low = record.getUnsignedByte(52);
+flag_first_charge_not_full = record.getUnsignedByte(53);
+ g_filter_vol = record.getFloat(54);
+ g_filter_I = record.getFloat(58);
+ g_evl_vol = record.getFloat(62);
+ g_delt_I = record.getFloat(66);
 } catch (Exception e) {RecordException(e);}}
 
 

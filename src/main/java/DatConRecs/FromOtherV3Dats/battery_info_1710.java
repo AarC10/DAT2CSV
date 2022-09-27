@@ -32,26 +32,26 @@ protected float out_ctl_f = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- ad_v = _payload.getUnsignedShort(0);
- r_time = _payload.getUnsignedShort(2);
- ave_I = _payload.getFloat(4);
- vol_t = _payload.getFloat(8);
- pack_ve = _payload.getInt(12);
- I = _payload.getInt(16);
- r_cap = _payload.getUnsignedShort(20);
-cap_per = _payload.getUnsignedByte(22);
- temp = _payload.getShort(23);
-right = _payload.getUnsignedByte(25);
- l_cell = _payload.getUnsignedShort(26);
- dyna_cnt = _payload.getUnsignedInt(28);
- f_cap = _payload.getUnsignedInt(32);
- out_ctl = _payload.getFloat(36);
- out_ctl_f = _payload.getFloat(40);
+ ad_v = record.getUnsignedShort(0);
+ r_time = record.getUnsignedShort(2);
+ ave_I = record.getFloat(4);
+ vol_t = record.getFloat(8);
+ pack_ve = record.getInt(12);
+ I = record.getInt(16);
+ r_cap = record.getUnsignedShort(20);
+cap_per = record.getUnsignedByte(22);
+ temp = record.getShort(23);
+right = record.getUnsignedByte(25);
+ l_cell = record.getUnsignedShort(26);
+ dyna_cnt = record.getUnsignedInt(28);
+ f_cap = record.getUnsignedInt(32);
+ out_ctl = record.getFloat(36);
+ out_ctl_f = record.getFloat(40);
 } catch (Exception e) {RecordException(e);}}
 
 

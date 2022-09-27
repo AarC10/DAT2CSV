@@ -22,14 +22,14 @@ public class usonic4_16 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            usonic_h = (float) (((float) (_payload.getShort(0))) / 1000.0);
-            usonic_flag = _payload.getUnsignedByte(2);
-            usonic_cnt = _payload.getUnsignedByte(3);
+            usonic_h = (float) (((float) (record.getShort(0))) / 1000.0);
+            usonic_flag = record.getUnsignedByte(2);
+            usonic_cnt = record.getUnsignedByte(3);
         } catch (Exception e) {
             RecordException(e);
         }

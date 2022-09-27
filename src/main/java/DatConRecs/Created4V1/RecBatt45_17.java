@@ -33,19 +33,19 @@ public class RecBatt45_17 extends RecBatt {
 
 
     @Override
-    public void process(Payload payload) {
-        super.process(payload);
+    public void process(Payload record) {
+        super.process(record);
         if (numSamples == 0) { // first time
             init();
         }
 
         valid = true;
         numSamples++;
-        fcc = payload.getUnsignedShort(0);
+        fcc = record.getUnsignedShort(0);
         ratedCapacity = payloadBB.getShort(2);
         remcap = payloadBB.getShort(4);
         totalVolts = payloadBB.getShort(6) / 1000.0;
-        crrnt = -payload.getUnsignedShort(8) - 65536 / 1000.0;
+        crrnt = -record.getUnsignedShort(8) - 65536 / 1000.0;
         batteryPercent = payloadBB.get(11);
         temp = payloadBB.get(12);
         for (int i = 0; i < numCells; i++) {

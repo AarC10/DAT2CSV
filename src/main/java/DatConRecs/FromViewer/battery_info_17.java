@@ -39,33 +39,33 @@ protected int vol_main = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- design_capacity = _payload.getUnsignedShort(0);
- full_charge_capacity = _payload.getUnsignedShort(2);
- remaining_capacity = _payload.getUnsignedShort(4);
- pack_voltage = _payload.getUnsignedShort(6);
- current = _payload.getShort(8);
-life_percentage = _payload.getUnsignedByte(10);
-capacity_percentage = _payload.getUnsignedByte(11);
- temperature = _payload.getShort(12);
- cycle_count = _payload.getUnsignedShort(14);
- serial_number = _payload.getUnsignedShort(16);
- cell1 = _payload.getUnsignedShort(18);
- cell2 = _payload.getUnsignedShort(20);
- cell3 = _payload.getUnsignedShort(22);
- cell4 = _payload.getUnsignedShort(24);
- cell5 = _payload.getUnsignedShort(26);
- cell6 = _payload.getUnsignedShort(28);
- average_current = _payload.getShort(30);
-right = _payload.getUnsignedByte(32);
- error_count = _payload.getUnsignedInt(33);
- n_discharge_times = _payload.getUnsignedInt(37);
- current_status = _payload.getUnsignedInt(41);
- vol_main = _payload.getUnsignedShort(45);
+ design_capacity = record.getUnsignedShort(0);
+ full_charge_capacity = record.getUnsignedShort(2);
+ remaining_capacity = record.getUnsignedShort(4);
+ pack_voltage = record.getUnsignedShort(6);
+ current = record.getShort(8);
+life_percentage = record.getUnsignedByte(10);
+capacity_percentage = record.getUnsignedByte(11);
+ temperature = record.getShort(12);
+ cycle_count = record.getUnsignedShort(14);
+ serial_number = record.getUnsignedShort(16);
+ cell1 = record.getUnsignedShort(18);
+ cell2 = record.getUnsignedShort(20);
+ cell3 = record.getUnsignedShort(22);
+ cell4 = record.getUnsignedShort(24);
+ cell5 = record.getUnsignedShort(26);
+ cell6 = record.getUnsignedShort(28);
+ average_current = record.getShort(30);
+right = record.getUnsignedByte(32);
+ error_count = record.getUnsignedInt(33);
+ n_discharge_times = record.getUnsignedInt(37);
+ current_status = record.getUnsignedInt(41);
+ vol_main = record.getUnsignedShort(45);
 } catch (Exception e) {RecordException(e);}}
 
 

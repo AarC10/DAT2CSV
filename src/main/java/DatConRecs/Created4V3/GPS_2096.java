@@ -11,7 +11,7 @@ public class GPS_2096 extends GPSGroup {
         super(convertDat, 0, 2096, 66);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 }

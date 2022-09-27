@@ -26,16 +26,16 @@ public class ofdm_cnt_1999 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            recv_total = _payload.getUnsignedShort(0);
-            header_error = _payload.getUnsignedShort(2);
-            v1_error = _payload.getUnsignedShort(4);
-            v0_error = _payload.getUnsignedShort(6);
-            seccuss = _payload.getUnsignedShort(8);
+            recv_total = record.getUnsignedShort(0);
+            header_error = record.getUnsignedShort(2);
+            v1_error = record.getUnsignedShort(4);
+            v0_error = record.getUnsignedShort(6);
+            seccuss = record.getUnsignedShort(8);
         } catch (Exception e) {
             RecordException(e);
         }

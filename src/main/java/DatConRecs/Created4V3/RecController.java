@@ -47,8 +47,8 @@ public class RecController extends Record {
         super(convertDat, id, length);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 
     protected static Signal ControllerIntSig = Signal.SeriesInt("Controller",

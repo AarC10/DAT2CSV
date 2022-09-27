@@ -37,11 +37,11 @@ public class Record_SDlogs_65280 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         if (Persist.EXPERIMENTAL_DEV) {
             try {
-                payloadString = _payload.getString();
+                payloadString = record.getString();
                 System.out.println("Rec65280 " + payloadString);
             } catch (Exception e) {
                 RecordException(e);

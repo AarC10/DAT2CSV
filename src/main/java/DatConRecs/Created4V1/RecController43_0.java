@@ -27,8 +27,8 @@ public class RecController43_0 extends Record {
     }
 
     @Override
-    public void process(Payload payload) {
-        super.process(payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             aileron = payloadBB.getShort(4);
             elevator = payloadBB.getShort(6);

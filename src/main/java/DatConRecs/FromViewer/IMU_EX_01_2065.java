@@ -29,23 +29,23 @@ protected int imu_ex_cnt_01 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- vo_vx_01 = _payload.getFloat(0);
- vo_vy_01 = _payload.getFloat(4);
- vo_vz_01 = _payload.getFloat(8);
- vo_px_01 = _payload.getFloat(12);
- vo_py_01 = _payload.getFloat(16);
- vo_pz_01 = _payload.getFloat(20);
- us_v_01 = _payload.getFloat(24);
- us_p_01 = _payload.getFloat(28);
- vo_flag_navi_01 = _payload.getUnsignedShort(32);
- imu_err_flag_01 = _payload.getUnsignedShort(34);
- vo_flag_rsv_01 = _payload.getUnsignedShort(36);
- imu_ex_cnt_01 = _payload.getUnsignedShort(38);
+ vo_vx_01 = record.getFloat(0);
+ vo_vy_01 = record.getFloat(4);
+ vo_vz_01 = record.getFloat(8);
+ vo_px_01 = record.getFloat(12);
+ vo_py_01 = record.getFloat(16);
+ vo_pz_01 = record.getFloat(20);
+ us_v_01 = record.getFloat(24);
+ us_p_01 = record.getFloat(28);
+ vo_flag_navi_01 = record.getUnsignedShort(32);
+ imu_err_flag_01 = record.getUnsignedShort(34);
+ vo_flag_rsv_01 = record.getUnsignedShort(36);
+ imu_ex_cnt_01 = record.getUnsignedShort(38);
 } catch (Exception e) {RecordException(e);}}
 
 

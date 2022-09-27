@@ -82,44 +82,44 @@ public class follow_me_data_43 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            heading_ref = _payload.getFloat(0);
-            heading_error = _payload.getFloat(4);
-            heading_rate = _payload.getFloat(8);
-            ascending_tgt_height = _payload.getFloat(12);
-            ascending_error = _payload.getFloat(16);
-            ascending_vel = _payload.getFloat(20);
-            phone_tagt_x = _payload.getDouble(24);
-            phone_tagt_y = _payload.getDouble(32);
-            quadrotor_cur_x = _payload.getDouble(40);
-            quadrotor_cur_y = _payload.getDouble(48);
-            quadrotor2phone_offset_x = _payload.getFloat(56);
-            quadrotor2phone_offset_y = _payload.getFloat(60);
-            quadrotor2phone_distance = _payload.getFloat(64);
-            quadrotor2targetpoint_offset_x = _payload.getFloat(68);
-            quadrotor2targetpoint_offset_y = _payload.getFloat(72);
-            quadrotor2targetpoint_distance = _payload.getFloat(76);
-            tagt_vel_x = _payload.getFloat(80);
-            tagt_vel_y = _payload.getFloat(84);
-            cur_vel_x = _payload.getFloat(88);
-            cur_vel_y = _payload.getFloat(92);
-            cruise_vel_x = _payload.getFloat(96);
-            cruise_vel_y = _payload.getFloat(100);
-            fixed_offset_x = _payload.getFloat(104);
-            fixed_offset_y = _payload.getFloat(108);
-            fixed_distance_offset = _payload.getFloat(112);
-            dist_drone2drone = _payload.getFloat(116);
-            dist_phone2phone = _payload.getFloat(120);
-            gimbal_ptich_tgt = _payload.getFloat(124);
-            gimbal_pitch_error = _payload.getFloat(128);
-            gimbal_pitch_rate = _payload.getFloat(132);
-            in_height_limit = _payload.getUnsignedByte(136);
-            target_loss_count = _payload.getUnsignedByte(137);
-            mission_status = _payload.getUnsignedByte(138);
+            heading_ref = record.getFloat(0);
+            heading_error = record.getFloat(4);
+            heading_rate = record.getFloat(8);
+            ascending_tgt_height = record.getFloat(12);
+            ascending_error = record.getFloat(16);
+            ascending_vel = record.getFloat(20);
+            phone_tagt_x = record.getDouble(24);
+            phone_tagt_y = record.getDouble(32);
+            quadrotor_cur_x = record.getDouble(40);
+            quadrotor_cur_y = record.getDouble(48);
+            quadrotor2phone_offset_x = record.getFloat(56);
+            quadrotor2phone_offset_y = record.getFloat(60);
+            quadrotor2phone_distance = record.getFloat(64);
+            quadrotor2targetpoint_offset_x = record.getFloat(68);
+            quadrotor2targetpoint_offset_y = record.getFloat(72);
+            quadrotor2targetpoint_distance = record.getFloat(76);
+            tagt_vel_x = record.getFloat(80);
+            tagt_vel_y = record.getFloat(84);
+            cur_vel_x = record.getFloat(88);
+            cur_vel_y = record.getFloat(92);
+            cruise_vel_x = record.getFloat(96);
+            cruise_vel_y = record.getFloat(100);
+            fixed_offset_x = record.getFloat(104);
+            fixed_offset_y = record.getFloat(108);
+            fixed_distance_offset = record.getFloat(112);
+            dist_drone2drone = record.getFloat(116);
+            dist_phone2phone = record.getFloat(120);
+            gimbal_ptich_tgt = record.getFloat(124);
+            gimbal_pitch_error = record.getFloat(128);
+            gimbal_pitch_rate = record.getFloat(132);
+            in_height_limit = record.getUnsignedByte(136);
+            target_loss_count = record.getUnsignedByte(137);
+            mission_status = record.getUnsignedByte(138);
         } catch (Exception e) {
             RecordException(e);
         }

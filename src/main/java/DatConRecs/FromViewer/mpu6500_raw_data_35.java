@@ -23,17 +23,17 @@ protected float mpu6500_wz = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- mpu6500_ax = _payload.getFloat(0);
- mpu6500_ay = _payload.getFloat(4);
- mpu6500_az = _payload.getFloat(8);
- mpu6500_wx = _payload.getFloat(12);
- mpu6500_wy = _payload.getFloat(16);
- mpu6500_wz = _payload.getFloat(20);
+ mpu6500_ax = record.getFloat(0);
+ mpu6500_ay = record.getFloat(4);
+ mpu6500_az = record.getFloat(8);
+ mpu6500_wx = record.getFloat(12);
+ mpu6500_wy = record.getFloat(16);
+ mpu6500_wz = record.getFloat(20);
 } catch (Exception e) {RecordException(e);}}
 
 

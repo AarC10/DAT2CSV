@@ -17,12 +17,12 @@ public class RecRCStat17_1700 extends RCStatus {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             statusValid = true;
             //cur_cmd = _payload.getUnsignedShort(0);
-            fail_safe = _payload.getUnsignedByte(2);
+            fail_safe = record.getUnsignedByte(2);
             //vedio_lost = _payload.getUnsignedByte(3);
             data_lost = ((payloadBB.get(4) == 1) ? "lost" : "");
             app_lost = ((payloadBB.get(5) == 1) ? "lost" : "");

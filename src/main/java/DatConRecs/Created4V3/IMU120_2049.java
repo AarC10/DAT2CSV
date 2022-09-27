@@ -10,7 +10,7 @@ public class IMU120_2049 extends RecIMU {
         current = this;
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 }

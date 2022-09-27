@@ -24,14 +24,14 @@ public class compass_4 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
-            magx = _payload.getShort(0);
-            magy = _payload.getShort(2);
-            magz = _payload.getShort(4);
-            mag_cnt = _payload.getUnsignedShort(6);
+            magx = record.getShort(0);
+            magy = record.getShort(2);
+            magz = record.getShort(4);
+            mag_cnt = record.getUnsignedShort(6);
         } catch (Exception e) {
             RecordException(e);
         }

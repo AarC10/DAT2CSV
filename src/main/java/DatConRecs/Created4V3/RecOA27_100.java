@@ -45,8 +45,8 @@ public class RecOA27_100 extends Record {
             "OA:frontDistance", "Obstace Avoidance Front Distance", null,
             Units.meters);
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             OAfrontDistance = payloadBB.get(4);
         } catch (Exception e) {

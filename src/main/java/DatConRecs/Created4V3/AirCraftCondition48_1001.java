@@ -43,30 +43,30 @@ public class AirCraftCondition48_1001 extends AirCraftCondition {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
-            intFlightState = _payload.getUnsignedByte(0);
-            flightState = _payload.getUnsignedByte(1);
-            lastFlightState = _payload.getUnsignedByte(2);
-            nearGndState = _payload.getUnsignedByte(3);
-            launchState = _payload.getUnsignedByte(4);
-            launchAccDur = _payload.getFloat(5);
-            launchDeltaV = _payload.getFloat(9);
-            launchFreeFallDur = _payload.getFloat(13);
-            launchFreeFallDeltaV = _payload.getFloat(17);
-            landState = _payload.getUnsignedByte(21);
-            thrust = _payload.getShort(22);
-            gyro = _payload.getShort(24);
-            landDurPress = _payload.getFloat(26);
-            landDurSonic = _payload.getFloat(30);
-            thrustBody = _payload.getShort(34);
-            thrustGnd = _payload.getShort(36);
-            thrustGndCompen = _payload.getShort(38);
-            safeTiltRaw = _payload.getShort(40);
-            safeTilt = _payload.getShort(42);
-            satTimer = _payload.getFloat(44);
+            intFlightState = record.getUnsignedByte(0);
+            flightState = record.getUnsignedByte(1);
+            lastFlightState = record.getUnsignedByte(2);
+            nearGndState = record.getUnsignedByte(3);
+            launchState = record.getUnsignedByte(4);
+            launchAccDur = record.getFloat(5);
+            launchDeltaV = record.getFloat(9);
+            launchFreeFallDur = record.getFloat(13);
+            launchFreeFallDeltaV = record.getFloat(17);
+            landState = record.getUnsignedByte(21);
+            thrust = record.getShort(22);
+            gyro = record.getShort(24);
+            landDurPress = record.getFloat(26);
+            landDurSonic = record.getFloat(30);
+            thrustBody = record.getShort(34);
+            thrustGnd = record.getShort(36);
+            thrustGndCompen = record.getShort(38);
+            safeTiltRaw = record.getShort(40);
+            safeTilt = record.getShort(42);
+            satTimer = record.getFloat(44);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);

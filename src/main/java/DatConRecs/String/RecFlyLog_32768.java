@@ -35,23 +35,23 @@ public class RecFlyLog_32768 extends Record {
         setRecType(RecType.STRING);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             timeOffset = convertDat.timeOffset;
-            payloadString = _payload.getCleanString();
+            payloadString = record.getCleanString();
             if (payloadString.length() > 0) {
                 if (convertDat.csvEventLogOutput
-                        && convertDat.tickRangeLower <= _payload.getTickNo()) {
+                        && convertDat.tickRangeLower <= record.getTickNo()) {
                     if (text.length() > 0)
                         text += "|";
                     text += payloadString;
                 }
                 if (convertDat.eloPS != null
-                        && convertDat.tickRangeLower <= _payload.getTickNo()) {
-                    long tickNo = _payload.getTickNo();
+                        && convertDat.tickRangeLower <= record.getTickNo()) {
+                    long tickNo = record.getTickNo();
                     convertDat.eloPS
-                            .println(_datFile.timeString(tickNo, timeOffset)
+                            .println(datFile.timeString(tickNo, timeOffset)
                                     + " : " + payloadString);
                 }
             }

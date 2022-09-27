@@ -19,11 +19,11 @@ public class Record_ModuleName_65532 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try{
         if (Persist.EXPERIMENTAL_DEV) {
-            payloadString = _payload.getString();
+            payloadString = record.getString();
             System.out.println("Record_ModuleName_65532 " + payloadString);
         }
         } catch (Exception e) {

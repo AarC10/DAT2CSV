@@ -40,24 +40,24 @@ public class BattInfo_38_1710 extends BattInfo {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
-            valid = true;
-            Vol = _payload.getFloat(0);
-            Current = (float) (((float) (_payload.getFloat(4))) / 1000.0);
-            R_time = _payload.getUnsignedShort(8);
-            CellVol = (float) (((float) (_payload.getUnsignedShort(10)))
+            this.valid = true;
+            Vol = record.getFloat(0);
+            Current = (float) (((float) (record.getFloat(4))) / 1000.0);
+            R_time = record.getUnsignedShort(8);
+            CellVol = (float) (((float) (record.getUnsignedShort(10)))
                     / 1000.0);
-            LowVolThreshold = _payload.getFloat(12);
-            BatVol = (float) (((float) (_payload.getInt(16))) / 1000.0);
-            BatCurrent = -(float) (((float) (_payload.getInt(20))) / 1000.0);
-            BatCap = _payload.getUnsignedShort(24);
-            CapPercnt = _payload.getUnsignedByte(26);
-            BatTemp = (float) (((float) (_payload.getShort(27))) / 10.0);
-            BatAuth = _payload.getUnsignedByte(29);
-            BatDataCnt = _payload.getUnsignedInt(30);
-            FullCap = _payload.getUnsignedInt(34);
+            LowVolThreshold = record.getFloat(12);
+            BatVol = (float) (((float) (record.getInt(16))) / 1000.0);
+            BatCurrent = -(float) (((float) (record.getInt(20))) / 1000.0);
+            BatCap = record.getUnsignedShort(24);
+            CapPercnt = record.getUnsignedByte(26);
+            BatTemp = (float) (((float) (record.getShort(27))) / 10.0);
+            BatAuth = record.getUnsignedByte(29);
+            BatDataCnt = record.getUnsignedInt(30);
+            FullCap = record.getUnsignedInt(34);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -66,21 +66,21 @@ public class BattInfo_38_1710 extends BattInfo {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(Vol, battery_infoFloatSig, "Vol", lineT, valid);
+            printCSVValue(Vol, batteryInfoFloatSig, "Vol", lineT, valid);
             printCSVValue(Current, currentSig, "Current", lineT, valid);
             printCSVValue(R_time, battInfoRemainTimeSig, "remainingTime", lineT,
                     valid);
             printCSVValue(CellVol, cellVoltSig, "CellVol", lineT, valid);
-            printCSVValue(LowVolThreshold, battery_infoFloatSig,
+            printCSVValue(LowVolThreshold, batteryInfoFloatSig,
                     "LowVolThreshold", lineT, valid);
-            printCSVValue(BatVol, BattVoltSig, "BatVol", lineT, valid);
+            printCSVValue(BatVol, battVoltSig, "BatVol", lineT, valid);
             printCSVValue(BatCurrent, currentSig, "BatCurrent", lineT, valid);
             printCSVValue(BatCap, batteryCap, "FullChargeCap", lineT, valid);
-            printCSVValue(CapPercnt, batteryCapPrcnt, "Remaining%", lineT,
+            printCSVValue(CapPercnt, batteryCapPercent, "Remaining%", lineT,
                     valid);
             printCSVValue(BatTemp, batteryTempSig, "BatTemp", lineT, valid);
             //printCsvValue(BatAuth, battery_infoIntSig, "BatAuth", lineT, valid);
-            printCSVValue(BatDataCnt, battery_infoIntSig, "BatDataCnt", lineT,
+            printCSVValue(BatDataCnt, batteryInfoIntSig, "BatDataCnt", lineT,
                     valid);
             printCSVValue(FullCap, batteryCap, "OriginalCap", lineT, valid);
         } catch (Exception e) {

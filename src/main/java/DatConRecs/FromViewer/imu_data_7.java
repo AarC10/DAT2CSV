@@ -29,23 +29,23 @@ protected float imu_Ref = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- imu_gyro_tempX = _payload.getFloat(0);
- imu_gyro_tempY = _payload.getFloat(4);
- imu_gyro_tempZ = _payload.getFloat(8);
- imu_gyro_x = _payload.getFloat(12);
- imu_gyro_y = _payload.getFloat(16);
- imu_gyro_z = _payload.getFloat(20);
- imu_acc_x = _payload.getFloat(24);
- imu_acc_y = _payload.getFloat(28);
- imu_acc_z = _payload.getFloat(32);
- imu_airpress = _payload.getFloat(36);
- imu_Vin = _payload.getFloat(40);
- imu_Ref = _payload.getFloat(44);
+ imu_gyro_tempX = record.getFloat(0);
+ imu_gyro_tempY = record.getFloat(4);
+ imu_gyro_tempZ = record.getFloat(8);
+ imu_gyro_x = record.getFloat(12);
+ imu_gyro_y = record.getFloat(16);
+ imu_gyro_z = record.getFloat(20);
+ imu_acc_x = record.getFloat(24);
+ imu_acc_y = record.getFloat(28);
+ imu_acc_z = record.getFloat(32);
+ imu_airpress = record.getFloat(36);
+ imu_Vin = record.getFloat(40);
+ imu_Ref = record.getFloat(44);
 } catch (Exception e) {RecordException(e);}}
 
 

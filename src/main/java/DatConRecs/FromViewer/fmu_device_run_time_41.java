@@ -33,27 +33,27 @@ protected long gear = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- battery = _payload.getUnsignedInt(0);
- led = _payload.getUnsignedInt(4);
- baromter = _payload.getUnsignedInt(8);
- gyro_acc = _payload.getUnsignedInt(12);
- imu = _payload.getUnsignedInt(16);
- vo = _payload.getUnsignedInt(20);
- ultrasonic = _payload.getUnsignedInt(24);
- pmu = _payload.getUnsignedInt(28);
- esc = _payload.getUnsignedInt(32);
- mc = _payload.getUnsignedInt(36);
- camera = _payload.getUnsignedInt(40);
- gps = _payload.getUnsignedInt(44);
- Compass = _payload.getUnsignedInt(48);
- gimbal = _payload.getUnsignedInt(52);
- rc = _payload.getUnsignedInt(56);
- gear = _payload.getUnsignedInt(60);
+ battery = record.getUnsignedInt(0);
+ led = record.getUnsignedInt(4);
+ baromter = record.getUnsignedInt(8);
+ gyro_acc = record.getUnsignedInt(12);
+ imu = record.getUnsignedInt(16);
+ vo = record.getUnsignedInt(20);
+ ultrasonic = record.getUnsignedInt(24);
+ pmu = record.getUnsignedInt(28);
+ esc = record.getUnsignedInt(32);
+ mc = record.getUnsignedInt(36);
+ camera = record.getUnsignedInt(40);
+ gps = record.getUnsignedInt(44);
+ Compass = record.getUnsignedInt(48);
+ gimbal = record.getUnsignedInt(52);
+ rc = record.getUnsignedInt(56);
+ gear = record.getUnsignedInt(60);
 } catch (Exception e) {RecordException(e);}}
 
 

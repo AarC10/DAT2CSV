@@ -176,8 +176,8 @@ public class RecIMU extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         valid = true;
         longRad = payloadBB.getDouble(0);
         latRad = payloadBB.getDouble(8);
@@ -211,8 +211,8 @@ public class RecIMU extends Record {
         i4 = payloadBB.getShort(112);
         i5 = payloadBB.getShort(114);
         numSats = payloadBB.get(116);
-        if (_payload.tickNo > _payload.datFile.flightStartTick) {
-            if ((_payload.tickNo > dtLastTickNo + 60)) {
+        if (record.tickNo > record.datFile.flightStartTick) {
+            if ((record.tickNo > dtLastTickNo + 60)) {
                 if (dtLastLat == 0.0 && dtLastLong == 0.0) {
                     dtLastLat = latRad;
                     dtLastLong = longRad;
@@ -237,12 +237,12 @@ public class RecIMU extends Record {
                 distanceTravelled += dist;
                 dtLastLat = latRad;
                 dtLastLong = longRad;
-                dtLastTickNo = _payload.tickNo;
+                dtLastTickNo = record.tickNo;
             }
         }
         if (integrationLastTickNo != 0) {
-            double dt = ((_payload.tickNo - integrationLastTickNo)
-                    / _datFile.getClockRate());
+            double dt = ((record.tickNo - integrationLastTickNo)
+                    / datFile.getClockRate());
             totalZGyro += (0.5 * (gyroZ + gyroZLast)) * dt;
             totalXGyro += (0.5 * (gyroX + gyroXLast)) * dt;
             totalYGyro += (0.5 * (gyroY + gyroYLast)) * dt;
@@ -255,7 +255,7 @@ public class RecIMU extends Record {
                 //imuCalcs.computeAccel(ag_X, ag_Y, ag_Z, dt);
             }
         }
-        integrationLastTickNo = _payload.tickNo;
+        integrationLastTickNo = record.tickNo;
     }
 
     public float getAg_X() {
@@ -374,7 +374,7 @@ public class RecIMU extends Record {
                 double distance = Util.distance(latRad, longRad, lastLatRad,
                         lastLongRad);
                 velGPS = distance / (((double) (convertDat.tickNo - lastTickNo))
-                        / _datFile.getClockRate());
+                        / datFile.getClockRate());
             } else {
                 velGPS = 0.0;
             }
@@ -404,7 +404,7 @@ public class RecIMU extends Record {
                 notFirstLine = true;
                 if (Persist.inertialOnlyCalcs) {
                     double dt = (((double) (convertDat.tickNo - lastTickNo))
-                            / _datFile.getClockRate());
+                            / datFile.getClockRate());
                     imuCalcs.computeAccel(Math.toRadians(pitch),
                             Math.toRadians(roll), Math.toRadians(yaw), accelX,
                             accelY, accelZ, dt);

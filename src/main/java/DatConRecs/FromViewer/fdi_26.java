@@ -23,17 +23,17 @@ protected float gyroz_bias_raw = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- ns_abnormal_all = _payload.getUnsignedInt(0);
- history_ns_abnormal_all = _payload.getUnsignedInt(4);
-gyro_bias_raw_flag = _payload.getUnsignedByte(8);
- gyrox_bias_raw = _payload.getFloat(9);
- gyroy_bias_raw = _payload.getFloat(13);
- gyroz_bias_raw = _payload.getFloat(17);
+ ns_abnormal_all = record.getUnsignedInt(0);
+ history_ns_abnormal_all = record.getUnsignedInt(4);
+gyro_bias_raw_flag = record.getUnsignedByte(8);
+ gyrox_bias_raw = record.getFloat(9);
+ gyroy_bias_raw = record.getFloat(13);
+ gyroz_bias_raw = record.getFloat(17);
 } catch (Exception e) {RecordException(e);}}
 
 

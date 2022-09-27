@@ -280,9 +280,9 @@ public class GoTxt_12 extends Record {
 
     private String visionUsedString = "False";
 
-    public void process(Payload _payload) {
-        super.process(_payload);
-        payloadBB = _payload.getBB();
+    public void process(Payload record) {
+        super.process(record);
+        payloadBB = record.getBB();
         valid = true;
         longitude = Math.toDegrees(payloadBB.getDouble(0));
         latitude = Math.toDegrees(payloadBB.getDouble(8));

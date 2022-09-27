@@ -18,11 +18,11 @@ public class ns_data_component_10086 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
-            ns_cmpnt = _payload.getUnsignedInt(0);
+            ns_cmpnt = record.getUnsignedInt(0);
         } catch (Exception e) {
             RecordException(e);
         }

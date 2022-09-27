@@ -20,14 +20,14 @@ protected float adxl278_az = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- adxl278_ax = _payload.getFloat(0);
- adxl278_ay = _payload.getFloat(4);
- adxl278_az = _payload.getFloat(8);
+ adxl278_ax = record.getFloat(0);
+ adxl278_ay = record.getFloat(4);
+ adxl278_az = record.getFloat(8);
 } catch (Exception e) {RecordException(e);}}
 
 

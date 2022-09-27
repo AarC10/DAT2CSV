@@ -36,23 +36,23 @@ public class AirCraftCondition39_70 extends AirCraftCondition {
     }
 
     @Override
-    public void process(Payload payload) {
-        super.process(payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            craftFlightMode = payload.getUnsignedByte(0);
-            nearGndState = payload.getUnsignedByte(1);
-            launchAccDuration = payload.getFloat(2);
-            launchDeltaV = payload.getFloat(6);
-            launchState = payload.getUnsignedByte(10);
-            thrustProjGnd = payload.getFloat(11);
-            thrustProjGndCompen = payload.getFloat(15);
-            thrustCompensator = payload.getFloat(19);
-            hoverThrust = payload.getFloat(23);
-            dynamicThrust = payload.getFloat(27);
-            cosSafeTilt = payload.getFloat(31);
-            safeTilt = payload.getFloat(35);
+            craftFlightMode = record.getUnsignedByte(0);
+            nearGndState = record.getUnsignedByte(1);
+            launchAccDuration = record.getFloat(2);
+            launchDeltaV = record.getFloat(6);
+            launchState = record.getUnsignedByte(10);
+            thrustProjGnd = record.getFloat(11);
+            thrustProjGndCompen = record.getFloat(15);
+            thrustCompensator = record.getFloat(19);
+            hoverThrust = record.getFloat(23);
+            dynamicThrust = record.getFloat(27);
+            cosSafeTilt = record.getFloat(31);
+            safeTilt = record.getFloat(35);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);

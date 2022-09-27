@@ -36,21 +36,21 @@ public class ATTI_MINI1_2209 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            s_qw1 = _payload.getFloat(0);
-            s_qx1 = _payload.getFloat(4);
-            s_qy1 = _payload.getFloat(8);
-            s_qz1 = _payload.getFloat(12);
-            s_pgz1 = _payload.getFloat(16);
-            s_vgz1 = _payload.getFloat(20);
-            s_agz1 = _payload.getFloat(24);
-            s_rsv01 = _payload.getUnsignedInt(28);
-            s_rsv11 = _payload.getUnsignedInt(32);
-            s_cnt1 = _payload.getUnsignedInt(36);
+            s_qw1 = record.getFloat(0);
+            s_qx1 = record.getFloat(4);
+            s_qy1 = record.getFloat(8);
+            s_qz1 = record.getFloat(12);
+            s_pgz1 = record.getFloat(16);
+            s_vgz1 = record.getFloat(20);
+            s_agz1 = record.getFloat(24);
+            s_rsv01 = record.getUnsignedInt(28);
+            s_rsv11 = record.getUnsignedInt(32);
+            s_cnt1 = record.getUnsignedInt(36);
         } catch (Exception e) {
             RecordException(e);
         }

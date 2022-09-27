@@ -15,8 +15,8 @@ public class RecMotor76_52721 extends Motor {
         current = this;
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 

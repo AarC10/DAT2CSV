@@ -30,24 +30,24 @@ protected short user_flight_cmd_ack = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-user_req_ctrl_flag = _payload.getUnsignedByte(0);
- user_req_roll_or_x = _payload.getFloat(1);
- user_req_pitch_or_y = _payload.getFloat(5);
- user_req_thr_z = _payload.getFloat(9);
- user_req_yaw = _payload.getFloat(13);
-nav_cur_dev = _payload.getUnsignedByte(17);
-api_cur_sub_mode = _payload.getUnsignedByte(18);
-api_user_ctrl_data_health = _payload.getUnsignedByte(19);
-api_app_ctrl_data_health = _payload.getUnsignedByte(20);
-user_open_close_req = _payload.getUnsignedByte(21);
-user_open_close_ack = _payload.getUnsignedByte(22);
-user_flight_cmd_req = _payload.getUnsignedByte(23);
-user_flight_cmd_ack = _payload.getUnsignedByte(24);
+user_req_ctrl_flag = record.getUnsignedByte(0);
+ user_req_roll_or_x = record.getFloat(1);
+ user_req_pitch_or_y = record.getFloat(5);
+ user_req_thr_z = record.getFloat(9);
+ user_req_yaw = record.getFloat(13);
+nav_cur_dev = record.getUnsignedByte(17);
+api_cur_sub_mode = record.getUnsignedByte(18);
+api_user_ctrl_data_health = record.getUnsignedByte(19);
+api_app_ctrl_data_health = record.getUnsignedByte(20);
+user_open_close_req = record.getUnsignedByte(21);
+user_open_close_ack = record.getUnsignedByte(22);
+user_flight_cmd_req = record.getUnsignedByte(23);
+user_flight_cmd_ack = record.getUnsignedByte(24);
 } catch (Exception e) {RecordException(e);}}
 
 

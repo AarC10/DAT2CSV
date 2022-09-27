@@ -30,8 +30,8 @@ public class RecMotor169_10090 extends Motor {
         PPMsend = true;
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
             rfStatus = payloadBB.get(0);
@@ -41,7 +41,7 @@ public class RecMotor169_10090 extends Motor {
             rfTemp = payloadBB.getShort(7);
             rfPPM_recv = payloadBB.getShort(9);
             rfV_out = ((float) payloadBB.getShort(11)) / 10.0f;
-            rfPPM_send = _payload.getUnsignedShort(19);
+            rfPPM_send = record.getUnsignedShort(19);
             //
             lfStatus = payloadBB.get(21);
             lfCurrent = ((float) payloadBB.getShort(22)) / 100.0f;
@@ -50,7 +50,7 @@ public class RecMotor169_10090 extends Motor {
             lfTemp = payloadBB.getShort(28);
             lfPPM_recv = payloadBB.getShort(30);
             lfV_out = ((float) payloadBB.getShort(32)) / 10.0f;
-            lfPPM_send = _payload.getUnsignedShort(40);
+            lfPPM_send = record.getUnsignedShort(40);
             //
             lbStatus = payloadBB.get(42);
             lbCurrent = ((float) payloadBB.getShort(43)) / 100.0f;
@@ -59,7 +59,7 @@ public class RecMotor169_10090 extends Motor {
             lbTemp = payloadBB.getShort(49);
             lbPPM_recv = payloadBB.getShort(51);
             lbV_out = ((float) payloadBB.getShort(53)) / 10.0f;
-            lbPPM_send = _payload.getUnsignedShort(61);
+            lbPPM_send = record.getUnsignedShort(61);
             //
             rbStatus = payloadBB.get(63);
             rbCurrent = ((float) payloadBB.getShort(64)) / 100.0f;
@@ -68,7 +68,7 @@ public class RecMotor169_10090 extends Motor {
             rbTemp = payloadBB.getShort(70);
             rbPPM_recv = payloadBB.getShort(72);
             rbV_out = ((float) payloadBB.getShort(74)) / 10.0f;
-            rbPPM_send = _payload.getUnsignedShort(82);
+            rbPPM_send = record.getUnsignedShort(82);
             thrustTheta = computeThrustTheta(lbSpeed, rfSpeed, rbSpeed,
                     lfSpeed);
             //        computePower(rfVolts, rfCurrent, lfVolts, lfCurrent, lbVolts, lbCurrent,

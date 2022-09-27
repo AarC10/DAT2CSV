@@ -86,46 +86,46 @@ public class err_code_112 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            imu1_break = _payload.getUnsignedByte(0);
-            imu2_break = _payload.getUnsignedByte(1);
-            gcm0_break = _payload.getUnsignedByte(2);
-            gcm1_break = _payload.getUnsignedByte(3);
-            gcm2_break = _payload.getUnsignedByte(4);
-            imu0_fault = _payload.getUnsignedByte(5);
-            imu1_fault = _payload.getUnsignedByte(6);
-            imu2_fault = _payload.getUnsignedByte(7);
-            gcm0_fault = _payload.getUnsignedByte(8);
-            gcm1_fault = _payload.getUnsignedByte(9);
-            gcm2_fault = _payload.getUnsignedByte(10);
-            mc_fault = _payload.getUnsignedByte(11);
-            mc_dev = _payload.getUnsignedByte(12);
-            mc_err = _payload.getUnsignedByte(13);
-            mc_act = _payload.getUnsignedByte(14);
-            imu_stat = _payload.getUnsignedByte(15);
-            mag_stat = _payload.getUnsignedByte(16);
-            imu0_dev = _payload.getUnsignedByte(17);
-            imu0_err = _payload.getUnsignedByte(18);
-            imu0_act = _payload.getUnsignedByte(19);
-            imu1_dev = _payload.getUnsignedByte(20);
-            imu1_err = _payload.getUnsignedByte(21);
-            imu1_act = _payload.getUnsignedByte(22);
-            imu2_dev = _payload.getUnsignedByte(23);
-            imu2_err = _payload.getUnsignedByte(24);
-            imu2_act = _payload.getUnsignedByte(25);
-            gcm0_dev = _payload.getUnsignedByte(26);
-            gcm0_err = _payload.getUnsignedByte(27);
-            gcm0_act = _payload.getUnsignedByte(28);
-            gcm1_dev = _payload.getUnsignedByte(29);
-            gcm1_err = _payload.getUnsignedByte(30);
-            gcm1_act = _payload.getUnsignedByte(31);
-            gcm2_dev = _payload.getUnsignedByte(32);
-            gcm2_err = _payload.getUnsignedByte(33);
-            gcm2_act = _payload.getUnsignedByte(34);
+            imu1_break = record.getUnsignedByte(0);
+            imu2_break = record.getUnsignedByte(1);
+            gcm0_break = record.getUnsignedByte(2);
+            gcm1_break = record.getUnsignedByte(3);
+            gcm2_break = record.getUnsignedByte(4);
+            imu0_fault = record.getUnsignedByte(5);
+            imu1_fault = record.getUnsignedByte(6);
+            imu2_fault = record.getUnsignedByte(7);
+            gcm0_fault = record.getUnsignedByte(8);
+            gcm1_fault = record.getUnsignedByte(9);
+            gcm2_fault = record.getUnsignedByte(10);
+            mc_fault = record.getUnsignedByte(11);
+            mc_dev = record.getUnsignedByte(12);
+            mc_err = record.getUnsignedByte(13);
+            mc_act = record.getUnsignedByte(14);
+            imu_stat = record.getUnsignedByte(15);
+            mag_stat = record.getUnsignedByte(16);
+            imu0_dev = record.getUnsignedByte(17);
+            imu0_err = record.getUnsignedByte(18);
+            imu0_act = record.getUnsignedByte(19);
+            imu1_dev = record.getUnsignedByte(20);
+            imu1_err = record.getUnsignedByte(21);
+            imu1_act = record.getUnsignedByte(22);
+            imu2_dev = record.getUnsignedByte(23);
+            imu2_err = record.getUnsignedByte(24);
+            imu2_act = record.getUnsignedByte(25);
+            gcm0_dev = record.getUnsignedByte(26);
+            gcm0_err = record.getUnsignedByte(27);
+            gcm0_act = record.getUnsignedByte(28);
+            gcm1_dev = record.getUnsignedByte(29);
+            gcm1_err = record.getUnsignedByte(30);
+            gcm1_act = record.getUnsignedByte(31);
+            gcm2_dev = record.getUnsignedByte(32);
+            gcm2_err = record.getUnsignedByte(33);
+            gcm2_act = record.getUnsignedByte(34);
         } catch (Exception e) {
             RecordException(e);
         }

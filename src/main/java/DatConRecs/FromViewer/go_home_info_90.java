@@ -21,15 +21,15 @@ protected float dis_to_home_y = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-go_home_stage = _payload.getUnsignedByte(0);
- go_home_timer = _payload.getFloat(1);
- dis_to_home_x = _payload.getFloat(5);
- dis_to_home_y = _payload.getFloat(9);
+go_home_stage = record.getUnsignedByte(0);
+ go_home_timer = record.getFloat(1);
+ dis_to_home_x = record.getFloat(5);
+ dis_to_home_y = record.getFloat(9);
 } catch (Exception e) {RecordException(e);}}
 
 

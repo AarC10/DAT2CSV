@@ -42,36 +42,36 @@ protected short reserved4 = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- visionObservationCount = _payload.getUnsignedShort(0);
- Vel_X = _payload.getShort(2);
- Vel_Y = _payload.getShort(4);
- Vel_Z = _payload.getShort(6);
- Pos_X = _payload.getFloat(8);
- Pos_Y = _payload.getFloat(12);
- Pos_Z = _payload.getFloat(16);
- hoverPointUncertainty1 = _payload.getFloat(20);
- hoverPointUncertainty2 = _payload.getFloat(24);
- hoverPointUncertainty3 = _payload.getFloat(28);
- hoverPointUncertainty4 = _payload.getFloat(32);
- hoverPointUncertainty5 = _payload.getFloat(36);
- hoverPointUncertainty6 = _payload.getFloat(40);
- velocityUncertainty1 = _payload.getFloat(44);
- velocityUncertainty2 = _payload.getFloat(48);
- velocityUncertainty3 = _payload.getFloat(52);
- velocityUncertainty4 = _payload.getFloat(56);
- velocityUncertainty5 = _payload.getFloat(60);
- velocityUncertainty6 = _payload.getFloat(64);
- height = _payload.getFloat(68);
- heightUncertainty = _payload.getFloat(72);
-reserved1 = _payload.getUnsignedByte(76);
-reserved2 = _payload.getUnsignedByte(77);
-reserved3 = _payload.getUnsignedByte(78);
-reserved4 = _payload.getUnsignedByte(79);
+ visionObservationCount = record.getUnsignedShort(0);
+ Vel_X = record.getShort(2);
+ Vel_Y = record.getShort(4);
+ Vel_Z = record.getShort(6);
+ Pos_X = record.getFloat(8);
+ Pos_Y = record.getFloat(12);
+ Pos_Z = record.getFloat(16);
+ hoverPointUncertainty1 = record.getFloat(20);
+ hoverPointUncertainty2 = record.getFloat(24);
+ hoverPointUncertainty3 = record.getFloat(28);
+ hoverPointUncertainty4 = record.getFloat(32);
+ hoverPointUncertainty5 = record.getFloat(36);
+ hoverPointUncertainty6 = record.getFloat(40);
+ velocityUncertainty1 = record.getFloat(44);
+ velocityUncertainty2 = record.getFloat(48);
+ velocityUncertainty3 = record.getFloat(52);
+ velocityUncertainty4 = record.getFloat(56);
+ velocityUncertainty5 = record.getFloat(60);
+ velocityUncertainty6 = record.getFloat(64);
+ height = record.getFloat(68);
+ heightUncertainty = record.getFloat(72);
+reserved1 = record.getUnsignedByte(76);
+reserved2 = record.getUnsignedByte(77);
+reserved3 = record.getUnsignedByte(78);
+reserved4 = record.getUnsignedByte(79);
 } catch (Exception e) {RecordException(e);}}
 
 

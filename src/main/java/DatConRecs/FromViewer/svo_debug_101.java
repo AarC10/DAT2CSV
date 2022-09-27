@@ -25,19 +25,19 @@ protected float VisionDebug8 = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- VisionDebug1 = _payload.getFloat(0);
- VisionDebug2 = _payload.getFloat(4);
- VisionDebug3 = _payload.getFloat(8);
- VisionDebug4 = _payload.getFloat(12);
- VisionDebug5 = _payload.getFloat(16);
- VisionDebug6 = _payload.getFloat(20);
- VisionDebug7 = _payload.getFloat(24);
- VisionDebug8 = _payload.getFloat(28);
+ VisionDebug1 = record.getFloat(0);
+ VisionDebug2 = record.getFloat(4);
+ VisionDebug3 = record.getFloat(8);
+ VisionDebug4 = record.getFloat(12);
+ VisionDebug5 = record.getFloat(16);
+ VisionDebug6 = record.getFloat(20);
+ VisionDebug7 = record.getFloat(24);
+ VisionDebug8 = record.getFloat(28);
 } catch (Exception e) {RecordException(e);}}
 
 

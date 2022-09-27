@@ -30,24 +30,24 @@ protected short dyn_ccpm_saturation_flag = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- dyn_ccpm_raw_lift = _payload.getFloat(0);
- dyn_ccpm_raw_tilt_x = _payload.getFloat(4);
- dyn_ccpm_raw_tilt_y = _payload.getFloat(8);
- dyn_ccpm_raw_torsion = _payload.getFloat(12);
- dyn_ccpm_fix_lift = _payload.getFloat(16);
- dyn_ccpm_fix_tilt_x = _payload.getFloat(20);
- dyn_ccpm_fix_tilt_y = _payload.getFloat(24);
- dyn_ccpm_fix_torsion = _payload.getFloat(28);
- dyn_ccpm_fix_lift_scale = _payload.getFloat(32);
- dyn_ccpm_fix_tilt_scale = _payload.getFloat(36);
- dyn_ccpm_fix_torsion_scale = _payload.getFloat(40);
- dyn_ccpm_saturation_value = _payload.getFloat(44);
-dyn_ccpm_saturation_flag = _payload.getUnsignedByte(48);
+ dyn_ccpm_raw_lift = record.getFloat(0);
+ dyn_ccpm_raw_tilt_x = record.getFloat(4);
+ dyn_ccpm_raw_tilt_y = record.getFloat(8);
+ dyn_ccpm_raw_torsion = record.getFloat(12);
+ dyn_ccpm_fix_lift = record.getFloat(16);
+ dyn_ccpm_fix_tilt_x = record.getFloat(20);
+ dyn_ccpm_fix_tilt_y = record.getFloat(24);
+ dyn_ccpm_fix_torsion = record.getFloat(28);
+ dyn_ccpm_fix_lift_scale = record.getFloat(32);
+ dyn_ccpm_fix_tilt_scale = record.getFloat(36);
+ dyn_ccpm_fix_torsion_scale = record.getFloat(40);
+ dyn_ccpm_saturation_value = record.getFloat(44);
+dyn_ccpm_saturation_flag = record.getUnsignedByte(48);
 } catch (Exception e) {RecordException(e);}}
 
 

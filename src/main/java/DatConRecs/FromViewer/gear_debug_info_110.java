@@ -31,25 +31,25 @@ protected short gear_rc_raw_input = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-gear_mode = _payload.getUnsignedByte(0);
-gear_state = _payload.getUnsignedByte(1);
-gear_cmd = _payload.getUnsignedByte(2);
-gear_speed = _payload.getUnsignedByte(3);
- gear_counter = _payload.getUnsignedInt(4);
-gear_pack_flag = _payload.getUnsignedByte(8);
-gear_pack_req = _payload.getUnsignedByte(9);
-gear_pack_type = _payload.getUnsignedByte(10);
-gear_pack_state = _payload.getUnsignedByte(11);
-gear_pack_manual_cmd = _payload.getUnsignedByte(12);
-gear_rc_cmd = _payload.getUnsignedByte(13);
-gear_app_req = _payload.getUnsignedByte(14);
-gear_app_cmd = _payload.getUnsignedByte(15);
- gear_rc_raw_input = _payload.getShort(16);
+gear_mode = record.getUnsignedByte(0);
+gear_state = record.getUnsignedByte(1);
+gear_cmd = record.getUnsignedByte(2);
+gear_speed = record.getUnsignedByte(3);
+ gear_counter = record.getUnsignedInt(4);
+gear_pack_flag = record.getUnsignedByte(8);
+gear_pack_req = record.getUnsignedByte(9);
+gear_pack_type = record.getUnsignedByte(10);
+gear_pack_state = record.getUnsignedByte(11);
+gear_pack_manual_cmd = record.getUnsignedByte(12);
+gear_rc_cmd = record.getUnsignedByte(13);
+gear_app_req = record.getUnsignedByte(14);
+gear_app_cmd = record.getUnsignedByte(15);
+ gear_rc_raw_input = record.getShort(16);
 } catch (Exception e) {RecordException(e);}}
 
 

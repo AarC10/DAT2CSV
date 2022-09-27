@@ -41,35 +41,35 @@ protected short product_type = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- longtitude = _payload.getDouble(0);
- latitude = _payload.getDouble(8);
- relative_height = _payload.getShort(16);
- vgx = _payload.getShort(18);
- vgy = _payload.getShort(20);
- vgz = _payload.getShort(22);
- pitch = _payload.getShort(24);
- roll = _payload.getShort(26);
- yaw = _payload.getShort(28);
-mode1 = _payload.getUnsignedByte(30);
-latest_cmd = _payload.getUnsignedByte(31);
- controller_state = _payload.getUnsignedInt(32);
-gps_nums = _payload.getUnsignedByte(36);
-gohome_landing_reason = _payload.getUnsignedByte(37);
-start_fail_reason = _payload.getUnsignedByte(38);
-controller_state_ext = _payload.getUnsignedByte(39);
-rsvd2 = _payload.getUnsignedByte(40);
-ultrasonic_height = _payload.getUnsignedByte(41);
- motor_startup_time = _payload.getUnsignedShort(42);
-motor_startup_times = _payload.getUnsignedByte(44);
-bat_alarm1 = _payload.getUnsignedByte(45);
-bat_alarm2 = _payload.getUnsignedByte(46);
-version_match = _payload.getUnsignedByte(47);
-product_type = _payload.getUnsignedByte(48);
+ longtitude = record.getDouble(0);
+ latitude = record.getDouble(8);
+ relative_height = record.getShort(16);
+ vgx = record.getShort(18);
+ vgy = record.getShort(20);
+ vgz = record.getShort(22);
+ pitch = record.getShort(24);
+ roll = record.getShort(26);
+ yaw = record.getShort(28);
+mode1 = record.getUnsignedByte(30);
+latest_cmd = record.getUnsignedByte(31);
+ controller_state = record.getUnsignedInt(32);
+gps_nums = record.getUnsignedByte(36);
+gohome_landing_reason = record.getUnsignedByte(37);
+start_fail_reason = record.getUnsignedByte(38);
+controller_state_ext = record.getUnsignedByte(39);
+rsvd2 = record.getUnsignedByte(40);
+ultrasonic_height = record.getUnsignedByte(41);
+ motor_startup_time = record.getUnsignedShort(42);
+motor_startup_times = record.getUnsignedByte(44);
+bat_alarm1 = record.getUnsignedByte(45);
+bat_alarm2 = record.getUnsignedByte(46);
+version_match = record.getUnsignedByte(47);
+product_type = record.getUnsignedByte(48);
 } catch (Exception e) {RecordException(e);}}
 
 

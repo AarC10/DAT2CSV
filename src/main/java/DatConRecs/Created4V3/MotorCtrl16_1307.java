@@ -11,18 +11,18 @@ public class MotorCtrl16_1307 extends MotorControl {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
-            pwm1 = ((float) _payload.getUnsignedShort(0)) / 100.0f;
-            pwm2 = ((float) _payload.getUnsignedShort(2)) / 100.0f;
-            pwm3 = ((float) _payload.getUnsignedShort(4)) / 100.0f;
-            pwm4 = ((float) _payload.getUnsignedShort(6)) / 100.0f;
-            pwm5 = ((float) _payload.getUnsignedShort(8)) / 100.0f;
-            pwm6 = ((float) _payload.getUnsignedShort(10)) / 100.0f;
-            pwm7 = ((float) _payload.getUnsignedShort(12)) / 100.0f;
-            pwm8 = ((float) _payload.getUnsignedShort(14)) / 100.0f;
+            pwm1 = ((float) record.getUnsignedShort(0)) / 100.0f;
+            pwm2 = ((float) record.getUnsignedShort(2)) / 100.0f;
+            pwm3 = ((float) record.getUnsignedShort(4)) / 100.0f;
+            pwm4 = ((float) record.getUnsignedShort(6)) / 100.0f;
+            pwm5 = ((float) record.getUnsignedShort(8)) / 100.0f;
+            pwm6 = ((float) record.getUnsignedShort(10)) / 100.0f;
+            pwm7 = ((float) record.getUnsignedShort(12)) / 100.0f;
+            pwm8 = ((float) record.getUnsignedShort(14)) / 100.0f;
         } catch (Exception e) {
             RecordException(e);
         }

@@ -35,29 +35,29 @@ protected int gpsstate = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- gps_date = _payload.getUnsignedInt(0);
- gps_time = _payload.getUnsignedInt(4);
- gps_lon = _payload.getInt(8);
- gps_lat = _payload.getInt(12);
- hmsl = _payload.getInt(16);
- Vel_N = _payload.getFloat(20);
- Vel_E = _payload.getFloat(24);
- Vel_D = _payload.getFloat(28);
- hdop = _payload.getFloat(32);
- pdop = _payload.getFloat(36);
- gps_fix = _payload.getFloat(40);
- gnss_flag = _payload.getFloat(44);
- hacc = _payload.getFloat(48);
- sacc = _payload.getFloat(52);
- gps_used = _payload.getUnsignedInt(56);
- gln_used = _payload.getUnsignedInt(60);
- numsv = _payload.getUnsignedShort(64);
- gpsstate = _payload.getUnsignedShort(66);
+ gps_date = record.getUnsignedInt(0);
+ gps_time = record.getUnsignedInt(4);
+ gps_lon = record.getInt(8);
+ gps_lat = record.getInt(12);
+ hmsl = record.getInt(16);
+ Vel_N = record.getFloat(20);
+ Vel_E = record.getFloat(24);
+ Vel_D = record.getFloat(28);
+ hdop = record.getFloat(32);
+ pdop = record.getFloat(36);
+ gps_fix = record.getFloat(40);
+ gnss_flag = record.getFloat(44);
+ hacc = record.getFloat(48);
+ sacc = record.getFloat(52);
+ gps_used = record.getUnsignedInt(56);
+ gln_used = record.getUnsignedInt(60);
+ numsv = record.getUnsignedShort(64);
+ gpsstate = record.getUnsignedShort(66);
 } catch (Exception e) {RecordException(e);}}
 
 

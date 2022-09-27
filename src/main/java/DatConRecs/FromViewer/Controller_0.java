@@ -41,35 +41,35 @@ protected short gps_ctrl_levels = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- g_real_clock = _payload.getUnsignedInt(0);
- g_real_input_channel_COMMAND_AILERON = _payload.getShort(4);
- g_real_input_channel_COMMAND_ELEVATOR = _payload.getShort(6);
- g_real_input_channel_COMMAND_THROTTLE = _payload.getShort(8);
- g_real_input_channel_COMMAND_RUDDER = _payload.getShort(10);
- g_real_input_channel_COMMAND_MODE = _payload.getShort(12);
- g_real_input_channel_COMMAND_IOC = _payload.getShort(14);
- g_real_input_channel_COMMAND_GO_HOME = _payload.getShort(16);
- g_real_input_channel_COMMAND_D4 = _payload.getShort(18);
- g_real_input_control_core_pitch = _payload.getShort(20);
- g_real_input_control_core_roll = _payload.getShort(22);
- g_real_input_control_core_alti = _payload.getShort(24);
- g_real_input_control_core_tail = _payload.getShort(26);
-g_real_status_cotrol_command_mode = _payload.getUnsignedByte(28);
-g_real_status_control_real_mode = _payload.getUnsignedByte(29);
-g_real_status_ioc_control_command_mode = _payload.getUnsignedByte(30);
-g_real_status_rc_state = _payload.getUnsignedByte(31);
-g_real_status_motor_status = _payload.getUnsignedByte(32);
- imu_package_lost_count = _payload.getUnsignedInt(33);
- g_real_status_main_batery_voltage = _payload.getUnsignedShort(37);
-imu_temp_real_ctl_out_per = _payload.getUnsignedByte(39);
-us_fail_flag = _payload.getUnsignedByte(40);
-gps_signal_levels = _payload.getUnsignedByte(41);
-gps_ctrl_levels = _payload.getUnsignedByte(42);
+ g_real_clock = record.getUnsignedInt(0);
+ g_real_input_channel_COMMAND_AILERON = record.getShort(4);
+ g_real_input_channel_COMMAND_ELEVATOR = record.getShort(6);
+ g_real_input_channel_COMMAND_THROTTLE = record.getShort(8);
+ g_real_input_channel_COMMAND_RUDDER = record.getShort(10);
+ g_real_input_channel_COMMAND_MODE = record.getShort(12);
+ g_real_input_channel_COMMAND_IOC = record.getShort(14);
+ g_real_input_channel_COMMAND_GO_HOME = record.getShort(16);
+ g_real_input_channel_COMMAND_D4 = record.getShort(18);
+ g_real_input_control_core_pitch = record.getShort(20);
+ g_real_input_control_core_roll = record.getShort(22);
+ g_real_input_control_core_alti = record.getShort(24);
+ g_real_input_control_core_tail = record.getShort(26);
+g_real_status_cotrol_command_mode = record.getUnsignedByte(28);
+g_real_status_control_real_mode = record.getUnsignedByte(29);
+g_real_status_ioc_control_command_mode = record.getUnsignedByte(30);
+g_real_status_rc_state = record.getUnsignedByte(31);
+g_real_status_motor_status = record.getUnsignedByte(32);
+ imu_package_lost_count = record.getUnsignedInt(33);
+ g_real_status_main_batery_voltage = record.getUnsignedShort(37);
+imu_temp_real_ctl_out_per = record.getUnsignedByte(39);
+us_fail_flag = record.getUnsignedByte(40);
+gps_signal_levels = record.getUnsignedByte(41);
+gps_ctrl_levels = record.getUnsignedByte(42);
 } catch (Exception e) {RecordException(e);}}
 
 

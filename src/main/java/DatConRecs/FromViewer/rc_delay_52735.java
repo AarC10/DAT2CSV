@@ -18,12 +18,12 @@ protected long dly_ns = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- dly_ns = _payload.getUnsignedInt(0);
+ dly_ns = record.getUnsignedInt(0);
 } catch (Exception e) {RecordException(e);}}
 
 

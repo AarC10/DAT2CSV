@@ -33,27 +33,27 @@ protected long cnt_01 = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- dst_value_01 = _payload.getShort(0);
- cur_dst_temp_01 = _payload.getShort(2);
- p_01 = _payload.getInt(4);
- i_01 = _payload.getInt(8);
- d_01 = _payload.getInt(12);
- dl_err_01 = _payload.getShort(16);
-real_ctl_out_per_01 = _payload.getUnsignedByte(18);
-slope_type_01 = _payload.getUnsignedByte(19);
-temp_ctl_slope_01 = _payload.getUnsignedByte(20);
-t_finish_01 = _payload.getUnsignedByte(21);
- err_last_01 = _payload.getShort(22);
- ctl_out_value_01 = _payload.getUnsignedInt(24);
- real_ctl_out_value_01 = _payload.getUnsignedInt(28);
- i_small_01 = _payload.getInt(32);
- out_01 = _payload.getInt(36);
- cnt_01 = _payload.getUnsignedInt(40);
+ dst_value_01 = record.getShort(0);
+ cur_dst_temp_01 = record.getShort(2);
+ p_01 = record.getInt(4);
+ i_01 = record.getInt(8);
+ d_01 = record.getInt(12);
+ dl_err_01 = record.getShort(16);
+real_ctl_out_per_01 = record.getUnsignedByte(18);
+slope_type_01 = record.getUnsignedByte(19);
+temp_ctl_slope_01 = record.getUnsignedByte(20);
+t_finish_01 = record.getUnsignedByte(21);
+ err_last_01 = record.getShort(22);
+ ctl_out_value_01 = record.getUnsignedInt(24);
+ real_ctl_out_value_01 = record.getUnsignedInt(28);
+ i_small_01 = record.getInt(32);
+ out_01 = record.getInt(36);
+ cnt_01 = record.getUnsignedInt(40);
 } catch (Exception e) {RecordException(e);}}
 
 

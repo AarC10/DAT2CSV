@@ -32,8 +32,8 @@ public class RecRCStat48_1700 extends RCStatus {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             statusValid = true;
             fail_safe = payloadBB.get(2);

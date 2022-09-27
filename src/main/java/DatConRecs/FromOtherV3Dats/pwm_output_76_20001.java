@@ -54,30 +54,30 @@ public class pwm_output_76_20001 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            OUT_M1 = _payload.getUnsignedInt(0);
-            OUT_M2 = _payload.getUnsignedInt(4);
-            OUT_M3 = _payload.getUnsignedInt(8);
-            OUT_M4 = _payload.getUnsignedInt(12);
-            OUT_M5 = _payload.getUnsignedInt(16);
-            OUT_M6 = _payload.getUnsignedInt(20);
-            OUT_M7 = _payload.getUnsignedInt(24);
-            OUT_M8 = _payload.getUnsignedInt(28);
-            OUT_F1 = _payload.getUnsignedInt(32);
-            OUT_F2 = _payload.getUnsignedInt(36);
-            OUT_F3 = _payload.getUnsignedInt(40);
-            OUT_F4 = _payload.getUnsignedInt(44);
-            OUT_F5 = _payload.getUnsignedInt(48);
-            OUT_F6 = _payload.getUnsignedInt(52);
-            OUT_F7 = _payload.getUnsignedInt(56);
-            OUT_F8 = _payload.getUnsignedInt(60);
-            OUT_TEMP_CTRL_0 = _payload.getUnsignedInt(64);
-            OUT_TEMP_CTRL_1 = _payload.getUnsignedInt(68);
-            OUT_TEMP_CTRL = _payload.getUnsignedInt(72);
+            OUT_M1 = record.getUnsignedInt(0);
+            OUT_M2 = record.getUnsignedInt(4);
+            OUT_M3 = record.getUnsignedInt(8);
+            OUT_M4 = record.getUnsignedInt(12);
+            OUT_M5 = record.getUnsignedInt(16);
+            OUT_M6 = record.getUnsignedInt(20);
+            OUT_M7 = record.getUnsignedInt(24);
+            OUT_M8 = record.getUnsignedInt(28);
+            OUT_F1 = record.getUnsignedInt(32);
+            OUT_F2 = record.getUnsignedInt(36);
+            OUT_F3 = record.getUnsignedInt(40);
+            OUT_F4 = record.getUnsignedInt(44);
+            OUT_F5 = record.getUnsignedInt(48);
+            OUT_F6 = record.getUnsignedInt(52);
+            OUT_F7 = record.getUnsignedInt(56);
+            OUT_F8 = record.getUnsignedInt(60);
+            OUT_TEMP_CTRL_0 = record.getUnsignedInt(64);
+            OUT_TEMP_CTRL_1 = record.getUnsignedInt(68);
+            OUT_TEMP_CTRL = record.getUnsignedInt(72);
         } catch (Exception e) {
             RecordException(e);
         }

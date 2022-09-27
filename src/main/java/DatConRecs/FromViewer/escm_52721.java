@@ -58,52 +58,52 @@ protected short esc4_debug2 = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-esc1_status = _payload.getUnsignedByte(0);
- esc1_current = _payload.getShort(1);
- esc1_speed = _payload.getShort(3);
- esc1_voltage = _payload.getShort(5);
- esc1_temperature = _payload.getShort(7);
- esc1_ppm_recv = _payload.getShort(9);
- esc1_v_out = _payload.getShort(11);
- esc1_debug0 = _payload.getShort(13);
- esc1_debug1 = _payload.getShort(15);
- esc1_debug2 = _payload.getShort(17);
+esc1_status = record.getUnsignedByte(0);
+ esc1_current = record.getShort(1);
+ esc1_speed = record.getShort(3);
+ esc1_voltage = record.getShort(5);
+ esc1_temperature = record.getShort(7);
+ esc1_ppm_recv = record.getShort(9);
+ esc1_v_out = record.getShort(11);
+ esc1_debug0 = record.getShort(13);
+ esc1_debug1 = record.getShort(15);
+ esc1_debug2 = record.getShort(17);
  
-esc2_status = _payload.getUnsignedByte(19);
- esc2_current = _payload.getShort(20);
- esc2_speed = _payload.getShort(22);
- esc2_voltage = _payload.getShort(24);
- esc2_temperature = _payload.getShort(26);
- esc2_ppm_recv = _payload.getShort(28);
- esc2_v_out = _payload.getShort(30);
- esc2_debug0 = _payload.getShort(32);
- esc2_debug1 = _payload.getShort(34);
- esc2_debug2 = _payload.getShort(36);
-esc3_status = _payload.getUnsignedByte(38);
- esc3_current = _payload.getShort(39);
- esc3_speed = _payload.getShort(41);
- esc3_voltage = _payload.getShort(43);
- esc3_temperature = _payload.getShort(45);
- esc3_ppm_recv = _payload.getShort(47);
- esc3_v_out = _payload.getShort(49);
- esc3_debug0 = _payload.getShort(51);
- esc3_debug1 = _payload.getShort(53);
- esc3_debug2 = _payload.getShort(55);
-esc4_status = _payload.getUnsignedByte(57);
- esc4_current = _payload.getShort(58);
- esc4_speed = _payload.getShort(60);
- esc4_voltage = _payload.getShort(62);
- esc4_temperature = _payload.getShort(64);
- esc4_ppm_recv = _payload.getShort(66);
- esc4_v_out = _payload.getShort(68);
- esc4_debug0 = _payload.getShort(70);
- esc4_debug1 = _payload.getShort(72);
- esc4_debug2 = _payload.getShort(74);
+esc2_status = record.getUnsignedByte(19);
+ esc2_current = record.getShort(20);
+ esc2_speed = record.getShort(22);
+ esc2_voltage = record.getShort(24);
+ esc2_temperature = record.getShort(26);
+ esc2_ppm_recv = record.getShort(28);
+ esc2_v_out = record.getShort(30);
+ esc2_debug0 = record.getShort(32);
+ esc2_debug1 = record.getShort(34);
+ esc2_debug2 = record.getShort(36);
+esc3_status = record.getUnsignedByte(38);
+ esc3_current = record.getShort(39);
+ esc3_speed = record.getShort(41);
+ esc3_voltage = record.getShort(43);
+ esc3_temperature = record.getShort(45);
+ esc3_ppm_recv = record.getShort(47);
+ esc3_v_out = record.getShort(49);
+ esc3_debug0 = record.getShort(51);
+ esc3_debug1 = record.getShort(53);
+ esc3_debug2 = record.getShort(55);
+esc4_status = record.getUnsignedByte(57);
+ esc4_current = record.getShort(58);
+ esc4_speed = record.getShort(60);
+ esc4_voltage = record.getShort(62);
+ esc4_temperature = record.getShort(64);
+ esc4_ppm_recv = record.getShort(66);
+ esc4_v_out = record.getShort(68);
+ esc4_debug0 = record.getShort(70);
+ esc4_debug1 = record.getShort(72);
+ esc4_debug2 = record.getShort(74);
 } catch (Exception e) {RecordException(e);}}
 
 

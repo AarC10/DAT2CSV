@@ -58,8 +58,8 @@ public class RecAirComp extends Record {
         super(convertDat, id, length);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 
     double gX = 0.0;

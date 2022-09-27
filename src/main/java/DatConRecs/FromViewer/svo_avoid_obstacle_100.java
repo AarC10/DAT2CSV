@@ -24,18 +24,18 @@ protected short SVO_cnt = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-SVO_stop_flag = _payload.getUnsignedByte(0);
- SVO_p_front = _payload.getUnsignedShort(1);
- SVO_p_right = _payload.getUnsignedShort(3);
- SVO_p_back = _payload.getUnsignedShort(5);
- SVO_p_left = _payload.getUnsignedShort(7);
-SVO_v_limit = _payload.getUnsignedByte(9);
-SVO_cnt = _payload.getUnsignedByte(10);
+SVO_stop_flag = record.getUnsignedByte(0);
+ SVO_p_front = record.getUnsignedShort(1);
+ SVO_p_right = record.getUnsignedShort(3);
+ SVO_p_back = record.getUnsignedShort(5);
+ SVO_p_left = record.getUnsignedShort(7);
+SVO_v_limit = record.getUnsignedByte(9);
+SVO_cnt = record.getUnsignedByte(10);
 } catch (Exception e) {RecordException(e);}}
 
 

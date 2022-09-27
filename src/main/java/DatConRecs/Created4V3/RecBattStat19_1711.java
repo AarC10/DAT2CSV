@@ -36,8 +36,8 @@ public class RecBattStat19_1711 extends Record {
 
     String status = "";
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             status = "";
             if (payloadBB.get(0) != 0x00) {

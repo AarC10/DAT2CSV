@@ -17,8 +17,8 @@ public class IMU120_2048 extends RecIMU {
                 Units.meters);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
 
     }
 

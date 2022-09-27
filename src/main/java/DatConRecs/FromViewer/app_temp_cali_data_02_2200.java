@@ -48,42 +48,42 @@ protected float base_temp_02 = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-start_flag_02 = _payload.getUnsignedByte(0);
- state_02 = _payload.getByte(1);;
-cali_cnt_02 = _payload.getUnsignedByte(2);
-temp_ready_02 = _payload.getUnsignedByte(3);
-step_02 = _payload.getUnsignedByte(4);
-cali_type_02 = _payload.getUnsignedByte(5);
- tick_02 = _payload.getUnsignedShort(6);
- grav_acc_x_02 = _payload.getByte(8);;
- grav_acc_y_02 = _payload.getByte(9);;
- grav_acc_z_02 = _payload.getByte(10);;
- dst_cali_temp_02 = _payload.getByte(11);;
- temp_min_02 = _payload.getFloat(12);
- temp_max_02 = _payload.getFloat(16);
-temp_cali_status_02 = _payload.getUnsignedByte(20);
-base_cali_status_02 = _payload.getUnsignedByte(21);
-cfg_temp_cali_fw_version_02 = _payload.getUnsignedByte(22);
-cur_temp_cali_fw_version_02 = _payload.getUnsignedByte(23);
- temp_bw_x_02 = _payload.getFloat(24);
- temp_bw_y_02 = _payload.getFloat(28);
- temp_bw_z_02 = _payload.getFloat(32);
- temp_ba_x_02 = _payload.getFloat(36);
- temp_ba_y_02 = _payload.getFloat(40);
- temp_ba_z_02 = _payload.getFloat(44);
- temp_temp_02 = _payload.getFloat(48);
- base_bw_x_02 = _payload.getFloat(52);
- base_bw_y_02 = _payload.getFloat(56);
- base_bw_z_02 = _payload.getFloat(60);
- base_ba_x_02 = _payload.getFloat(64);
- base_ba_y_02 = _payload.getFloat(68);
- base_ba_z_02 = _payload.getFloat(72);
- base_temp_02 = _payload.getFloat(76);
+start_flag_02 = record.getUnsignedByte(0);
+ state_02 = record.getByte(1);;
+cali_cnt_02 = record.getUnsignedByte(2);
+temp_ready_02 = record.getUnsignedByte(3);
+step_02 = record.getUnsignedByte(4);
+cali_type_02 = record.getUnsignedByte(5);
+ tick_02 = record.getUnsignedShort(6);
+ grav_acc_x_02 = record.getByte(8);;
+ grav_acc_y_02 = record.getByte(9);;
+ grav_acc_z_02 = record.getByte(10);;
+ dst_cali_temp_02 = record.getByte(11);;
+ temp_min_02 = record.getFloat(12);
+ temp_max_02 = record.getFloat(16);
+temp_cali_status_02 = record.getUnsignedByte(20);
+base_cali_status_02 = record.getUnsignedByte(21);
+cfg_temp_cali_fw_version_02 = record.getUnsignedByte(22);
+cur_temp_cali_fw_version_02 = record.getUnsignedByte(23);
+ temp_bw_x_02 = record.getFloat(24);
+ temp_bw_y_02 = record.getFloat(28);
+ temp_bw_z_02 = record.getFloat(32);
+ temp_ba_x_02 = record.getFloat(36);
+ temp_ba_y_02 = record.getFloat(40);
+ temp_ba_z_02 = record.getFloat(44);
+ temp_temp_02 = record.getFloat(48);
+ base_bw_x_02 = record.getFloat(52);
+ base_bw_y_02 = record.getFloat(56);
+ base_bw_z_02 = record.getFloat(60);
+ base_ba_x_02 = record.getFloat(64);
+ base_ba_y_02 = record.getFloat(68);
+ base_ba_z_02 = record.getFloat(72);
+ base_temp_02 = record.getFloat(76);
 } catch (Exception e) {RecordException(e);}}
 
 

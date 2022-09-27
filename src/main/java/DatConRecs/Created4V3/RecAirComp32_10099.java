@@ -50,8 +50,8 @@ public class RecAirComp32_10099 extends RecAirComp {
     Op.float        airspeed_comp_alti 0
      * */
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         valid = true;
         velNorm = payloadBB.getFloat(0);
         vgx = payloadBB.getFloat(12);

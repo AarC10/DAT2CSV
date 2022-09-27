@@ -63,25 +63,25 @@ public class RecSVOAVOID15_1121 extends Record {
         super(convertDat, 1121, 15);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         valid = true;
 
-        osd_avoid_obstacle_enable = _payload.getUnsignedByte(0);
-        osd_user_avoid_enable = _payload.getUnsignedByte(1);
-        osd_avoid_obstacle_work_flag = _payload.getUnsignedByte(2);
-        osd_emergency_brake_work_flag = _payload.getUnsignedByte(3);
-        go_home_avoid_enable = _payload.getUnsignedByte(4);
-        avoid_ground_force_landing_flag = _payload.getUnsignedByte(5);
-        radius_limit_work_flag = _payload.getUnsignedByte(6);
-        airport_limit_work_flag = _payload.getUnsignedByte(7);
-        avoid_obstacle_work_flag = _payload.getUnsignedByte(8);
-        horiz_near_boundary_flag = _payload.getUnsignedByte(9);
-        is_avoid_overshoot_act_flag = _payload.getUnsignedByte(10);
-        vert_low_limit_work_flag = _payload.getUnsignedByte(11);
-        vert_airport_limit_work_flag = _payload.getUnsignedByte(12);
-        roof_limit_flag = _payload.getUnsignedByte(13);
-        hit_ground_limit_work_flag = _payload.getUnsignedByte(14);
+        osd_avoid_obstacle_enable = record.getUnsignedByte(0);
+        osd_user_avoid_enable = record.getUnsignedByte(1);
+        osd_avoid_obstacle_work_flag = record.getUnsignedByte(2);
+        osd_emergency_brake_work_flag = record.getUnsignedByte(3);
+        go_home_avoid_enable = record.getUnsignedByte(4);
+        avoid_ground_force_landing_flag = record.getUnsignedByte(5);
+        radius_limit_work_flag = record.getUnsignedByte(6);
+        airport_limit_work_flag = record.getUnsignedByte(7);
+        avoid_obstacle_work_flag = record.getUnsignedByte(8);
+        horiz_near_boundary_flag = record.getUnsignedByte(9);
+        is_avoid_overshoot_act_flag = record.getUnsignedByte(10);
+        vert_low_limit_work_flag = record.getUnsignedByte(11);
+        vert_airport_limit_work_flag = record.getUnsignedByte(12);
+        roof_limit_flag = record.getUnsignedByte(13);
+        hit_ground_limit_work_flag = record.getUnsignedByte(14);
 
         emergBrake = (osd_emergency_brake_work_flag == 1) ? "true" : "false";
         avoidObst = (osd_avoid_obstacle_work_flag == 1) ? "true" : "false";

@@ -47,41 +47,41 @@ protected float directy_2 = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-area_state = _payload.getUnsignedByte(0);
-action_state = _payload.getUnsignedByte(1);
-work_point_num = _payload.getUnsignedByte(2);
- lat_int_0 = _payload.getInt(3);
- lon_int_0 = _payload.getInt(7);
-point_from_where_0 = _payload.getUnsignedByte(11);
-flag_limit_radius_0 = _payload.getUnsignedByte(12);
-flag_limit_hi_0 = _payload.getUnsignedByte(13);
- d2limit_edge_0 = _payload.getFloat(14);
- d2limit_hi_0 = _payload.getFloat(18);
- directx_0 = _payload.getFloat(22);
- directy_0 = _payload.getFloat(26);
- lat_int_1 = _payload.getInt(30);
- lon_int_1 = _payload.getInt(34);
-point_from_where_1 = _payload.getUnsignedByte(38);
-flag_limit_radius_1 = _payload.getUnsignedByte(39);
-flag_limit_hi_1 = _payload.getUnsignedByte(40);
- d2limit_edge_1 = _payload.getFloat(41);
- d2limit_hi_1 = _payload.getFloat(45);
- directx_1 = _payload.getFloat(49);
- directy_1 = _payload.getFloat(53);
- lat_int_2 = _payload.getInt(57);
- lon_int_2 = _payload.getInt(61);
-point_from_where_2 = _payload.getUnsignedByte(65);
-flag_limit_radius_2 = _payload.getUnsignedByte(66);
-flag_limit_hi_2 = _payload.getUnsignedByte(67);
- d2limit_edge_2 = _payload.getFloat(68);
- d2limit_hi_2 = _payload.getFloat(72);
- directx_2 = _payload.getFloat(76);
- directy_2 = _payload.getFloat(80);
+area_state = record.getUnsignedByte(0);
+action_state = record.getUnsignedByte(1);
+work_point_num = record.getUnsignedByte(2);
+ lat_int_0 = record.getInt(3);
+ lon_int_0 = record.getInt(7);
+point_from_where_0 = record.getUnsignedByte(11);
+flag_limit_radius_0 = record.getUnsignedByte(12);
+flag_limit_hi_0 = record.getUnsignedByte(13);
+ d2limit_edge_0 = record.getFloat(14);
+ d2limit_hi_0 = record.getFloat(18);
+ directx_0 = record.getFloat(22);
+ directy_0 = record.getFloat(26);
+ lat_int_1 = record.getInt(30);
+ lon_int_1 = record.getInt(34);
+point_from_where_1 = record.getUnsignedByte(38);
+flag_limit_radius_1 = record.getUnsignedByte(39);
+flag_limit_hi_1 = record.getUnsignedByte(40);
+ d2limit_edge_1 = record.getFloat(41);
+ d2limit_hi_1 = record.getFloat(45);
+ directx_1 = record.getFloat(49);
+ directy_1 = record.getFloat(53);
+ lat_int_2 = record.getInt(57);
+ lon_int_2 = record.getInt(61);
+point_from_where_2 = record.getUnsignedByte(65);
+flag_limit_radius_2 = record.getUnsignedByte(66);
+flag_limit_hi_2 = record.getUnsignedByte(67);
+ d2limit_edge_2 = record.getFloat(68);
+ d2limit_hi_2 = record.getFloat(72);
+ directx_2 = record.getFloat(76);
+ directy_2 = record.getFloat(80);
 } catch (Exception e) {RecordException(e);}}
 
 

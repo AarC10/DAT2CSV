@@ -36,30 +36,30 @@ protected int pwm_8 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-horiz_motor_status = _payload.getUnsignedByte(0);
-horiz_motor_cmd_id = _payload.getUnsignedByte(1);
-horiz_motor_feedback_id = _payload.getUnsignedByte(2);
- thrust_1 = _payload.getUnsignedShort(3);
- thrust_2 = _payload.getUnsignedShort(5);
- thrust_3 = _payload.getUnsignedShort(7);
- thrust_4 = _payload.getUnsignedShort(9);
- thrust_5 = _payload.getUnsignedShort(11);
- thrust_6 = _payload.getUnsignedShort(13);
- thrust_7 = _payload.getUnsignedShort(15);
- thrust_8 = _payload.getUnsignedShort(17);
- pwm_1 = _payload.getUnsignedShort(19);
- pwm_2 = _payload.getUnsignedShort(21);
- pwm_3 = _payload.getUnsignedShort(23);
- pwm_4 = _payload.getUnsignedShort(25);
- pwm_5 = _payload.getUnsignedShort(27);
- pwm_6 = _payload.getUnsignedShort(29);
- pwm_7 = _payload.getUnsignedShort(31);
- pwm_8 = _payload.getUnsignedShort(33);
+horiz_motor_status = record.getUnsignedByte(0);
+horiz_motor_cmd_id = record.getUnsignedByte(1);
+horiz_motor_feedback_id = record.getUnsignedByte(2);
+ thrust_1 = record.getUnsignedShort(3);
+ thrust_2 = record.getUnsignedShort(5);
+ thrust_3 = record.getUnsignedShort(7);
+ thrust_4 = record.getUnsignedShort(9);
+ thrust_5 = record.getUnsignedShort(11);
+ thrust_6 = record.getUnsignedShort(13);
+ thrust_7 = record.getUnsignedShort(15);
+ thrust_8 = record.getUnsignedShort(17);
+ pwm_1 = record.getUnsignedShort(19);
+ pwm_2 = record.getUnsignedShort(21);
+ pwm_3 = record.getUnsignedShort(23);
+ pwm_4 = record.getUnsignedShort(25);
+ pwm_5 = record.getUnsignedShort(27);
+ pwm_6 = record.getUnsignedShort(29);
+ pwm_7 = record.getUnsignedShort(31);
+ pwm_8 = record.getUnsignedShort(33);
 } catch (Exception e) {RecordException(e);}}
 
 

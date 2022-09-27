@@ -26,20 +26,20 @@ protected short byte7 = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-byte1 = _payload.getUnsignedByte(0);
-byte2 = _payload.getUnsignedByte(1);
- word1 = _payload.getUnsignedShort(2);
-byte3 = _payload.getUnsignedByte(4);
-ctrl_action = _payload.getUnsignedByte(5);
-byte4 = _payload.getUnsignedByte(6);
-byte5 = _payload.getUnsignedByte(7);
-byte6 = _payload.getUnsignedByte(8);
-byte7 = _payload.getUnsignedByte(9);
+byte1 = record.getUnsignedByte(0);
+byte2 = record.getUnsignedByte(1);
+ word1 = record.getUnsignedShort(2);
+byte3 = record.getUnsignedByte(4);
+ctrl_action = record.getUnsignedByte(5);
+byte4 = record.getUnsignedByte(6);
+byte5 = record.getUnsignedByte(7);
+byte6 = record.getUnsignedByte(8);
+byte7 = record.getUnsignedByte(9);
 } catch (Exception e) {RecordException(e);}}
 
 

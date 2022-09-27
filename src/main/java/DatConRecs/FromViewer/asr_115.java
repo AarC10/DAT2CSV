@@ -18,12 +18,12 @@ protected long lead = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- lead = _payload.getUnsignedInt(0);
+ lead = record.getUnsignedInt(0);
 } catch (Exception e) {RecordException(e);}}
 
 

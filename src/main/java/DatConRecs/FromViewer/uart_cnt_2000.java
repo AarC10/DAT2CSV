@@ -33,27 +33,27 @@ protected int uart_rx8 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- uart_tx1 = _payload.getUnsignedShort(0);
- uart_rx1 = _payload.getUnsignedShort(2);
- uart_tx2 = _payload.getUnsignedShort(4);
- uart_rx2 = _payload.getUnsignedShort(6);
- uart_tx3 = _payload.getUnsignedShort(8);
- uart_rx3 = _payload.getUnsignedShort(10);
- uart_tx4 = _payload.getUnsignedShort(12);
- uart_rx4 = _payload.getUnsignedShort(14);
- uart_tx5 = _payload.getUnsignedShort(16);
- uart_rx5 = _payload.getUnsignedShort(18);
- uart_tx6 = _payload.getUnsignedShort(20);
- uart_rx6 = _payload.getUnsignedShort(22);
- uart_tx7 = _payload.getUnsignedShort(24);
- uart_rx7 = _payload.getUnsignedShort(26);
- uart_tx8 = _payload.getUnsignedShort(28);
- uart_rx8 = _payload.getUnsignedShort(30);
+ uart_tx1 = record.getUnsignedShort(0);
+ uart_rx1 = record.getUnsignedShort(2);
+ uart_tx2 = record.getUnsignedShort(4);
+ uart_rx2 = record.getUnsignedShort(6);
+ uart_tx3 = record.getUnsignedShort(8);
+ uart_rx3 = record.getUnsignedShort(10);
+ uart_tx4 = record.getUnsignedShort(12);
+ uart_rx4 = record.getUnsignedShort(14);
+ uart_tx5 = record.getUnsignedShort(16);
+ uart_rx5 = record.getUnsignedShort(18);
+ uart_tx6 = record.getUnsignedShort(20);
+ uart_rx6 = record.getUnsignedShort(22);
+ uart_tx7 = record.getUnsignedShort(24);
+ uart_rx7 = record.getUnsignedShort(26);
+ uart_tx8 = record.getUnsignedShort(28);
+ uart_rx8 = record.getUnsignedShort(30);
 } catch (Exception e) {RecordException(e);}}
 
 

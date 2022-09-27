@@ -27,21 +27,21 @@ protected int fa = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- bias_gyrox = _payload.getFloat(0);
- bias_gyroy = _payload.getFloat(4);
- bias_gyroz = _payload.getFloat(8);
- bias_accx = _payload.getFloat(12);
- bias_accy = _payload.getFloat(16);
- bias_accz = _payload.getFloat(20);
- tw = _payload.getFloat(24);
- ta = _payload.getFloat(28);
- fw = _payload.getUnsignedShort(32);
- fa = _payload.getUnsignedShort(34);
+ bias_gyrox = record.getFloat(0);
+ bias_gyroy = record.getFloat(4);
+ bias_gyroz = record.getFloat(8);
+ bias_accx = record.getFloat(12);
+ bias_accy = record.getFloat(16);
+ bias_accz = record.getFloat(20);
+ tw = record.getFloat(24);
+ ta = record.getFloat(28);
+ fw = record.getUnsignedShort(32);
+ fa = record.getUnsignedShort(34);
 } catch (Exception e) {RecordException(e);}}
 
 

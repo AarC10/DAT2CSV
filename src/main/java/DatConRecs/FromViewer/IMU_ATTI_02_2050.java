@@ -50,44 +50,44 @@ protected int cnt_atti_02 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- longtiI_02 = _payload.getDouble(0);
- latiI_02 = _payload.getDouble(8);
- altiI_02 = _payload.getFloat(16);
- acc_x_02 = _payload.getFloat(20);
- acc_y_02 = _payload.getFloat(24);
- acc_z_02 = _payload.getFloat(28);
- gyro_x_02 = _payload.getFloat(32);
- gyro_y_02 = _payload.getFloat(36);
- gyro_z_02 = _payload.getFloat(40);
- press_02 = _payload.getFloat(44);
- q0_02 = _payload.getFloat(48);
- q1_02 = _payload.getFloat(52);
- q2_02 = _payload.getFloat(56);
- q3_02 = _payload.getFloat(60);
- ag_x_02 = _payload.getFloat(64);
- ag_y_02 = _payload.getFloat(68);
- ag_z_02 = _payload.getFloat(72);
- vg_x_02 = _payload.getFloat(76);
- vg_y_02 = _payload.getFloat(80);
- vg_z_02 = _payload.getFloat(84);
- gb_x_02 = _payload.getFloat(88);
- gb_y_02 = _payload.getFloat(92);
- gb_z_02 = _payload.getFloat(96);
- m_x_02 = _payload.getShort(100);
- m_y_02 = _payload.getShort(102);
- m_z_02 = _payload.getShort(104);
- temp_x_02 = _payload.getShort(106);
- temp_y_02 = _payload.getShort(108);
- temp_z_02 = _payload.getShort(110);
- sensor_monitor_02 = _payload.getUnsignedShort(112);
- filter_status_02 = _payload.getUnsignedShort(114);
- svn_02 = _payload.getUnsignedShort(116);
- cnt_atti_02 = _payload.getUnsignedShort(118);
+ longtiI_02 = record.getDouble(0);
+ latiI_02 = record.getDouble(8);
+ altiI_02 = record.getFloat(16);
+ acc_x_02 = record.getFloat(20);
+ acc_y_02 = record.getFloat(24);
+ acc_z_02 = record.getFloat(28);
+ gyro_x_02 = record.getFloat(32);
+ gyro_y_02 = record.getFloat(36);
+ gyro_z_02 = record.getFloat(40);
+ press_02 = record.getFloat(44);
+ q0_02 = record.getFloat(48);
+ q1_02 = record.getFloat(52);
+ q2_02 = record.getFloat(56);
+ q3_02 = record.getFloat(60);
+ ag_x_02 = record.getFloat(64);
+ ag_y_02 = record.getFloat(68);
+ ag_z_02 = record.getFloat(72);
+ vg_x_02 = record.getFloat(76);
+ vg_y_02 = record.getFloat(80);
+ vg_z_02 = record.getFloat(84);
+ gb_x_02 = record.getFloat(88);
+ gb_y_02 = record.getFloat(92);
+ gb_z_02 = record.getFloat(96);
+ m_x_02 = record.getShort(100);
+ m_y_02 = record.getShort(102);
+ m_z_02 = record.getShort(104);
+ temp_x_02 = record.getShort(106);
+ temp_y_02 = record.getShort(108);
+ temp_z_02 = record.getShort(110);
+ sensor_monitor_02 = record.getUnsignedShort(112);
+ filter_status_02 = record.getUnsignedShort(114);
+ svn_02 = record.getUnsignedShort(116);
+ cnt_atti_02 = record.getUnsignedShort(118);
 } catch (Exception e) {RecordException(e);}}
 
 

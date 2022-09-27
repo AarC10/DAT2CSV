@@ -41,8 +41,8 @@ public class HomePoint24_13 extends Record {
         super(convertDat, 13, 24);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             double longRad = payloadBB.getDouble(0);
             double latRad = payloadBB.getDouble(8);

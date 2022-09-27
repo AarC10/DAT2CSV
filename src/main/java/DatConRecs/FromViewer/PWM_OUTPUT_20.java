@@ -25,19 +25,19 @@ protected int M8 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- M1 = _payload.getUnsignedShort(0);
- M2 = _payload.getUnsignedShort(2);
- M3 = _payload.getUnsignedShort(4);
- M4 = _payload.getUnsignedShort(6);
- M5 = _payload.getUnsignedShort(8);
- M6 = _payload.getUnsignedShort(10);
- M7 = _payload.getUnsignedShort(12);
- M8 = _payload.getUnsignedShort(14);
+ M1 = record.getUnsignedShort(0);
+ M2 = record.getUnsignedShort(2);
+ M3 = record.getUnsignedShort(4);
+ M4 = record.getUnsignedShort(6);
+ M5 = record.getUnsignedShort(8);
+ M6 = record.getUnsignedShort(10);
+ M7 = record.getUnsignedShort(12);
+ M8 = record.getUnsignedShort(14);
 } catch (Exception e) {RecordException(e);}}
 
 

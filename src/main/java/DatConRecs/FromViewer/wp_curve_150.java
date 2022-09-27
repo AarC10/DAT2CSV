@@ -26,20 +26,20 @@ protected short wp_state = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- px = _payload.getFloat(0);
- py = _payload.getFloat(4);
- pz = _payload.getFloat(8);
- vx = _payload.getFloat(12);
- vy = _payload.getFloat(16);
- vz = _payload.getFloat(20);
- v_norm = _payload.getFloat(24);
- T = _payload.getFloat(28);
-wp_state = _payload.getUnsignedByte(32);
+ px = record.getFloat(0);
+ py = record.getFloat(4);
+ pz = record.getFloat(8);
+ vx = record.getFloat(12);
+ vy = record.getFloat(16);
+ vz = record.getFloat(20);
+ v_norm = record.getFloat(24);
+ T = record.getFloat(28);
+wp_state = record.getUnsignedByte(32);
 } catch (Exception e) {RecordException(e);}}
 
 

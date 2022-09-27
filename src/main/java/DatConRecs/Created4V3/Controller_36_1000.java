@@ -38,31 +38,31 @@ public class Controller_36_1000 extends RecController {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            ctrl_tick = _payload.getUnsignedInt(0);
-            ctrl_pitch = _payload.getShort(4);
-            ctrl_roll = _payload.getShort(6);
-            ctrl_yaw = _payload.getShort(8);
-            ctrl_thr = _payload.getShort(10);
-            ctrl_mode_cur = _payload.getUnsignedByte(12);
-            cur_mode_switch = _payload.getUnsignedByte(13);
-            motor_state_cur = _payload.getUnsignedByte(14);
-            motor_average_speed = _payload.getShort(15);
-            sig_level = _payload.getUnsignedByte(17);
-            ctrl_level = _payload.getUnsignedByte(18);
-            in_sim_model = _payload.getUnsignedByte(19);
-            real_max_height = _payload.getUnsignedShort(20);
-            real_max_radius = _payload.getUnsignedShort(22);
-            distance_to_home_x = _payload.getFloat(24);
-            distance_to_home_y = _payload.getFloat(28);
-            action_reqest_id = _payload.getUnsignedByte(32);
-            action_action_id = _payload.getUnsignedByte(33);
-            cur_cmd_mode = _payload.getUnsignedByte(34);
-            cur_cmd_mode_req_id = _payload.getUnsignedByte(35);
+            ctrl_tick = record.getUnsignedInt(0);
+            ctrl_pitch = record.getShort(4);
+            ctrl_roll = record.getShort(6);
+            ctrl_yaw = record.getShort(8);
+            ctrl_thr = record.getShort(10);
+            ctrl_mode_cur = record.getUnsignedByte(12);
+            cur_mode_switch = record.getUnsignedByte(13);
+            motor_state_cur = record.getUnsignedByte(14);
+            motor_average_speed = record.getShort(15);
+            sig_level = record.getUnsignedByte(17);
+            ctrl_level = record.getUnsignedByte(18);
+            in_sim_model = record.getUnsignedByte(19);
+            real_max_height = record.getUnsignedShort(20);
+            real_max_radius = record.getUnsignedShort(22);
+            distance_to_home_x = record.getFloat(24);
+            distance_to_home_y = record.getFloat(28);
+            action_reqest_id = record.getUnsignedByte(32);
+            action_action_id = record.getUnsignedByte(33);
+            cur_cmd_mode = record.getUnsignedByte(34);
+            cur_cmd_mode_req_id = record.getUnsignedByte(35);
         } catch (Exception e) {
             RecordException(e);
         }

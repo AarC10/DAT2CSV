@@ -30,8 +30,8 @@ public class MagRawGroup extends Record {
 
     protected Signal magRawSig = null;
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             magX = payloadBB.getShort(0);
             magY = payloadBB.getShort(2);

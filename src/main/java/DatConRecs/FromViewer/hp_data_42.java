@@ -31,25 +31,25 @@ protected float head_error = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- tgt_hp_alti = _payload.getFloat(0);
- tgt_ang_rate = _payload.getFloat(4);
- tgt_radius = _payload.getFloat(8);
- distance_to_hp = _payload.getFloat(12);
- cosine_angle = _payload.getFloat(16);
- angle_rate = _payload.getFloat(20);
- radius = _payload.getFloat(24);
- pos_error_x = _payload.getFloat(28);
- pos_error_y = _payload.getFloat(32);
- pos_error_z = _payload.getFloat(36);
- vel_error_x = _payload.getFloat(40);
- vel_error_y = _payload.getFloat(44);
- vel_error_z = _payload.getFloat(48);
- head_error = _payload.getFloat(52);
+ tgt_hp_alti = record.getFloat(0);
+ tgt_ang_rate = record.getFloat(4);
+ tgt_radius = record.getFloat(8);
+ distance_to_hp = record.getFloat(12);
+ cosine_angle = record.getFloat(16);
+ angle_rate = record.getFloat(20);
+ radius = record.getFloat(24);
+ pos_error_x = record.getFloat(28);
+ pos_error_y = record.getFloat(32);
+ pos_error_z = record.getFloat(36);
+ vel_error_x = record.getFloat(40);
+ vel_error_y = record.getFloat(44);
+ vel_error_z = record.getFloat(48);
+ head_error = record.getFloat(52);
 } catch (Exception e) {RecordException(e);}}
 
 

@@ -201,7 +201,7 @@ public class RecBatt extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            for (int i = 1; i <= _datFile.getNumBattCells(); i++) {
+            for (int i = 1; i <= datFile.getNumBattCells(); i++) {
                 printCSVValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
                         valid);
             }

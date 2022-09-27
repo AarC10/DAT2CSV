@@ -15,10 +15,10 @@ public class console_52719 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
-            String payloadString = _payload.getString();
+            String payloadString = record.getString();
             if (Persist.EXPERIMENTAL_DEV) {
                 System.out.println("console_52719 " + payloadString);
             }

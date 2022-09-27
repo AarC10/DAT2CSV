@@ -24,8 +24,8 @@ public class HomePoint34_13 extends Record {
     }
 
     @Override
-    public void process(Payload payload) {
-        super.process(payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             double longRad = payloadBB.getDouble(0);
             double latRad = payloadBB.getDouble(8);

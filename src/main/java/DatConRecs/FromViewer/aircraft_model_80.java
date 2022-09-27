@@ -49,43 +49,43 @@ protected float m8_torque = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- m1_current = _payload.getFloat(0);
- m1_w = _payload.getFloat(4);
- m1_lift = _payload.getFloat(8);
- m1_torque = _payload.getFloat(12);
- m2_current = _payload.getFloat(16);
- m2_w = _payload.getFloat(20);
- m2_lift = _payload.getFloat(24);
- m2_torque = _payload.getFloat(28);
- m3_current = _payload.getFloat(32);
- m3_w = _payload.getFloat(36);
- m3_lift = _payload.getFloat(40);
- m3_torque = _payload.getFloat(44);
- m4_current = _payload.getFloat(48);
- m4_w = _payload.getFloat(52);
- m4_lift = _payload.getFloat(56);
- m4_torque = _payload.getFloat(60);
- m5_current = _payload.getFloat(64);
- m5_w = _payload.getFloat(68);
- m5_lift = _payload.getFloat(72);
- m5_torque = _payload.getFloat(76);
- m6_current = _payload.getFloat(80);
- m6_w = _payload.getFloat(84);
- m6_lift = _payload.getFloat(88);
- m6_torque = _payload.getFloat(92);
- m7_current = _payload.getFloat(96);
- m7_w = _payload.getFloat(100);
- m7_lift = _payload.getFloat(104);
- m7_torque = _payload.getFloat(108);
- m8_current = _payload.getFloat(112);
- m8_w = _payload.getFloat(116);
- m8_lift = _payload.getFloat(120);
- m8_torque = _payload.getFloat(124);
+ m1_current = record.getFloat(0);
+ m1_w = record.getFloat(4);
+ m1_lift = record.getFloat(8);
+ m1_torque = record.getFloat(12);
+ m2_current = record.getFloat(16);
+ m2_w = record.getFloat(20);
+ m2_lift = record.getFloat(24);
+ m2_torque = record.getFloat(28);
+ m3_current = record.getFloat(32);
+ m3_w = record.getFloat(36);
+ m3_lift = record.getFloat(40);
+ m3_torque = record.getFloat(44);
+ m4_current = record.getFloat(48);
+ m4_w = record.getFloat(52);
+ m4_lift = record.getFloat(56);
+ m4_torque = record.getFloat(60);
+ m5_current = record.getFloat(64);
+ m5_w = record.getFloat(68);
+ m5_lift = record.getFloat(72);
+ m5_torque = record.getFloat(76);
+ m6_current = record.getFloat(80);
+ m6_w = record.getFloat(84);
+ m6_lift = record.getFloat(88);
+ m6_torque = record.getFloat(92);
+ m7_current = record.getFloat(96);
+ m7_w = record.getFloat(100);
+ m7_lift = record.getFloat(104);
+ m7_torque = record.getFloat(108);
+ m8_current = record.getFloat(112);
+ m8_w = record.getFloat(116);
+ m8_lift = record.getFloat(120);
+ m8_torque = record.getFloat(124);
 } catch (Exception e) {RecordException(e);}}
 
 

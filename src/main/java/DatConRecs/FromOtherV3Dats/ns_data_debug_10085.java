@@ -56,31 +56,31 @@ public class ns_data_debug_10085 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            d00 = _payload.getFloat(0);
-            d01 = _payload.getFloat(4);
-            d02 = _payload.getFloat(8);
-            d03 = _payload.getFloat(12);
-            d04 = _payload.getFloat(16);
-            d05 = _payload.getFloat(20);
-            d06 = _payload.getFloat(24);
-            d07 = _payload.getFloat(28);
-            d08 = _payload.getFloat(32);
-            d09 = _payload.getFloat(36);
-            d10 = _payload.getFloat(40);
-            d11 = _payload.getFloat(44);
-            d12 = _payload.getFloat(48);
-            d13 = _payload.getFloat(52);
-            d14 = _payload.getFloat(56);
-            d15 = _payload.getFloat(60);
-            d16 = _payload.getFloat(64);
-            d17 = _payload.getFloat(68);
-            d18 = _payload.getFloat(72);
-            d19 = _payload.getFloat(76);
+            d00 = record.getFloat(0);
+            d01 = record.getFloat(4);
+            d02 = record.getFloat(8);
+            d03 = record.getFloat(12);
+            d04 = record.getFloat(16);
+            d05 = record.getFloat(20);
+            d06 = record.getFloat(24);
+            d07 = record.getFloat(28);
+            d08 = record.getFloat(32);
+            d09 = record.getFloat(36);
+            d10 = record.getFloat(40);
+            d11 = record.getFloat(44);
+            d12 = record.getFloat(48);
+            d13 = record.getFloat(52);
+            d14 = record.getFloat(56);
+            d15 = record.getFloat(60);
+            d16 = record.getFloat(64);
+            d17 = record.getFloat(68);
+            d18 = record.getFloat(72);
+            d19 = record.getFloat(76);
         } catch (Exception e) {
             RecordException(e);
         }

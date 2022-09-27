@@ -56,50 +56,50 @@ protected short vert_thrust_cmd_data = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-vert_module_module_mode = _payload.getUnsignedByte(0);
-vert_module_vert_hover_state = _payload.getUnsignedByte(1);
-vert_module_vert_hover_enable = _payload.getUnsignedByte(2);
- vert_module_vert_hover_pos = _payload.getFloat(3);
- vert_module_vert_hover_brake_timer = _payload.getFloat(7);
- vert_module_take_off_thrust = _payload.getFloat(11);
-vert_module_auto_take_off_state = _payload.getUnsignedByte(15);
- vert_module_auto_take_off_height = _payload.getFloat(16);
-api_vert_ctrl_mode = _payload.getUnsignedByte(20);
-api_vert_ctrl_cmd_id = _payload.getUnsignedByte(21);
-vert_pos_status = _payload.getUnsignedByte(22);
-vert_pos_cmd_id = _payload.getUnsignedByte(23);
-vert_pos_feedback_id = _payload.getUnsignedByte(24);
- vert_pos_cmd = _payload.getShort(25);
- vert_pos_feedback = _payload.getShort(27);
- vert_pos_P_ctrl = _payload.getShort(29);
- vert_pos_output = _payload.getShort(31);
-vert_vel_status = _payload.getUnsignedByte(33);
-vert_vel_cmd_id = _payload.getUnsignedByte(34);
-vert_vel_feedback_id = _payload.getUnsignedByte(35);
- vert_vel_cmd = _payload.getShort(36);
- vert_vel_cmd_before_limit = _payload.getShort(38);
- vert_vel_cmd_after_limit = _payload.getShort(40);
- vert_vel_feedback = _payload.getShort(42);
- vert_vel_P_ctrl = _payload.getShort(44);
- vert_vel_output = _payload.getShort(46);
-vert_acc_status = _payload.getUnsignedByte(48);
-vert_acc_cmd_id = _payload.getUnsignedByte(49);
-vert_acc_feedback_id = _payload.getUnsignedByte(50);
- vert_acc_cmd = _payload.getShort(51);
- vert_acc_feedback = _payload.getShort(53);
- vert_acc_P_ctrl = _payload.getShort(55);
- vert_acc_I_ctrl = _payload.getShort(57);
- vert_acc_feedforward = _payload.getShort(59);
- vert_acc_output = _payload.getShort(61);
-vert_thrust_status = _payload.getUnsignedByte(63);
-vert_thrust_cmd_id = _payload.getUnsignedByte(64);
-vert_thrust_feedback_id = _payload.getUnsignedByte(65);
- vert_thrust_cmd_data = _payload.getShort(66);
+vert_module_module_mode = record.getUnsignedByte(0);
+vert_module_vert_hover_state = record.getUnsignedByte(1);
+vert_module_vert_hover_enable = record.getUnsignedByte(2);
+ vert_module_vert_hover_pos = record.getFloat(3);
+ vert_module_vert_hover_brake_timer = record.getFloat(7);
+ vert_module_take_off_thrust = record.getFloat(11);
+vert_module_auto_take_off_state = record.getUnsignedByte(15);
+ vert_module_auto_take_off_height = record.getFloat(16);
+api_vert_ctrl_mode = record.getUnsignedByte(20);
+api_vert_ctrl_cmd_id = record.getUnsignedByte(21);
+vert_pos_status = record.getUnsignedByte(22);
+vert_pos_cmd_id = record.getUnsignedByte(23);
+vert_pos_feedback_id = record.getUnsignedByte(24);
+ vert_pos_cmd = record.getShort(25);
+ vert_pos_feedback = record.getShort(27);
+ vert_pos_P_ctrl = record.getShort(29);
+ vert_pos_output = record.getShort(31);
+vert_vel_status = record.getUnsignedByte(33);
+vert_vel_cmd_id = record.getUnsignedByte(34);
+vert_vel_feedback_id = record.getUnsignedByte(35);
+ vert_vel_cmd = record.getShort(36);
+ vert_vel_cmd_before_limit = record.getShort(38);
+ vert_vel_cmd_after_limit = record.getShort(40);
+ vert_vel_feedback = record.getShort(42);
+ vert_vel_P_ctrl = record.getShort(44);
+ vert_vel_output = record.getShort(46);
+vert_acc_status = record.getUnsignedByte(48);
+vert_acc_cmd_id = record.getUnsignedByte(49);
+vert_acc_feedback_id = record.getUnsignedByte(50);
+ vert_acc_cmd = record.getShort(51);
+ vert_acc_feedback = record.getShort(53);
+ vert_acc_P_ctrl = record.getShort(55);
+ vert_acc_I_ctrl = record.getShort(57);
+ vert_acc_feedforward = record.getShort(59);
+ vert_acc_output = record.getShort(61);
+vert_thrust_status = record.getUnsignedByte(63);
+vert_thrust_cmd_id = record.getUnsignedByte(64);
+vert_thrust_feedback_id = record.getUnsignedByte(65);
+ vert_thrust_cmd_data = record.getShort(66);
 } catch (Exception e) {RecordException(e);}}
 
 

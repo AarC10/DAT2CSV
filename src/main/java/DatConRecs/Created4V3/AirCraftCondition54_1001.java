@@ -39,29 +39,29 @@ public class AirCraftCondition54_1001 extends AirCraftCondition {
     }
 
     @Override
-    public void process(Payload payload) {
-        super.process(payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            intFlightState = payload.getUnsignedByte(0);
-            flightState = payload.getUnsignedByte(1);
-            lastFlightState = payload.getUnsignedByte(2);
-            nearGndState = payload.getUnsignedByte(3);
-            launch_state = payload.getUnsignedByte(4);
-            launch_acc_dur = payload.getFloat(5);
-            launch_delta_v = payload.getFloat(9);
-            landState = payload.getUnsignedByte(13);
-            thrust = payload.getFloat(14);
-            gyro = payload.getFloat(18);
-            gyro_acc = payload.getFloat(22);
-            land_dur = payload.getFloat(26);
-            thrust_proj_gnd = payload.getFloat(30);
-            thrust_proj_gnd_compen = payload.getFloat(34);
-            thrust_compensator = payload.getFloat(38);
-            hover_thrust = payload.getFloat(42);
-            cos_safe_tilt = payload.getFloat(46);
-            safe_tilt = payload.getFloat(50);
+            intFlightState = record.getUnsignedByte(0);
+            flightState = record.getUnsignedByte(1);
+            lastFlightState = record.getUnsignedByte(2);
+            nearGndState = record.getUnsignedByte(3);
+            launch_state = record.getUnsignedByte(4);
+            launch_acc_dur = record.getFloat(5);
+            launch_delta_v = record.getFloat(9);
+            landState = record.getUnsignedByte(13);
+            thrust = record.getFloat(14);
+            gyro = record.getFloat(18);
+            gyro_acc = record.getFloat(22);
+            land_dur = record.getFloat(26);
+            thrust_proj_gnd = record.getFloat(30);
+            thrust_proj_gnd_compen = record.getFloat(34);
+            thrust_compensator = record.getFloat(38);
+            hover_thrust = record.getFloat(42);
+            cos_safe_tilt = record.getFloat(46);
+            safe_tilt = record.getFloat(50);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);

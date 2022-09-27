@@ -19,14 +19,14 @@ public class Sys_cfg_65535 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
-            payload = _payload.getBB();
-            payloadString = _payload.getString();
+            payload = record.getBB();
+            payloadString = record.getString();
             if (convertDat.cloPS != null) {
                 if (payloadString.length() > 0) {
-                    convertDat.cloPS.println(_payload.getCleanString());
+                    convertDat.cloPS.println(record.getCleanString());
                 }
             }
         } catch (Exception e) {

@@ -36,8 +36,8 @@ public class RecSmartBatt77_18 extends Record {
         current = this;
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
             batteryUsefulTime = payloadBB.getShort(0);

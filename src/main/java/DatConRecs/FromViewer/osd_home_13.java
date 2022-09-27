@@ -23,17 +23,17 @@ protected short course_lock_torsion = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- osd_lon = _payload.getDouble(0);
- osd_lat = _payload.getDouble(8);
- osd_alt = _payload.getFloat(16);
- osd_home_state = _payload.getUnsignedShort(20);
- fixed_altitedue = _payload.getUnsignedShort(22);
- course_lock_torsion = _payload.getShort(24);
+ osd_lon = record.getDouble(0);
+ osd_lat = record.getDouble(8);
+ osd_alt = record.getFloat(16);
+ osd_home_state = record.getUnsignedShort(20);
+ fixed_altitedue = record.getUnsignedShort(22);
+ course_lock_torsion = record.getShort(24);
 } catch (Exception e) {RecordException(e);}}
 
 

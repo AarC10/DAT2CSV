@@ -49,8 +49,8 @@ public class RecBatt26_5000 extends RecBatt {
 
     private int status4 = 0;
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             if (numSamples == 0) { // first time
                 init();

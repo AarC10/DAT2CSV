@@ -11,8 +11,8 @@ public class SD_logs_65280 extends Record {
   super(convertDat, 65280,-1);
 }
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
 } catch (Exception e) {RecordException(e);}}
 

@@ -33,8 +33,8 @@ public class RecMotor152_10090 extends Motor {
 
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             if (convertDat.getNumMotors() == 4) {
                 valid = true;

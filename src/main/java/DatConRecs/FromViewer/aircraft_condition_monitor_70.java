@@ -40,23 +40,23 @@ public class aircraft_condition_monitor_70 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            craft_flight_mode = _payload.getUnsignedByte(0);
-            near_gnd_state = _payload.getUnsignedByte(1);
-            launch_acc_duration = _payload.getFloat(2);
-            launch_delta_v = _payload.getFloat(6);
-            launch_state = _payload.getUnsignedByte(10);
-            thrust_proj_gnd = _payload.getFloat(11);
-            thrust_proj_gnd_compen = _payload.getFloat(15);
-            thrust_compensator = _payload.getFloat(19);
-            hover_thrust = _payload.getFloat(23);
-            dynamic_thrust = _payload.getFloat(27);
-            cos_safe_tilt = _payload.getFloat(31);
-            safe_tilt = _payload.getFloat(35);
+            craft_flight_mode = record.getUnsignedByte(0);
+            near_gnd_state = record.getUnsignedByte(1);
+            launch_acc_duration = record.getFloat(2);
+            launch_delta_v = record.getFloat(6);
+            launch_state = record.getUnsignedByte(10);
+            thrust_proj_gnd = record.getFloat(11);
+            thrust_proj_gnd_compen = record.getFloat(15);
+            thrust_compensator = record.getFloat(19);
+            hover_thrust = record.getFloat(23);
+            dynamic_thrust = record.getFloat(27);
+            cos_safe_tilt = record.getFloat(31);
+            safe_tilt = record.getFloat(35);
         } catch (Exception e) {
             RecordException(e);
         }

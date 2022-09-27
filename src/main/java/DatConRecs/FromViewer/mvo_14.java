@@ -25,19 +25,19 @@ protected short mvo_flag = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- mvo_px = _payload.getFloat(0);
- mvo_py = _payload.getFloat(4);
- mvo_pz = _payload.getFloat(8);
- mvo_vx = _payload.getShort(12);
- mvo_vy = _payload.getShort(14);
- mvo_vz = _payload.getShort(16);
-mvo_cnt = _payload.getUnsignedByte(18);
-mvo_flag = _payload.getUnsignedByte(19);
+ mvo_px = record.getFloat(0);
+ mvo_py = record.getFloat(4);
+ mvo_pz = record.getFloat(8);
+ mvo_vx = record.getShort(12);
+ mvo_vy = record.getShort(14);
+ mvo_vz = record.getShort(16);
+mvo_cnt = record.getUnsignedByte(18);
+mvo_flag = record.getUnsignedByte(19);
 } catch (Exception e) {RecordException(e);}}
 
 

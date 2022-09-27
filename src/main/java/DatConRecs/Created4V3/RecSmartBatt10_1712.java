@@ -41,13 +41,13 @@ public class RecSmartBatt10_1712 extends Record {
         super(convertDat, 1712, 10);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
-            goHomeBatt = _payload.getUnsignedShort(2);
-            landBatt = _payload.getUnsignedShort(4);
-            goHomeTime = _payload.getUnsignedShort(6);
-            landTime = _payload.getUnsignedShort(8);
+            goHomeBatt = record.getUnsignedShort(2);
+            landBatt = record.getUnsignedShort(4);
+            goHomeTime = record.getUnsignedShort(6);
+            landTime = record.getUnsignedShort(8);
             valid = true;
         } catch (Exception e) {
             RecordException(e);

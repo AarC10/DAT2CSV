@@ -25,19 +25,19 @@ protected short flag = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- bw_x = _payload.getFloat(0);
- bw_y = _payload.getFloat(4);
- bw_z = _payload.getFloat(8);
- ba_x = _payload.getFloat(12);
- ba_y = _payload.getFloat(16);
- ba_z = _payload.getFloat(20);
- temp = _payload.getFloat(24);
-flag = _payload.getUnsignedByte(28);
+ bw_x = record.getFloat(0);
+ bw_y = record.getFloat(4);
+ bw_z = record.getFloat(8);
+ ba_x = record.getFloat(12);
+ ba_y = record.getFloat(16);
+ ba_z = record.getFloat(20);
+ temp = record.getFloat(24);
+flag = record.getUnsignedByte(28);
 } catch (Exception e) {RecordException(e);}}
 
 

@@ -27,8 +27,8 @@ public class Record35_1000 extends RecController {
         super(convertDat, 1000, 35);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             ctrl_pitch = (short) payloadBB.getShort(4);
             ctrl_roll = (short) payloadBB.getShort(6);

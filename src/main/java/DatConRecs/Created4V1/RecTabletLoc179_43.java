@@ -27,8 +27,8 @@ public class RecTabletLoc179_43 extends Record {
         super(convertDat, 43, 179);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             latRad = payloadBB.getDouble(155);
             longRad = payloadBB.getDouble(163);

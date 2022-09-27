@@ -64,7 +64,7 @@ public class RecordDef extends Record {
 
     public void init(ConvertDatV3 convertDatV3) {
         this.convertDat = convertDatV3;
-        _datFile = this.convertDat.getDatFile();
+        datFile = this.convertDat.getDatFile();
         this.csvWriter = convertDat.csvWriter;
         IntSignal = Signal.SeriesInt(getName(), "", null, Units.noUnits);
         FloatSignal = Signal.SeriesFloat(getName(), "", null, Units.noUnits);
@@ -74,8 +74,8 @@ public class RecordDef extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
             int offset = 0;
@@ -83,30 +83,30 @@ public class RecordDef extends Record {
                 Field field = fields.get(fieldNum);
                 switch (field.getType()) {
                 case duble:
-                    values[fieldNum] = _payload.getDouble(offset);
+                    values[fieldNum] = record.getDouble(offset);
                     break;
                 case expr:
                     break;
                 case fp32:
-                    values[fieldNum] = _payload.getFloat(offset);
+                    values[fieldNum] = record.getFloat(offset);
                     break;
                 case int16_t:
-                    values[fieldNum] = _payload.getShort(offset);
+                    values[fieldNum] = record.getShort(offset);
                     break;
                 case int32_t:
-                    values[fieldNum] = _payload.getInt(offset);
+                    values[fieldNum] = record.getInt(offset);
                     break;
                 case int8_t:
-                    values[fieldNum] = _payload.getByte(offset);
+                    values[fieldNum] = record.getByte(offset);
                     break;
                 case uint16_t:
-                    values[fieldNum] = _payload.getUnsignedShort(offset);
+                    values[fieldNum] = record.getUnsignedShort(offset);
                     break;
                 case uint32_t:
-                    values[fieldNum] = _payload.getUnsignedInt(offset);
+                    values[fieldNum] = record.getUnsignedInt(offset);
                     break;
                 case uint8_t:
-                    values[fieldNum] = _payload.getUnsignedByte(offset);
+                    values[fieldNum] = record.getUnsignedByte(offset);
                     break;
                 default:
                     throw new RuntimeException("process(Payload _payload) ");

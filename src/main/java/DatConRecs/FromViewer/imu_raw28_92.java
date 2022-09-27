@@ -46,25 +46,25 @@ public class imu_raw28_92 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            gyro_x_used = _payload.getShort(0);
-            gyro_y_used = _payload.getShort(2);
-            gyro_z_used = _payload.getShort(4);
-            acc_x_used = _payload.getShort(6);
-            acc_y_used = _payload.getShort(8);
-            acc_z_used = _payload.getShort(10);
-            gyro_x_unused = _payload.getShort(12);
-            gyro_y_unused = _payload.getShort(14);
-            gyro_z_unused = _payload.getShort(16);
-            acc_x_unused = _payload.getShort(18);
-            acc_y_unused = _payload.getShort(20);
-            acc_z_unused = _payload.getShort(22);
-            xxxxcnt = _payload.getShort(24);
-            xxbaro = _payload.getShort(26);
+            gyro_x_used = record.getShort(0);
+            gyro_y_used = record.getShort(2);
+            gyro_z_used = record.getShort(4);
+            acc_x_used = record.getShort(6);
+            acc_y_used = record.getShort(8);
+            acc_z_used = record.getShort(10);
+            gyro_x_unused = record.getShort(12);
+            gyro_y_unused = record.getShort(14);
+            gyro_z_unused = record.getShort(16);
+            acc_x_unused = record.getShort(18);
+            acc_y_unused = record.getShort(20);
+            acc_z_unused = record.getShort(22);
+            xxxxcnt = record.getShort(24);
+            xxbaro = record.getShort(26);
             //xxbaro_temp = _payload.getShort(28);
         } catch (Exception e) {
             RecordException(e);

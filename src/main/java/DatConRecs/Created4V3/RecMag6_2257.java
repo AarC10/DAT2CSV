@@ -9,7 +9,7 @@ public class RecMag6_2257 extends MagGroup {
         super(convertDat, 2257, 6, 1);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 }

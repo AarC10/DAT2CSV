@@ -70,8 +70,8 @@ public class IMUEX extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
 
     }
 

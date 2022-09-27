@@ -40,8 +40,8 @@ public class RecAirComp29_10100 extends RecAirComp {
         super(convertDat, 10100, 29);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
             vbx = payloadBB.getFloat(0);

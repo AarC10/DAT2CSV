@@ -8,7 +8,7 @@ public class RecMagRaw6_20351 extends MagRawGroup {
         super(convertDat, 20351, 6, 1);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 }

@@ -8,14 +8,14 @@ public class Controller_37_1000 extends RecController {
         super(convertDat, 1000, 37);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         ctrl_pitch = (short) payloadBB.getShort(4);
         ctrl_roll = (short) payloadBB.getShort(6);
         ctrl_yaw = (short) payloadBB.getShort(8);
         ctrl_thr = (short) payloadBB.getShort(10);
-        sig_level = _payload.getUnsignedByte(15);
-        ctrl_level = _payload.getUnsignedByte(16);
+        sig_level = record.getUnsignedByte(15);
+        ctrl_level = record.getUnsignedByte(16);
         valid = true;
     }
 }

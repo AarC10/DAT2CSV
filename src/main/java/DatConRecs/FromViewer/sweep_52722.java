@@ -18,12 +18,12 @@ protected int ppm = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- ppm = _payload.getUnsignedShort(0);
+ ppm = record.getUnsignedShort(0);
 } catch (Exception e) {RecordException(e);}}
 
 

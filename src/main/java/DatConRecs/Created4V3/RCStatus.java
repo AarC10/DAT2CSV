@@ -81,8 +81,8 @@ public class RCStatus extends Record {
         numRecs = 0;
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 
     //    protected Signal frameLostSig = Signal.State("RC:frameLost", "Frame Lost",

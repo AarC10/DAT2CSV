@@ -28,8 +28,8 @@ public class RecRCStat78_1700 extends RCStatus {
         super(convertDat, 1700, 78);
     }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             statusValid = true;
             fail_safe = payloadBB.get(45);

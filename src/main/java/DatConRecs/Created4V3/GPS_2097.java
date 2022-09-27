@@ -15,7 +15,7 @@ public class GPS_2097 extends GPSGroup {
 //        return RecSpec.RecType.BINARY;
 //    }
 
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
     }
 }

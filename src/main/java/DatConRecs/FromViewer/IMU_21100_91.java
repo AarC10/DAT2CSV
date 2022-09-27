@@ -24,18 +24,18 @@ protected long cnt_21100 = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- gyro_x_21100 = _payload.getShort(0);
- gyro_y_21100 = _payload.getShort(2);
- gyro_z_21100 = _payload.getShort(4);
- acc_x_21100 = _payload.getShort(6);
- acc_y_21100 = _payload.getShort(8);
- acc_z_21100 = _payload.getShort(10);
- cnt_21100 = _payload.getUnsignedInt(12);
+ gyro_x_21100 = record.getShort(0);
+ gyro_y_21100 = record.getShort(2);
+ gyro_z_21100 = record.getShort(4);
+ acc_x_21100 = record.getShort(6);
+ acc_y_21100 = record.getShort(8);
+ acc_z_21100 = record.getShort(10);
+ cnt_21100 = record.getUnsignedInt(12);
 } catch (Exception e) {RecordException(e);}}
 
 

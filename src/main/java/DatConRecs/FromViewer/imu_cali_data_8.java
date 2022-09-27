@@ -33,27 +33,27 @@ protected short time = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- gyrox_temp = _payload.getFloat(0);
- g_cfg_temper_bias_bias_bw_0 = _payload.getFloat(4);
- g_cfg_temper_bias_bias_bw_1 = _payload.getFloat(8);
- g_cfg_temper_bias_bias_bw_2 = _payload.getFloat(12);
- g_cfg_temper_bias_bias_ba_0 = _payload.getFloat(16);
- g_cfg_temper_bias_bias_ba_1 = _payload.getFloat(20);
- g_cfg_temper_bias_bias_ba_2 = _payload.getFloat(24);
- g_cfg_temper_bias_flag = _payload.getUnsignedShort(28);
- g_cfg_temper_bias_cali = _payload.getUnsignedShort(30);
- g_cfg_gyro_bias_flag = _payload.getUnsignedShort(32);
- g_cfg_gyro_bias_cali = _payload.getUnsignedShort(34);
-imu_cali_bias_sta_flag = _payload.getUnsignedByte(36);
-imu_cali_bias_sta_cnt = _payload.getUnsignedByte(37);
-g_cali_state = _payload.getUnsignedByte(38);
- clock = _payload.getUnsignedShort(39);
- time = _payload.getShort(41);
+ gyrox_temp = record.getFloat(0);
+ g_cfg_temper_bias_bias_bw_0 = record.getFloat(4);
+ g_cfg_temper_bias_bias_bw_1 = record.getFloat(8);
+ g_cfg_temper_bias_bias_bw_2 = record.getFloat(12);
+ g_cfg_temper_bias_bias_ba_0 = record.getFloat(16);
+ g_cfg_temper_bias_bias_ba_1 = record.getFloat(20);
+ g_cfg_temper_bias_bias_ba_2 = record.getFloat(24);
+ g_cfg_temper_bias_flag = record.getUnsignedShort(28);
+ g_cfg_temper_bias_cali = record.getUnsignedShort(30);
+ g_cfg_gyro_bias_flag = record.getUnsignedShort(32);
+ g_cfg_gyro_bias_cali = record.getUnsignedShort(34);
+imu_cali_bias_sta_flag = record.getUnsignedByte(36);
+imu_cali_bias_sta_cnt = record.getUnsignedByte(37);
+g_cali_state = record.getUnsignedByte(38);
+ clock = record.getUnsignedShort(39);
+ time = record.getShort(41);
 } catch (Exception e) {RecordException(e);}}
 
 

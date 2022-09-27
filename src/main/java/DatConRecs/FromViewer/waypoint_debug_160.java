@@ -20,14 +20,14 @@ protected int wp_tgt_vel = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-wp_mission_status = _payload.getUnsignedByte(0);
-wp_cur_num = _payload.getUnsignedByte(1);
- wp_tgt_vel = _payload.getUnsignedShort(2);
+wp_mission_status = record.getUnsignedByte(0);
+wp_cur_num = record.getUnsignedByte(1);
+ wp_tgt_vel = record.getUnsignedShort(2);
 } catch (Exception e) {RecordException(e);}}
 
 

@@ -36,30 +36,30 @@ protected long gyro_hf_cnt = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- raw_w_x = _payload.getShort(0);
- raw_w_y = _payload.getShort(2);
- raw_w_z = _payload.getShort(4);
- raw_a_x = _payload.getShort(6);
- raw_a_y = _payload.getShort(8);
- raw_a_z = _payload.getShort(10);
- raw_wa_x = _payload.getShort(12);
- raw_wa_y = _payload.getShort(14);
- raw_wa_z = _payload.getShort(16);
- iir_w_x = _payload.getShort(18);
- iir_w_y = _payload.getShort(20);
- iir_w_z = _payload.getShort(22);
- iir_a_x = _payload.getShort(24);
- iir_a_y = _payload.getShort(26);
- iir_a_z = _payload.getShort(28);
- iir_wa_x = _payload.getShort(30);
- iir_wa_y = _payload.getShort(32);
- iir_wa_z = _payload.getShort(34);
- gyro_hf_cnt = _payload.getUnsignedInt(36);
+ raw_w_x = record.getShort(0);
+ raw_w_y = record.getShort(2);
+ raw_w_z = record.getShort(4);
+ raw_a_x = record.getShort(6);
+ raw_a_y = record.getShort(8);
+ raw_a_z = record.getShort(10);
+ raw_wa_x = record.getShort(12);
+ raw_wa_y = record.getShort(14);
+ raw_wa_z = record.getShort(16);
+ iir_w_x = record.getShort(18);
+ iir_w_y = record.getShort(20);
+ iir_w_z = record.getShort(22);
+ iir_a_x = record.getShort(24);
+ iir_a_y = record.getShort(26);
+ iir_a_z = record.getShort(28);
+ iir_wa_x = record.getShort(30);
+ iir_wa_y = record.getShort(32);
+ iir_wa_z = record.getShort(34);
+ gyro_hf_cnt = record.getUnsignedInt(36);
 } catch (Exception e) {RecordException(e);}}
 
 

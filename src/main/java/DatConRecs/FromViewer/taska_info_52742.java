@@ -20,14 +20,14 @@ protected int pending1 = (int)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- period_jitter1 = _payload.getInt(0);
- exec_time1 = _payload.getUnsignedShort(4);
- pending1 = _payload.getUnsignedShort(6);
+ period_jitter1 = record.getInt(0);
+ exec_time1 = record.getUnsignedShort(4);
+ pending1 = record.getUnsignedShort(6);
 } catch (Exception e) {RecordException(e);}}
 
 

@@ -25,19 +25,19 @@ protected short CMD_D4 = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- CMD_ALIERON = _payload.getShort(0);
- CMD_ELEVATOR = _payload.getShort(2);
- CMD_THROTTLE = _payload.getShort(4);
- CMD_RUDDER = _payload.getShort(6);
- CMD_MODE = _payload.getShort(8);
- CMD_IOC = _payload.getShort(10);
- CMD_GO_HOME = _payload.getShort(12);
- CMD_D4 = _payload.getShort(14);
+ CMD_ALIERON = record.getShort(0);
+ CMD_ELEVATOR = record.getShort(2);
+ CMD_THROTTLE = record.getShort(4);
+ CMD_RUDDER = record.getShort(6);
+ CMD_MODE = record.getShort(8);
+ CMD_IOC = record.getShort(10);
+ CMD_GO_HOME = record.getShort(12);
+ CMD_D4 = record.getShort(14);
 } catch (Exception e) {RecordException(e);}}
 
 

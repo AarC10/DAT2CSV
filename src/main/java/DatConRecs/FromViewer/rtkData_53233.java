@@ -33,27 +33,27 @@ protected long cntRTK = (long)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
- Lat = _payload.getInt(0);
- Lon = _payload.getInt(4);
- Height = _payload.getInt(8);
- satNum = _payload.getUnsignedShort(12);
- posType = _payload.getUnsignedShort(14);
- reserve1 = _payload.getInt(16);
- reserve2 = _payload.getInt(20);
- reserve3 = _payload.getInt(24);
- reserve4 = _payload.getInt(28);
- reserve5 = _payload.getInt(32);
- reserve6 = _payload.getInt(36);
- reserve7 = _payload.getInt(40);
- reserve8 = _payload.getInt(44);
- reserve9 = _payload.getInt(48);
- reserve10 = _payload.getInt(52);
- cntRTK = _payload.getUnsignedInt(56);
+ Lat = record.getInt(0);
+ Lon = record.getInt(4);
+ Height = record.getInt(8);
+ satNum = record.getUnsignedShort(12);
+ posType = record.getUnsignedShort(14);
+ reserve1 = record.getInt(16);
+ reserve2 = record.getInt(20);
+ reserve3 = record.getInt(24);
+ reserve4 = record.getInt(28);
+ reserve5 = record.getInt(32);
+ reserve6 = record.getInt(36);
+ reserve7 = record.getInt(40);
+ reserve8 = record.getInt(44);
+ reserve9 = record.getInt(48);
+ reserve10 = record.getInt(52);
+ cntRTK = record.getUnsignedInt(56);
 } catch (Exception e) {RecordException(e);}}
 
 

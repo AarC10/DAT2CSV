@@ -41,35 +41,35 @@ protected float svo_avoid_debug3_damping_scale = (float)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-svo_avoid_debug0_limit_en = _payload.getUnsignedByte(0);
- svo_avoid_debug0_d_craft2edge = _payload.getFloat(1);
- svo_avoid_debug0_limit_direct_0 = _payload.getFloat(5);
- svo_avoid_debug0_limit_direct_1 = _payload.getFloat(9);
- svo_avoid_debug0_limit_norm = _payload.getFloat(13);
- svo_avoid_debug0_damping_scale = _payload.getFloat(17);
-svo_avoid_debug1_limit_en = _payload.getUnsignedByte(21);
- svo_avoid_debug1_d_craft2edge = _payload.getFloat(22);
- svo_avoid_debug1_limit_direct_0 = _payload.getFloat(26);
- svo_avoid_debug1_limit_direct_1 = _payload.getFloat(30);
- svo_avoid_debug1_limit_norm = _payload.getFloat(34);
- svo_avoid_debug1_damping_scale = _payload.getFloat(38);
-svo_avoid_debug2_limit_en = _payload.getUnsignedByte(42);
- svo_avoid_debug2_d_craft2edge = _payload.getFloat(43);
- svo_avoid_debug2_limit_direct_0 = _payload.getFloat(47);
- svo_avoid_debug2_limit_direct_1 = _payload.getFloat(51);
- svo_avoid_debug2_limit_norm = _payload.getFloat(55);
- svo_avoid_debug2_damping_scale = _payload.getFloat(59);
-svo_avoid_debug3_limit_en = _payload.getUnsignedByte(63);
- svo_avoid_debug3_d_craft2edge = _payload.getFloat(64);
- svo_avoid_debug3_limit_direct_0 = _payload.getFloat(68);
- svo_avoid_debug3_limit_direct_1 = _payload.getFloat(72);
- svo_avoid_debug3_limit_norm = _payload.getFloat(76);
- svo_avoid_debug3_damping_scale = _payload.getFloat(80);
+svo_avoid_debug0_limit_en = record.getUnsignedByte(0);
+ svo_avoid_debug0_d_craft2edge = record.getFloat(1);
+ svo_avoid_debug0_limit_direct_0 = record.getFloat(5);
+ svo_avoid_debug0_limit_direct_1 = record.getFloat(9);
+ svo_avoid_debug0_limit_norm = record.getFloat(13);
+ svo_avoid_debug0_damping_scale = record.getFloat(17);
+svo_avoid_debug1_limit_en = record.getUnsignedByte(21);
+ svo_avoid_debug1_d_craft2edge = record.getFloat(22);
+ svo_avoid_debug1_limit_direct_0 = record.getFloat(26);
+ svo_avoid_debug1_limit_direct_1 = record.getFloat(30);
+ svo_avoid_debug1_limit_norm = record.getFloat(34);
+ svo_avoid_debug1_damping_scale = record.getFloat(38);
+svo_avoid_debug2_limit_en = record.getUnsignedByte(42);
+ svo_avoid_debug2_d_craft2edge = record.getFloat(43);
+ svo_avoid_debug2_limit_direct_0 = record.getFloat(47);
+ svo_avoid_debug2_limit_direct_1 = record.getFloat(51);
+ svo_avoid_debug2_limit_norm = record.getFloat(55);
+ svo_avoid_debug2_damping_scale = record.getFloat(59);
+svo_avoid_debug3_limit_en = record.getUnsignedByte(63);
+ svo_avoid_debug3_d_craft2edge = record.getFloat(64);
+ svo_avoid_debug3_limit_direct_0 = record.getFloat(68);
+ svo_avoid_debug3_limit_direct_1 = record.getFloat(72);
+ svo_avoid_debug3_limit_norm = record.getFloat(76);
+ svo_avoid_debug3_damping_scale = record.getFloat(80);
 } catch (Exception e) {RecordException(e);}}
 
 

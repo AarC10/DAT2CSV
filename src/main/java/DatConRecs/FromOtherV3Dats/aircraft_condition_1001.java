@@ -30,18 +30,18 @@ public class aircraft_condition_1001 extends Record {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload record) {
+        super.process(record);
         try {
             valid = true;
 
-            int_fsm = _payload.getUnsignedByte(0);
-            fsm_state = _payload.getUnsignedByte(1);
-            last_fsm = _payload.getUnsignedByte(2);
-            near_gnd = _payload.getUnsignedByte(3);
-            UP_state = _payload.getUnsignedByte(4);
-            land_state = _payload.getUnsignedByte(5);
-            safe_fltr = _payload.getShort(6);
+            int_fsm = record.getUnsignedByte(0);
+            fsm_state = record.getUnsignedByte(1);
+            last_fsm = record.getUnsignedByte(2);
+            near_gnd = record.getUnsignedByte(3);
+            UP_state = record.getUnsignedByte(4);
+            land_state = record.getUnsignedByte(5);
+            safe_fltr = record.getShort(6);
         } catch (Exception e) {
             RecordException(e);
         }

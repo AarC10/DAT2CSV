@@ -19,13 +19,13 @@ protected short led_status = (short)0;
        }
 
 @Override
-  public void process(Payload _payload) {
-      super.process(_payload);
+  public void process(Payload record) {
+      super.process(record);
         try {
       valid = true;
 
-start_fan = _payload.getUnsignedByte(0);
-led_status = _payload.getUnsignedByte(1);
+start_fan = record.getUnsignedByte(0);
+led_status = record.getUnsignedByte(1);
 } catch (Exception e) {RecordException(e);}}
 
 
