@@ -31,39 +31,19 @@ public class AnalyzeDatResults {
         resultCode = _resultCode;
     }
 
-    //    public void addMessage(String msg) {
-    //        messages += msg;
-    //    }
-
-    //    public void resetMessages() {
-    //        messages = "";
-    //    }
-    //
-    //    public ResultCode getResultCode() {
-    //        return resultCode;
-    //    }
-
     public String getMessages() {
         return messages;
     }
 
     public String toString() {
-        String retv = "";
+        String str = "";
         switch (resultCode) {
-        case NO_ERRORS:
-            retv += "";
-            break;
-        case SOME_ERRORS:
-            retv += "Warnings:\n";
-            break;
-        case CORRUPTED:
-            retv += "Corrupted File\n";
-            break;
-        case NOT_DAT:
-            retv += "Not a .DAT file\n";
-            break;
+            case NO_ERRORS -> str += "";
+            case SOME_ERRORS -> str += "Warnings:\n";
+            case CORRUPTED -> str += "Corrupted File\n";
+            case NOT_DAT -> str += "Not a .DAT file\n";
         }
-        retv += messages;
-        return retv;
+        str += messages;
+        return str;
     }
 }

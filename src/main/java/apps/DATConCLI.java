@@ -7,14 +7,20 @@ import java.io.IOException;
 
 public class DATConCLI {
     public static void main(String[] args) throws NotDatFile, IOException, FileEnd {
-        File iFile = new File("/home/aaron/Downloads/djiDatData/FLY000.DAT");
+        String filename = args[1];
 
-        DatFile datFile = DatFile.createDatFile(iFile.getAbsolutePath());
+        System.out.println("Processing: " + filename);
+        File file = new File(filename);
+
+        DatFile datFile = DatFile.createDatFile(file.getAbsolutePath());
         datFile.reset();
         datFile.preAnalyze();
 
         ConvertDat convertDat = datFile.createConVertDat();
-        convertDat.csvWriter = new CsvWriter("/home/aaron/Downloads/djiDatData/FLY000.csv");
+
+        String csvFileName = filename.replace(".dat", ".csv");
+        System.out.println("Writing to " + csvFileName);
+        convertDat.csvWriter = new CsvWriter(csvFileName);
         convertDat.createRecordParsers();
 
         datFile.reset();
