@@ -9,45 +9,51 @@ import files.Units;
 public class IMUEX extends Record {
     protected boolean valid = false;
 
-    protected float vo_vx = (float) 0;
+    protected double vo_vx = 0;
 
-    protected float vo_vy = (float) 0;
+    protected double vo_vy = 0;
 
-    protected float vo_vz = (float) 0;
+    protected double vo_vz = 0;
 
-    protected float vo_px = (float) 0;
+    protected double vo_px = 0;
 
-    protected float vo_py = (float) 0;
+    protected double vo_py = 0;
 
-    protected float vo_pz = (float) 0;
+    protected double vo_pz = 0;
 
-    protected float us_v = (float) 0;
+    protected double us_v = 0;
 
-    protected float us_p = (float) 0;
+    protected double us_p = 0;
 
-    protected int vo_flag_navi = (int) 0;
+    protected int vo_flag_navi = 0;
 
-    protected int flag_err = (int) 0;
+    protected int flag_err = 0;
 
-    protected int vo_flag_rsv = (int) 0;
+    protected int vo_flag_rsv = 0;
 
-    protected int ex_cnt = (int) 0;
+    protected int ex_cnt = 0;
 
     protected int index = 0;
 
     protected String errString = "";
 
+    protected Signal intSig;
+
+    protected Signal vovSig;
+
+    protected Signal vopSig;
+
+    protected Signal usSig;
+
+    private Signal errSig;
+
     public IMUEX(ConvertDat convertDat, int id, int length, int index) {
         super(convertDat, id, length);
         this.index = index;
-        intSig = Signal.SeriesIntExperimental("IMUEX" + "(" + index + ")", "",
-                null, Units.noUnits);
-        vovSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")",
-                "vo", null, Units.noUnits);
-        vopSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")",
-                "vo", null, Units.noUnits);
-        usSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")",
-                "us", null, Units.noUnits);
+        intSig = Signal.SeriesIntExperimental("IMUEX" + "(" + index + ")", "", null, Units.noUnits);
+        vovSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")", "vo", null, Units.noUnits);
+        vopSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")", "vo", null, Units.noUnits);
+        usSig = Signal.SeriesFloatExperimental("IMUEX" + "(" + index + ")", "us", null, Units.noUnits);
         errSig = Signal.State("IMUEX" + "(" + index + ")", "err", "NONE");
     }
 
@@ -75,15 +81,6 @@ public class IMUEX extends Record {
 
     }
 
-    protected Signal intSig = null;
-
-    protected Signal vovSig = null;
-
-    protected Signal vopSig = null;
-
-    protected Signal usSig = null;
-
-    private Signal errSig = null;
 
     public void printCols(lineType lineT) {
         try {

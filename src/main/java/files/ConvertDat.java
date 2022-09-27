@@ -78,7 +78,7 @@ public class ConvertDat {
 
     protected boolean printVersion;
 
-    public float absoluteHeight = 0.0f;
+    public double absoluteHeight = 0.0f;
 
     public boolean absoluteHeightValid = false;
 
@@ -306,7 +306,7 @@ public class ConvertDat {
     }
 
     public void processCoords(double longitudeDegrees, double latitudeDegrees,
-            float relativeHeight) {
+                              double relativeHeight) {
         if (!gpsCoordsOK) {
             gpsCoordsOK = (longitudeDegrees != 0.0 && latitudeDegrees != 0.0
                     && relativeHeight != 0.0f);
@@ -316,7 +316,7 @@ public class ConvertDat {
         }
         if (kmlType != KmlType.NONE && tickRangeLower <= tickNo) {
             if (gpsCoordsOK) {
-                float alt = relativeHeight;
+                double alt = relativeHeight;
                 if (kmlType == KmlType.PROFILE) {
                     alt += homePointElevation;
                     absoluteHeight = alt;
@@ -399,7 +399,7 @@ public class ConvertDat {
         return relativeHeight;
     }
 
-    public float getAbsoluteHeight() {
+    public double getAbsoluteHeight() {
         return absoluteHeight;
     }
 
