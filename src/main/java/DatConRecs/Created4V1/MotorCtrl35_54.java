@@ -11,18 +11,18 @@ public class MotorCtrl35_54 extends MotorControl {
     }
 
     @Override
-    public void process(Payload _payload) {
-        super.process(_payload);
+    public void process(Payload payload) {
+        super.process(payload);
         try {
             valid = true;
-            pwm1 = ((float) _payload.getUnsignedShort(19)) / 100.0f;
-            pwm2 = ((float) _payload.getUnsignedShort(21)) / 100.0f;
-            pwm3 = ((float) _payload.getUnsignedShort(23)) / 100.0f;
-            pwm4 = ((float) _payload.getUnsignedShort(25)) / 100.0f;
-            pwm5 = ((float) _payload.getUnsignedShort(27)) / 100.0f;
-            pwm6 = ((float) _payload.getUnsignedShort(29)) / 100.0f;
-            pwm7 = ((float) _payload.getUnsignedShort(31)) / 100.0f;
-            pwm8 = ((float) _payload.getUnsignedShort(33)) / 100.0f;
+            pwm1 = payload.getUnsignedShort(19) / 100.0f;
+            pwm2 = payload.getUnsignedShort(21) / 100.0f;
+            pwm3 = payload.getUnsignedShort(23) / 100.0f;
+            pwm4 = payload.getUnsignedShort(25) / 100.0f;
+            pwm5 = payload.getUnsignedShort(27) / 100.0f;
+            pwm6 = payload.getUnsignedShort(29) / 100.0f;
+            pwm7 = payload.getUnsignedShort(31) / 100.0f;
+            pwm8 = payload.getUnsignedShort(33) / 100.0f;
         } catch (Exception e) {
             RecordException(e);
         }

@@ -1,10 +1,11 @@
-package V3.Files;
+package V3.files;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.ByteOrder;
 import java.nio.channels.FileChannel;
+import java.util.List;
 import java.util.Vector;
 
 import DatConRecs.RecDef.OpConfig;
@@ -24,7 +25,7 @@ public class DatFileV3 extends files.DatFile {
 
     private Vector<RecordDef> recordDefs = null;
 
-    public Vector<RecordDef> getRecordDefs() {
+    public List<RecordDef> getRecordDefs() {
         return recordDefs;
     }
 
@@ -40,7 +41,7 @@ public class DatFileV3 extends files.DatFile {
     }
 
     public ConvertDat createConVertDat() {
-        return (new V3.Files.ConvertDatV3(this));
+        return (new V3.files.ConvertDatV3(this));
     }
 
     public void reset() throws IOException {

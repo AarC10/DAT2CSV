@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Vector;
 
 import DatConRecs.RecDef.Field.FieldType;
@@ -80,7 +81,7 @@ public class OpConfig {
 
     int varNameExtension = 0;
 
-    public OpConfig(Vector<Line> lines) {
+    public OpConfig(List<Line> lines) {
 
         State state = State.backup1;
         String recName = "";

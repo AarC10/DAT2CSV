@@ -86,9 +86,7 @@ public class Dictionary extends DatConRecs.Dictionary {
         entries.add(new RecClassSpec(RecMagRaw6_20350.class, 20350, 6));
         entries.add(new RecClassSpec(RecMagRaw6_20351.class, 20351, 6));
         entries.add(new RecClassSpec(RecMagRaw6_20352.class, 20352, 6));
-        //entries.add(new RecClassSpec());
-        //entries.add(new RecClassSpec(, , ));
-        //entries.add(new RecClassSpec(RecDefs_65533.class, 65533, -1));
+
     }
 
 }

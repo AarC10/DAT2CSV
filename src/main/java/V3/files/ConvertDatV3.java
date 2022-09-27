@@ -17,9 +17,10 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package V3.Files;
+package V3.files;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Vector;
 
 import DatConRecs.Dictionary;
@@ -222,7 +223,7 @@ public class ConvertDatV3 extends ConvertDat {
     }
 
     private Record getRecordInstFromDat(RecSpec recInDat) {
-        Vector<RecordDef> recordDefs = _datFile.getRecordDefs();
+        List<RecordDef> recordDefs = _datFile.getRecordDefs();
         if (recordDefs != null) {
             for (int i = 0; i < recordDefs.size(); i++) {
                 RecordDef recDef = recordDefs.get(i);

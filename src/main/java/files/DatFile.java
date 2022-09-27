@@ -18,6 +18,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package files;
 
+import DatConRecs.Payload;
+import DatConRecs.RecDef.OpConfig;
+import DatConRecs.RecDef.RecordDef;
+import files.Corrupted.Type;
+import files.DatHeader.AcType;
+import V1.files.DatFileV1;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,17 +34,7 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Vector;
-
-import DatConRecs.Payload;
-import DatConRecs.RecDef.OpConfig;
-import DatConRecs.RecDef.RecordDef;
-import files.Corrupted.Type;
-import files.DatHeader.AcType;
-import V1.Files.DatFileV1;
+import java.util.*;
 
 public class DatFile {
 
@@ -110,11 +107,9 @@ public class DatFile {
         return recsInDat;
     }
 
-    static boolean debug = true;
+    private List<RecordDef> recordDefs = null;
 
-    private Vector<RecordDef> recordDefs = null;
-
-    public Vector<RecordDef> getRecordDefs() {
+    public List<RecordDef> getRecordDefs() {
         return recordDefs;
     }
 
@@ -177,8 +172,6 @@ public class DatFile {
         }
         return false;
     }
-
-
 
     public DatFile(File _file) throws files.NotDatFile, FileNotFoundException {
         datHeader = new files.DatHeader(this);
@@ -528,7 +521,7 @@ public class DatFile {
     }
 
     public ConvertDat createConVertDat() {
-        return (new V3.Files.ConvertDatV3(this));
+        return (new V3.files.ConvertDatV3(this));
     }
 
     public void reset() throws IOException {
@@ -734,7 +727,7 @@ public class DatFile {
         return false;
     }
 
-    Vector<OpConfig.Line> opLines = new Vector<OpConfig.Line>();
+    List<OpConfig.Line> opLines = new ArrayList<>();
 
     public void preAnalyze() throws NotDatFile {
         switch (acType) {

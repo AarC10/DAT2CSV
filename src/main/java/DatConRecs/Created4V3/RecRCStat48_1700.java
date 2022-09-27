@@ -31,6 +31,7 @@ public class RecRCStat48_1700 extends RCStatus {
         super(convertDat, 1700, 48);
     }
 
+    @Override
     public void process(Payload _payload) {
         super.process(_payload);
         try {
@@ -39,7 +40,7 @@ public class RecRCStat48_1700 extends RCStatus {
             data_lost = ((payloadBB.get(4) == 1) ? "lost" : "");
             app_lost = ((payloadBB.get(5) == 1) ? "lost" : "");
             frame_lost = payloadBB.get(6);
-            rec_cnt = ((long) payloadBB.getInt(7) & 0xffffffffL);
+            rec_cnt = payloadBB.getInt(7) & 0xffffffffL;
             connected = ((payloadBB.get(44) == 1) ? "Connected"
                     : "Disconnected");
             super.common();
@@ -58,33 +59,4 @@ public class RecRCStat48_1700 extends RCStatus {
             DatConLog.Exception(e);
         }
     }
-    //    name    rc_debug_info
-    //    type    1700
-    //    Op.uint16_t     rc_input_cur_command 0
-    //    Op.uint8_t      fail_safe 0
-    //    Op.uint8_t      ofdm_vedio_lost 0
-    //    Op.uint8_t      ofdm_data_lost 0
-    //    Op.uint8_t      app_connect_lost 0
-    //    Op.uint8_t      frame_lost 0
-    //    Op.uint32_t     rec_rc_cnt 0
-    //    Op.uint32_t     app_chl_data_cnt 0
-    //    Op.int16_t      KNOB_BASIC_ROLL 0
-    //    Op.int16_t      KNOB_BASIC_PITCH 0
-    //    Op.int16_t      KNOB_BASIC_YAW 0
-    //    Op.int16_t      KNOB_BASIC_THRUST 0
-    //    Op.int16_t      KNOB_ATTI_GAIN 0
-    //    Op.int16_t      KNOB_GYRO_GAIN 0
-    //    Op.int16_t      KNOB_ATTI_HORIZ_GAIN 0
-    //    Op.int16_t      KNOB_ATTI_VERT_GAIN 0
-    //    Op.int16_t      KNOB_ATTI_RANGE_GAIN 0
-    //    Op.int16_t      KNOB_ATTI_VERT_UP_GAIN 0
-    //    Op.int16_t      KNOB_BRAKE_GAIN 0
-    //    Op.int16_t      KNOB_TILT_GAIN 0
-    //    Op.int16_t      KNOB_HORIZ_POS_GAIN 0
-    //    Op.int16_t      KNOB_HORIZ_VEL_GAIN 0
-    //    Op.uint8_t      sky_connected 0
-    //    Op.uint8_t      ground_connected 0
-    //    Op.uint8_t      connected 0 ==============45
-    //    Op.uint8_t      mode_switch_changed 0
-    //    Op.uint8_t      arm_status 0
 }

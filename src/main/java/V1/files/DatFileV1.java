@@ -1,4 +1,4 @@
-package V1.Files;
+package V1.files;
 
 import java.io.File;
 import java.io.FileNotFoundException;
