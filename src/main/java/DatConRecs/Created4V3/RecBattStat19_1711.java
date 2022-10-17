@@ -21,10 +21,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
 
 public class RecBattStat19_1711 extends Record {
 
@@ -36,8 +36,8 @@ public class RecBattStat19_1711 extends Record {
 
     String status = "";
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             status = "";
             if (payloadBB.get(0) != 0x00) {
@@ -91,7 +91,7 @@ public class RecBattStat19_1711 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(status, batteryStatusSig, "", lineT, true);
+            printCsvValue(status, batteryStatusSig, "", lineT, true);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

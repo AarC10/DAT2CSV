@@ -1,6 +1,6 @@
 package DatConRecs.Created4V3;
 
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class BatBox32_5004 extends BatBox32_500X {
     protected boolean valid = false;

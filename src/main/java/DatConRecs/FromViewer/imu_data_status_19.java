@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class imu_data_status_19 extends Record {
@@ -19,13 +20,13 @@ protected short led_status = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-start_fan = record.getUnsignedByte(0);
-led_status = record.getUnsignedByte(1);
+start_fan = _payload.getUnsignedByte(0);
+led_status = _payload.getUnsignedByte(1);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -39,8 +40,8 @@ led_status = record.getUnsignedByte(1);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(start_fan, imu_data_statusIntSig, "start_fan",lineT, valid);
- printCSVValue(led_status, imu_data_statusIntSig, "led_status",lineT, valid);
+ printCsvValue(start_fan, imu_data_statusIntSig, "start_fan",lineT, valid);
+ printCsvValue(led_status, imu_data_statusIntSig, "led_status",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

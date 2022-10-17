@@ -1,14 +1,14 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class RecMagRaw6_20352 extends MagRawGroup {
     public RecMagRaw6_20352(ConvertDat convertDat) {
         super(convertDat, 20352, 6, 2);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 }

@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class app_temp_bias_data_24 extends Record {
@@ -25,19 +26,19 @@ protected short flag = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- bw_x = record.getFloat(0);
- bw_y = record.getFloat(4);
- bw_z = record.getFloat(8);
- ba_x = record.getFloat(12);
- ba_y = record.getFloat(16);
- ba_z = record.getFloat(20);
- temp = record.getFloat(24);
-flag = record.getUnsignedByte(28);
+ bw_x = _payload.getFloat(0);
+ bw_y = _payload.getFloat(4);
+ bw_z = _payload.getFloat(8);
+ ba_x = _payload.getFloat(12);
+ ba_y = _payload.getFloat(16);
+ ba_z = _payload.getFloat(20);
+ temp = _payload.getFloat(24);
+flag = _payload.getUnsignedByte(28);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -51,14 +52,14 @@ flag = record.getUnsignedByte(28);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(bw_x, app_temp_bias_dataFloatSig, "bw_x",lineT, valid);
- printCSVValue(bw_y, app_temp_bias_dataFloatSig, "bw_y",lineT, valid);
- printCSVValue(bw_z, app_temp_bias_dataFloatSig, "bw_z",lineT, valid);
- printCSVValue(ba_x, app_temp_bias_dataFloatSig, "ba_x",lineT, valid);
- printCSVValue(ba_y, app_temp_bias_dataFloatSig, "ba_y",lineT, valid);
- printCSVValue(ba_z, app_temp_bias_dataFloatSig, "ba_z",lineT, valid);
- printCSVValue(temp, app_temp_bias_dataFloatSig, "temp",lineT, valid);
- printCSVValue(flag, app_temp_bias_dataIntSig, "flag",lineT, valid);
+ printCsvValue(bw_x, app_temp_bias_dataFloatSig, "bw_x",lineT, valid);
+ printCsvValue(bw_y, app_temp_bias_dataFloatSig, "bw_y",lineT, valid);
+ printCsvValue(bw_z, app_temp_bias_dataFloatSig, "bw_z",lineT, valid);
+ printCsvValue(ba_x, app_temp_bias_dataFloatSig, "ba_x",lineT, valid);
+ printCsvValue(ba_y, app_temp_bias_dataFloatSig, "ba_y",lineT, valid);
+ printCsvValue(ba_z, app_temp_bias_dataFloatSig, "ba_z",lineT, valid);
+ printCsvValue(temp, app_temp_bias_dataFloatSig, "temp",lineT, valid);
+ printCsvValue(flag, app_temp_bias_dataIntSig, "flag",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

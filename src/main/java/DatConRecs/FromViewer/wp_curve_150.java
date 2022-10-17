@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class wp_curve_150 extends Record {
@@ -26,20 +27,20 @@ protected short wp_state = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- px = record.getFloat(0);
- py = record.getFloat(4);
- pz = record.getFloat(8);
- vx = record.getFloat(12);
- vy = record.getFloat(16);
- vz = record.getFloat(20);
- v_norm = record.getFloat(24);
- T = record.getFloat(28);
-wp_state = record.getUnsignedByte(32);
+ px = _payload.getFloat(0);
+ py = _payload.getFloat(4);
+ pz = _payload.getFloat(8);
+ vx = _payload.getFloat(12);
+ vy = _payload.getFloat(16);
+ vz = _payload.getFloat(20);
+ v_norm = _payload.getFloat(24);
+ T = _payload.getFloat(28);
+wp_state = _payload.getUnsignedByte(32);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -53,15 +54,15 @@ wp_state = record.getUnsignedByte(32);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(px, wp_curveFloatSig, "px",lineT, valid);
- printCSVValue(py, wp_curveFloatSig, "py",lineT, valid);
- printCSVValue(pz, wp_curveFloatSig, "pz",lineT, valid);
- printCSVValue(vx, wp_curveFloatSig, "vx",lineT, valid);
- printCSVValue(vy, wp_curveFloatSig, "vy",lineT, valid);
- printCSVValue(vz, wp_curveFloatSig, "vz",lineT, valid);
- printCSVValue(v_norm, wp_curveFloatSig, "v_norm",lineT, valid);
- printCSVValue(T, wp_curveFloatSig, "T",lineT, valid);
- printCSVValue(wp_state, wp_curveIntSig, "wp_state",lineT, valid);
+ printCsvValue(px, wp_curveFloatSig, "px",lineT, valid);
+ printCsvValue(py, wp_curveFloatSig, "py",lineT, valid);
+ printCsvValue(pz, wp_curveFloatSig, "pz",lineT, valid);
+ printCsvValue(vx, wp_curveFloatSig, "vx",lineT, valid);
+ printCsvValue(vy, wp_curveFloatSig, "vy",lineT, valid);
+ printCsvValue(vz, wp_curveFloatSig, "vz",lineT, valid);
+ printCsvValue(v_norm, wp_curveFloatSig, "v_norm",lineT, valid);
+ printCsvValue(T, wp_curveFloatSig, "T",lineT, valid);
+ printCsvValue(wp_state, wp_curveIntSig, "wp_state",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

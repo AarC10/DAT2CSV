@@ -1,8 +1,8 @@
 package DatConRecs.Created4V1;
 
-import DatConRecs.Payload;
 import DatConRecs.Created4V3.MagRawGroup;
-import files.ConvertDat;
+import DatConRecs.Payload;
+import Files.ConvertDat;
 
 public class Mag8_4 extends MagRawGroup {
 
@@ -10,4 +10,7 @@ public class Mag8_4 extends MagRawGroup {
         super(convertDat, 4, 8, 0);
     }
 
+    public void process(Payload _payload) {
+        super.process(_payload);
+    }
 }

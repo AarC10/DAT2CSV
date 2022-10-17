@@ -20,7 +20,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class RecMotor152_10090 extends Motor {
 
@@ -33,8 +33,8 @@ public class RecMotor152_10090 extends Motor {
 
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             if (convertDat.getNumMotors() == 4) {
                 valid = true;

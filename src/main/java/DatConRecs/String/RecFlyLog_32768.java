@@ -1,15 +1,15 @@
 
 package DatConRecs.String;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.TSAGeoMag;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.TSAGeoMag;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class RecFlyLog_32768 extends Record {
 
@@ -35,23 +35,23 @@ public class RecFlyLog_32768 extends Record {
         setRecType(RecType.STRING);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             timeOffset = convertDat.timeOffset;
-            payloadString = record.getCleanString();
+            payloadString = _payload.getCleanString();
             if (payloadString.length() > 0) {
                 if (convertDat.csvEventLogOutput
-                        && convertDat.tickRangeLower <= record.getTickNo()) {
+                        && convertDat.tickRangeLower <= _payload.getTickNo()) {
                     if (text.length() > 0)
                         text += "|";
                     text += payloadString;
                 }
                 if (convertDat.eloPS != null
-                        && convertDat.tickRangeLower <= record.getTickNo()) {
-                    long tickNo = record.getTickNo();
+                        && convertDat.tickRangeLower <= _payload.getTickNo()) {
+                    long tickNo = _payload.getTickNo();
                     convertDat.eloPS
-                            .println(datFile.timeString(tickNo, timeOffset)
+                            .println(_datFile.timeString(tickNo, timeOffset)
                                     + " : " + payloadString);
                 }
             }
@@ -99,7 +99,7 @@ public class RecFlyLog_32768 extends Record {
         try {
             if (convertDat.csvEventLogOutput) {
                 String noComma = text.replaceAll(",", ".");
-                printCSVValue(noComma, "eventLog", lineT, true);
+                printCsvValue(noComma, "eventLog", lineT, true);
             }
             text = "";
         } catch (Exception e) {

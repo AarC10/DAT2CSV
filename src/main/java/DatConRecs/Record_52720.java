@@ -1,10 +1,10 @@
 package DatConRecs;
 
-import files.ConvertDat;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class Record_52720 extends Record {
     protected boolean valid = false;
@@ -56,31 +56,31 @@ public class Record_52720 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         valid = true;
 
-        cpu_usage_pcnt = record.getUnsignedShort(0);
-        cpu_usage_task_b_pcnt = record.getUnsignedShort(2);
-        cpu_usage_task_a_pcnt = record.getUnsignedShort(4);
-        uc_resv0 = record.getUnsignedShort(6);
-        max_time_workqueue = record.getUnsignedShort(8);
-        max_time_task_b = record.getUnsignedShort(10);
-        max_time_task_a = record.getUnsignedShort(12);
-        max_time_task_c = record.getUnsignedShort(14);
-        max_time_task_d = record.getUnsignedShort(16);
-        uc_resv1 = record.getUnsignedShort(18);
-        stack_usage_irq_pcnt = record.getUnsignedShort(20);
-        stack_usage_workqueue_pcnt = record.getUnsignedShort(22);
-        stack_usage_b_pcnt = record.getUnsignedShort(24);
-        stack_usage_a_pcnt = record.getUnsignedShort(26);
-        stack_usage_c_pcnt = record.getUnsignedShort(28);
-        stack_usage_d_pcnt = record.getUnsignedShort(30);
-        uc_resv2 = record.getUnsignedShort(32);
-        pend_cnt_a = record.getUnsignedShort(34);
-        pend_cnt_b = record.getUnsignedShort(36);
-        pend_cnt_c = record.getUnsignedShort(38);
-        pend_cnt_d = record.getUnsignedShort(40);
+        cpu_usage_pcnt = _payload.getUnsignedShort(0);
+        cpu_usage_task_b_pcnt = _payload.getUnsignedShort(2);
+        cpu_usage_task_a_pcnt = _payload.getUnsignedShort(4);
+        uc_resv0 = _payload.getUnsignedShort(6);
+        max_time_workqueue = _payload.getUnsignedShort(8);
+        max_time_task_b = _payload.getUnsignedShort(10);
+        max_time_task_a = _payload.getUnsignedShort(12);
+        max_time_task_c = _payload.getUnsignedShort(14);
+        max_time_task_d = _payload.getUnsignedShort(16);
+        uc_resv1 = _payload.getUnsignedShort(18);
+        stack_usage_irq_pcnt = _payload.getUnsignedShort(20);
+        stack_usage_workqueue_pcnt = _payload.getUnsignedShort(22);
+        stack_usage_b_pcnt = _payload.getUnsignedShort(24);
+        stack_usage_a_pcnt = _payload.getUnsignedShort(26);
+        stack_usage_c_pcnt = _payload.getUnsignedShort(28);
+        stack_usage_d_pcnt = _payload.getUnsignedShort(30);
+        uc_resv2 = _payload.getUnsignedShort(32);
+        pend_cnt_a = _payload.getUnsignedShort(34);
+        pend_cnt_b = _payload.getUnsignedShort(36);
+        pend_cnt_c = _payload.getUnsignedShort(38);
+        pend_cnt_d = _payload.getUnsignedShort(40);
     }
 
     protected static Signal uc_monitorIntSig = Signal
@@ -89,44 +89,44 @@ public class Record_52720 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(cpu_usage_pcnt, uc_monitorIntSig, "cpu_usage_pcnt",
+            printCsvValue(cpu_usage_pcnt, uc_monitorIntSig, "cpu_usage_pcnt",
                     lineT, valid);
-            printCSVValue(cpu_usage_task_b_pcnt, uc_monitorIntSig,
+            printCsvValue(cpu_usage_task_b_pcnt, uc_monitorIntSig,
                     "cpu_usage_task_b_pcnt", lineT, valid);
-            printCSVValue(cpu_usage_task_a_pcnt, uc_monitorIntSig,
+            printCsvValue(cpu_usage_task_a_pcnt, uc_monitorIntSig,
                     "cpu_usage_task_a_pcnt", lineT, valid);
-            printCSVValue(uc_resv0, uc_monitorIntSig, "uc_resv0", lineT, valid);
-            printCSVValue(max_time_workqueue, uc_monitorIntSig,
+            printCsvValue(uc_resv0, uc_monitorIntSig, "uc_resv0", lineT, valid);
+            printCsvValue(max_time_workqueue, uc_monitorIntSig,
                     "max_time_workqueue", lineT, valid);
-            printCSVValue(max_time_task_b, uc_monitorIntSig, "max_time_task_b",
+            printCsvValue(max_time_task_b, uc_monitorIntSig, "max_time_task_b",
                     lineT, valid);
-            printCSVValue(max_time_task_a, uc_monitorIntSig, "max_time_task_a",
+            printCsvValue(max_time_task_a, uc_monitorIntSig, "max_time_task_a",
                     lineT, valid);
-            printCSVValue(max_time_task_c, uc_monitorIntSig, "max_time_task_c",
+            printCsvValue(max_time_task_c, uc_monitorIntSig, "max_time_task_c",
                     lineT, valid);
-            printCSVValue(max_time_task_d, uc_monitorIntSig, "max_time_task_d",
+            printCsvValue(max_time_task_d, uc_monitorIntSig, "max_time_task_d",
                     lineT, valid);
-            printCSVValue(uc_resv1, uc_monitorIntSig, "uc_resv1", lineT, valid);
-            printCSVValue(stack_usage_irq_pcnt, uc_monitorIntSig,
+            printCsvValue(uc_resv1, uc_monitorIntSig, "uc_resv1", lineT, valid);
+            printCsvValue(stack_usage_irq_pcnt, uc_monitorIntSig,
                     "stack_usage_irq_pcnt", lineT, valid);
-            printCSVValue(stack_usage_workqueue_pcnt, uc_monitorIntSig,
+            printCsvValue(stack_usage_workqueue_pcnt, uc_monitorIntSig,
                     "stack_usage_workqueue_pcnt", lineT, valid);
-            printCSVValue(stack_usage_b_pcnt, uc_monitorIntSig,
+            printCsvValue(stack_usage_b_pcnt, uc_monitorIntSig,
                     "stack_usage_b_pcnt", lineT, valid);
-            printCSVValue(stack_usage_a_pcnt, uc_monitorIntSig,
+            printCsvValue(stack_usage_a_pcnt, uc_monitorIntSig,
                     "stack_usage_a_pcnt", lineT, valid);
-            printCSVValue(stack_usage_c_pcnt, uc_monitorIntSig,
+            printCsvValue(stack_usage_c_pcnt, uc_monitorIntSig,
                     "stack_usage_c_pcnt", lineT, valid);
-            printCSVValue(stack_usage_d_pcnt, uc_monitorIntSig,
+            printCsvValue(stack_usage_d_pcnt, uc_monitorIntSig,
                     "stack_usage_d_pcnt", lineT, valid);
-            printCSVValue(uc_resv2, uc_monitorIntSig, "uc_resv2", lineT, valid);
-            printCSVValue(pend_cnt_a, uc_monitorIntSig, "pend_cnt_a", lineT,
+            printCsvValue(uc_resv2, uc_monitorIntSig, "uc_resv2", lineT, valid);
+            printCsvValue(pend_cnt_a, uc_monitorIntSig, "pend_cnt_a", lineT,
                     valid);
-            printCSVValue(pend_cnt_b, uc_monitorIntSig, "pend_cnt_b", lineT,
+            printCsvValue(pend_cnt_b, uc_monitorIntSig, "pend_cnt_b", lineT,
                     valid);
-            printCSVValue(pend_cnt_c, uc_monitorIntSig, "pend_cnt_c", lineT,
+            printCsvValue(pend_cnt_c, uc_monitorIntSig, "pend_cnt_c", lineT,
                     valid);
-            printCSVValue(pend_cnt_d, uc_monitorIntSig, "pend_cnt_d", lineT,
+            printCsvValue(pend_cnt_d, uc_monitorIntSig, "pend_cnt_d", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

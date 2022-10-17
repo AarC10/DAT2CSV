@@ -1,16 +1,7 @@
 package DatConRecs;
 
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.MagYaw;
-import files.IMUCalcs;
-import files.Persist;
-import files.Quaternion;
-import files.Signal;
-import files.Units;
-import files.Util;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class RecIMU extends Record {
 
@@ -176,8 +167,8 @@ public class RecIMU extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         valid = true;
         longRad = payloadBB.getDouble(0);
         latRad = payloadBB.getDouble(8);
@@ -211,8 +202,8 @@ public class RecIMU extends Record {
         i4 = payloadBB.getShort(112);
         i5 = payloadBB.getShort(114);
         numSats = payloadBB.get(116);
-        if (record.tickNo > record.datFile.flightStartTick) {
-            if ((record.tickNo > dtLastTickNo + 60)) {
+        if (_payload.tickNo > _payload.datFile.flightStartTick) {
+            if ((_payload.tickNo > dtLastTickNo + 60)) {
                 if (dtLastLat == 0.0 && dtLastLong == 0.0) {
                     dtLastLat = latRad;
                     dtLastLong = longRad;
@@ -237,12 +228,12 @@ public class RecIMU extends Record {
                 distanceTravelled += dist;
                 dtLastLat = latRad;
                 dtLastLong = longRad;
-                dtLastTickNo = record.tickNo;
+                dtLastTickNo = _payload.tickNo;
             }
         }
         if (integrationLastTickNo != 0) {
-            double dt = ((record.tickNo - integrationLastTickNo)
-                    / datFile.getClockRate());
+            double dt = ((_payload.tickNo - integrationLastTickNo)
+                    / _datFile.getClockRate());
             totalZGyro += (0.5 * (gyroZ + gyroZLast)) * dt;
             totalXGyro += (0.5 * (gyroX + gyroXLast)) * dt;
             totalYGyro += (0.5 * (gyroY + gyroYLast)) * dt;
@@ -255,7 +246,7 @@ public class RecIMU extends Record {
                 //imuCalcs.computeAccel(ag_X, ag_Y, ag_Z, dt);
             }
         }
-        integrationLastTickNo = record.tickNo;
+        integrationLastTickNo = _payload.tickNo;
     }
 
     public float getAg_X() {
@@ -338,73 +329,73 @@ public class RecIMU extends Record {
                 convertDat.processCoordsNoGoTxt(longitudeDegrees,
                         latitudeDegrees, baroRaw);
             }
-            printCSVValue(longitudeDegrees, coordSig, "Longitude", lineT,
+            printCsvValue(longitudeDegrees, coordSig, "Longitude", lineT,
                     convertDat.gpsCoordsOK);
-            printCSVValue(latitudeDegrees, coordSig, "Latitude", lineT,
+            printCsvValue(latitudeDegrees, coordSig, "Latitude", lineT,
                     convertDat.gpsCoordsOK);
-            printCSVValue(numSats, numSatsSig, "numSats", lineT, valid);
+            printCsvValue(numSats, numSatsSig, "numSats", lineT, valid);
 
-            printCSVValue(baroRaw, barometerSig, "barometer:Raw", lineT, valid);
-            printCSVValue(baroSmooth, barometerSig, "barometer:Smooth", lineT,
+            printCsvValue(baroRaw, barometerSig, "barometer:Raw", lineT, valid);
+            printCsvValue(baroSmooth, barometerSig, "barometer:Smooth", lineT,
                     valid);
 
-            printCSVValue(accelX, accelSig, "accel:X", lineT, valid);
-            printCSVValue(accelY, accelSig, "accel:Y", lineT, valid);
-            printCSVValue(accelZ, accelSig, "accel:Z", lineT, valid);
-            printCSVValue(accel, accelSig, "accel:Composite", lineT, valid);
+            printCsvValue(accelX, accelSig, "accel:X", lineT, valid);
+            printCsvValue(accelY, accelSig, "accel:Y", lineT, valid);
+            printCsvValue(accelZ, accelSig, "accel:Z", lineT, valid);
+            printCsvValue(accel, accelSig, "accel:Composite", lineT, valid);
 
-            printCSVValue(gyroX, gyroSig, "gyro:X", lineT, valid);
-            printCSVValue(gyroY, gyroSig, "gyro:Y", lineT, valid);
-            printCSVValue(gyroZ, gyroSig, "gyro:Z", lineT, valid);
-            printCSVValue(gyro, gyroSig, "gyro:Composite", lineT, valid);
+            printCsvValue(gyroX, gyroSig, "gyro:X", lineT, valid);
+            printCsvValue(gyroY, gyroSig, "gyro:Y", lineT, valid);
+            printCsvValue(gyroZ, gyroSig, "gyro:Z", lineT, valid);
+            printCsvValue(gyro, gyroSig, "gyro:Composite", lineT, valid);
 
-            printCSVValue(magX, magSig, "mag:X", lineT, valid);
-            printCSVValue(magY, magSig, "mag:Y", lineT, valid);
-            printCSVValue(magZ, magSig, "mag:Z", lineT, valid);
-            printCSVValue(magMod, magSig, "mag:Mod", lineT, valid);
+            printCsvValue(magX, magSig, "mag:X", lineT, valid);
+            printCsvValue(magY, magSig, "mag:Y", lineT, valid);
+            printCsvValue(magZ, magSig, "mag:Z", lineT, valid);
+            printCsvValue(magMod, magSig, "mag:Mod", lineT, valid);
 
-            printCSVValue(velN, velocitySig, "velN", lineT, valid);
-            printCSVValue(velE, velocitySig, "velE", lineT, valid);
-            printCSVValue(velD, velocitySig, "velD", lineT, valid);
-            printCSVValue(vel, velocitySig, "velComposite", lineT, valid);
-            printCSVValue(velH, velocitySig, "velH", lineT, valid);
+            printCsvValue(velN, velocitySig, "velN", lineT, valid);
+            printCsvValue(velE, velocitySig, "velE", lineT, valid);
+            printCsvValue(velD, velocitySig, "velD", lineT, valid);
+            printCsvValue(vel, velocitySig, "velComposite", lineT, valid);
+            printCsvValue(velH, velocitySig, "velH", lineT, valid);
 
             double velGPS = 0.0;
             if (notFirstLine) {
                 double distance = Util.distance(latRad, longRad, lastLatRad,
                         lastLongRad);
                 velGPS = distance / (((double) (convertDat.tickNo - lastTickNo))
-                        / datFile.getClockRate());
+                        / _datFile.getClockRate());
             } else {
                 velGPS = 0.0;
             }
 
             lastLatRad = latRad;
             lastLongRad = longRad;
-            printCSVValue(velGPS - velH, velocitySig, "GPS-H", lineT, valid);
+            printCsvValue(velGPS - velH, velocitySig, "GPS-H", lineT, valid);
 
-            printCSVValue(quatW, quaternionSig, "quatW", lineT, valid);
-            printCSVValue(quatX, quaternionSig, "quatX", lineT, valid);
-            printCSVValue(quatY, quaternionSig, "quatY", lineT, valid);
-            printCSVValue(quatZ, quaternionSig, "quatZ", lineT, valid);
+            printCsvValue(quatW, quaternionSig, "quatW", lineT, valid);
+            printCsvValue(quatX, quaternionSig, "quatX", lineT, valid);
+            printCsvValue(quatY, quaternionSig, "quatY", lineT, valid);
+            printCsvValue(quatZ, quaternionSig, "quatZ", lineT, valid);
 
-            printCSVValue(roll, attitudeSig, "roll", lineT, valid);
-            printCSVValue(pitch, attitudeSig, "pitch", lineT, valid);
-            printCSVValue(yaw, attitudeSig, "yaw", lineT, valid);
-            printCSVValue(((yaw + 360.0) % 360.0), attitudeSig, "yaw360", lineT,
+            printCsvValue(roll, attitudeSig, "roll", lineT, valid);
+            printCsvValue(pitch, attitudeSig, "pitch", lineT, valid);
+            printCsvValue(yaw, attitudeSig, "yaw", lineT, valid);
+            printCsvValue(((yaw + 360.0) % 360.0), attitudeSig, "yaw360", lineT,
                     valid);
 
-            printCSVValue(totalZGyro, totalGyroSig, "totalGyro:Z", lineT,
+            printCsvValue(totalZGyro, totalGyroSig, "totalGyro:Z", lineT,
                     valid);
-            printCSVValue(totalXGyro, totalGyroSig, "totalGyro:X", lineT,
+            printCsvValue(totalXGyro, totalGyroSig, "totalGyro:X", lineT,
                     valid);
-            printCSVValue(totalYGyro, totalGyroSig, "totalGyro:Y", lineT,
+            printCsvValue(totalYGyro, totalGyroSig, "totalGyro:Y", lineT,
                     valid);
             if (lineT == lineType.LINE) {
                 notFirstLine = true;
                 if (Persist.inertialOnlyCalcs) {
                     double dt = (((double) (convertDat.tickNo - lastTickNo))
-                            / datFile.getClockRate());
+                            / _datFile.getClockRate());
                     imuCalcs.computeAccel(Math.toRadians(pitch),
                             Math.toRadians(roll), Math.toRadians(yaw), accelX,
                             accelY, accelZ, dt);
@@ -419,7 +410,7 @@ public class RecIMU extends Record {
                 distanceHP = Util.distance(latRad, longRad,
                         convertDat.getHPLatRad(), convertDat.getHPLongRad());
             }
-            printCSVValue(magYaw.getDegrees(), magSig, "magYaw", lineT, valid);
+            printCsvValue(magYaw.getDegrees(), magSig, "magYaw", lineT, valid);
             if (Persist.magCalcs) {
                 double diff = 0.0;
                 if (yaw > magYaw.getDegrees() + 180) {
@@ -429,27 +420,27 @@ public class RecIMU extends Record {
                 } else {
                     diff = magYaw.getDegrees() - yaw;
                 }
-                printCSVValue(diff, magSig, "Yaw-magYaw", lineT, valid);
+                printCsvValue(diff, magSig, "Yaw-magYaw", lineT, valid);
             }
             if (Persist.inertialOnlyCalcs) {
                 imuCalcs.printCols(lineT, valid);
             }
-            printCSVValue(distanceHP, distanceSig, "distanceHP", lineT,
+            printCsvValue(distanceHP, distanceSig, "distanceHP", lineT,
                     convertDat.isHpValid());
-            printCSVValue(distanceTravelled, distanceSig, "distanceTravelled",
+            printCsvValue(distanceTravelled, distanceSig, "distanceTravelled",
                     lineT, valid);
-            printCSVValue(bearingDeclined, directionSig,
+            printCsvValue(bearingDeclined, directionSig,
                     "directionOfTravel[mag]", lineT, bearingValid);
-            printCSVValue(bearingTrue, directionSig, "directionOfTravel[true]",
+            printCsvValue(bearingTrue, directionSig, "directionOfTravel[true]",
                     lineT, bearingValid);
-            printCSVValue(imuTemp, imuTempSig, "temperature", lineT, valid);
+            printCsvValue(imuTemp, imuTempSig, "temperature", lineT, valid);
             if (Persist.EXPERIMENTAL_FIELDS) {
-                printCSVValue(ag_X, experimentalSig, "ag_X", lineT, valid);
-                printCSVValue(ag_Y, experimentalSig, "ag_Y", lineT, valid);
-                printCSVValue(ag_Z, experimentalSig, "ag_Z", lineT, valid);
-                printCSVValue(gb_X, experimentalSig, "gb_X", lineT, valid);
-                printCSVValue(gb_Y, experimentalSig, "gb_Y", lineT, valid);
-                printCSVValue(gb_Z, experimentalSig, "gb_Z", lineT, valid);
+                printCsvValue(ag_X, experimentalSig, "ag_X", lineT, valid);
+                printCsvValue(ag_Y, experimentalSig, "ag_Y", lineT, valid);
+                printCsvValue(ag_Z, experimentalSig, "ag_Z", lineT, valid);
+                printCsvValue(gb_X, experimentalSig, "gb_X", lineT, valid);
+                printCsvValue(gb_Y, experimentalSig, "gb_Y", lineT, valid);
+                printCsvValue(gb_Z, experimentalSig, "gb_Z", lineT, valid);
             }
         } catch (Exception e) {
             DatConLog.Exception(e);

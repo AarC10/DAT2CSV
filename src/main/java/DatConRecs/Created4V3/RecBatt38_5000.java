@@ -18,7 +18,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package DatConRecs.Created4V3;
 
-import files.ConvertDat;
+import Files.ConvertDat;
 
 // 50 HZ
 //length 47

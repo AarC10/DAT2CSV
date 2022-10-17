@@ -2,9 +2,9 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecAirComp21_10100 extends RecAirComp {
 
@@ -18,8 +18,8 @@ public class RecAirComp21_10100 extends RecAirComp {
         super(convertDat, 10100, 21);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         valid = true;
         vbx = payloadBB.getFloat(0);
         vby = payloadBB.getFloat(4);
@@ -39,13 +39,13 @@ public class RecAirComp21_10100 extends RecAirComp {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(vbx, vbSig, "X", lineT, valid);
-            printCSVValue(vby, vbSig, "Y", lineT, valid);
-            printCSVValue(compAlti, compAltiSig, "", lineT, valid);
-            printCSVValue(velNorm, velNormSig, "", lineT, valid);
-            printCSVValue(velLevel1Time, velLevelTimeSig, "1", lineT, valid);
-            printCSVValue(velLevel2Time, velLevelTimeSig, "2", lineT, valid);
-            printCSVValue(velLevel, velLevelSig, "", lineT, valid);
+            printCsvValue(vbx, vbSig, "X", lineT, valid);
+            printCsvValue(vby, vbSig, "Y", lineT, valid);
+            printCsvValue(compAlti, compAltiSig, "", lineT, valid);
+            printCsvValue(velNorm, velNormSig, "", lineT, valid);
+            printCsvValue(velLevel1Time, velLevelTimeSig, "1", lineT, valid);
+            printCsvValue(velLevel2Time, velLevelTimeSig, "2", lineT, valid);
+            printCsvValue(velLevel, velLevelSig, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

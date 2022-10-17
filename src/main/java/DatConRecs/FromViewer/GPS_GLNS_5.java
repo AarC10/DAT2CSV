@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class GPS_GLNS_5 extends Record {
@@ -35,29 +36,29 @@ protected int gpsstate = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- gps_date = record.getUnsignedInt(0);
- gps_time = record.getUnsignedInt(4);
- gps_lon = record.getInt(8);
- gps_lat = record.getInt(12);
- hmsl = record.getInt(16);
- Vel_N = record.getFloat(20);
- Vel_E = record.getFloat(24);
- Vel_D = record.getFloat(28);
- hdop = record.getFloat(32);
- pdop = record.getFloat(36);
- gps_fix = record.getFloat(40);
- gnss_flag = record.getFloat(44);
- hacc = record.getFloat(48);
- sacc = record.getFloat(52);
- gps_used = record.getUnsignedInt(56);
- gln_used = record.getUnsignedInt(60);
- numsv = record.getUnsignedShort(64);
- gpsstate = record.getUnsignedShort(66);
+ gps_date = _payload.getUnsignedInt(0);
+ gps_time = _payload.getUnsignedInt(4);
+ gps_lon = _payload.getInt(8);
+ gps_lat = _payload.getInt(12);
+ hmsl = _payload.getInt(16);
+ Vel_N = _payload.getFloat(20);
+ Vel_E = _payload.getFloat(24);
+ Vel_D = _payload.getFloat(28);
+ hdop = _payload.getFloat(32);
+ pdop = _payload.getFloat(36);
+ gps_fix = _payload.getFloat(40);
+ gnss_flag = _payload.getFloat(44);
+ hacc = _payload.getFloat(48);
+ sacc = _payload.getFloat(52);
+ gps_used = _payload.getUnsignedInt(56);
+ gln_used = _payload.getUnsignedInt(60);
+ numsv = _payload.getUnsignedShort(64);
+ gpsstate = _payload.getUnsignedShort(66);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -71,24 +72,24 @@ protected int gpsstate = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(gps_date, GPS_GLNSIntSig, "gps_date",lineT, valid);
- printCSVValue(gps_time, GPS_GLNSIntSig, "gps_time",lineT, valid);
- printCSVValue(gps_lon, GPS_GLNSIntSig, "gps_lon",lineT, valid);
- printCSVValue(gps_lat, GPS_GLNSIntSig, "gps_lat",lineT, valid);
- printCSVValue(hmsl, GPS_GLNSIntSig, "hmsl",lineT, valid);
- printCSVValue(Vel_N, GPS_GLNSFloatSig, "Vel_N",lineT, valid);
- printCSVValue(Vel_E, GPS_GLNSFloatSig, "Vel_E",lineT, valid);
- printCSVValue(Vel_D, GPS_GLNSFloatSig, "Vel_D",lineT, valid);
- printCSVValue(hdop, GPS_GLNSFloatSig, "hdop",lineT, valid);
- printCSVValue(pdop, GPS_GLNSFloatSig, "pdop",lineT, valid);
- printCSVValue(gps_fix, GPS_GLNSFloatSig, "gps_fix",lineT, valid);
- printCSVValue(gnss_flag, GPS_GLNSFloatSig, "gnss_flag",lineT, valid);
- printCSVValue(hacc, GPS_GLNSFloatSig, "hacc",lineT, valid);
- printCSVValue(sacc, GPS_GLNSFloatSig, "sacc",lineT, valid);
- printCSVValue(gps_used, GPS_GLNSIntSig, "gps_used",lineT, valid);
- printCSVValue(gln_used, GPS_GLNSIntSig, "gln_used",lineT, valid);
- printCSVValue(numsv, GPS_GLNSIntSig, "numsv",lineT, valid);
- printCSVValue(gpsstate, GPS_GLNSIntSig, "gpsstate",lineT, valid);
+ printCsvValue(gps_date, GPS_GLNSIntSig, "gps_date",lineT, valid);
+ printCsvValue(gps_time, GPS_GLNSIntSig, "gps_time",lineT, valid);
+ printCsvValue(gps_lon, GPS_GLNSIntSig, "gps_lon",lineT, valid);
+ printCsvValue(gps_lat, GPS_GLNSIntSig, "gps_lat",lineT, valid);
+ printCsvValue(hmsl, GPS_GLNSIntSig, "hmsl",lineT, valid);
+ printCsvValue(Vel_N, GPS_GLNSFloatSig, "Vel_N",lineT, valid);
+ printCsvValue(Vel_E, GPS_GLNSFloatSig, "Vel_E",lineT, valid);
+ printCsvValue(Vel_D, GPS_GLNSFloatSig, "Vel_D",lineT, valid);
+ printCsvValue(hdop, GPS_GLNSFloatSig, "hdop",lineT, valid);
+ printCsvValue(pdop, GPS_GLNSFloatSig, "pdop",lineT, valid);
+ printCsvValue(gps_fix, GPS_GLNSFloatSig, "gps_fix",lineT, valid);
+ printCsvValue(gnss_flag, GPS_GLNSFloatSig, "gnss_flag",lineT, valid);
+ printCsvValue(hacc, GPS_GLNSFloatSig, "hacc",lineT, valid);
+ printCsvValue(sacc, GPS_GLNSFloatSig, "sacc",lineT, valid);
+ printCsvValue(gps_used, GPS_GLNSIntSig, "gps_used",lineT, valid);
+ printCsvValue(gln_used, GPS_GLNSIntSig, "gln_used",lineT, valid);
+ printCsvValue(numsv, GPS_GLNSIntSig, "numsv",lineT, valid);
+ printCsvValue(gpsstate, GPS_GLNSIntSig, "gpsstate",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

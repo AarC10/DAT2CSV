@@ -2,8 +2,8 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.IMUEX;
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
 
 public class IMUEX40 extends IMUEX {
 
@@ -12,23 +12,23 @@ public class IMUEX40 extends IMUEX {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            vo_vx = record.getFloat(0);
-            vo_vy = record.getFloat(4);
-            vo_vz = record.getFloat(8);
-            vo_px = record.getFloat(12);
-            vo_py = record.getFloat(16);
-            vo_pz = record.getFloat(20);
-            us_v = record.getFloat(24);
-            us_p = record.getFloat(28);
-            vo_flag_navi = record.getUnsignedShort(32);
-            flag_err = record.getUnsignedShort(34);
-            vo_flag_rsv = record.getUnsignedShort(36);
-            ex_cnt = record.getUnsignedShort(38);
+            vo_vx = _payload.getFloat(0);
+            vo_vy = _payload.getFloat(4);
+            vo_vz = _payload.getFloat(8);
+            vo_px = _payload.getFloat(12);
+            vo_py = _payload.getFloat(16);
+            vo_pz = _payload.getFloat(20);
+            us_v = _payload.getFloat(24);
+            us_p = _payload.getFloat(28);
+            vo_flag_navi = _payload.getUnsignedShort(32);
+            flag_err = _payload.getUnsignedShort(34);
+            vo_flag_rsv = _payload.getUnsignedShort(36);
+            ex_cnt = _payload.getUnsignedShort(38);
             errString = getErrString(flag_err);
         } catch (Exception e) {
             RecordException(e);

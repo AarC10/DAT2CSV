@@ -1,60 +1,55 @@
 package DatConRecs;
 
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
-import files.ConvertDat.lineType;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class RecBatt extends Record {
 
-    public double crrnt = 0.0;
+    public float crrnt = (float) 0.0;
 
     protected short batteryPercent = 0;
 
-    protected double fcc = 0.0f;
+    protected float fcc = 0.0f;
 
-    protected double remcap = 0.0f;
+    protected float remcap = 0.0f;
 
-    public double[] volt;
+    public float volt[];
 
     protected int numCells = 0;
 
-    public double temp = 0.0;
-    ;
+    public float temp = (float) 0.0;;
 
-    public double totalVolts = 0.0;
+    public float totalVolts = (float) 0.0;
 
-    public double maxVolts = 0.0;
+    public float maxVolts = (float) 0.0;
 
-    public double minVolts = 0.0;
+    public float minVolts = (float) 0.0;
 
-    public double sumOfVolts = 0.0;
+    public float sumOfVolts = (float) 0.0;
 
-    public double avgVolts = 0.0;
+    public float avgVolts = (float) 0.0;
 
     protected long sumOfCurrents = 0;
 
     protected long numSamples = 0;
 
-    public double voltDiff = 0.0;
+    public float voltDiff = (float) 0.0;
 
-    public double maxCurrent = 0.0;
+    public float maxCurrent = (float) 0.0;
 
-    public double minCurrent = 0.0;
+    public float minCurrent = (float) 0.0;
 
-    public double avgCurrent = 0.0;
+    public float avgCurrent = (float) 0.0;
 
-    public double watts = 0.0;
+    public float watts = (float) 0.0;
 
-    public double maxWatts = 0.0;
+    public float maxWatts = (float) 0.0;
 
-    public double minWatts = 0.0;
+    public float minWatts = (float) 0.0;
 
-    protected double sumOfWatts = 0.0;
+    protected float sumOfWatts = (float) 0.0;
 
-    public double avgWatts = 0.0;
+    public float avgWatts = (float) 0.0;
 
     public boolean valid = false;
 
@@ -79,7 +74,7 @@ public class RecBatt extends Record {
     public RecBatt(ConvertDat convertDat, int id, int length, int index) {
         super(convertDat, id, length);
         numCells = convertDat.getDatFile().getNumBattCells();
-        volt = new double[numCells];
+        volt = new float[numCells];
         for (int i = 0; i < numCells; i++) {
             volt[i] = 0.0f;
         }
@@ -120,9 +115,9 @@ public class RecBatt extends Record {
         minWatts = Float.MAX_VALUE;
     }
 
-    protected double maxVolt(double... floatVolts) {
-        double retv = -Float.MAX_VALUE;
-        for (double volts : floatVolts) {
+    protected float maxVolt(float... floatVolts) {
+        float retv = -Float.MAX_VALUE;
+        for (float volts : floatVolts) {
             if (volts > retv) {
                 retv = volts;
             }
@@ -130,9 +125,9 @@ public class RecBatt extends Record {
         return retv;
     }
 
-    protected double minVolt(double... floatVolts) {
-        double retv = Float.MAX_VALUE;
-        for (double volts : floatVolts) {
+    protected float minVolt(float... floatVolts) {
+        float retv = Float.MAX_VALUE;
+        for (float volts : floatVolts) {
             if (volts < retv) {
                 retv = volts;
             }
@@ -140,17 +135,17 @@ public class RecBatt extends Record {
         return retv;
     }
 
-    protected double minVolts(double[] volts) {
-        double min = Double.MAX_VALUE;
-        for (double v : volts) {
-            if (v < min)
-                min = v;
+    protected float minVolts(float[] volts) {
+        float min = Float.MAX_VALUE;
+        for (int i = 0; i < volts.length; i++) {
+            if (volts[i] < min)
+                min = volts[i];
         }
         return min;
     }
 
-    protected double maxVolts(double[] volts) {
-        double max = Float.MIN_VALUE;
+    protected float maxVolts(float[] volts) {
+        float max = Float.MIN_VALUE;
         for (int i = 0; i < volts.length; i++) {
             if (volts[i] > max)
                 max = volts[i];
@@ -183,35 +178,35 @@ public class RecBatt extends Record {
     }
 
     protected void printComputedBattCols(lineType lineT) throws Exception {
-        printCSVValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
-        printCSVValue(watts, wattsSig, "watts", lineT, valid);
-        printCSVValue(minCurrent, currentSig, "minCurrent", lineT, valid);
-        printCSVValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
-        printCSVValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
+        printCsvValue(voltDiff, voltsSig, "voltSpread", lineT, valid);
+        printCsvValue(watts, wattsSig, "watts", lineT, valid);
+        printCsvValue(minCurrent, currentSig, "minCurrent", lineT, valid);
+        printCsvValue(maxCurrent, currentSig, "maxCurrent", lineT, valid);
+        printCsvValue(avgCurrent, currentSig, "avgCurrent", lineT, valid);
 
-        printCSVValue(minVolts, voltsSig, "minVolts", lineT, valid);
-        printCSVValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
-        printCSVValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
+        printCsvValue(minVolts, voltsSig, "minVolts", lineT, valid);
+        printCsvValue(maxVolts, voltsSig, "maxVolts", lineT, valid);
+        printCsvValue(avgVolts, voltsSig, "avgVolts", lineT, valid);
 
-        printCSVValue(minWatts, wattsSig, "minWatts", lineT, valid);
-        printCSVValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
-        printCSVValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
+        printCsvValue(minWatts, wattsSig, "minWatts", lineT, valid);
+        printCsvValue(maxWatts, wattsSig, "maxWatts", lineT, valid);
+        printCsvValue(avgWatts, wattsSig, "avgWatts", lineT, valid);
     }
 
     @Override
     public void printCols(lineType lineT) {
         try {
-            for (int i = 1; i <= datFile.getNumBattCells(); i++) {
-                printCSVValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
+            for (int i = 1; i <= _datFile.getNumBattCells(); i++) {
+                printCsvValue(volt[i - 1], cellVoltSig, "cellVolts" + i, lineT,
                         valid);
             }
-            printCSVValue(crrnt, currentSig, "current", lineT, valid);
-            printCSVValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
-            printCSVValue(temp, batteryTempSig, "Temp", lineT, valid);
-            printCSVValue(batteryPercent, battPercent, "battery%", lineT,
+            printCsvValue(crrnt, currentSig, "current", lineT, valid);
+            printCsvValue(totalVolts, voltsSig, "totalVolts", lineT, valid);
+            printCsvValue(temp, batteryTempSig, "Temp", lineT, valid);
+            printCsvValue(batteryPercent, battPercent, "battery%", lineT,
                     valid);
-            printCSVValue(fcc, batteryFCC, "FullChargeCap", lineT, valid);
-            printCSVValue(remcap, batteryRemCap, "RemainingCap", lineT, valid);
+            printCsvValue(fcc, batteryFCC, "FullChargeCap", lineT, valid);
+            printCsvValue(remcap, batteryRemCap, "RemainingCap", lineT, valid);
             printComputedBattCols(lineT);
 
         } catch (Exception e) {

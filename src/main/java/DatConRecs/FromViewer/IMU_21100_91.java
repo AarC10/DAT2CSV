@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class IMU_21100_91 extends Record {
@@ -24,18 +25,18 @@ protected long cnt_21100 = (long)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- gyro_x_21100 = record.getShort(0);
- gyro_y_21100 = record.getShort(2);
- gyro_z_21100 = record.getShort(4);
- acc_x_21100 = record.getShort(6);
- acc_y_21100 = record.getShort(8);
- acc_z_21100 = record.getShort(10);
- cnt_21100 = record.getUnsignedInt(12);
+ gyro_x_21100 = _payload.getShort(0);
+ gyro_y_21100 = _payload.getShort(2);
+ gyro_z_21100 = _payload.getShort(4);
+ acc_x_21100 = _payload.getShort(6);
+ acc_y_21100 = _payload.getShort(8);
+ acc_z_21100 = _payload.getShort(10);
+ cnt_21100 = _payload.getUnsignedInt(12);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -49,13 +50,13 @@ protected long cnt_21100 = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(gyro_x_21100, IMU_21100IntSig, "gyro_x_21100",lineT, valid);
- printCSVValue(gyro_y_21100, IMU_21100IntSig, "gyro_y_21100",lineT, valid);
- printCSVValue(gyro_z_21100, IMU_21100IntSig, "gyro_z_21100",lineT, valid);
- printCSVValue(acc_x_21100, IMU_21100IntSig, "acc_x_21100",lineT, valid);
- printCSVValue(acc_y_21100, IMU_21100IntSig, "acc_y_21100",lineT, valid);
- printCSVValue(acc_z_21100, IMU_21100IntSig, "acc_z_21100",lineT, valid);
- printCSVValue(cnt_21100, IMU_21100IntSig, "cnt_21100",lineT, valid);
+ printCsvValue(gyro_x_21100, IMU_21100IntSig, "gyro_x_21100",lineT, valid);
+ printCsvValue(gyro_y_21100, IMU_21100IntSig, "gyro_y_21100",lineT, valid);
+ printCsvValue(gyro_z_21100, IMU_21100IntSig, "gyro_z_21100",lineT, valid);
+ printCsvValue(acc_x_21100, IMU_21100IntSig, "acc_x_21100",lineT, valid);
+ printCsvValue(acc_y_21100, IMU_21100IntSig, "acc_y_21100",lineT, valid);
+ printCsvValue(acc_z_21100, IMU_21100IntSig, "acc_z_21100",lineT, valid);
+ printCsvValue(cnt_21100, IMU_21100IntSig, "cnt_21100",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

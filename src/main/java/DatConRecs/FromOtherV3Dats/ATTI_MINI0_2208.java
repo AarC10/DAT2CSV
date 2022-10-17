@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class ATTI_MINI0_2208 extends Record {
     protected boolean valid = false;
@@ -36,21 +36,21 @@ public class ATTI_MINI0_2208 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            s_qw0 = record.getFloat(0);
-            s_qx0 = record.getFloat(4);
-            s_qy0 = record.getFloat(8);
-            s_qz0 = record.getFloat(12);
-            s_pgz0 = record.getFloat(16);
-            s_vgz0 = record.getFloat(20);
-            s_agz0 = record.getFloat(24);
-            s_rsv00 = record.getUnsignedInt(28);
-            s_rsv10 = record.getUnsignedInt(32);
-            s_cnt0 = record.getUnsignedInt(36);
+            s_qw0 = _payload.getFloat(0);
+            s_qx0 = _payload.getFloat(4);
+            s_qy0 = _payload.getFloat(8);
+            s_qz0 = _payload.getFloat(12);
+            s_pgz0 = _payload.getFloat(16);
+            s_vgz0 = _payload.getFloat(20);
+            s_agz0 = _payload.getFloat(24);
+            s_rsv00 = _payload.getUnsignedInt(28);
+            s_rsv10 = _payload.getUnsignedInt(32);
+            s_cnt0 = _payload.getUnsignedInt(36);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -68,16 +68,16 @@ public class ATTI_MINI0_2208 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(s_qw0, ATTI_MINI0FloatSig, "s_qw0", lineT, valid);
-            printCSVValue(s_qx0, ATTI_MINI0FloatSig, "s_qx0", lineT, valid);
-            printCSVValue(s_qy0, ATTI_MINI0FloatSig, "s_qy0", lineT, valid);
-            printCSVValue(s_qz0, ATTI_MINI0FloatSig, "s_qz0", lineT, valid);
-            printCSVValue(s_pgz0, ATTI_MINI0FloatSig, "s_pgz0", lineT, valid);
-            printCSVValue(s_vgz0, ATTI_MINI0FloatSig, "s_vgz0", lineT, valid);
-            printCSVValue(s_agz0, ATTI_MINI0FloatSig, "s_agz0", lineT, valid);
-            printCSVValue(s_rsv00, ATTI_MINI0IntSig, "s_rsv00", lineT, valid);
-            printCSVValue(s_rsv10, ATTI_MINI0IntSig, "s_rsv10", lineT, valid);
-            printCSVValue(s_cnt0, ATTI_MINI0IntSig, "s_cnt0", lineT, valid);
+            printCsvValue(s_qw0, ATTI_MINI0FloatSig, "s_qw0", lineT, valid);
+            printCsvValue(s_qx0, ATTI_MINI0FloatSig, "s_qx0", lineT, valid);
+            printCsvValue(s_qy0, ATTI_MINI0FloatSig, "s_qy0", lineT, valid);
+            printCsvValue(s_qz0, ATTI_MINI0FloatSig, "s_qz0", lineT, valid);
+            printCsvValue(s_pgz0, ATTI_MINI0FloatSig, "s_pgz0", lineT, valid);
+            printCsvValue(s_vgz0, ATTI_MINI0FloatSig, "s_vgz0", lineT, valid);
+            printCsvValue(s_agz0, ATTI_MINI0FloatSig, "s_agz0", lineT, valid);
+            printCsvValue(s_rsv00, ATTI_MINI0IntSig, "s_rsv00", lineT, valid);
+            printCsvValue(s_rsv10, ATTI_MINI0IntSig, "s_rsv10", lineT, valid);
+            printCsvValue(s_cnt0, ATTI_MINI0IntSig, "s_cnt0", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

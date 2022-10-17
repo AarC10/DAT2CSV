@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class osd_home_13 extends Record {
@@ -23,17 +24,17 @@ protected short course_lock_torsion = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- osd_lon = record.getDouble(0);
- osd_lat = record.getDouble(8);
- osd_alt = record.getFloat(16);
- osd_home_state = record.getUnsignedShort(20);
- fixed_altitedue = record.getUnsignedShort(22);
- course_lock_torsion = record.getShort(24);
+ osd_lon = _payload.getDouble(0);
+ osd_lat = _payload.getDouble(8);
+ osd_alt = _payload.getFloat(16);
+ osd_home_state = _payload.getUnsignedShort(20);
+ fixed_altitedue = _payload.getUnsignedShort(22);
+ course_lock_torsion = _payload.getShort(24);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -47,12 +48,12 @@ protected short course_lock_torsion = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(osd_lon, osd_homeDoubleSig, "osd_lon",lineT, valid);
- printCSVValue(osd_lat, osd_homeDoubleSig, "osd_lat",lineT, valid);
- printCSVValue(osd_alt, osd_homeFloatSig, "osd_alt",lineT, valid);
- printCSVValue(osd_home_state, osd_homeIntSig, "osd_home_state",lineT, valid);
- printCSVValue(fixed_altitedue, osd_homeIntSig, "fixed_altitedue",lineT, valid);
- printCSVValue(course_lock_torsion, osd_homeIntSig, "course_lock_torsion",lineT, valid);
+ printCsvValue(osd_lon, osd_homeDoubleSig, "osd_lon",lineT, valid);
+ printCsvValue(osd_lat, osd_homeDoubleSig, "osd_lat",lineT, valid);
+ printCsvValue(osd_alt, osd_homeFloatSig, "osd_alt",lineT, valid);
+ printCsvValue(osd_home_state, osd_homeIntSig, "osd_home_state",lineT, valid);
+ printCsvValue(fixed_altitedue, osd_homeIntSig, "fixed_altitedue",lineT, valid);
+ printCsvValue(course_lock_torsion, osd_homeIntSig, "course_lock_torsion",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

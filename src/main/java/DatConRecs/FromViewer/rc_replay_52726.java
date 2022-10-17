@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class rc_replay_52726 extends Record {
@@ -25,19 +26,19 @@ protected short CMD_D4 = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- CMD_ALIERON = record.getShort(0);
- CMD_ELEVATOR = record.getShort(2);
- CMD_THROTTLE = record.getShort(4);
- CMD_RUDDER = record.getShort(6);
- CMD_MODE = record.getShort(8);
- CMD_IOC = record.getShort(10);
- CMD_GO_HOME = record.getShort(12);
- CMD_D4 = record.getShort(14);
+ CMD_ALIERON = _payload.getShort(0);
+ CMD_ELEVATOR = _payload.getShort(2);
+ CMD_THROTTLE = _payload.getShort(4);
+ CMD_RUDDER = _payload.getShort(6);
+ CMD_MODE = _payload.getShort(8);
+ CMD_IOC = _payload.getShort(10);
+ CMD_GO_HOME = _payload.getShort(12);
+ CMD_D4 = _payload.getShort(14);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -51,14 +52,14 @@ protected short CMD_D4 = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(CMD_ALIERON, rc_replayIntSig, "CMD_ALIERON",lineT, valid);
- printCSVValue(CMD_ELEVATOR, rc_replayIntSig, "CMD_ELEVATOR",lineT, valid);
- printCSVValue(CMD_THROTTLE, rc_replayIntSig, "CMD_THROTTLE",lineT, valid);
- printCSVValue(CMD_RUDDER, rc_replayIntSig, "CMD_RUDDER",lineT, valid);
- printCSVValue(CMD_MODE, rc_replayIntSig, "CMD_MODE",lineT, valid);
- printCSVValue(CMD_IOC, rc_replayIntSig, "CMD_IOC",lineT, valid);
- printCSVValue(CMD_GO_HOME, rc_replayIntSig, "CMD_GO_HOME",lineT, valid);
- printCSVValue(CMD_D4, rc_replayIntSig, "CMD_D4",lineT, valid);
+ printCsvValue(CMD_ALIERON, rc_replayIntSig, "CMD_ALIERON",lineT, valid);
+ printCsvValue(CMD_ELEVATOR, rc_replayIntSig, "CMD_ELEVATOR",lineT, valid);
+ printCsvValue(CMD_THROTTLE, rc_replayIntSig, "CMD_THROTTLE",lineT, valid);
+ printCsvValue(CMD_RUDDER, rc_replayIntSig, "CMD_RUDDER",lineT, valid);
+ printCsvValue(CMD_MODE, rc_replayIntSig, "CMD_MODE",lineT, valid);
+ printCsvValue(CMD_IOC, rc_replayIntSig, "CMD_IOC",lineT, valid);
+ printCsvValue(CMD_GO_HOME, rc_replayIntSig, "CMD_GO_HOME",lineT, valid);
+ printCsvValue(CMD_D4, rc_replayIntSig, "CMD_D4",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -19,12 +19,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Persist;
-import files.Signal;
-import files.Units;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class RecAirComp29_10100 extends RecAirComp {
 
@@ -40,8 +36,8 @@ public class RecAirComp29_10100 extends RecAirComp {
         super(convertDat, 10100, 29);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
             vbx = payloadBB.getFloat(0);
@@ -72,14 +68,14 @@ public class RecAirComp29_10100 extends RecAirComp {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(vbx, vbSig, "X", lineT, valid);
-            printCSVValue(vby, vbSig, "Y", lineT, valid);
-            printCSVValue(compAlti, compAltiSig, "", lineT, valid);
-            printCSVValue(windSpeed, windSpeedSig, "", lineT, valid);
-            printCSVValue(windX, windSig, "X", lineT, valid);
-            printCSVValue(windY, windSig, "Y", lineT, valid);
-            printCSVValue(motorSpeed, motorSpeedSig, "", lineT, valid);
-            printCSVValue(velLevel, velLevelSig, "", lineT, valid);
+            printCsvValue(vbx, vbSig, "X", lineT, valid);
+            printCsvValue(vby, vbSig, "Y", lineT, valid);
+            printCsvValue(compAlti, compAltiSig, "", lineT, valid);
+            printCsvValue(windSpeed, windSpeedSig, "", lineT, valid);
+            printCsvValue(windX, windSig, "X", lineT, valid);
+            printCsvValue(windY, windSig, "Y", lineT, valid);
+            printCsvValue(motorSpeed, motorSpeedSig, "", lineT, valid);
+            printCsvValue(velLevel, velLevelSig, "", lineT, valid);
             if (Persist.EXPERIMENTAL_FIELDS) {
                 super.printWindComps(lineT);
             }

@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class IMU_EX_00_2064 extends Record {
     protected boolean valid = false;
@@ -40,23 +40,23 @@ public class IMU_EX_00_2064 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            vo_vx_00 = record.getFloat(0);
-            vo_vy_00 = record.getFloat(4);
-            vo_vz_00 = record.getFloat(8);
-            vo_px_00 = record.getFloat(12);
-            vo_py_00 = record.getFloat(16);
-            vo_pz_00 = record.getFloat(20);
-            us_v_00 = record.getFloat(24);
-            us_p_00 = record.getFloat(28);
-            vo_flag_navi_00 = record.getUnsignedShort(32);
-            imu_err_flag_00 = record.getUnsignedShort(34);
-            vo_flag_rsv_00 = record.getUnsignedShort(36);
-            imu_ex_cnt_00 = record.getUnsignedShort(38);
+            vo_vx_00 = _payload.getFloat(0);
+            vo_vy_00 = _payload.getFloat(4);
+            vo_vz_00 = _payload.getFloat(8);
+            vo_px_00 = _payload.getFloat(12);
+            vo_py_00 = _payload.getFloat(16);
+            vo_pz_00 = _payload.getFloat(20);
+            us_v_00 = _payload.getFloat(24);
+            us_p_00 = _payload.getFloat(28);
+            vo_flag_navi_00 = _payload.getUnsignedShort(32);
+            imu_err_flag_00 = _payload.getUnsignedShort(34);
+            vo_flag_rsv_00 = _payload.getUnsignedShort(36);
+            imu_ex_cnt_00 = _payload.getUnsignedShort(38);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -74,27 +74,27 @@ public class IMU_EX_00_2064 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(vo_vx_00, IMU_EX_00FloatSig, "vo_vx_00", lineT,
+            printCsvValue(vo_vx_00, IMU_EX_00FloatSig, "vo_vx_00", lineT,
                     valid);
-            printCSVValue(vo_vy_00, IMU_EX_00FloatSig, "vo_vy_00", lineT,
+            printCsvValue(vo_vy_00, IMU_EX_00FloatSig, "vo_vy_00", lineT,
                     valid);
-            printCSVValue(vo_vz_00, IMU_EX_00FloatSig, "vo_vz_00", lineT,
+            printCsvValue(vo_vz_00, IMU_EX_00FloatSig, "vo_vz_00", lineT,
                     valid);
-            printCSVValue(vo_px_00, IMU_EX_00FloatSig, "vo_px_00", lineT,
+            printCsvValue(vo_px_00, IMU_EX_00FloatSig, "vo_px_00", lineT,
                     valid);
-            printCSVValue(vo_py_00, IMU_EX_00FloatSig, "vo_py_00", lineT,
+            printCsvValue(vo_py_00, IMU_EX_00FloatSig, "vo_py_00", lineT,
                     valid);
-            printCSVValue(vo_pz_00, IMU_EX_00FloatSig, "vo_pz_00", lineT,
+            printCsvValue(vo_pz_00, IMU_EX_00FloatSig, "vo_pz_00", lineT,
                     valid);
-            printCSVValue(us_v_00, IMU_EX_00FloatSig, "us_v_00", lineT, valid);
-            printCSVValue(us_p_00, IMU_EX_00FloatSig, "us_p_00", lineT, valid);
-            printCSVValue(vo_flag_navi_00, IMU_EX_00IntSig, "vo_flag_navi_00",
+            printCsvValue(us_v_00, IMU_EX_00FloatSig, "us_v_00", lineT, valid);
+            printCsvValue(us_p_00, IMU_EX_00FloatSig, "us_p_00", lineT, valid);
+            printCsvValue(vo_flag_navi_00, IMU_EX_00IntSig, "vo_flag_navi_00",
                     lineT, valid);
-            printCSVValue(imu_err_flag_00, IMU_EX_00IntSig, "imu_err_flag_00",
+            printCsvValue(imu_err_flag_00, IMU_EX_00IntSig, "imu_err_flag_00",
                     lineT, valid);
-            printCSVValue(vo_flag_rsv_00, IMU_EX_00IntSig, "vo_flag_rsv_00",
+            printCsvValue(vo_flag_rsv_00, IMU_EX_00IntSig, "vo_flag_rsv_00",
                     lineT, valid);
-            printCSVValue(imu_ex_cnt_00, IMU_EX_00IntSig, "imu_ex_cnt_00",
+            printCsvValue(imu_ex_cnt_00, IMU_EX_00IntSig, "imu_ex_cnt_00",
                     lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

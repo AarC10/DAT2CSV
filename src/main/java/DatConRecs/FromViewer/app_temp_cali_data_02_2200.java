@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class app_temp_cali_data_02_2200 extends Record {
@@ -48,42 +49,42 @@ protected float base_temp_02 = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-start_flag_02 = record.getUnsignedByte(0);
- state_02 = record.getByte(1);;
-cali_cnt_02 = record.getUnsignedByte(2);
-temp_ready_02 = record.getUnsignedByte(3);
-step_02 = record.getUnsignedByte(4);
-cali_type_02 = record.getUnsignedByte(5);
- tick_02 = record.getUnsignedShort(6);
- grav_acc_x_02 = record.getByte(8);;
- grav_acc_y_02 = record.getByte(9);;
- grav_acc_z_02 = record.getByte(10);;
- dst_cali_temp_02 = record.getByte(11);;
- temp_min_02 = record.getFloat(12);
- temp_max_02 = record.getFloat(16);
-temp_cali_status_02 = record.getUnsignedByte(20);
-base_cali_status_02 = record.getUnsignedByte(21);
-cfg_temp_cali_fw_version_02 = record.getUnsignedByte(22);
-cur_temp_cali_fw_version_02 = record.getUnsignedByte(23);
- temp_bw_x_02 = record.getFloat(24);
- temp_bw_y_02 = record.getFloat(28);
- temp_bw_z_02 = record.getFloat(32);
- temp_ba_x_02 = record.getFloat(36);
- temp_ba_y_02 = record.getFloat(40);
- temp_ba_z_02 = record.getFloat(44);
- temp_temp_02 = record.getFloat(48);
- base_bw_x_02 = record.getFloat(52);
- base_bw_y_02 = record.getFloat(56);
- base_bw_z_02 = record.getFloat(60);
- base_ba_x_02 = record.getFloat(64);
- base_ba_y_02 = record.getFloat(68);
- base_ba_z_02 = record.getFloat(72);
- base_temp_02 = record.getFloat(76);
+start_flag_02 = _payload.getUnsignedByte(0);
+ state_02 = _payload.getByte(1);;
+cali_cnt_02 = _payload.getUnsignedByte(2);
+temp_ready_02 = _payload.getUnsignedByte(3);
+step_02 = _payload.getUnsignedByte(4);
+cali_type_02 = _payload.getUnsignedByte(5);
+ tick_02 = _payload.getUnsignedShort(6);
+ grav_acc_x_02 = _payload.getByte(8);;
+ grav_acc_y_02 = _payload.getByte(9);;
+ grav_acc_z_02 = _payload.getByte(10);;
+ dst_cali_temp_02 = _payload.getByte(11);;
+ temp_min_02 = _payload.getFloat(12);
+ temp_max_02 = _payload.getFloat(16);
+temp_cali_status_02 = _payload.getUnsignedByte(20);
+base_cali_status_02 = _payload.getUnsignedByte(21);
+cfg_temp_cali_fw_version_02 = _payload.getUnsignedByte(22);
+cur_temp_cali_fw_version_02 = _payload.getUnsignedByte(23);
+ temp_bw_x_02 = _payload.getFloat(24);
+ temp_bw_y_02 = _payload.getFloat(28);
+ temp_bw_z_02 = _payload.getFloat(32);
+ temp_ba_x_02 = _payload.getFloat(36);
+ temp_ba_y_02 = _payload.getFloat(40);
+ temp_ba_z_02 = _payload.getFloat(44);
+ temp_temp_02 = _payload.getFloat(48);
+ base_bw_x_02 = _payload.getFloat(52);
+ base_bw_y_02 = _payload.getFloat(56);
+ base_bw_z_02 = _payload.getFloat(60);
+ base_ba_x_02 = _payload.getFloat(64);
+ base_ba_y_02 = _payload.getFloat(68);
+ base_ba_z_02 = _payload.getFloat(72);
+ base_temp_02 = _payload.getFloat(76);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -97,37 +98,37 @@ cur_temp_cali_fw_version_02 = record.getUnsignedByte(23);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(start_flag_02, app_temp_cali_data_02IntSig, "start_flag_02",lineT, valid);
- printCSVValue(state_02, app_temp_cali_data_02IntSig, "state_02",lineT, valid);
- printCSVValue(cali_cnt_02, app_temp_cali_data_02IntSig, "cali_cnt_02",lineT, valid);
- printCSVValue(temp_ready_02, app_temp_cali_data_02IntSig, "temp_ready_02",lineT, valid);
- printCSVValue(step_02, app_temp_cali_data_02IntSig, "step_02",lineT, valid);
- printCSVValue(cali_type_02, app_temp_cali_data_02IntSig, "cali_type_02",lineT, valid);
- printCSVValue(tick_02, app_temp_cali_data_02IntSig, "tick_02",lineT, valid);
- printCSVValue(grav_acc_x_02, app_temp_cali_data_02IntSig, "grav_acc_x_02",lineT, valid);
- printCSVValue(grav_acc_y_02, app_temp_cali_data_02IntSig, "grav_acc_y_02",lineT, valid);
- printCSVValue(grav_acc_z_02, app_temp_cali_data_02IntSig, "grav_acc_z_02",lineT, valid);
- printCSVValue(dst_cali_temp_02, app_temp_cali_data_02IntSig, "dst_cali_temp_02",lineT, valid);
- printCSVValue(temp_min_02, app_temp_cali_data_02FloatSig, "temp_min_02",lineT, valid);
- printCSVValue(temp_max_02, app_temp_cali_data_02FloatSig, "temp_max_02",lineT, valid);
- printCSVValue(temp_cali_status_02, app_temp_cali_data_02IntSig, "temp_cali_status_02",lineT, valid);
- printCSVValue(base_cali_status_02, app_temp_cali_data_02IntSig, "base_cali_status_02",lineT, valid);
- printCSVValue(cfg_temp_cali_fw_version_02, app_temp_cali_data_02IntSig, "cfg_temp_cali_fw_version_02",lineT, valid);
- printCSVValue(cur_temp_cali_fw_version_02, app_temp_cali_data_02IntSig, "cur_temp_cali_fw_version_02",lineT, valid);
- printCSVValue(temp_bw_x_02, app_temp_cali_data_02FloatSig, "temp_bw_x_02",lineT, valid);
- printCSVValue(temp_bw_y_02, app_temp_cali_data_02FloatSig, "temp_bw_y_02",lineT, valid);
- printCSVValue(temp_bw_z_02, app_temp_cali_data_02FloatSig, "temp_bw_z_02",lineT, valid);
- printCSVValue(temp_ba_x_02, app_temp_cali_data_02FloatSig, "temp_ba_x_02",lineT, valid);
- printCSVValue(temp_ba_y_02, app_temp_cali_data_02FloatSig, "temp_ba_y_02",lineT, valid);
- printCSVValue(temp_ba_z_02, app_temp_cali_data_02FloatSig, "temp_ba_z_02",lineT, valid);
- printCSVValue(temp_temp_02, app_temp_cali_data_02FloatSig, "temp_temp_02",lineT, valid);
- printCSVValue(base_bw_x_02, app_temp_cali_data_02FloatSig, "base_bw_x_02",lineT, valid);
- printCSVValue(base_bw_y_02, app_temp_cali_data_02FloatSig, "base_bw_y_02",lineT, valid);
- printCSVValue(base_bw_z_02, app_temp_cali_data_02FloatSig, "base_bw_z_02",lineT, valid);
- printCSVValue(base_ba_x_02, app_temp_cali_data_02FloatSig, "base_ba_x_02",lineT, valid);
- printCSVValue(base_ba_y_02, app_temp_cali_data_02FloatSig, "base_ba_y_02",lineT, valid);
- printCSVValue(base_ba_z_02, app_temp_cali_data_02FloatSig, "base_ba_z_02",lineT, valid);
- printCSVValue(base_temp_02, app_temp_cali_data_02FloatSig, "base_temp_02",lineT, valid);
+ printCsvValue(start_flag_02, app_temp_cali_data_02IntSig, "start_flag_02",lineT, valid);
+ printCsvValue(state_02, app_temp_cali_data_02IntSig, "state_02",lineT, valid);
+ printCsvValue(cali_cnt_02, app_temp_cali_data_02IntSig, "cali_cnt_02",lineT, valid);
+ printCsvValue(temp_ready_02, app_temp_cali_data_02IntSig, "temp_ready_02",lineT, valid);
+ printCsvValue(step_02, app_temp_cali_data_02IntSig, "step_02",lineT, valid);
+ printCsvValue(cali_type_02, app_temp_cali_data_02IntSig, "cali_type_02",lineT, valid);
+ printCsvValue(tick_02, app_temp_cali_data_02IntSig, "tick_02",lineT, valid);
+ printCsvValue(grav_acc_x_02, app_temp_cali_data_02IntSig, "grav_acc_x_02",lineT, valid);
+ printCsvValue(grav_acc_y_02, app_temp_cali_data_02IntSig, "grav_acc_y_02",lineT, valid);
+ printCsvValue(grav_acc_z_02, app_temp_cali_data_02IntSig, "grav_acc_z_02",lineT, valid);
+ printCsvValue(dst_cali_temp_02, app_temp_cali_data_02IntSig, "dst_cali_temp_02",lineT, valid);
+ printCsvValue(temp_min_02, app_temp_cali_data_02FloatSig, "temp_min_02",lineT, valid);
+ printCsvValue(temp_max_02, app_temp_cali_data_02FloatSig, "temp_max_02",lineT, valid);
+ printCsvValue(temp_cali_status_02, app_temp_cali_data_02IntSig, "temp_cali_status_02",lineT, valid);
+ printCsvValue(base_cali_status_02, app_temp_cali_data_02IntSig, "base_cali_status_02",lineT, valid);
+ printCsvValue(cfg_temp_cali_fw_version_02, app_temp_cali_data_02IntSig, "cfg_temp_cali_fw_version_02",lineT, valid);
+ printCsvValue(cur_temp_cali_fw_version_02, app_temp_cali_data_02IntSig, "cur_temp_cali_fw_version_02",lineT, valid);
+ printCsvValue(temp_bw_x_02, app_temp_cali_data_02FloatSig, "temp_bw_x_02",lineT, valid);
+ printCsvValue(temp_bw_y_02, app_temp_cali_data_02FloatSig, "temp_bw_y_02",lineT, valid);
+ printCsvValue(temp_bw_z_02, app_temp_cali_data_02FloatSig, "temp_bw_z_02",lineT, valid);
+ printCsvValue(temp_ba_x_02, app_temp_cali_data_02FloatSig, "temp_ba_x_02",lineT, valid);
+ printCsvValue(temp_ba_y_02, app_temp_cali_data_02FloatSig, "temp_ba_y_02",lineT, valid);
+ printCsvValue(temp_ba_z_02, app_temp_cali_data_02FloatSig, "temp_ba_z_02",lineT, valid);
+ printCsvValue(temp_temp_02, app_temp_cali_data_02FloatSig, "temp_temp_02",lineT, valid);
+ printCsvValue(base_bw_x_02, app_temp_cali_data_02FloatSig, "base_bw_x_02",lineT, valid);
+ printCsvValue(base_bw_y_02, app_temp_cali_data_02FloatSig, "base_bw_y_02",lineT, valid);
+ printCsvValue(base_bw_z_02, app_temp_cali_data_02FloatSig, "base_bw_z_02",lineT, valid);
+ printCsvValue(base_ba_x_02, app_temp_cali_data_02FloatSig, "base_ba_x_02",lineT, valid);
+ printCsvValue(base_ba_y_02, app_temp_cali_data_02FloatSig, "base_ba_y_02",lineT, valid);
+ printCsvValue(base_ba_z_02, app_temp_cali_data_02FloatSig, "base_ba_z_02",lineT, valid);
+ printCsvValue(base_temp_02, app_temp_cali_data_02FloatSig, "base_temp_02",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -19,9 +19,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package DatConRecs;
 
-import files.ConvertDat;
-import files.DatConLog;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class Record_ModuleName_65532 extends Record {
 
@@ -34,9 +34,9 @@ public class Record_ModuleName_65532 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
-        payloadString = record.getString();
+    public void process(Payload _payload) {
+        super.process(_payload);
+        payloadString = _payload.getString();
         System.out.println("Record_ModuleName_65532 " + payloadString);
     }
 

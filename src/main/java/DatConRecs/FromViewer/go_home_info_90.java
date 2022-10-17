@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class go_home_info_90 extends Record {
@@ -21,15 +22,15 @@ protected float dis_to_home_y = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-go_home_stage = record.getUnsignedByte(0);
- go_home_timer = record.getFloat(1);
- dis_to_home_x = record.getFloat(5);
- dis_to_home_y = record.getFloat(9);
+go_home_stage = _payload.getUnsignedByte(0);
+ go_home_timer = _payload.getFloat(1);
+ dis_to_home_x = _payload.getFloat(5);
+ dis_to_home_y = _payload.getFloat(9);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -43,10 +44,10 @@ go_home_stage = record.getUnsignedByte(0);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(go_home_stage, go_home_infoIntSig, "go_home_stage",lineT, valid);
- printCSVValue(go_home_timer, go_home_infoFloatSig, "go_home_timer",lineT, valid);
- printCSVValue(dis_to_home_x, go_home_infoFloatSig, "dis_to_home_x",lineT, valid);
- printCSVValue(dis_to_home_y, go_home_infoFloatSig, "dis_to_home_y",lineT, valid);
+ printCsvValue(go_home_stage, go_home_infoIntSig, "go_home_stage",lineT, valid);
+ printCsvValue(go_home_timer, go_home_infoFloatSig, "go_home_timer",lineT, valid);
+ printCsvValue(dis_to_home_x, go_home_infoFloatSig, "dis_to_home_x",lineT, valid);
+ printCsvValue(dis_to_home_y, go_home_infoFloatSig, "dis_to_home_y",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

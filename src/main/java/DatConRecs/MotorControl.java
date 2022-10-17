@@ -1,11 +1,7 @@
 package DatConRecs;
 
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
-import files.ConvertDat.lineType;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class MotorControl extends Record {
 
@@ -35,8 +31,8 @@ public class MotorControl extends Record {
         super(convertDat, id, length);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 
     public static Signal motorCtrlStatusSig = Signal.SeriesFloat(
@@ -45,30 +41,30 @@ public class MotorControl extends Record {
     public void printCols(lineType lineT) {
         try {
             if (status) {
-                printCSVValue(motor_status, motorCtrlStatusSig, "", lineT,
+                printCsvValue(motor_status, motorCtrlStatusSig, "", lineT,
                         valid);
             }
             if (convertDat.getNumMotors() == 6) {
-                printCSVValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
+                printCsvValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
                         lineT, valid);
-                printCSVValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
+                printCsvValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
                         lineT, valid);
-                printCSVValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LSide", lineT,
+                printCsvValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LSide", lineT,
                         valid);
-                printCSVValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
+                printCsvValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
                         valid);
-                printCSVValue(pwm5, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
+                printCsvValue(pwm5, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
                         valid);
-                printCSVValue(pwm6, AxesAndSigs.motorCtrlPWMSig, "RSide", lineT,
+                printCsvValue(pwm6, AxesAndSigs.motorCtrlPWMSig, "RSide", lineT,
                         valid);
             } else {
-                printCSVValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
+                printCsvValue(pwm1, AxesAndSigs.motorCtrlPWMSig, "RFront",
                         lineT, valid);
-                printCSVValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
+                printCsvValue(pwm2, AxesAndSigs.motorCtrlPWMSig, "LFront",
                         lineT, valid);
-                printCSVValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
+                printCsvValue(pwm3, AxesAndSigs.motorCtrlPWMSig, "LBack", lineT,
                         valid);
-                printCSVValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
+                printCsvValue(pwm4, AxesAndSigs.motorCtrlPWMSig, "RBack", lineT,
                         valid);
             }
         } catch (Exception e) {

@@ -2,7 +2,7 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.AirCraftCondition;
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class AirCraftCondition8_1001 extends AirCraftCondition {
 
@@ -11,17 +11,17 @@ public class AirCraftCondition8_1001 extends AirCraftCondition {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
-            intFlightState = record.getUnsignedByte(0);
-            flightState = record.getUnsignedByte(1);
-            lastFlightState = record.getUnsignedByte(2);
-            nearGndState = record.getUnsignedByte(3);
-            UP_state = record.getUnsignedByte(4);
-            landState = record.getUnsignedByte(5);
-            safe_fltr = record.getShort(6);
+            intFlightState = _payload.getUnsignedByte(0);
+            flightState = _payload.getUnsignedByte(1);
+            lastFlightState = _payload.getUnsignedByte(2);
+            nearGndState = _payload.getUnsignedByte(3);
+            UP_state = _payload.getUnsignedByte(4);
+            landState = _payload.getUnsignedByte(5);
+            safe_fltr = _payload.getShort(6);
             nearGrnd = (nearGndState != 0) ? "True" : "False";
         } catch (Exception e) {
             RecordException(e);

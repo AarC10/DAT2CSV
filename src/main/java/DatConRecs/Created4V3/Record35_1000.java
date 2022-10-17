@@ -19,7 +19,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class Record35_1000 extends RecController {
 
@@ -27,8 +27,8 @@ public class Record35_1000 extends RecController {
         super(convertDat, 1000, 35);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             ctrl_pitch = (short) payloadBB.getShort(4);
             ctrl_roll = (short) payloadBB.getShort(6);

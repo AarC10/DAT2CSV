@@ -2,7 +2,7 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.RecIMU;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class IMU120_2049 extends RecIMU {
     public IMU120_2049(ConvertDat convertDat) {
@@ -10,7 +10,7 @@ public class IMU120_2049 extends RecIMU {
         current = this;
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 }

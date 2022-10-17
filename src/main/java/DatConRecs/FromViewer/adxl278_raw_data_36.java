@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class adxl278_raw_data_36 extends Record {
@@ -20,14 +21,14 @@ protected float adxl278_az = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- adxl278_ax = record.getFloat(0);
- adxl278_ay = record.getFloat(4);
- adxl278_az = record.getFloat(8);
+ adxl278_ax = _payload.getFloat(0);
+ adxl278_ay = _payload.getFloat(4);
+ adxl278_az = _payload.getFloat(8);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -41,9 +42,9 @@ protected float adxl278_az = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(adxl278_ax, adxl278_raw_dataFloatSig, "adxl278_ax",lineT, valid);
- printCSVValue(adxl278_ay, adxl278_raw_dataFloatSig, "adxl278_ay",lineT, valid);
- printCSVValue(adxl278_az, adxl278_raw_dataFloatSig, "adxl278_az",lineT, valid);
+ printCsvValue(adxl278_ax, adxl278_raw_dataFloatSig, "adxl278_ax",lineT, valid);
+ printCsvValue(adxl278_ay, adxl278_raw_dataFloatSig, "adxl278_ay",lineT, valid);
+ printCsvValue(adxl278_az, adxl278_raw_dataFloatSig, "adxl278_az",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

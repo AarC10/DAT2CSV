@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class ctrl_motor_54 extends Record {
@@ -36,30 +37,30 @@ protected int pwm_8 = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-horiz_motor_status = record.getUnsignedByte(0);
-horiz_motor_cmd_id = record.getUnsignedByte(1);
-horiz_motor_feedback_id = record.getUnsignedByte(2);
- thrust_1 = record.getUnsignedShort(3);
- thrust_2 = record.getUnsignedShort(5);
- thrust_3 = record.getUnsignedShort(7);
- thrust_4 = record.getUnsignedShort(9);
- thrust_5 = record.getUnsignedShort(11);
- thrust_6 = record.getUnsignedShort(13);
- thrust_7 = record.getUnsignedShort(15);
- thrust_8 = record.getUnsignedShort(17);
- pwm_1 = record.getUnsignedShort(19);
- pwm_2 = record.getUnsignedShort(21);
- pwm_3 = record.getUnsignedShort(23);
- pwm_4 = record.getUnsignedShort(25);
- pwm_5 = record.getUnsignedShort(27);
- pwm_6 = record.getUnsignedShort(29);
- pwm_7 = record.getUnsignedShort(31);
- pwm_8 = record.getUnsignedShort(33);
+horiz_motor_status = _payload.getUnsignedByte(0);
+horiz_motor_cmd_id = _payload.getUnsignedByte(1);
+horiz_motor_feedback_id = _payload.getUnsignedByte(2);
+ thrust_1 = _payload.getUnsignedShort(3);
+ thrust_2 = _payload.getUnsignedShort(5);
+ thrust_3 = _payload.getUnsignedShort(7);
+ thrust_4 = _payload.getUnsignedShort(9);
+ thrust_5 = _payload.getUnsignedShort(11);
+ thrust_6 = _payload.getUnsignedShort(13);
+ thrust_7 = _payload.getUnsignedShort(15);
+ thrust_8 = _payload.getUnsignedShort(17);
+ pwm_1 = _payload.getUnsignedShort(19);
+ pwm_2 = _payload.getUnsignedShort(21);
+ pwm_3 = _payload.getUnsignedShort(23);
+ pwm_4 = _payload.getUnsignedShort(25);
+ pwm_5 = _payload.getUnsignedShort(27);
+ pwm_6 = _payload.getUnsignedShort(29);
+ pwm_7 = _payload.getUnsignedShort(31);
+ pwm_8 = _payload.getUnsignedShort(33);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -73,25 +74,25 @@ horiz_motor_feedback_id = record.getUnsignedByte(2);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(horiz_motor_status, ctrl_motorIntSig, "horiz_motor_status",lineT, valid);
- printCSVValue(horiz_motor_cmd_id, ctrl_motorIntSig, "horiz_motor_cmd_id",lineT, valid);
- printCSVValue(horiz_motor_feedback_id, ctrl_motorIntSig, "horiz_motor_feedback_id",lineT, valid);
- printCSVValue(thrust_1, ctrl_motorIntSig, "thrust_1",lineT, valid);
- printCSVValue(thrust_2, ctrl_motorIntSig, "thrust_2",lineT, valid);
- printCSVValue(thrust_3, ctrl_motorIntSig, "thrust_3",lineT, valid);
- printCSVValue(thrust_4, ctrl_motorIntSig, "thrust_4",lineT, valid);
- printCSVValue(thrust_5, ctrl_motorIntSig, "thrust_5",lineT, valid);
- printCSVValue(thrust_6, ctrl_motorIntSig, "thrust_6",lineT, valid);
- printCSVValue(thrust_7, ctrl_motorIntSig, "thrust_7",lineT, valid);
- printCSVValue(thrust_8, ctrl_motorIntSig, "thrust_8",lineT, valid);
- printCSVValue(pwm_1, ctrl_motorIntSig, "pwm_1",lineT, valid);
- printCSVValue(pwm_2, ctrl_motorIntSig, "pwm_2",lineT, valid);
- printCSVValue(pwm_3, ctrl_motorIntSig, "pwm_3",lineT, valid);
- printCSVValue(pwm_4, ctrl_motorIntSig, "pwm_4",lineT, valid);
- printCSVValue(pwm_5, ctrl_motorIntSig, "pwm_5",lineT, valid);
- printCSVValue(pwm_6, ctrl_motorIntSig, "pwm_6",lineT, valid);
- printCSVValue(pwm_7, ctrl_motorIntSig, "pwm_7",lineT, valid);
- printCSVValue(pwm_8, ctrl_motorIntSig, "pwm_8",lineT, valid);
+ printCsvValue(horiz_motor_status, ctrl_motorIntSig, "horiz_motor_status",lineT, valid);
+ printCsvValue(horiz_motor_cmd_id, ctrl_motorIntSig, "horiz_motor_cmd_id",lineT, valid);
+ printCsvValue(horiz_motor_feedback_id, ctrl_motorIntSig, "horiz_motor_feedback_id",lineT, valid);
+ printCsvValue(thrust_1, ctrl_motorIntSig, "thrust_1",lineT, valid);
+ printCsvValue(thrust_2, ctrl_motorIntSig, "thrust_2",lineT, valid);
+ printCsvValue(thrust_3, ctrl_motorIntSig, "thrust_3",lineT, valid);
+ printCsvValue(thrust_4, ctrl_motorIntSig, "thrust_4",lineT, valid);
+ printCsvValue(thrust_5, ctrl_motorIntSig, "thrust_5",lineT, valid);
+ printCsvValue(thrust_6, ctrl_motorIntSig, "thrust_6",lineT, valid);
+ printCsvValue(thrust_7, ctrl_motorIntSig, "thrust_7",lineT, valid);
+ printCsvValue(thrust_8, ctrl_motorIntSig, "thrust_8",lineT, valid);
+ printCsvValue(pwm_1, ctrl_motorIntSig, "pwm_1",lineT, valid);
+ printCsvValue(pwm_2, ctrl_motorIntSig, "pwm_2",lineT, valid);
+ printCsvValue(pwm_3, ctrl_motorIntSig, "pwm_3",lineT, valid);
+ printCsvValue(pwm_4, ctrl_motorIntSig, "pwm_4",lineT, valid);
+ printCsvValue(pwm_5, ctrl_motorIntSig, "pwm_5",lineT, valid);
+ printCsvValue(pwm_6, ctrl_motorIntSig, "pwm_6",lineT, valid);
+ printCsvValue(pwm_7, ctrl_motorIntSig, "pwm_7",lineT, valid);
+ printCsvValue(pwm_8, ctrl_motorIntSig, "pwm_8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

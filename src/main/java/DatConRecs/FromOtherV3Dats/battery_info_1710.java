@@ -1,11 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class battery_info_1710 extends Record {
@@ -32,26 +33,26 @@ protected float out_ctl_f = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- ad_v = record.getUnsignedShort(0);
- r_time = record.getUnsignedShort(2);
- ave_I = record.getFloat(4);
- vol_t = record.getFloat(8);
- pack_ve = record.getInt(12);
- I = record.getInt(16);
- r_cap = record.getUnsignedShort(20);
-cap_per = record.getUnsignedByte(22);
- temp = record.getShort(23);
-right = record.getUnsignedByte(25);
- l_cell = record.getUnsignedShort(26);
- dyna_cnt = record.getUnsignedInt(28);
- f_cap = record.getUnsignedInt(32);
- out_ctl = record.getFloat(36);
- out_ctl_f = record.getFloat(40);
+ ad_v = _payload.getUnsignedShort(0);
+ r_time = _payload.getUnsignedShort(2);
+ ave_I = _payload.getFloat(4);
+ vol_t = _payload.getFloat(8);
+ pack_ve = _payload.getInt(12);
+ I = _payload.getInt(16);
+ r_cap = _payload.getUnsignedShort(20);
+cap_per = _payload.getUnsignedByte(22);
+ temp = _payload.getShort(23);
+right = _payload.getUnsignedByte(25);
+ l_cell = _payload.getUnsignedShort(26);
+ dyna_cnt = _payload.getUnsignedInt(28);
+ f_cap = _payload.getUnsignedInt(32);
+ out_ctl = _payload.getFloat(36);
+ out_ctl_f = _payload.getFloat(40);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -65,21 +66,21 @@ right = record.getUnsignedByte(25);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(ad_v, battery_infoIntSig, "ad_v",lineT, valid);
- printCSVValue(r_time, battery_infoIntSig, "r_time",lineT, valid);
- printCSVValue(ave_I, battery_infoFloatSig, "ave_I",lineT, valid);
- printCSVValue(vol_t, battery_infoFloatSig, "vol_t",lineT, valid);
- printCSVValue(pack_ve, battery_infoIntSig, "pack_ve",lineT, valid);
- printCSVValue(I, battery_infoIntSig, "I",lineT, valid);
- printCSVValue(r_cap, battery_infoIntSig, "r_cap",lineT, valid);
- printCSVValue(cap_per, battery_infoIntSig, "cap_per",lineT, valid);
- printCSVValue(temp, battery_infoIntSig, "temp",lineT, valid);
- printCSVValue(right, battery_infoIntSig, "right",lineT, valid);
- printCSVValue(l_cell, battery_infoIntSig, "l_cell",lineT, valid);
- printCSVValue(dyna_cnt, battery_infoIntSig, "dyna_cnt",lineT, valid);
- printCSVValue(f_cap, battery_infoIntSig, "f_cap",lineT, valid);
- printCSVValue(out_ctl, battery_infoFloatSig, "out_ctl",lineT, valid);
- printCSVValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f",lineT, valid);
+ printCsvValue(ad_v, battery_infoIntSig, "ad_v",lineT, valid);
+ printCsvValue(r_time, battery_infoIntSig, "r_time",lineT, valid);
+ printCsvValue(ave_I, battery_infoFloatSig, "ave_I",lineT, valid);
+ printCsvValue(vol_t, battery_infoFloatSig, "vol_t",lineT, valid);
+ printCsvValue(pack_ve, battery_infoIntSig, "pack_ve",lineT, valid);
+ printCsvValue(I, battery_infoIntSig, "I",lineT, valid);
+ printCsvValue(r_cap, battery_infoIntSig, "r_cap",lineT, valid);
+ printCsvValue(cap_per, battery_infoIntSig, "cap_per",lineT, valid);
+ printCsvValue(temp, battery_infoIntSig, "temp",lineT, valid);
+ printCsvValue(right, battery_infoIntSig, "right",lineT, valid);
+ printCsvValue(l_cell, battery_infoIntSig, "l_cell",lineT, valid);
+ printCsvValue(dyna_cnt, battery_infoIntSig, "dyna_cnt",lineT, valid);
+ printCsvValue(f_cap, battery_infoIntSig, "f_cap",lineT, valid);
+ printCsvValue(out_ctl, battery_infoFloatSig, "out_ctl",lineT, valid);
+ printCsvValue(out_ctl_f, battery_infoFloatSig, "out_ctl_f",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

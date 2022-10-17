@@ -20,12 +20,8 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class RecController extends Record {
 
@@ -47,8 +43,8 @@ public class RecController extends Record {
         super(convertDat, id, length);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 
     protected static Signal ControllerIntSig = Signal.SeriesInt("Controller",
@@ -57,14 +53,14 @@ public class RecController extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(ctrl_roll, AxesAndSigs.aileronSig, "", lineT, valid);
-            printCSVValue(ctrl_pitch, AxesAndSigs.elevatorSig, "", lineT,
+            printCsvValue(ctrl_roll, AxesAndSigs.aileronSig, "", lineT, valid);
+            printCsvValue(ctrl_pitch, AxesAndSigs.elevatorSig, "", lineT,
                     valid);
-            printCSVValue(ctrl_yaw, AxesAndSigs.rudderSig, "", lineT, valid);
-            printCSVValue(ctrl_thr, AxesAndSigs.throttleSig, "", lineT, valid);
-            printCSVValue(sig_level, ControllerIntSig, "gpsLevel", lineT,
+            printCsvValue(ctrl_yaw, AxesAndSigs.rudderSig, "", lineT, valid);
+            printCsvValue(ctrl_thr, AxesAndSigs.throttleSig, "", lineT, valid);
+            printCsvValue(sig_level, ControllerIntSig, "gpsLevel", lineT,
                     valid);
-            printCSVValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
+            printCsvValue(ctrl_level, ControllerIntSig, "ctrl_level", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

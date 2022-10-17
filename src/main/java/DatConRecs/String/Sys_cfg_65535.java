@@ -1,12 +1,12 @@
 package DatConRecs.String;
 
-import java.nio.ByteBuffer;
-
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+
+import java.nio.ByteBuffer;
 
 public class Sys_cfg_65535 extends Record {
 
@@ -19,14 +19,14 @@ public class Sys_cfg_65535 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
-            payload = record.getBB();
-            payloadString = record.getString();
+            payload = _payload.getBB();
+            payloadString = _payload.getString();
             if (convertDat.cloPS != null) {
                 if (payloadString.length() > 0) {
-                    convertDat.cloPS.println(record.getCleanString());
+                    convertDat.cloPS.println(_payload.getCleanString());
                 }
             }
         } catch (Exception e) {

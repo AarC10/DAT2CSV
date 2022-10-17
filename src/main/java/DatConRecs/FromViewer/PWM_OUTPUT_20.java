@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class PWM_OUTPUT_20 extends Record {
@@ -25,19 +26,19 @@ protected int M8 = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- M1 = record.getUnsignedShort(0);
- M2 = record.getUnsignedShort(2);
- M3 = record.getUnsignedShort(4);
- M4 = record.getUnsignedShort(6);
- M5 = record.getUnsignedShort(8);
- M6 = record.getUnsignedShort(10);
- M7 = record.getUnsignedShort(12);
- M8 = record.getUnsignedShort(14);
+ M1 = _payload.getUnsignedShort(0);
+ M2 = _payload.getUnsignedShort(2);
+ M3 = _payload.getUnsignedShort(4);
+ M4 = _payload.getUnsignedShort(6);
+ M5 = _payload.getUnsignedShort(8);
+ M6 = _payload.getUnsignedShort(10);
+ M7 = _payload.getUnsignedShort(12);
+ M8 = _payload.getUnsignedShort(14);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -51,14 +52,14 @@ protected int M8 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(M1, PWM_OUTPUTIntSig, "M1",lineT, valid);
- printCSVValue(M2, PWM_OUTPUTIntSig, "M2",lineT, valid);
- printCSVValue(M3, PWM_OUTPUTIntSig, "M3",lineT, valid);
- printCSVValue(M4, PWM_OUTPUTIntSig, "M4",lineT, valid);
- printCSVValue(M5, PWM_OUTPUTIntSig, "M5",lineT, valid);
- printCSVValue(M6, PWM_OUTPUTIntSig, "M6",lineT, valid);
- printCSVValue(M7, PWM_OUTPUTIntSig, "M7",lineT, valid);
- printCSVValue(M8, PWM_OUTPUTIntSig, "M8",lineT, valid);
+ printCsvValue(M1, PWM_OUTPUTIntSig, "M1",lineT, valid);
+ printCsvValue(M2, PWM_OUTPUTIntSig, "M2",lineT, valid);
+ printCsvValue(M3, PWM_OUTPUTIntSig, "M3",lineT, valid);
+ printCsvValue(M4, PWM_OUTPUTIntSig, "M4",lineT, valid);
+ printCsvValue(M5, PWM_OUTPUTIntSig, "M5",lineT, valid);
+ printCsvValue(M6, PWM_OUTPUTIntSig, "M6",lineT, valid);
+ printCsvValue(M7, PWM_OUTPUTIntSig, "M7",lineT, valid);
+ printCsvValue(M8, PWM_OUTPUTIntSig, "M8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

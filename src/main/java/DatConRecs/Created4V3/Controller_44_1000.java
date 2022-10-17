@@ -1,7 +1,7 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class Controller_44_1000 extends RecController {
 
@@ -40,32 +40,32 @@ public class Controller_44_1000 extends RecController {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            ctrl_tick = record.getUnsignedInt(0);
-            ctrl_pitch = (short) (record.getFloat(4) * 10000);
-            ctrl_roll = (short) (record.getFloat(8) * 10000);
-            ctrl_yaw = (short) (record.getFloat(12) * 10000);
-            ctrl_thr = (short) (record.getFloat(16) * 10000);
-            ctrl_mode = record.getUnsignedByte(20);
-            mode_switch = record.getUnsignedByte(21);
-            motor_state = record.getUnsignedByte(22);
-            sig_level = record.getUnsignedByte(23);
-            ctrl_level = record.getUnsignedByte(24);
-            sim_model = record.getUnsignedByte(25);
-            max_height = record.getUnsignedShort(26);
-            max_radius = record.getUnsignedShort(28);
-            D2H_x = record.getFloat(30);
-            D2H_y = record.getFloat(34);
-            act_req_id = record.getUnsignedByte(38);
-            act_act_id = record.getUnsignedByte(39);
-            cmd_mod = record.getUnsignedByte(40);
-            mod_req_id = record.getUnsignedByte(41);
-            is_soaring_up = record.getUnsignedByte(42);
-            eagle_temp_level = record.getUnsignedByte(43);
+            ctrl_tick = _payload.getUnsignedInt(0);
+            ctrl_pitch = (short) (_payload.getFloat(4) * 10000);
+            ctrl_roll = (short) (_payload.getFloat(8) * 10000);
+            ctrl_yaw = (short) (_payload.getFloat(12) * 10000);
+            ctrl_thr = (short) (_payload.getFloat(16) * 10000);
+            ctrl_mode = _payload.getUnsignedByte(20);
+            mode_switch = _payload.getUnsignedByte(21);
+            motor_state = _payload.getUnsignedByte(22);
+            sig_level = _payload.getUnsignedByte(23);
+            ctrl_level = _payload.getUnsignedByte(24);
+            sim_model = _payload.getUnsignedByte(25);
+            max_height = _payload.getUnsignedShort(26);
+            max_radius = _payload.getUnsignedShort(28);
+            D2H_x = _payload.getFloat(30);
+            D2H_y = _payload.getFloat(34);
+            act_req_id = _payload.getUnsignedByte(38);
+            act_act_id = _payload.getUnsignedByte(39);
+            cmd_mod = _payload.getUnsignedByte(40);
+            mod_req_id = _payload.getUnsignedByte(41);
+            is_soaring_up = _payload.getUnsignedByte(42);
+            eagle_temp_level = _payload.getUnsignedByte(43);
         } catch (Exception e) {
             RecordException(e);
         }

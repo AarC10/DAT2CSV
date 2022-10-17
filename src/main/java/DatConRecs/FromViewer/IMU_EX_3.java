@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class IMU_EX_3 extends Record {
     protected boolean valid = false;
@@ -46,26 +46,26 @@ public class IMU_EX_3 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            vo_vx = record.getFloat(0);
-            vo_vy = record.getFloat(4);
-            vo_vz = record.getFloat(8);
-            vo_px = record.getFloat(12);
-            vo_py = record.getFloat(16);
-            vo_pz = record.getFloat(20);
-            us_v = record.getFloat(24);
-            us_p = record.getFloat(28);
-            rtk_longti = record.getDouble(32);
-            rtk_lati = record.getDouble(40);
-            rtk_alti = record.getFloat(48);
-            vo_flag_navi = record.getUnsignedShort(52);
-            imu_err_flag = record.getUnsignedShort(54);
-            vo_flag_rsv = record.getUnsignedShort(56);
-            imu_ex_cnt = record.getUnsignedShort(58);
+            vo_vx = _payload.getFloat(0);
+            vo_vy = _payload.getFloat(4);
+            vo_vz = _payload.getFloat(8);
+            vo_px = _payload.getFloat(12);
+            vo_py = _payload.getFloat(16);
+            vo_pz = _payload.getFloat(20);
+            us_v = _payload.getFloat(24);
+            us_p = _payload.getFloat(28);
+            rtk_longti = _payload.getDouble(32);
+            rtk_lati = _payload.getDouble(40);
+            rtk_alti = _payload.getFloat(48);
+            vo_flag_navi = _payload.getUnsignedShort(52);
+            imu_err_flag = _payload.getUnsignedShort(54);
+            vo_flag_rsv = _payload.getUnsignedShort(56);
+            imu_ex_cnt = _payload.getUnsignedShort(58);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -83,25 +83,25 @@ public class IMU_EX_3 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(vo_vx, IMU_EXFloatSig, "vo_vx", lineT, valid);
-            printCSVValue(vo_vy, IMU_EXFloatSig, "vo_vy", lineT, valid);
-            printCSVValue(vo_vz, IMU_EXFloatSig, "vo_vz", lineT, valid);
-            printCSVValue(vo_px, IMU_EXFloatSig, "vo_px", lineT, valid);
-            printCSVValue(vo_py, IMU_EXFloatSig, "vo_py", lineT, valid);
-            printCSVValue(vo_pz, IMU_EXFloatSig, "vo_pz", lineT, valid);
-            printCSVValue(us_v, IMU_EXFloatSig, "us_v", lineT, valid);
-            printCSVValue(us_p, IMU_EXFloatSig, "us_p", lineT, valid);
-            printCSVValue(rtk_longti, IMU_EXDoubleSig, "rtk_longti", lineT,
+            printCsvValue(vo_vx, IMU_EXFloatSig, "vo_vx", lineT, valid);
+            printCsvValue(vo_vy, IMU_EXFloatSig, "vo_vy", lineT, valid);
+            printCsvValue(vo_vz, IMU_EXFloatSig, "vo_vz", lineT, valid);
+            printCsvValue(vo_px, IMU_EXFloatSig, "vo_px", lineT, valid);
+            printCsvValue(vo_py, IMU_EXFloatSig, "vo_py", lineT, valid);
+            printCsvValue(vo_pz, IMU_EXFloatSig, "vo_pz", lineT, valid);
+            printCsvValue(us_v, IMU_EXFloatSig, "us_v", lineT, valid);
+            printCsvValue(us_p, IMU_EXFloatSig, "us_p", lineT, valid);
+            printCsvValue(rtk_longti, IMU_EXDoubleSig, "rtk_longti", lineT,
                     valid);
-            printCSVValue(rtk_lati, IMU_EXDoubleSig, "rtk_lati", lineT, valid);
-            printCSVValue(rtk_alti, IMU_EXFloatSig, "rtk_alti", lineT, valid);
-            printCSVValue(vo_flag_navi, IMU_EXIntSig, "vo_flag_navi", lineT,
+            printCsvValue(rtk_lati, IMU_EXDoubleSig, "rtk_lati", lineT, valid);
+            printCsvValue(rtk_alti, IMU_EXFloatSig, "rtk_alti", lineT, valid);
+            printCsvValue(vo_flag_navi, IMU_EXIntSig, "vo_flag_navi", lineT,
                     valid);
-            printCSVValue(imu_err_flag, IMU_EXIntSig, "imu_err_flag", lineT,
+            printCsvValue(imu_err_flag, IMU_EXIntSig, "imu_err_flag", lineT,
                     valid);
-            printCSVValue(vo_flag_rsv, IMU_EXIntSig, "vo_flag_rsv", lineT,
+            printCsvValue(vo_flag_rsv, IMU_EXIntSig, "vo_flag_rsv", lineT,
                     valid);
-            printCSVValue(imu_ex_cnt, IMU_EXIntSig, "imu_ex_cnt", lineT, valid);
+            printCsvValue(imu_ex_cnt, IMU_EXIntSig, "imu_ex_cnt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

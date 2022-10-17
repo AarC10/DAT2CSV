@@ -1,7 +1,8 @@
 package DatConRecs.FromViewer;
 
+import Files.RecClassSpec;
+
 import java.util.Vector;
-import files.RecClassSpec;
 
 public class Dictionary {
     public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();

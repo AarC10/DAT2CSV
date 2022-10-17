@@ -21,13 +21,8 @@ package DatConRecs.Created4V3;
 import DatConRecs.Payload;
 import DatConRecs.RecIMU;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.MagYaw;
-import files.Persist;
-import files.Signal;
-import files.Units;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class MagGroup extends Record {
 
@@ -54,8 +49,8 @@ public class MagGroup extends Record {
                 "Yaw computed from magnetometers", null, Units.degrees180);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             magX = payloadBB.getShort(0);
             magY = payloadBB.getShort(2);
@@ -77,11 +72,11 @@ public class MagGroup extends Record {
                     magYaw = MagYaw.compute(magX, magY, magZ, magMod);
                 }
 
-                printCSVValue(magX, magSig, "X", lineT, valid);
-                printCSVValue(magY, magSig, "Y", lineT, valid);
-                printCSVValue(magZ, magSig, "Z", lineT, valid);
-                printCSVValue(magMod, magSig, "Mod", lineT, valid);
-                printCSVValue(magYaw, magYawSig, "magYaw", lineT, valid);
+                printCsvValue(magX, magSig, "X", lineT, valid);
+                printCsvValue(magY, magSig, "Y", lineT, valid);
+                printCsvValue(magZ, magSig, "Z", lineT, valid);
+                printCsvValue(magMod, magSig, "Mod", lineT, valid);
+                printCsvValue(magYaw, magYawSig, "magYaw", lineT, valid);
 
                 double diff = 0.0;
                 double yaw = Math.toDegrees(RecIMU.current.getYawRadians());
@@ -92,7 +87,7 @@ public class MagGroup extends Record {
                 } else {
                     diff = magYaw - yaw;
                 }
-                printCSVValue(diff, magYawSig, "Yaw-magYaw", lineT, valid);
+                printCsvValue(diff, magYawSig, "Yaw-magYaw", lineT, valid);
             } catch (Exception e) {
                 DatConLog.Exception(e);
             }

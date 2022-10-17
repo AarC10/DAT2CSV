@@ -20,10 +20,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.DatConLog;
-import files.ConvertDat.lineType;
+import Files.AxesAndSigs;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecSmartBatt10_1712 extends Record {
 
@@ -41,13 +41,13 @@ public class RecSmartBatt10_1712 extends Record {
         super(convertDat, 1712, 10);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
-            goHomeBatt = record.getUnsignedShort(2);
-            landBatt = record.getUnsignedShort(4);
-            goHomeTime = record.getUnsignedShort(6);
-            landTime = record.getUnsignedShort(8);
+            goHomeBatt = _payload.getUnsignedShort(2);
+            landBatt = _payload.getUnsignedShort(4);
+            goHomeTime = _payload.getUnsignedShort(6);
+            landTime = _payload.getUnsignedShort(8);
             valid = true;
         } catch (Exception e) {
             RecordException(e);
@@ -66,11 +66,11 @@ public class RecSmartBatt10_1712 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT, valid);
-            printCSVValue(landBatt, AxesAndSigs.battLand, "", lineT, valid);
-            printCSVValue(goHomeTime, AxesAndSigs.battGoHomeTime, "", lineT,
+            printCsvValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT, valid);
+            printCsvValue(landBatt, AxesAndSigs.battLand, "", lineT, valid);
+            printCsvValue(goHomeTime, AxesAndSigs.battGoHomeTime, "", lineT,
                     valid);
-            printCSVValue(landTime, AxesAndSigs.battLandTime, "", lineT, valid);
+            printCsvValue(landTime, AxesAndSigs.battLandTime, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

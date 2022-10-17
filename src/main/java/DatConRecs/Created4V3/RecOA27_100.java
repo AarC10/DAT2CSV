@@ -21,11 +21,11 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class RecOA27_100 extends Record {
     public boolean frontDistanceIsValid() {
@@ -45,8 +45,8 @@ public class RecOA27_100 extends Record {
             "OA:frontDistance", "Obstace Avoidance Front Distance", null,
             Units.meters);
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             OAfrontDistance = payloadBB.get(4);
         } catch (Exception e) {
@@ -57,7 +57,7 @@ public class RecOA27_100 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(OAfrontDistance, oAFrontDistanceSig, "", lineT,
+            printCsvValue(OAfrontDistance, oAFrontDistanceSig, "", lineT,
                     frontDistanceIsValid());
         } catch (Exception e) {
             DatConLog.Exception(e);

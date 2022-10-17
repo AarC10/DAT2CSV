@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class asr_115 extends Record {
@@ -18,12 +19,12 @@ protected long lead = (long)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- lead = record.getUnsignedInt(0);
+ lead = _payload.getUnsignedInt(0);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -37,7 +38,7 @@ protected long lead = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(lead, asrIntSig, "lead",lineT, valid);
+ printCsvValue(lead, asrIntSig, "lead",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

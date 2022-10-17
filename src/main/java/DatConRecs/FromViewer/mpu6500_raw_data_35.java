@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class mpu6500_raw_data_35 extends Record {
@@ -23,17 +24,17 @@ protected float mpu6500_wz = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- mpu6500_ax = record.getFloat(0);
- mpu6500_ay = record.getFloat(4);
- mpu6500_az = record.getFloat(8);
- mpu6500_wx = record.getFloat(12);
- mpu6500_wy = record.getFloat(16);
- mpu6500_wz = record.getFloat(20);
+ mpu6500_ax = _payload.getFloat(0);
+ mpu6500_ay = _payload.getFloat(4);
+ mpu6500_az = _payload.getFloat(8);
+ mpu6500_wx = _payload.getFloat(12);
+ mpu6500_wy = _payload.getFloat(16);
+ mpu6500_wz = _payload.getFloat(20);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -47,12 +48,12 @@ protected float mpu6500_wz = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(mpu6500_ax, mpu6500_raw_dataFloatSig, "mpu6500_ax",lineT, valid);
- printCSVValue(mpu6500_ay, mpu6500_raw_dataFloatSig, "mpu6500_ay",lineT, valid);
- printCSVValue(mpu6500_az, mpu6500_raw_dataFloatSig, "mpu6500_az",lineT, valid);
- printCSVValue(mpu6500_wx, mpu6500_raw_dataFloatSig, "mpu6500_wx",lineT, valid);
- printCSVValue(mpu6500_wy, mpu6500_raw_dataFloatSig, "mpu6500_wy",lineT, valid);
- printCSVValue(mpu6500_wz, mpu6500_raw_dataFloatSig, "mpu6500_wz",lineT, valid);
+ printCsvValue(mpu6500_ax, mpu6500_raw_dataFloatSig, "mpu6500_ax",lineT, valid);
+ printCsvValue(mpu6500_ay, mpu6500_raw_dataFloatSig, "mpu6500_ay",lineT, valid);
+ printCsvValue(mpu6500_az, mpu6500_raw_dataFloatSig, "mpu6500_az",lineT, valid);
+ printCsvValue(mpu6500_wx, mpu6500_raw_dataFloatSig, "mpu6500_wx",lineT, valid);
+ printCsvValue(mpu6500_wy, mpu6500_raw_dataFloatSig, "mpu6500_wy",lineT, valid);
+ printCsvValue(mpu6500_wz, mpu6500_raw_dataFloatSig, "mpu6500_wz",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

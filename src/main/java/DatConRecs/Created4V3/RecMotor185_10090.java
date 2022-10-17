@@ -20,8 +20,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.DatConLog;
 
 public class RecMotor185_10090 extends Motor {
 
@@ -30,8 +30,8 @@ public class RecMotor185_10090 extends Motor {
         PPMsend = true;
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             if (convertDat.getNumMotors() == 4) {
                 valid = true;
@@ -42,7 +42,7 @@ public class RecMotor185_10090 extends Motor {
                 rfTemp = payloadBB.getShort(7);
                 rfPPM_recv = payloadBB.getShort(9);
                 rfV_out = ((float) payloadBB.getShort(11)) / 10.0f;
-                rfPPM_send = record.getUnsignedShort(19);
+                rfPPM_send = _payload.getUnsignedShort(19);
                 //
                 lfStatus = payloadBB.get(23);
                 lfCurrent = ((float) payloadBB.getShort(24)) / 100.0f;
@@ -51,7 +51,7 @@ public class RecMotor185_10090 extends Motor {
                 lfTemp = payloadBB.getShort(30);
                 lfPPM_recv = payloadBB.getShort(32);
                 lfV_out = ((float) payloadBB.getShort(34)) / 10.0f;
-                lfPPM_send = record.getUnsignedShort(42);
+                lfPPM_send = _payload.getUnsignedShort(42);
                 //
                 lbStatus = payloadBB.get(46);
                 lbCurrent = ((float) payloadBB.getShort(47)) / 100.0f;
@@ -60,7 +60,7 @@ public class RecMotor185_10090 extends Motor {
                 lbTemp = payloadBB.getShort(53);
                 lbPPM_recv = payloadBB.getShort(55);
                 lbV_out = ((float) payloadBB.getShort(57)) / 10.0f;
-                lbPPM_send = record.getUnsignedShort(65);
+                lbPPM_send = _payload.getUnsignedShort(65);
                 //
                 rbStatus = payloadBB.get(69);
                 rbCurrent = ((float) payloadBB.getShort(70)) / 100.0f;
@@ -69,7 +69,7 @@ public class RecMotor185_10090 extends Motor {
                 rbTemp = payloadBB.getShort(76);
                 rbPPM_recv = payloadBB.getShort(78);
                 rbV_out = ((float) payloadBB.getShort(80)) / 10.0f;
-                rbPPM_send = record.getUnsignedShort(88);
+                rbPPM_send = _payload.getUnsignedShort(88);
 
                 thrustTheta = computeThrustTheta(lbSpeed, rfSpeed, rbSpeed,
                         lfSpeed);
@@ -83,7 +83,7 @@ public class RecMotor185_10090 extends Motor {
                 rfTemp = payloadBB.getShort(7);
                 rfPPM_recv = payloadBB.getShort(9);
                 rfV_out = ((float) payloadBB.getShort(11)) / 10.0f;
-                rfPPM_send = record.getUnsignedShort(19);
+                rfPPM_send = _payload.getUnsignedShort(19);
                 //
                 lfStatus = payloadBB.get(23);
                 lfCurrent = ((float) payloadBB.getShort(24)) / 100.0f;
@@ -92,7 +92,7 @@ public class RecMotor185_10090 extends Motor {
                 lfTemp = payloadBB.getShort(30);
                 lfPPM_recv = payloadBB.getShort(32);
                 lfV_out = ((float) payloadBB.getShort(34)) / 10.0f;
-                lfPPM_send = record.getUnsignedShort(42);
+                lfPPM_send = _payload.getUnsignedShort(42);
                 //
                 lsStatus = payloadBB.get(46);
                 lsCurrent = ((float) payloadBB.getShort(47)) / 100.0f;
@@ -101,7 +101,7 @@ public class RecMotor185_10090 extends Motor {
                 lsTemp = payloadBB.getShort(53);
                 lsPPM_recv = payloadBB.getShort(55);
                 lsV_out = ((float) payloadBB.getShort(57)) / 10.0f;
-                lsPPM_send = record.getUnsignedShort(65);
+                lsPPM_send = _payload.getUnsignedShort(65);
                 //
                 lbStatus = payloadBB.get(69);
                 lbCurrent = ((float) payloadBB.getShort(70)) / 100.0f;
@@ -110,7 +110,7 @@ public class RecMotor185_10090 extends Motor {
                 lbTemp = payloadBB.getShort(76);
                 lbPPM_recv = payloadBB.getShort(78);
                 lbV_out = ((float) payloadBB.getShort(80)) / 10.0f;
-                lbPPM_send = record.getUnsignedShort(88);
+                lbPPM_send = _payload.getUnsignedShort(88);
 
                 rbStatus = payloadBB.get(92);
                 rbCurrent = ((float) payloadBB.getShort(93)) / 100.0f;
@@ -119,7 +119,7 @@ public class RecMotor185_10090 extends Motor {
                 rbTemp = payloadBB.getShort(99);
                 rbPPM_recv = payloadBB.getShort(101);
                 rbV_out = ((float) payloadBB.getShort(103)) / 10.0f;
-                rbPPM_send = record.getUnsignedShort(111);
+                rbPPM_send = _payload.getUnsignedShort(111);
 
                 rsStatus = payloadBB.get(115);
                 rsCurrent = ((float) payloadBB.getShort(116)) / 100.0f;
@@ -128,7 +128,7 @@ public class RecMotor185_10090 extends Motor {
                 rsTemp = payloadBB.getShort(122);
                 rsPPM_recv = payloadBB.getShort(124);
                 rsV_out = ((float) payloadBB.getShort(126)) / 10.0f;
-                rsPPM_send = record.getUnsignedShort(134);
+                rsPPM_send = _payload.getUnsignedShort(134);
             }
 
         } catch (Exception e) {

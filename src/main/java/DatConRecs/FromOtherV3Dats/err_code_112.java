@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class err_code_112 extends Record {
     protected boolean valid = false;
@@ -86,46 +86,46 @@ public class err_code_112 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            imu1_break = record.getUnsignedByte(0);
-            imu2_break = record.getUnsignedByte(1);
-            gcm0_break = record.getUnsignedByte(2);
-            gcm1_break = record.getUnsignedByte(3);
-            gcm2_break = record.getUnsignedByte(4);
-            imu0_fault = record.getUnsignedByte(5);
-            imu1_fault = record.getUnsignedByte(6);
-            imu2_fault = record.getUnsignedByte(7);
-            gcm0_fault = record.getUnsignedByte(8);
-            gcm1_fault = record.getUnsignedByte(9);
-            gcm2_fault = record.getUnsignedByte(10);
-            mc_fault = record.getUnsignedByte(11);
-            mc_dev = record.getUnsignedByte(12);
-            mc_err = record.getUnsignedByte(13);
-            mc_act = record.getUnsignedByte(14);
-            imu_stat = record.getUnsignedByte(15);
-            mag_stat = record.getUnsignedByte(16);
-            imu0_dev = record.getUnsignedByte(17);
-            imu0_err = record.getUnsignedByte(18);
-            imu0_act = record.getUnsignedByte(19);
-            imu1_dev = record.getUnsignedByte(20);
-            imu1_err = record.getUnsignedByte(21);
-            imu1_act = record.getUnsignedByte(22);
-            imu2_dev = record.getUnsignedByte(23);
-            imu2_err = record.getUnsignedByte(24);
-            imu2_act = record.getUnsignedByte(25);
-            gcm0_dev = record.getUnsignedByte(26);
-            gcm0_err = record.getUnsignedByte(27);
-            gcm0_act = record.getUnsignedByte(28);
-            gcm1_dev = record.getUnsignedByte(29);
-            gcm1_err = record.getUnsignedByte(30);
-            gcm1_act = record.getUnsignedByte(31);
-            gcm2_dev = record.getUnsignedByte(32);
-            gcm2_err = record.getUnsignedByte(33);
-            gcm2_act = record.getUnsignedByte(34);
+            imu1_break = _payload.getUnsignedByte(0);
+            imu2_break = _payload.getUnsignedByte(1);
+            gcm0_break = _payload.getUnsignedByte(2);
+            gcm1_break = _payload.getUnsignedByte(3);
+            gcm2_break = _payload.getUnsignedByte(4);
+            imu0_fault = _payload.getUnsignedByte(5);
+            imu1_fault = _payload.getUnsignedByte(6);
+            imu2_fault = _payload.getUnsignedByte(7);
+            gcm0_fault = _payload.getUnsignedByte(8);
+            gcm1_fault = _payload.getUnsignedByte(9);
+            gcm2_fault = _payload.getUnsignedByte(10);
+            mc_fault = _payload.getUnsignedByte(11);
+            mc_dev = _payload.getUnsignedByte(12);
+            mc_err = _payload.getUnsignedByte(13);
+            mc_act = _payload.getUnsignedByte(14);
+            imu_stat = _payload.getUnsignedByte(15);
+            mag_stat = _payload.getUnsignedByte(16);
+            imu0_dev = _payload.getUnsignedByte(17);
+            imu0_err = _payload.getUnsignedByte(18);
+            imu0_act = _payload.getUnsignedByte(19);
+            imu1_dev = _payload.getUnsignedByte(20);
+            imu1_err = _payload.getUnsignedByte(21);
+            imu1_act = _payload.getUnsignedByte(22);
+            imu2_dev = _payload.getUnsignedByte(23);
+            imu2_err = _payload.getUnsignedByte(24);
+            imu2_act = _payload.getUnsignedByte(25);
+            gcm0_dev = _payload.getUnsignedByte(26);
+            gcm0_err = _payload.getUnsignedByte(27);
+            gcm0_act = _payload.getUnsignedByte(28);
+            gcm1_dev = _payload.getUnsignedByte(29);
+            gcm1_err = _payload.getUnsignedByte(30);
+            gcm1_act = _payload.getUnsignedByte(31);
+            gcm2_dev = _payload.getUnsignedByte(32);
+            gcm2_err = _payload.getUnsignedByte(33);
+            gcm2_act = _payload.getUnsignedByte(34);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -143,52 +143,52 @@ public class err_code_112 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(imu1_break, err_codeIntSig, "imu1_break", lineT,
+            printCsvValue(imu1_break, err_codeIntSig, "imu1_break", lineT,
                     valid);
-            printCSVValue(imu2_break, err_codeIntSig, "imu2_break", lineT,
+            printCsvValue(imu2_break, err_codeIntSig, "imu2_break", lineT,
                     valid);
-            printCSVValue(gcm0_break, err_codeIntSig, "gcm0_break", lineT,
+            printCsvValue(gcm0_break, err_codeIntSig, "gcm0_break", lineT,
                     valid);
-            printCSVValue(gcm1_break, err_codeIntSig, "gcm1_break", lineT,
+            printCsvValue(gcm1_break, err_codeIntSig, "gcm1_break", lineT,
                     valid);
-            printCSVValue(gcm2_break, err_codeIntSig, "gcm2_break", lineT,
+            printCsvValue(gcm2_break, err_codeIntSig, "gcm2_break", lineT,
                     valid);
-            printCSVValue(imu0_fault, err_codeIntSig, "imu0_fault", lineT,
+            printCsvValue(imu0_fault, err_codeIntSig, "imu0_fault", lineT,
                     valid);
-            printCSVValue(imu1_fault, err_codeIntSig, "imu1_fault", lineT,
+            printCsvValue(imu1_fault, err_codeIntSig, "imu1_fault", lineT,
                     valid);
-            printCSVValue(imu2_fault, err_codeIntSig, "imu2_fault", lineT,
+            printCsvValue(imu2_fault, err_codeIntSig, "imu2_fault", lineT,
                     valid);
-            printCSVValue(gcm0_fault, err_codeIntSig, "gcm0_fault", lineT,
+            printCsvValue(gcm0_fault, err_codeIntSig, "gcm0_fault", lineT,
                     valid);
-            printCSVValue(gcm1_fault, err_codeIntSig, "gcm1_fault", lineT,
+            printCsvValue(gcm1_fault, err_codeIntSig, "gcm1_fault", lineT,
                     valid);
-            printCSVValue(gcm2_fault, err_codeIntSig, "gcm2_fault", lineT,
+            printCsvValue(gcm2_fault, err_codeIntSig, "gcm2_fault", lineT,
                     valid);
-            printCSVValue(mc_fault, err_codeIntSig, "mc_fault", lineT, valid);
-            printCSVValue(mc_dev, err_codeIntSig, "mc_dev", lineT, valid);
-            printCSVValue(mc_err, err_codeIntSig, "mc_err", lineT, valid);
-            printCSVValue(mc_act, err_codeIntSig, "mc_act", lineT, valid);
-            printCSVValue(imu_stat, err_codeIntSig, "imu_stat", lineT, valid);
-            printCSVValue(mag_stat, err_codeIntSig, "mag_stat", lineT, valid);
-            printCSVValue(imu0_dev, err_codeIntSig, "imu0_dev", lineT, valid);
-            printCSVValue(imu0_err, err_codeIntSig, "imu0_err", lineT, valid);
-            printCSVValue(imu0_act, err_codeIntSig, "imu0_act", lineT, valid);
-            printCSVValue(imu1_dev, err_codeIntSig, "imu1_dev", lineT, valid);
-            printCSVValue(imu1_err, err_codeIntSig, "imu1_err", lineT, valid);
-            printCSVValue(imu1_act, err_codeIntSig, "imu1_act", lineT, valid);
-            printCSVValue(imu2_dev, err_codeIntSig, "imu2_dev", lineT, valid);
-            printCSVValue(imu2_err, err_codeIntSig, "imu2_err", lineT, valid);
-            printCSVValue(imu2_act, err_codeIntSig, "imu2_act", lineT, valid);
-            printCSVValue(gcm0_dev, err_codeIntSig, "gcm0_dev", lineT, valid);
-            printCSVValue(gcm0_err, err_codeIntSig, "gcm0_err", lineT, valid);
-            printCSVValue(gcm0_act, err_codeIntSig, "gcm0_act", lineT, valid);
-            printCSVValue(gcm1_dev, err_codeIntSig, "gcm1_dev", lineT, valid);
-            printCSVValue(gcm1_err, err_codeIntSig, "gcm1_err", lineT, valid);
-            printCSVValue(gcm1_act, err_codeIntSig, "gcm1_act", lineT, valid);
-            printCSVValue(gcm2_dev, err_codeIntSig, "gcm2_dev", lineT, valid);
-            printCSVValue(gcm2_err, err_codeIntSig, "gcm2_err", lineT, valid);
-            printCSVValue(gcm2_act, err_codeIntSig, "gcm2_act", lineT, valid);
+            printCsvValue(mc_fault, err_codeIntSig, "mc_fault", lineT, valid);
+            printCsvValue(mc_dev, err_codeIntSig, "mc_dev", lineT, valid);
+            printCsvValue(mc_err, err_codeIntSig, "mc_err", lineT, valid);
+            printCsvValue(mc_act, err_codeIntSig, "mc_act", lineT, valid);
+            printCsvValue(imu_stat, err_codeIntSig, "imu_stat", lineT, valid);
+            printCsvValue(mag_stat, err_codeIntSig, "mag_stat", lineT, valid);
+            printCsvValue(imu0_dev, err_codeIntSig, "imu0_dev", lineT, valid);
+            printCsvValue(imu0_err, err_codeIntSig, "imu0_err", lineT, valid);
+            printCsvValue(imu0_act, err_codeIntSig, "imu0_act", lineT, valid);
+            printCsvValue(imu1_dev, err_codeIntSig, "imu1_dev", lineT, valid);
+            printCsvValue(imu1_err, err_codeIntSig, "imu1_err", lineT, valid);
+            printCsvValue(imu1_act, err_codeIntSig, "imu1_act", lineT, valid);
+            printCsvValue(imu2_dev, err_codeIntSig, "imu2_dev", lineT, valid);
+            printCsvValue(imu2_err, err_codeIntSig, "imu2_err", lineT, valid);
+            printCsvValue(imu2_act, err_codeIntSig, "imu2_act", lineT, valid);
+            printCsvValue(gcm0_dev, err_codeIntSig, "gcm0_dev", lineT, valid);
+            printCsvValue(gcm0_err, err_codeIntSig, "gcm0_err", lineT, valid);
+            printCsvValue(gcm0_act, err_codeIntSig, "gcm0_act", lineT, valid);
+            printCsvValue(gcm1_dev, err_codeIntSig, "gcm1_dev", lineT, valid);
+            printCsvValue(gcm1_err, err_codeIntSig, "gcm1_err", lineT, valid);
+            printCsvValue(gcm1_act, err_codeIntSig, "gcm1_act", lineT, valid);
+            printCsvValue(gcm2_dev, err_codeIntSig, "gcm2_dev", lineT, valid);
+            printCsvValue(gcm2_err, err_codeIntSig, "gcm2_err", lineT, valid);
+            printCsvValue(gcm2_act, err_codeIntSig, "gcm2_act", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

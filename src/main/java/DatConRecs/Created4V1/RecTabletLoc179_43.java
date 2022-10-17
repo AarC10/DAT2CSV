@@ -2,11 +2,11 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 // 15 HZ
 public class RecTabletLoc179_43 extends Record {
@@ -27,8 +27,8 @@ public class RecTabletLoc179_43 extends Record {
         super(convertDat, 43, 179);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             latRad = payloadBB.getDouble(155);
             longRad = payloadBB.getDouble(163);
@@ -50,9 +50,9 @@ public class RecTabletLoc179_43 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(longitudeTablet, tabletGPSSig, "Longitude", lineT,
+            printCsvValue(longitudeTablet, tabletGPSSig, "Longitude", lineT,
                     valid);
-            printCSVValue(latitudeTablet, tabletGPSSig, "Latitude", lineT,
+            printCsvValue(latitudeTablet, tabletGPSSig, "Latitude", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

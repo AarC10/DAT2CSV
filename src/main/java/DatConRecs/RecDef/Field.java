@@ -2,7 +2,7 @@ package DatConRecs.RecDef;
 
 public class Field {
     public enum FieldType {
-        UINT_32_T, UINT_16_T, UINT_8_T, INT_32_T, INT_16_T, INT_8_T, FP_32, DOUBLE, EXPR;
+        uint32_t, uint16_t, uint8_t, int32_t, int16_t, int8_t, fp32, duble, expr;
 
         public static FieldType lookup(String ftype) {
             for (FieldType d : FieldType.values()) {
@@ -16,124 +16,211 @@ public class Field {
 
     FieldType fType;
 
-    String name;
+    String name = "";
 
     int initValue = 0;
+
+    @SuppressWarnings("unused")
+    private String exprRHS = "";
+
+    public Field(FieldType fType, String name) {
+        if (fType == null) {
+            throw new RuntimeException("Field(FieldType null, String name) ");
+        }
+        if (name == null || name == "") {
+            throw new RuntimeException("Field(FieldType fType, String null) ");
+        }
+        this.fType = fType;
+        this.name = name;
+    }
 
     public Field(FieldType fieldType, String name, int defaultValue) {
         this.fType = fieldType;
         this.name = name;
         try {
             this.initValue = defaultValue;
-        } catch (NumberFormatException ignored) {
+        } catch (NumberFormatException e) {
+
         }
+    }
+
+    public Field(String name, String type) {
+        this.fType = FieldType.lookup(type);
+        this.name = name;
+
+    }
+
+    public Field(String name, FieldType type) {
+        this.fType = type;
+        this.name = name;
+
+    }
+
+    public Field(FieldType fieldType, String varName, String exprRHS) {
+        this.fType = fieldType;
+        this.name = varName;
+        this.exprRHS = exprRHS;
     }
 
     public static FieldType getFieldType(String token) {
+        FieldType fieldType = null;
         if (token.equalsIgnoreCase("Op.uint16_t")) {
-            return FieldType.UINT_16_T;
+            fieldType = FieldType.uint16_t;
         } else if (token.equalsIgnoreCase("Op.uint8_t")) {
-            return FieldType.UINT_8_T;
+            fieldType = FieldType.uint8_t;
         } else if (token.equalsIgnoreCase("Op.uint32_t")) {
-            return FieldType.UINT_32_T;
+            fieldType = FieldType.uint32_t;
         } else if (token.equalsIgnoreCase("Op.int32_t")) {
-            return FieldType.INT_32_T;
+            fieldType = FieldType.int32_t;
         } else if (token.equalsIgnoreCase("Op.int16_t")) {
-            return FieldType.INT_16_T;
+            fieldType = FieldType.int16_t;
         } else if (token.equalsIgnoreCase("Op.int8_t")) {
-            return FieldType.INT_8_T;
+            fieldType = FieldType.int8_t;
         } else if (token.equalsIgnoreCase("Op.fp32")) {
-            return FieldType.FP_32;
+            fieldType = FieldType.fp32;
         } else if (token.equalsIgnoreCase("Op.float")) {
-            return FieldType.FP_32;
+            fieldType = FieldType.fp32;
         } else if (token.equalsIgnoreCase("Op.double")) {
-            return FieldType.DOUBLE;
+            fieldType = FieldType.duble;
         } else if (token.equalsIgnoreCase("Op.fp64")) {
-            return FieldType.DOUBLE;
+            fieldType = FieldType.duble;
         } else if (token.equalsIgnoreCase("Op.expr")) {
-            return FieldType.EXPR;
+            fieldType = FieldType.expr;
         }
-
-        return null;
+        return fieldType;
     }
 
     public int getSize() {
-        return switch (fType) {
-            case DOUBLE -> 8;
-            case FP_32, UINT_32_T, INT_32_T -> 4;
-            case INT_16_T, UINT_16_T -> 2;
-            case INT_8_T, UINT_8_T -> 1;
-            default -> 0;
-        };
+        switch (fType) {
+        case duble:
+            return 8;
+        case fp32:
+            return 4;
+        case int16_t:
+            return 2;
+        case int32_t:
+            return 4;
+        case int8_t:
+            return 1;
+        case uint32_t:
+            return 4;
+        case uint16_t:
+            return 2;
+        case uint8_t:
+            return 1;
+        default:
+            return 0;
+        }
     }
 
     public String getJavaType() {
-        return switch (fType) {
-            case UINT_8_T -> "short";
-            case UINT_16_T -> "int";
-            case UINT_32_T -> "long";
-            case INT_8_T -> "short";
-            case INT_16_T -> "short";
-            case INT_32_T -> "int";
-            case FP_32 -> "float";
-            case DOUBLE -> "double";
-            default -> null;
-        };
+        switch (fType) {
+        case duble:
+            return "double";
+        case fp32:
+            return "float";
+        case int16_t:
+            return "short";
+        case int32_t:
+            return "int";
+        case int8_t:
+            return "short";
+        case uint16_t:
+            return "int";
+        case uint32_t:
+            return "long";
+        case uint8_t:
+            return "short";
+        default:
+            break;
+
+        }
+        return null;
     }
 
     public String toString() {
         return fType + " " + name;
     }
 
+    public void setDefaultValue(int defaultValue) {
+        initValue = defaultValue;
+    }
 
     public String getJavaDeclaration() {
-        String javaDec = "protected ";
-        javaDec += getJavaType() + " ";
-        javaDec += name + " = ";
-        javaDec += "(" + getJavaType() + ")" + initValue + ";";
-        return javaDec;
+        String retv = "protected ";
+        retv += getJavaType() + " ";
+        retv += name + " = ";
+        retv += "(" + getJavaType() + ")" + initValue + ";";
+        return retv;
     }
 
     public String getJavaAssnFormat() {
-        return switch (fType) {
-            case DOUBLE -> " %s = _payload.getDouble(%d);";
-            case FP_32 -> " %s = _payload.getFloat(%d);";
-            case INT_16_T -> " %s = _payload.getShort(%d);";
-            case INT_32_T -> " %s = _payload.getInt(%d);";
-            case INT_8_T -> " %s = _payload.getByte(%d);;";
-            case UINT_16_T -> " %s = _payload.getUnsignedShort(%d);";
-            case UINT_32_T -> " %s = _payload.getUnsignedInt(%d);";
-            case UINT_8_T -> "%s = _payload.getUnsignedByte(%d);";
-            default -> "";
-        };
+        switch (fType) {
+        case duble:
+            return " %s = _payload.getDouble(%d);";
+        case fp32:
+            return " %s = _payload.getFloat(%d);";
+        case int16_t:
+            return " %s = _payload.getShort(%d);";
+        case int32_t:
+            return " %s = _payload.getInt(%d);";
+        case int8_t:
+            return " %s = _payload.getByte(%d);;";
+        case uint16_t:
+            return " %s = _payload.getUnsignedShort(%d);";
+        case uint32_t:
+            return " %s = _payload.getUnsignedInt(%d);";
+        case uint8_t:
+            return "%s = _payload.getUnsignedByte(%d);";
+        default:
+            return "";
+        }
     }
 
     public String getJavaPrintCsvLineFormat() {
-        return switch (fType) {
-            case DOUBLE -> " printCsvValue(%s, %sDoubleSig, \"%s\",lineT, valid);";
-            case FP_32 -> " printCsvValue(%s, %sFloatSig, \"%s\",lineT, valid);";
-            case INT_16_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            case INT_32_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            case INT_8_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            case UINT_16_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            case UINT_32_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            case UINT_8_T -> " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
-            default -> "";
-        };
+        switch (fType) {
+        case duble:
+            return " printCsvValue(%s, %sDoubleSig, \"%s\",lineT, valid);";
+        case fp32:
+            return " printCsvValue(%s, %sFloatSig, \"%s\",lineT, valid);";
+        case int16_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        case int32_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        case int8_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        case uint16_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        case uint32_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        case uint8_t:
+            return " printCsvValue(%s, %sIntSig, \"%s\",lineT, valid);";
+        default:
+            return "";
+        }
     }
 
     public String getPayloadType() {
-        return switch (fType) {
-            case DOUBLE -> "Double";
-            case FP_32 -> "Float";
-            case INT_16_T -> "Short";
-            case INT_32_T -> "Int";
-            case INT_8_T -> "Byte";
-            case UINT_16_T -> "UnsignedShort";
-            case UINT_32_T -> "UnsignedInt";
-            case UINT_8_T -> "UnsignedByte";
-            default -> "";
-        };
+        switch (fType) {
+        case duble:
+            return "Double";
+        case fp32:
+            return "Float";
+        case int16_t:
+            return "Short";
+        case int32_t:
+            return "Int";
+        case int8_t:
+            return "Byte";
+        case uint16_t:
+            return "UnsignedShort";
+        case uint32_t:
+            return "UnsignedInt";
+        case uint8_t:
+            return "UnsignedByte";
+        default:
+            return "";
+        }
     }
 
     public FieldType getType() {

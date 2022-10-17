@@ -1,9 +1,10 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 public class SD_logs_65280 extends Record {
  String text = "";
 
@@ -11,8 +12,8 @@ public class SD_logs_65280 extends Record {
   super(convertDat, 65280,-1);
 }
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
 } catch (Exception e) {RecordException(e);}}
 

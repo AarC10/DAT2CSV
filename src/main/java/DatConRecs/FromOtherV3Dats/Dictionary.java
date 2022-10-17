@@ -1,8 +1,8 @@
 package DatConRecs.FromOtherV3Dats;
 
-import java.util.Vector;
+import Files.RecClassSpec;
 
-import files.RecClassSpec;
+import java.util.Vector;
 
 public class Dictionary {
     public static Vector<RecClassSpec> entries = new Vector<RecClassSpec>();

@@ -2,7 +2,7 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.MotorControl;
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class MotorCtrl35_54 extends MotorControl {
   
@@ -11,18 +11,18 @@ public class MotorCtrl35_54 extends MotorControl {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
-            pwm1 = record.getUnsignedShort(19) / 100.0f;
-            pwm2 = record.getUnsignedShort(21) / 100.0f;
-            pwm3 = record.getUnsignedShort(23) / 100.0f;
-            pwm4 = record.getUnsignedShort(25) / 100.0f;
-            pwm5 = record.getUnsignedShort(27) / 100.0f;
-            pwm6 = record.getUnsignedShort(29) / 100.0f;
-            pwm7 = record.getUnsignedShort(31) / 100.0f;
-            pwm8 = record.getUnsignedShort(33) / 100.0f;
+            pwm1 = ((float) _payload.getUnsignedShort(19)) / 100.0f;
+            pwm2 = ((float) _payload.getUnsignedShort(21)) / 100.0f;
+            pwm3 = ((float) _payload.getUnsignedShort(23)) / 100.0f;
+            pwm4 = ((float) _payload.getUnsignedShort(25)) / 100.0f;
+            pwm5 = ((float) _payload.getUnsignedShort(27)) / 100.0f;
+            pwm6 = ((float) _payload.getUnsignedShort(29)) / 100.0f;
+            pwm7 = ((float) _payload.getUnsignedShort(31)) / 100.0f;
+            pwm8 = ((float) _payload.getUnsignedShort(33)) / 100.0f;
         } catch (Exception e) {
             RecordException(e);
         }

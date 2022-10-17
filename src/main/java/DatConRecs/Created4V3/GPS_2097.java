@@ -1,11 +1,11 @@
 
 package DatConRecs.Created4V3;
 
-import DatConRecs.GPSGroup;
+import DatConRecs.GpsGroup;
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
-public class GPS_2097 extends GPSGroup {
+public class GPS_2097 extends GpsGroup {
 
     public GPS_2097(ConvertDat convertDat) {
         super(convertDat, 1, 2097, 66);
@@ -15,7 +15,7 @@ public class GPS_2097 extends GPSGroup {
 //        return RecSpec.RecType.BINARY;
 //    }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 }

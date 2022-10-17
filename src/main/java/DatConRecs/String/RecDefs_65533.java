@@ -21,9 +21,9 @@ package DatConRecs.String;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecDefs_65533 extends Record {
 
@@ -36,10 +36,10 @@ public class RecDefs_65533 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
-            payloadString = record.getString();
+            payloadString = _payload.getString();
             if (convertDat.recDefsPS != null) {
                 if (payloadString.length() > 0) {
                     convertDat.recDefsPS.println(payloadString

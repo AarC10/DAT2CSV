@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class IMU_ATTI_1 extends Record {
@@ -50,44 +51,44 @@ protected int cnt_atti = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- longti = record.getDouble(0);
- lati = record.getDouble(8);
- alti = record.getFloat(16);
- acc_x = record.getFloat(20);
- acc_y = record.getFloat(24);
- acc_z = record.getFloat(28);
- gyro_x = record.getFloat(32);
- gyro_y = record.getFloat(36);
- gyro_z = record.getFloat(40);
- press = record.getFloat(44);
- q0 = record.getFloat(48);
- q1 = record.getFloat(52);
- q2 = record.getFloat(56);
- q3 = record.getFloat(60);
- ag_x = record.getFloat(64);
- ag_y = record.getFloat(68);
- ag_z = record.getFloat(72);
- vg_x = record.getFloat(76);
- vg_y = record.getFloat(80);
- vg_z = record.getFloat(84);
- gb_x = record.getFloat(88);
- gb_y = record.getFloat(92);
- gb_z = record.getFloat(96);
- m_x = record.getShort(100);
- m_y = record.getShort(102);
- m_z = record.getShort(104);
- temp_x = record.getShort(106);
- temp_y = record.getShort(108);
- temp_z = record.getShort(110);
- sensor_monitor = record.getUnsignedShort(112);
- filter_status = record.getUnsignedShort(114);
- svn = record.getUnsignedShort(116);
- cnt_atti = record.getUnsignedShort(118);
+ longti = _payload.getDouble(0);
+ lati = _payload.getDouble(8);
+ alti = _payload.getFloat(16);
+ acc_x = _payload.getFloat(20);
+ acc_y = _payload.getFloat(24);
+ acc_z = _payload.getFloat(28);
+ gyro_x = _payload.getFloat(32);
+ gyro_y = _payload.getFloat(36);
+ gyro_z = _payload.getFloat(40);
+ press = _payload.getFloat(44);
+ q0 = _payload.getFloat(48);
+ q1 = _payload.getFloat(52);
+ q2 = _payload.getFloat(56);
+ q3 = _payload.getFloat(60);
+ ag_x = _payload.getFloat(64);
+ ag_y = _payload.getFloat(68);
+ ag_z = _payload.getFloat(72);
+ vg_x = _payload.getFloat(76);
+ vg_y = _payload.getFloat(80);
+ vg_z = _payload.getFloat(84);
+ gb_x = _payload.getFloat(88);
+ gb_y = _payload.getFloat(92);
+ gb_z = _payload.getFloat(96);
+ m_x = _payload.getShort(100);
+ m_y = _payload.getShort(102);
+ m_z = _payload.getShort(104);
+ temp_x = _payload.getShort(106);
+ temp_y = _payload.getShort(108);
+ temp_z = _payload.getShort(110);
+ sensor_monitor = _payload.getUnsignedShort(112);
+ filter_status = _payload.getUnsignedShort(114);
+ svn = _payload.getUnsignedShort(116);
+ cnt_atti = _payload.getUnsignedShort(118);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -101,39 +102,39 @@ protected int cnt_atti = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(longti, IMU_ATTIDoubleSig, "longti",lineT, valid);
- printCSVValue(lati, IMU_ATTIDoubleSig, "lati",lineT, valid);
- printCSVValue(alti, IMU_ATTIFloatSig, "alti",lineT, valid);
- printCSVValue(acc_x, IMU_ATTIFloatSig, "acc_x",lineT, valid);
- printCSVValue(acc_y, IMU_ATTIFloatSig, "acc_y",lineT, valid);
- printCSVValue(acc_z, IMU_ATTIFloatSig, "acc_z",lineT, valid);
- printCSVValue(gyro_x, IMU_ATTIFloatSig, "gyro_x",lineT, valid);
- printCSVValue(gyro_y, IMU_ATTIFloatSig, "gyro_y",lineT, valid);
- printCSVValue(gyro_z, IMU_ATTIFloatSig, "gyro_z",lineT, valid);
- printCSVValue(press, IMU_ATTIFloatSig, "press",lineT, valid);
- printCSVValue(q0, IMU_ATTIFloatSig, "q0",lineT, valid);
- printCSVValue(q1, IMU_ATTIFloatSig, "q1",lineT, valid);
- printCSVValue(q2, IMU_ATTIFloatSig, "q2",lineT, valid);
- printCSVValue(q3, IMU_ATTIFloatSig, "q3",lineT, valid);
- printCSVValue(ag_x, IMU_ATTIFloatSig, "ag_x",lineT, valid);
- printCSVValue(ag_y, IMU_ATTIFloatSig, "ag_y",lineT, valid);
- printCSVValue(ag_z, IMU_ATTIFloatSig, "ag_z",lineT, valid);
- printCSVValue(vg_x, IMU_ATTIFloatSig, "vg_x",lineT, valid);
- printCSVValue(vg_y, IMU_ATTIFloatSig, "vg_y",lineT, valid);
- printCSVValue(vg_z, IMU_ATTIFloatSig, "vg_z",lineT, valid);
- printCSVValue(gb_x, IMU_ATTIFloatSig, "gb_x",lineT, valid);
- printCSVValue(gb_y, IMU_ATTIFloatSig, "gb_y",lineT, valid);
- printCSVValue(gb_z, IMU_ATTIFloatSig, "gb_z",lineT, valid);
- printCSVValue(m_x, IMU_ATTIIntSig, "m_x",lineT, valid);
- printCSVValue(m_y, IMU_ATTIIntSig, "m_y",lineT, valid);
- printCSVValue(m_z, IMU_ATTIIntSig, "m_z",lineT, valid);
- printCSVValue(temp_x, IMU_ATTIIntSig, "temp_x",lineT, valid);
- printCSVValue(temp_y, IMU_ATTIIntSig, "temp_y",lineT, valid);
- printCSVValue(temp_z, IMU_ATTIIntSig, "temp_z",lineT, valid);
- printCSVValue(sensor_monitor, IMU_ATTIIntSig, "sensor_monitor",lineT, valid);
- printCSVValue(filter_status, IMU_ATTIIntSig, "filter_status",lineT, valid);
- printCSVValue(svn, IMU_ATTIIntSig, "svn",lineT, valid);
- printCSVValue(cnt_atti, IMU_ATTIIntSig, "cnt_atti",lineT, valid);
+ printCsvValue(longti, IMU_ATTIDoubleSig, "longti",lineT, valid);
+ printCsvValue(lati, IMU_ATTIDoubleSig, "lati",lineT, valid);
+ printCsvValue(alti, IMU_ATTIFloatSig, "alti",lineT, valid);
+ printCsvValue(acc_x, IMU_ATTIFloatSig, "acc_x",lineT, valid);
+ printCsvValue(acc_y, IMU_ATTIFloatSig, "acc_y",lineT, valid);
+ printCsvValue(acc_z, IMU_ATTIFloatSig, "acc_z",lineT, valid);
+ printCsvValue(gyro_x, IMU_ATTIFloatSig, "gyro_x",lineT, valid);
+ printCsvValue(gyro_y, IMU_ATTIFloatSig, "gyro_y",lineT, valid);
+ printCsvValue(gyro_z, IMU_ATTIFloatSig, "gyro_z",lineT, valid);
+ printCsvValue(press, IMU_ATTIFloatSig, "press",lineT, valid);
+ printCsvValue(q0, IMU_ATTIFloatSig, "q0",lineT, valid);
+ printCsvValue(q1, IMU_ATTIFloatSig, "q1",lineT, valid);
+ printCsvValue(q2, IMU_ATTIFloatSig, "q2",lineT, valid);
+ printCsvValue(q3, IMU_ATTIFloatSig, "q3",lineT, valid);
+ printCsvValue(ag_x, IMU_ATTIFloatSig, "ag_x",lineT, valid);
+ printCsvValue(ag_y, IMU_ATTIFloatSig, "ag_y",lineT, valid);
+ printCsvValue(ag_z, IMU_ATTIFloatSig, "ag_z",lineT, valid);
+ printCsvValue(vg_x, IMU_ATTIFloatSig, "vg_x",lineT, valid);
+ printCsvValue(vg_y, IMU_ATTIFloatSig, "vg_y",lineT, valid);
+ printCsvValue(vg_z, IMU_ATTIFloatSig, "vg_z",lineT, valid);
+ printCsvValue(gb_x, IMU_ATTIFloatSig, "gb_x",lineT, valid);
+ printCsvValue(gb_y, IMU_ATTIFloatSig, "gb_y",lineT, valid);
+ printCsvValue(gb_z, IMU_ATTIFloatSig, "gb_z",lineT, valid);
+ printCsvValue(m_x, IMU_ATTIIntSig, "m_x",lineT, valid);
+ printCsvValue(m_y, IMU_ATTIIntSig, "m_y",lineT, valid);
+ printCsvValue(m_z, IMU_ATTIIntSig, "m_z",lineT, valid);
+ printCsvValue(temp_x, IMU_ATTIIntSig, "temp_x",lineT, valid);
+ printCsvValue(temp_y, IMU_ATTIIntSig, "temp_y",lineT, valid);
+ printCsvValue(temp_z, IMU_ATTIIntSig, "temp_z",lineT, valid);
+ printCsvValue(sensor_monitor, IMU_ATTIIntSig, "sensor_monitor",lineT, valid);
+ printCsvValue(filter_status, IMU_ATTIIntSig, "filter_status",lineT, valid);
+ printCsvValue(svn, IMU_ATTIIntSig, "svn",lineT, valid);
+ printCsvValue(cnt_atti, IMU_ATTIIntSig, "cnt_atti",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

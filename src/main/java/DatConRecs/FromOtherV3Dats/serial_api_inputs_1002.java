@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class serial_api_inputs_1002 extends Record {
     protected boolean valid = false;
@@ -50,28 +50,28 @@ public class serial_api_inputs_1002 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            sdk_ctrl_F = record.getUnsignedByte(0);
-            sdk_roll_x = record.getShort(1);
-            sdk_pitch_y = record.getShort(3);
-            sdk_thr_z = record.getShort(5);
-            sdk_yaw = record.getShort(7);
-            sdk_fdfd_x = record.getShort(9);
-            sdk_fdfd_y = record.getShort(11);
-            ctrl_dev = record.getUnsignedByte(13);
-            sub_mode = record.getUnsignedByte(14);
-            open_req = record.getUnsignedByte(15);
-            open_ack = record.getUnsignedByte(16);
-            cmd_req = record.getUnsignedByte(17);
-            cmd_ack = record.getUnsignedByte(18);
-            avoid_E = record.getUnsignedByte(19);
-            bit_S = record.getUnsignedByte(20);
-            fact_cnt = record.getUnsignedByte(21);
-            f_test = record.getUnsignedByte(22);
+            sdk_ctrl_F = _payload.getUnsignedByte(0);
+            sdk_roll_x = _payload.getShort(1);
+            sdk_pitch_y = _payload.getShort(3);
+            sdk_thr_z = _payload.getShort(5);
+            sdk_yaw = _payload.getShort(7);
+            sdk_fdfd_x = _payload.getShort(9);
+            sdk_fdfd_y = _payload.getShort(11);
+            ctrl_dev = _payload.getUnsignedByte(13);
+            sub_mode = _payload.getUnsignedByte(14);
+            open_req = _payload.getUnsignedByte(15);
+            open_ack = _payload.getUnsignedByte(16);
+            cmd_req = _payload.getUnsignedByte(17);
+            cmd_ack = _payload.getUnsignedByte(18);
+            avoid_E = _payload.getUnsignedByte(19);
+            bit_S = _payload.getUnsignedByte(20);
+            fact_cnt = _payload.getUnsignedByte(21);
+            f_test = _payload.getUnsignedByte(22);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -89,39 +89,39 @@ public class serial_api_inputs_1002 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(sdk_ctrl_F, serial_api_inputsIntSig, "sdk_ctrl_F",
+            printCsvValue(sdk_ctrl_F, serial_api_inputsIntSig, "sdk_ctrl_F",
                     lineT, valid);
-            printCSVValue(sdk_roll_x, serial_api_inputsIntSig, "sdk_roll_x",
+            printCsvValue(sdk_roll_x, serial_api_inputsIntSig, "sdk_roll_x",
                     lineT, valid);
-            printCSVValue(sdk_pitch_y, serial_api_inputsIntSig, "sdk_pitch_y",
+            printCsvValue(sdk_pitch_y, serial_api_inputsIntSig, "sdk_pitch_y",
                     lineT, valid);
-            printCSVValue(sdk_thr_z, serial_api_inputsIntSig, "sdk_thr_z",
+            printCsvValue(sdk_thr_z, serial_api_inputsIntSig, "sdk_thr_z",
                     lineT, valid);
-            printCSVValue(sdk_yaw, serial_api_inputsIntSig, "sdk_yaw", lineT,
+            printCsvValue(sdk_yaw, serial_api_inputsIntSig, "sdk_yaw", lineT,
                     valid);
-            printCSVValue(sdk_fdfd_x, serial_api_inputsIntSig, "sdk_fdfd_x",
+            printCsvValue(sdk_fdfd_x, serial_api_inputsIntSig, "sdk_fdfd_x",
                     lineT, valid);
-            printCSVValue(sdk_fdfd_y, serial_api_inputsIntSig, "sdk_fdfd_y",
+            printCsvValue(sdk_fdfd_y, serial_api_inputsIntSig, "sdk_fdfd_y",
                     lineT, valid);
-            printCSVValue(ctrl_dev, serial_api_inputsIntSig, "ctrl_dev", lineT,
+            printCsvValue(ctrl_dev, serial_api_inputsIntSig, "ctrl_dev", lineT,
                     valid);
-            printCSVValue(sub_mode, serial_api_inputsIntSig, "sub_mode", lineT,
+            printCsvValue(sub_mode, serial_api_inputsIntSig, "sub_mode", lineT,
                     valid);
-            printCSVValue(open_req, serial_api_inputsIntSig, "open_req", lineT,
+            printCsvValue(open_req, serial_api_inputsIntSig, "open_req", lineT,
                     valid);
-            printCSVValue(open_ack, serial_api_inputsIntSig, "open_ack", lineT,
+            printCsvValue(open_ack, serial_api_inputsIntSig, "open_ack", lineT,
                     valid);
-            printCSVValue(cmd_req, serial_api_inputsIntSig, "cmd_req", lineT,
+            printCsvValue(cmd_req, serial_api_inputsIntSig, "cmd_req", lineT,
                     valid);
-            printCSVValue(cmd_ack, serial_api_inputsIntSig, "cmd_ack", lineT,
+            printCsvValue(cmd_ack, serial_api_inputsIntSig, "cmd_ack", lineT,
                     valid);
-            printCSVValue(avoid_E, serial_api_inputsIntSig, "avoid_E", lineT,
+            printCsvValue(avoid_E, serial_api_inputsIntSig, "avoid_E", lineT,
                     valid);
-            printCSVValue(bit_S, serial_api_inputsIntSig, "bit_S", lineT,
+            printCsvValue(bit_S, serial_api_inputsIntSig, "bit_S", lineT,
                     valid);
-            printCSVValue(fact_cnt, serial_api_inputsIntSig, "fact_cnt", lineT,
+            printCsvValue(fact_cnt, serial_api_inputsIntSig, "fact_cnt", lineT,
                     valid);
-            printCSVValue(f_test, serial_api_inputsIntSig, "f_test", lineT,
+            printCsvValue(f_test, serial_api_inputsIntSig, "f_test", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

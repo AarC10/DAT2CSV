@@ -1,15 +1,15 @@
 
 package DatConRecs;
 
+import Files.DatFile;
+import Files.FileEnd;
+import Files.Quaternion;
+import Files.RollPitchYaw;
+
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-
-import files.DatFile;
-import files.FileEnd;
-import files.Quaternion;
-import files.RollPitchYaw;
 
 public class Payload {
 

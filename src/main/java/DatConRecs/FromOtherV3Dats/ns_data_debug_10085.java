@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class ns_data_debug_10085 extends Record {
     protected boolean valid = false;
@@ -56,31 +56,31 @@ public class ns_data_debug_10085 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            d00 = record.getFloat(0);
-            d01 = record.getFloat(4);
-            d02 = record.getFloat(8);
-            d03 = record.getFloat(12);
-            d04 = record.getFloat(16);
-            d05 = record.getFloat(20);
-            d06 = record.getFloat(24);
-            d07 = record.getFloat(28);
-            d08 = record.getFloat(32);
-            d09 = record.getFloat(36);
-            d10 = record.getFloat(40);
-            d11 = record.getFloat(44);
-            d12 = record.getFloat(48);
-            d13 = record.getFloat(52);
-            d14 = record.getFloat(56);
-            d15 = record.getFloat(60);
-            d16 = record.getFloat(64);
-            d17 = record.getFloat(68);
-            d18 = record.getFloat(72);
-            d19 = record.getFloat(76);
+            d00 = _payload.getFloat(0);
+            d01 = _payload.getFloat(4);
+            d02 = _payload.getFloat(8);
+            d03 = _payload.getFloat(12);
+            d04 = _payload.getFloat(16);
+            d05 = _payload.getFloat(20);
+            d06 = _payload.getFloat(24);
+            d07 = _payload.getFloat(28);
+            d08 = _payload.getFloat(32);
+            d09 = _payload.getFloat(36);
+            d10 = _payload.getFloat(40);
+            d11 = _payload.getFloat(44);
+            d12 = _payload.getFloat(48);
+            d13 = _payload.getFloat(52);
+            d14 = _payload.getFloat(56);
+            d15 = _payload.getFloat(60);
+            d16 = _payload.getFloat(64);
+            d17 = _payload.getFloat(68);
+            d18 = _payload.getFloat(72);
+            d19 = _payload.getFloat(76);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -98,26 +98,26 @@ public class ns_data_debug_10085 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(d00, ns_data_debugFloatSig, "d00", lineT, valid);
-            printCSVValue(d01, ns_data_debugFloatSig, "d01", lineT, valid);
-            printCSVValue(d02, ns_data_debugFloatSig, "d02", lineT, valid);
-            printCSVValue(d03, ns_data_debugFloatSig, "d03", lineT, valid);
-            printCSVValue(d04, ns_data_debugFloatSig, "d04", lineT, valid);
-            printCSVValue(d05, ns_data_debugFloatSig, "d05", lineT, valid);
-            printCSVValue(d06, ns_data_debugFloatSig, "d06", lineT, valid);
-            printCSVValue(d07, ns_data_debugFloatSig, "d07", lineT, valid);
-            printCSVValue(d08, ns_data_debugFloatSig, "d08", lineT, valid);
-            printCSVValue(d09, ns_data_debugFloatSig, "d09", lineT, valid);
-            printCSVValue(d10, ns_data_debugFloatSig, "d10", lineT, valid);
-            printCSVValue(d11, ns_data_debugFloatSig, "d11", lineT, valid);
-            printCSVValue(d12, ns_data_debugFloatSig, "d12", lineT, valid);
-            printCSVValue(d13, ns_data_debugFloatSig, "d13", lineT, valid);
-            printCSVValue(d14, ns_data_debugFloatSig, "d14", lineT, valid);
-            printCSVValue(d15, ns_data_debugFloatSig, "d15", lineT, valid);
-            printCSVValue(d16, ns_data_debugFloatSig, "d16", lineT, valid);
-            printCSVValue(d17, ns_data_debugFloatSig, "d17", lineT, valid);
-            printCSVValue(d18, ns_data_debugFloatSig, "d18", lineT, valid);
-            printCSVValue(d19, ns_data_debugFloatSig, "d19", lineT, valid);
+            printCsvValue(d00, ns_data_debugFloatSig, "d00", lineT, valid);
+            printCsvValue(d01, ns_data_debugFloatSig, "d01", lineT, valid);
+            printCsvValue(d02, ns_data_debugFloatSig, "d02", lineT, valid);
+            printCsvValue(d03, ns_data_debugFloatSig, "d03", lineT, valid);
+            printCsvValue(d04, ns_data_debugFloatSig, "d04", lineT, valid);
+            printCsvValue(d05, ns_data_debugFloatSig, "d05", lineT, valid);
+            printCsvValue(d06, ns_data_debugFloatSig, "d06", lineT, valid);
+            printCsvValue(d07, ns_data_debugFloatSig, "d07", lineT, valid);
+            printCsvValue(d08, ns_data_debugFloatSig, "d08", lineT, valid);
+            printCsvValue(d09, ns_data_debugFloatSig, "d09", lineT, valid);
+            printCsvValue(d10, ns_data_debugFloatSig, "d10", lineT, valid);
+            printCsvValue(d11, ns_data_debugFloatSig, "d11", lineT, valid);
+            printCsvValue(d12, ns_data_debugFloatSig, "d12", lineT, valid);
+            printCsvValue(d13, ns_data_debugFloatSig, "d13", lineT, valid);
+            printCsvValue(d14, ns_data_debugFloatSig, "d14", lineT, valid);
+            printCsvValue(d15, ns_data_debugFloatSig, "d15", lineT, valid);
+            printCsvValue(d16, ns_data_debugFloatSig, "d16", lineT, valid);
+            printCsvValue(d17, ns_data_debugFloatSig, "d17", lineT, valid);
+            printCsvValue(d18, ns_data_debugFloatSig, "d18", lineT, valid);
+            printCsvValue(d19, ns_data_debugFloatSig, "d19", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

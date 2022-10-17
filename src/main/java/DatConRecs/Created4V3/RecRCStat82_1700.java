@@ -19,8 +19,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
 
 public class RecRCStat82_1700 extends RCStatus {
 
@@ -28,8 +28,8 @@ public class RecRCStat82_1700 extends RCStatus {
         super(convertDat, 1700, 82);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             statusValid = true;
             fail_safe = payloadBB.get(37);

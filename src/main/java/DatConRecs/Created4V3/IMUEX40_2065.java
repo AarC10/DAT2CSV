@@ -1,7 +1,7 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class IMUEX40_2065 extends IMUEX40 {
 
@@ -10,8 +10,8 @@ public class IMUEX40_2065 extends IMUEX40 {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 
 }

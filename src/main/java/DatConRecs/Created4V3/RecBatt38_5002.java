@@ -19,7 +19,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class RecBatt38_5002 extends RecBatt38_500X {
 
@@ -31,8 +31,8 @@ public class RecBatt38_5002 extends RecBatt38_500X {
     //
     //    public short batteryPercent = 0;
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             if (numSamples == 0) { // first time
                 init();
@@ -40,7 +40,7 @@ public class RecBatt38_5002 extends RecBatt38_500X {
             valid = true;
             numSamples++;
             totalVolts = (float) (((float) (payloadBB.getShort(0))) / 1000.0);
-            crrnt = -(float) (((float) (record.getUnsignedShort(4) - 65536))
+            crrnt = -(float) (((float) (_payload.getUnsignedShort(4) - 65536))
                     / 1000.0);
             temp = (float) (((float) (payloadBB.getShort(16))) / 10.0);
             batteryPercent = payloadBB.get(18);
@@ -48,8 +48,8 @@ public class RecBatt38_5002 extends RecBatt38_500X {
                 volt[i] = (float) (((float) (payloadBB.getShort(19 + (2 * i))))
                         / 1000.0);
             }
-            double voltMax = maxVolts(volt);
-            double voltMin = minVolts(volt);
+            float voltMax = maxVolts(volt);
+            float voltMin = minVolts(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {

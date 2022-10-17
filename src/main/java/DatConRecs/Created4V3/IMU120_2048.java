@@ -3,11 +3,11 @@ package DatConRecs.Created4V3;
 import DatConRecs.GoTxt50_12;
 import DatConRecs.Payload;
 import DatConRecs.RecIMU;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class IMU120_2048 extends RecIMU {
     public IMU120_2048(ConvertDat convertDat) {
@@ -17,8 +17,8 @@ public class IMU120_2048 extends RecIMU {
                 Units.meters);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
 
     }
 
@@ -26,24 +26,24 @@ public class IMU120_2048 extends RecIMU {
         super.printCols(lineT);
         try {
             if (GoTxt50_12.current != null) {
-                printCSVValue(GoTxt50_12.current.flightTime, flightTimeSig, "",
+                printCsvValue(GoTxt50_12.current.flightTime, flightTimeSig, "",
                         lineT, GoTxt50_12.current.valid);
             }
 
             if (GoTxt50_12.current != null) {
-                printCSVValue(GoTxt50_12.current.gpsLevel, gpsHealthSig, "",
+                printCsvValue(GoTxt50_12.current.gpsLevel, gpsHealthSig, "",
                         lineT, GoTxt50_12.current.valid);
             }
 
             if (GoTxt50_12.current != null) {
-                printCSVValue(GoTxt50_12.current.vpsHeight, heightSig,
+                printCsvValue(GoTxt50_12.current.vpsHeight, heightSig,
                         "vpsHeight", lineT,
                         GoTxt50_12.current.valid & GoTxt50_12.current.waveWork);
             }
-            printCSVValue(convertDat.getRelativeHeight(), heightSig,
+            printCsvValue(convertDat.getRelativeHeight(), heightSig,
                     "relativeHeight", lineT, convertDat.isRelativeHeightOK());
 
-            printCSVValue(convertDat.getAbsoluteHeight(), heightSig,
+            printCsvValue(convertDat.getAbsoluteHeight(), heightSig,
                     "absoluteHeight", lineT, convertDat.absoluteHeightValid);
 
         } catch (Exception e) {

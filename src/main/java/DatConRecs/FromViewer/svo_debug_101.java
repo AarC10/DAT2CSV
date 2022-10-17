@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class svo_debug_101 extends Record {
@@ -25,19 +26,19 @@ protected float VisionDebug8 = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- VisionDebug1 = record.getFloat(0);
- VisionDebug2 = record.getFloat(4);
- VisionDebug3 = record.getFloat(8);
- VisionDebug4 = record.getFloat(12);
- VisionDebug5 = record.getFloat(16);
- VisionDebug6 = record.getFloat(20);
- VisionDebug7 = record.getFloat(24);
- VisionDebug8 = record.getFloat(28);
+ VisionDebug1 = _payload.getFloat(0);
+ VisionDebug2 = _payload.getFloat(4);
+ VisionDebug3 = _payload.getFloat(8);
+ VisionDebug4 = _payload.getFloat(12);
+ VisionDebug5 = _payload.getFloat(16);
+ VisionDebug6 = _payload.getFloat(20);
+ VisionDebug7 = _payload.getFloat(24);
+ VisionDebug8 = _payload.getFloat(28);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -51,14 +52,14 @@ protected float VisionDebug8 = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(VisionDebug1, svo_debugFloatSig, "VisionDebug1",lineT, valid);
- printCSVValue(VisionDebug2, svo_debugFloatSig, "VisionDebug2",lineT, valid);
- printCSVValue(VisionDebug3, svo_debugFloatSig, "VisionDebug3",lineT, valid);
- printCSVValue(VisionDebug4, svo_debugFloatSig, "VisionDebug4",lineT, valid);
- printCSVValue(VisionDebug5, svo_debugFloatSig, "VisionDebug5",lineT, valid);
- printCSVValue(VisionDebug6, svo_debugFloatSig, "VisionDebug6",lineT, valid);
- printCSVValue(VisionDebug7, svo_debugFloatSig, "VisionDebug7",lineT, valid);
- printCSVValue(VisionDebug8, svo_debugFloatSig, "VisionDebug8",lineT, valid);
+ printCsvValue(VisionDebug1, svo_debugFloatSig, "VisionDebug1",lineT, valid);
+ printCsvValue(VisionDebug2, svo_debugFloatSig, "VisionDebug2",lineT, valid);
+ printCsvValue(VisionDebug3, svo_debugFloatSig, "VisionDebug3",lineT, valid);
+ printCsvValue(VisionDebug4, svo_debugFloatSig, "VisionDebug4",lineT, valid);
+ printCsvValue(VisionDebug5, svo_debugFloatSig, "VisionDebug5",lineT, valid);
+ printCsvValue(VisionDebug6, svo_debugFloatSig, "VisionDebug6",lineT, valid);
+ printCsvValue(VisionDebug7, svo_debugFloatSig, "VisionDebug7",lineT, valid);
+ printCsvValue(VisionDebug8, svo_debugFloatSig, "VisionDebug8",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

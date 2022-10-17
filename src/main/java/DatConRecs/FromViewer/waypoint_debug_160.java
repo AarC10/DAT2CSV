@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class waypoint_debug_160 extends Record {
@@ -20,14 +21,14 @@ protected int wp_tgt_vel = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-wp_mission_status = record.getUnsignedByte(0);
-wp_cur_num = record.getUnsignedByte(1);
- wp_tgt_vel = record.getUnsignedShort(2);
+wp_mission_status = _payload.getUnsignedByte(0);
+wp_cur_num = _payload.getUnsignedByte(1);
+ wp_tgt_vel = _payload.getUnsignedShort(2);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -41,9 +42,9 @@ wp_cur_num = record.getUnsignedByte(1);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(wp_mission_status, waypoint_debugIntSig, "wp_mission_status",lineT, valid);
- printCSVValue(wp_cur_num, waypoint_debugIntSig, "wp_cur_num",lineT, valid);
- printCSVValue(wp_tgt_vel, waypoint_debugIntSig, "wp_tgt_vel",lineT, valid);
+ printCsvValue(wp_mission_status, waypoint_debugIntSig, "wp_mission_status",lineT, valid);
+ printCsvValue(wp_cur_num, waypoint_debugIntSig, "wp_cur_num",lineT, valid);
+ printCsvValue(wp_tgt_vel, waypoint_debugIntSig, "wp_tgt_vel",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

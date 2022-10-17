@@ -19,10 +19,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import DatConRecs.RecBatt;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 // 50 HZ
 //length 47
@@ -30,10 +29,6 @@ import files.DatConLog;
 public class RecBatt38_500X extends RecBatt {
 
     public static RecBatt38_500X current = null;
-
-    //    public RecBatt38_500X(ConvertDat convertDat) {
-    //        super(convertDat, 5000, 38, 0);
-    //    }
 
     public RecBatt38_500X(ConvertDat convertDat, int type, int index) {
         super(convertDat, type, 38, index);
@@ -47,8 +42,8 @@ public class RecBatt38_500X extends RecBatt {
 
     private int status4 = 0;
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             if (numSamples == 0) { // first time
                 init();
@@ -70,8 +65,8 @@ public class RecBatt38_500X extends RecBatt {
             status3 = payloadBB.get(16);
             status4 = payloadBB.get(17);
 
-            double voltMax = maxVolt(volt);
-            double voltMin = minVolt(volt);
+            float voltMax = maxVolt(volt);
+            float voltMin = minVolt(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {
@@ -109,10 +104,10 @@ public class RecBatt38_500X extends RecBatt {
             //            printCsvValue(fcc, batteryFCC, "", lineT, valid);
             //            printCsvValue(remcap, batteryRemCap, "", lineT, valid);
             //printCsvValue(temp, batteryTempSig, "", lineT, valid);
-            printCSVValue(status1, statusSig, "status1", lineT, true);
-            printCSVValue(status2, statusSig, "status2", lineT, true);
-            printCSVValue(status3, statusSig, "status3", lineT, true);
-            printCSVValue(status4, statusSig, "status4", lineT, true);
+            printCsvValue(status1, statusSig, "status1", lineT, true);
+            printCsvValue(status2, statusSig, "status2", lineT, true);
+            printCsvValue(status3, statusSig, "status3", lineT, true);
+            printCsvValue(status4, statusSig, "status4", lineT, true);
 
         } catch (Exception e) {
             DatConLog.Exception(e);

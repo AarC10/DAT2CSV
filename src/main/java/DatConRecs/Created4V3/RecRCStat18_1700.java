@@ -22,9 +22,9 @@ package DatConRecs.Created4V3;
 // 50 Hz
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.DatConLog;
-import files.ConvertDat.lineType;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecRCStat18_1700 extends RCStatus {
 
@@ -32,8 +32,8 @@ public class RecRCStat18_1700 extends RCStatus {
         super(convertDat, 1700, 18);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             statusValid = true;
             fail_safe = payloadBB.get(2);
@@ -57,7 +57,7 @@ public class RecRCStat18_1700 extends RCStatus {
     public void printCols(lineType lineT) {
         super.printCols(lineT);
         try {
-            printCSVValue(connected, RCStateSig, "connected", lineT,
+            printCsvValue(connected, RCStateSig, "connected", lineT,
                     statusValid);
         } catch (Exception e) {
             DatConLog.Exception(e);

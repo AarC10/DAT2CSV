@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class usonic_16 extends Record {
@@ -20,14 +21,14 @@ protected short usonic_cnt = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- usonic_h = record.getShort(0);
-usonic_flag = record.getUnsignedByte(2);
-usonic_cnt = record.getUnsignedByte(3);
+ usonic_h = _payload.getShort(0);
+usonic_flag = _payload.getUnsignedByte(2);
+usonic_cnt = _payload.getUnsignedByte(3);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -41,9 +42,9 @@ usonic_cnt = record.getUnsignedByte(3);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(usonic_h, usonicIntSig, "usonic_h",lineT, valid);
- printCSVValue(usonic_flag, usonicIntSig, "usonic_flag",lineT, valid);
- printCSVValue(usonic_cnt, usonicIntSig, "usonic_cnt",lineT, valid);
+ printCsvValue(usonic_h, usonicIntSig, "usonic_h",lineT, valid);
+ printCsvValue(usonic_flag, usonicIntSig, "usonic_flag",lineT, valid);
+ printCsvValue(usonic_cnt, usonicIntSig, "usonic_cnt",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

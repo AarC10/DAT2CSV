@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class aircraft_condition_monitor_70 extends Record {
     protected boolean valid = false;
@@ -40,23 +40,23 @@ public class aircraft_condition_monitor_70 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            craft_flight_mode = record.getUnsignedByte(0);
-            near_gnd_state = record.getUnsignedByte(1);
-            launch_acc_duration = record.getFloat(2);
-            launch_delta_v = record.getFloat(6);
-            launch_state = record.getUnsignedByte(10);
-            thrust_proj_gnd = record.getFloat(11);
-            thrust_proj_gnd_compen = record.getFloat(15);
-            thrust_compensator = record.getFloat(19);
-            hover_thrust = record.getFloat(23);
-            dynamic_thrust = record.getFloat(27);
-            cos_safe_tilt = record.getFloat(31);
-            safe_tilt = record.getFloat(35);
+            craft_flight_mode = _payload.getUnsignedByte(0);
+            near_gnd_state = _payload.getUnsignedByte(1);
+            launch_acc_duration = _payload.getFloat(2);
+            launch_delta_v = _payload.getFloat(6);
+            launch_state = _payload.getUnsignedByte(10);
+            thrust_proj_gnd = _payload.getFloat(11);
+            thrust_proj_gnd_compen = _payload.getFloat(15);
+            thrust_compensator = _payload.getFloat(19);
+            hover_thrust = _payload.getFloat(23);
+            dynamic_thrust = _payload.getFloat(27);
+            cos_safe_tilt = _payload.getFloat(31);
+            safe_tilt = _payload.getFloat(35);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -75,32 +75,32 @@ public class aircraft_condition_monitor_70 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(craft_flight_mode, aircraft_condition_monitorIntSig,
+            printCsvValue(craft_flight_mode, aircraft_condition_monitorIntSig,
                     "craft_flight_mode", lineT, valid);
-            printCSVValue(near_gnd_state, aircraft_condition_monitorIntSig,
+            printCsvValue(near_gnd_state, aircraft_condition_monitorIntSig,
                     "near_gnd_state", lineT, valid);
-            printCSVValue(launch_acc_duration,
+            printCsvValue(launch_acc_duration,
                     aircraft_condition_monitorFloatSig, "launch_acc_duration",
                     lineT, valid);
-            printCSVValue(launch_delta_v, aircraft_condition_monitorFloatSig,
+            printCsvValue(launch_delta_v, aircraft_condition_monitorFloatSig,
                     "launch_delta_v", lineT, valid);
-            printCSVValue(launch_state, aircraft_condition_monitorIntSig,
+            printCsvValue(launch_state, aircraft_condition_monitorIntSig,
                     "launch_state", lineT, valid);
-            printCSVValue(thrust_proj_gnd, aircraft_condition_monitorFloatSig,
+            printCsvValue(thrust_proj_gnd, aircraft_condition_monitorFloatSig,
                     "thrust_proj_gnd", lineT, valid);
-            printCSVValue(thrust_proj_gnd_compen,
+            printCsvValue(thrust_proj_gnd_compen,
                     aircraft_condition_monitorFloatSig,
                     "thrust_proj_gnd_compen", lineT, valid);
-            printCSVValue(thrust_compensator,
+            printCsvValue(thrust_compensator,
                     aircraft_condition_monitorFloatSig, "thrust_compensator",
                     lineT, valid);
-            printCSVValue(hover_thrust, aircraft_condition_monitorFloatSig,
+            printCsvValue(hover_thrust, aircraft_condition_monitorFloatSig,
                     "hover_thrust", lineT, valid);
-            printCSVValue(dynamic_thrust, aircraft_condition_monitorFloatSig,
+            printCsvValue(dynamic_thrust, aircraft_condition_monitorFloatSig,
                     "dynamic_thrust", lineT, valid);
-            printCSVValue(cos_safe_tilt, aircraft_condition_monitorFloatSig,
+            printCsvValue(cos_safe_tilt, aircraft_condition_monitorFloatSig,
                     "cos_safe_tilt", lineT, valid);
-            printCSVValue(safe_tilt, aircraft_condition_monitorFloatSig,
+            printCsvValue(safe_tilt, aircraft_condition_monitorFloatSig,
                     "safe_tilt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

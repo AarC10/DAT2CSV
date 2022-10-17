@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class fmu_device_run_time_41 extends Record {
@@ -33,27 +34,27 @@ protected long gear = (long)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- battery = record.getUnsignedInt(0);
- led = record.getUnsignedInt(4);
- baromter = record.getUnsignedInt(8);
- gyro_acc = record.getUnsignedInt(12);
- imu = record.getUnsignedInt(16);
- vo = record.getUnsignedInt(20);
- ultrasonic = record.getUnsignedInt(24);
- pmu = record.getUnsignedInt(28);
- esc = record.getUnsignedInt(32);
- mc = record.getUnsignedInt(36);
- camera = record.getUnsignedInt(40);
- gps = record.getUnsignedInt(44);
- Compass = record.getUnsignedInt(48);
- gimbal = record.getUnsignedInt(52);
- rc = record.getUnsignedInt(56);
- gear = record.getUnsignedInt(60);
+ battery = _payload.getUnsignedInt(0);
+ led = _payload.getUnsignedInt(4);
+ baromter = _payload.getUnsignedInt(8);
+ gyro_acc = _payload.getUnsignedInt(12);
+ imu = _payload.getUnsignedInt(16);
+ vo = _payload.getUnsignedInt(20);
+ ultrasonic = _payload.getUnsignedInt(24);
+ pmu = _payload.getUnsignedInt(28);
+ esc = _payload.getUnsignedInt(32);
+ mc = _payload.getUnsignedInt(36);
+ camera = _payload.getUnsignedInt(40);
+ gps = _payload.getUnsignedInt(44);
+ Compass = _payload.getUnsignedInt(48);
+ gimbal = _payload.getUnsignedInt(52);
+ rc = _payload.getUnsignedInt(56);
+ gear = _payload.getUnsignedInt(60);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -67,22 +68,22 @@ protected long gear = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(battery, fmu_device_run_timeIntSig, "battery",lineT, valid);
- printCSVValue(led, fmu_device_run_timeIntSig, "led",lineT, valid);
- printCSVValue(baromter, fmu_device_run_timeIntSig, "baromter",lineT, valid);
- printCSVValue(gyro_acc, fmu_device_run_timeIntSig, "gyro_acc",lineT, valid);
- printCSVValue(imu, fmu_device_run_timeIntSig, "imu",lineT, valid);
- printCSVValue(vo, fmu_device_run_timeIntSig, "vo",lineT, valid);
- printCSVValue(ultrasonic, fmu_device_run_timeIntSig, "ultrasonic",lineT, valid);
- printCSVValue(pmu, fmu_device_run_timeIntSig, "pmu",lineT, valid);
- printCSVValue(esc, fmu_device_run_timeIntSig, "esc",lineT, valid);
- printCSVValue(mc, fmu_device_run_timeIntSig, "mc",lineT, valid);
- printCSVValue(camera, fmu_device_run_timeIntSig, "camera",lineT, valid);
- printCSVValue(gps, fmu_device_run_timeIntSig, "gps",lineT, valid);
- printCSVValue(Compass, fmu_device_run_timeIntSig, "Compass",lineT, valid);
- printCSVValue(gimbal, fmu_device_run_timeIntSig, "gimbal",lineT, valid);
- printCSVValue(rc, fmu_device_run_timeIntSig, "rc",lineT, valid);
- printCSVValue(gear, fmu_device_run_timeIntSig, "gear",lineT, valid);
+ printCsvValue(battery, fmu_device_run_timeIntSig, "battery",lineT, valid);
+ printCsvValue(led, fmu_device_run_timeIntSig, "led",lineT, valid);
+ printCsvValue(baromter, fmu_device_run_timeIntSig, "baromter",lineT, valid);
+ printCsvValue(gyro_acc, fmu_device_run_timeIntSig, "gyro_acc",lineT, valid);
+ printCsvValue(imu, fmu_device_run_timeIntSig, "imu",lineT, valid);
+ printCsvValue(vo, fmu_device_run_timeIntSig, "vo",lineT, valid);
+ printCsvValue(ultrasonic, fmu_device_run_timeIntSig, "ultrasonic",lineT, valid);
+ printCsvValue(pmu, fmu_device_run_timeIntSig, "pmu",lineT, valid);
+ printCsvValue(esc, fmu_device_run_timeIntSig, "esc",lineT, valid);
+ printCsvValue(mc, fmu_device_run_timeIntSig, "mc",lineT, valid);
+ printCsvValue(camera, fmu_device_run_timeIntSig, "camera",lineT, valid);
+ printCsvValue(gps, fmu_device_run_timeIntSig, "gps",lineT, valid);
+ printCsvValue(Compass, fmu_device_run_timeIntSig, "Compass",lineT, valid);
+ printCsvValue(gimbal, fmu_device_run_timeIntSig, "gimbal",lineT, valid);
+ printCsvValue(rc, fmu_device_run_timeIntSig, "rc",lineT, valid);
+ printCsvValue(gear, fmu_device_run_timeIntSig, "gear",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

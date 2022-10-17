@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class ofdm_cnt_1999 extends Record {
     protected boolean valid = false;
@@ -26,16 +26,16 @@ public class ofdm_cnt_1999 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            recv_total = record.getUnsignedShort(0);
-            header_error = record.getUnsignedShort(2);
-            v1_error = record.getUnsignedShort(4);
-            v0_error = record.getUnsignedShort(6);
-            seccuss = record.getUnsignedShort(8);
+            recv_total = _payload.getUnsignedShort(0);
+            header_error = _payload.getUnsignedShort(2);
+            v1_error = _payload.getUnsignedShort(4);
+            v0_error = _payload.getUnsignedShort(6);
+            seccuss = _payload.getUnsignedShort(8);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -53,13 +53,13 @@ public class ofdm_cnt_1999 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(recv_total, ofdm_cntIntSig, "recv_total", lineT,
+            printCsvValue(recv_total, ofdm_cntIntSig, "recv_total", lineT,
                     valid);
-            printCSVValue(header_error, ofdm_cntIntSig, "header_error", lineT,
+            printCsvValue(header_error, ofdm_cntIntSig, "header_error", lineT,
                     valid);
-            printCSVValue(v1_error, ofdm_cntIntSig, "v1_error", lineT, valid);
-            printCSVValue(v0_error, ofdm_cntIntSig, "v0_error", lineT, valid);
-            printCSVValue(seccuss, ofdm_cntIntSig, "seccuss", lineT, valid);
+            printCsvValue(v1_error, ofdm_cntIntSig, "v1_error", lineT, valid);
+            printCsvValue(v0_error, ofdm_cntIntSig, "v0_error", lineT, valid);
+            printCsvValue(seccuss, ofdm_cntIntSig, "seccuss", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

@@ -1,8 +1,8 @@
 package DatConRecs.String;
 
-import java.util.Vector;
+import Files.RecClassSpec;
 
-import files.RecClassSpec;
+import java.util.Vector;
 
 public class Dictionary {
 

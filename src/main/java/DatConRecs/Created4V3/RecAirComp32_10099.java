@@ -19,9 +19,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecAirComp32_10099 extends RecAirComp {
 
@@ -50,8 +50,8 @@ public class RecAirComp32_10099 extends RecAirComp {
     Op.float        airspeed_comp_alti 0
      * */
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         valid = true;
         velNorm = payloadBB.getFloat(0);
         vgx = payloadBB.getFloat(12);
@@ -64,13 +64,13 @@ public class RecAirComp32_10099 extends RecAirComp {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(vbx, vbSig, "X", lineT, valid);
-            printCSVValue(vby, vbSig, "Y", lineT, valid);
-            printCSVValue(compAlti, compAltiSig, "", lineT, valid);
-            printCSVValue(velNorm, velNormSig, "", lineT, valid);
-            printCSVValue(vgx, vgSig, "X", lineT, valid);
-            printCSVValue(vgy, vgSig, "Y", lineT, valid);
-            printCSVValue(velLevel, velLevelSig, "", lineT, valid);
+            printCsvValue(vbx, vbSig, "X", lineT, valid);
+            printCsvValue(vby, vbSig, "Y", lineT, valid);
+            printCsvValue(compAlti, compAltiSig, "", lineT, valid);
+            printCsvValue(velNorm, velNormSig, "", lineT, valid);
+            printCsvValue(vgx, vgSig, "X", lineT, valid);
+            printCsvValue(vgy, vgSig, "Y", lineT, valid);
+            printCsvValue(velLevel, velLevelSig, "", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class svo_avoid_obstacle_100 extends Record {
@@ -24,18 +25,18 @@ protected short SVO_cnt = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-SVO_stop_flag = record.getUnsignedByte(0);
- SVO_p_front = record.getUnsignedShort(1);
- SVO_p_right = record.getUnsignedShort(3);
- SVO_p_back = record.getUnsignedShort(5);
- SVO_p_left = record.getUnsignedShort(7);
-SVO_v_limit = record.getUnsignedByte(9);
-SVO_cnt = record.getUnsignedByte(10);
+SVO_stop_flag = _payload.getUnsignedByte(0);
+ SVO_p_front = _payload.getUnsignedShort(1);
+ SVO_p_right = _payload.getUnsignedShort(3);
+ SVO_p_back = _payload.getUnsignedShort(5);
+ SVO_p_left = _payload.getUnsignedShort(7);
+SVO_v_limit = _payload.getUnsignedByte(9);
+SVO_cnt = _payload.getUnsignedByte(10);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -49,13 +50,13 @@ SVO_cnt = record.getUnsignedByte(10);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(SVO_stop_flag, svo_avoid_obstacleIntSig, "SVO_stop_flag",lineT, valid);
- printCSVValue(SVO_p_front, svo_avoid_obstacleIntSig, "SVO_p_front",lineT, valid);
- printCSVValue(SVO_p_right, svo_avoid_obstacleIntSig, "SVO_p_right",lineT, valid);
- printCSVValue(SVO_p_back, svo_avoid_obstacleIntSig, "SVO_p_back",lineT, valid);
- printCSVValue(SVO_p_left, svo_avoid_obstacleIntSig, "SVO_p_left",lineT, valid);
- printCSVValue(SVO_v_limit, svo_avoid_obstacleIntSig, "SVO_v_limit",lineT, valid);
- printCSVValue(SVO_cnt, svo_avoid_obstacleIntSig, "SVO_cnt",lineT, valid);
+ printCsvValue(SVO_stop_flag, svo_avoid_obstacleIntSig, "SVO_stop_flag",lineT, valid);
+ printCsvValue(SVO_p_front, svo_avoid_obstacleIntSig, "SVO_p_front",lineT, valid);
+ printCsvValue(SVO_p_right, svo_avoid_obstacleIntSig, "SVO_p_right",lineT, valid);
+ printCsvValue(SVO_p_back, svo_avoid_obstacleIntSig, "SVO_p_back",lineT, valid);
+ printCsvValue(SVO_p_left, svo_avoid_obstacleIntSig, "SVO_p_left",lineT, valid);
+ printCsvValue(SVO_v_limit, svo_avoid_obstacleIntSig, "SVO_v_limit",lineT, valid);
+ printCsvValue(SVO_cnt, svo_avoid_obstacleIntSig, "SVO_cnt",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

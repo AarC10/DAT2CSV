@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class sensor_cfg_temp_9 extends Record {
@@ -27,21 +28,21 @@ protected int fa = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- bias_gyrox = record.getFloat(0);
- bias_gyroy = record.getFloat(4);
- bias_gyroz = record.getFloat(8);
- bias_accx = record.getFloat(12);
- bias_accy = record.getFloat(16);
- bias_accz = record.getFloat(20);
- tw = record.getFloat(24);
- ta = record.getFloat(28);
- fw = record.getUnsignedShort(32);
- fa = record.getUnsignedShort(34);
+ bias_gyrox = _payload.getFloat(0);
+ bias_gyroy = _payload.getFloat(4);
+ bias_gyroz = _payload.getFloat(8);
+ bias_accx = _payload.getFloat(12);
+ bias_accy = _payload.getFloat(16);
+ bias_accz = _payload.getFloat(20);
+ tw = _payload.getFloat(24);
+ ta = _payload.getFloat(28);
+ fw = _payload.getUnsignedShort(32);
+ fa = _payload.getUnsignedShort(34);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -55,16 +56,16 @@ protected int fa = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(bias_gyrox, sensor_cfg_tempFloatSig, "bias_gyrox",lineT, valid);
- printCSVValue(bias_gyroy, sensor_cfg_tempFloatSig, "bias_gyroy",lineT, valid);
- printCSVValue(bias_gyroz, sensor_cfg_tempFloatSig, "bias_gyroz",lineT, valid);
- printCSVValue(bias_accx, sensor_cfg_tempFloatSig, "bias_accx",lineT, valid);
- printCSVValue(bias_accy, sensor_cfg_tempFloatSig, "bias_accy",lineT, valid);
- printCSVValue(bias_accz, sensor_cfg_tempFloatSig, "bias_accz",lineT, valid);
- printCSVValue(tw, sensor_cfg_tempFloatSig, "tw",lineT, valid);
- printCSVValue(ta, sensor_cfg_tempFloatSig, "ta",lineT, valid);
- printCSVValue(fw, sensor_cfg_tempIntSig, "fw",lineT, valid);
- printCSVValue(fa, sensor_cfg_tempIntSig, "fa",lineT, valid);
+ printCsvValue(bias_gyrox, sensor_cfg_tempFloatSig, "bias_gyrox",lineT, valid);
+ printCsvValue(bias_gyroy, sensor_cfg_tempFloatSig, "bias_gyroy",lineT, valid);
+ printCsvValue(bias_gyroz, sensor_cfg_tempFloatSig, "bias_gyroz",lineT, valid);
+ printCsvValue(bias_accx, sensor_cfg_tempFloatSig, "bias_accx",lineT, valid);
+ printCsvValue(bias_accy, sensor_cfg_tempFloatSig, "bias_accy",lineT, valid);
+ printCsvValue(bias_accz, sensor_cfg_tempFloatSig, "bias_accz",lineT, valid);
+ printCsvValue(tw, sensor_cfg_tempFloatSig, "tw",lineT, valid);
+ printCsvValue(ta, sensor_cfg_tempFloatSig, "ta",lineT, valid);
+ printCsvValue(fw, sensor_cfg_tempIntSig, "fw",lineT, valid);
+ printCsvValue(fa, sensor_cfg_tempIntSig, "fa",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

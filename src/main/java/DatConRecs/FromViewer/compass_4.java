@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class compass_4 extends Record {
     protected boolean valid = false;
@@ -24,14 +24,14 @@ public class compass_4 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
-            magx = record.getShort(0);
-            magy = record.getShort(2);
-            magz = record.getShort(4);
-            mag_cnt = record.getUnsignedShort(6);
+            magx = _payload.getShort(0);
+            magy = _payload.getShort(2);
+            magz = _payload.getShort(4);
+            mag_cnt = _payload.getUnsignedShort(6);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -49,10 +49,10 @@ public class compass_4 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(magx, compassIntSig, "magx", lineT, valid);
-            printCSVValue(magy, compassIntSig, "magy", lineT, valid);
-            printCSVValue(magz, compassIntSig, "magz", lineT, valid);
-            printCSVValue(mag_cnt, compassIntSig, "mag_cnt", lineT, valid);
+            printCsvValue(magx, compassIntSig, "magx", lineT, valid);
+            printCsvValue(magy, compassIntSig, "magy", lineT, valid);
+            printCsvValue(magz, compassIntSig, "magz", lineT, valid);
+            printCsvValue(mag_cnt, compassIntSig, "mag_cnt", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

@@ -2,9 +2,9 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.BattInfo;
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class BattInfo_38_1710 extends BattInfo {
     protected boolean valid = false;
@@ -40,24 +40,24 @@ public class BattInfo_38_1710 extends BattInfo {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
-            this.valid = true;
-            Vol = record.getFloat(0);
-            Current = (float) (((float) (record.getFloat(4))) / 1000.0);
-            R_time = record.getUnsignedShort(8);
-            CellVol = (float) (((float) (record.getUnsignedShort(10)))
+            valid = true;
+            Vol = _payload.getFloat(0);
+            Current = (float) (((float) (_payload.getFloat(4))) / 1000.0);
+            R_time = _payload.getUnsignedShort(8);
+            CellVol = (float) (((float) (_payload.getUnsignedShort(10)))
                     / 1000.0);
-            LowVolThreshold = record.getFloat(12);
-            BatVol = (float) (((float) (record.getInt(16))) / 1000.0);
-            BatCurrent = -(float) (((float) (record.getInt(20))) / 1000.0);
-            BatCap = record.getUnsignedShort(24);
-            CapPercnt = record.getUnsignedByte(26);
-            BatTemp = (float) (((float) (record.getShort(27))) / 10.0);
-            BatAuth = record.getUnsignedByte(29);
-            BatDataCnt = record.getUnsignedInt(30);
-            FullCap = record.getUnsignedInt(34);
+            LowVolThreshold = _payload.getFloat(12);
+            BatVol = (float) (((float) (_payload.getInt(16))) / 1000.0);
+            BatCurrent = -(float) (((float) (_payload.getInt(20))) / 1000.0);
+            BatCap = _payload.getUnsignedShort(24);
+            CapPercnt = _payload.getUnsignedByte(26);
+            BatTemp = (float) (((float) (_payload.getShort(27))) / 10.0);
+            BatAuth = _payload.getUnsignedByte(29);
+            BatDataCnt = _payload.getUnsignedInt(30);
+            FullCap = _payload.getUnsignedInt(34);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -66,23 +66,23 @@ public class BattInfo_38_1710 extends BattInfo {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(Vol, batteryInfoFloatSig, "Vol", lineT, valid);
-            printCSVValue(Current, currentSig, "Current", lineT, valid);
-            printCSVValue(R_time, battInfoRemainTimeSig, "remainingTime", lineT,
+            printCsvValue(Vol, battery_infoFloatSig, "Vol", lineT, valid);
+            printCsvValue(Current, currentSig, "Current", lineT, valid);
+            printCsvValue(R_time, battInfoRemainTimeSig, "remainingTime", lineT,
                     valid);
-            printCSVValue(CellVol, cellVoltSig, "CellVol", lineT, valid);
-            printCSVValue(LowVolThreshold, batteryInfoFloatSig,
+            printCsvValue(CellVol, cellVoltSig, "CellVol", lineT, valid);
+            printCsvValue(LowVolThreshold, battery_infoFloatSig,
                     "LowVolThreshold", lineT, valid);
-            printCSVValue(BatVol, battVoltSig, "BatVol", lineT, valid);
-            printCSVValue(BatCurrent, currentSig, "BatCurrent", lineT, valid);
-            printCSVValue(BatCap, batteryCap, "FullChargeCap", lineT, valid);
-            printCSVValue(CapPercnt, batteryCapPercent, "Remaining%", lineT,
+            printCsvValue(BatVol, BattVoltSig, "BatVol", lineT, valid);
+            printCsvValue(BatCurrent, currentSig, "BatCurrent", lineT, valid);
+            printCsvValue(BatCap, batteryCap, "FullChargeCap", lineT, valid);
+            printCsvValue(CapPercnt, batteryCapPrcnt, "Remaining%", lineT,
                     valid);
-            printCSVValue(BatTemp, batteryTempSig, "BatTemp", lineT, valid);
+            printCsvValue(BatTemp, batteryTempSig, "BatTemp", lineT, valid);
             //printCsvValue(BatAuth, battery_infoIntSig, "BatAuth", lineT, valid);
-            printCSVValue(BatDataCnt, batteryInfoIntSig, "BatDataCnt", lineT,
+            printCsvValue(BatDataCnt, battery_infoIntSig, "BatDataCnt", lineT,
                     valid);
-            printCSVValue(FullCap, batteryCap, "OriginalCap", lineT, valid);
+            printCsvValue(FullCap, batteryCap, "OriginalCap", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

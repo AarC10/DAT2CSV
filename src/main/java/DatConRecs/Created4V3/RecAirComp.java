@@ -2,13 +2,13 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import DatConRecs.Record;
 import DatConRecs.RecIMU;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import DatConRecs.Record;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class RecAirComp extends Record {
     protected boolean valid = false;
@@ -58,8 +58,8 @@ public class RecAirComp extends Record {
         super(convertDat, id, length);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
     }
 
     double gX = 0.0;
@@ -106,19 +106,19 @@ public class RecAirComp extends Record {
 
     protected void printWindComps(lineType lineT) {
         try {
-            printCSVValue(Math.toDegrees(yawRadians), experimentalSig,
+            printCsvValue(Math.toDegrees(yawRadians), experimentalSig,
                     "yawDegrees", lineT, valid);
-            printCSVValue(Math.toDegrees(alpha), experimentalSig,
+            printCsvValue(Math.toDegrees(alpha), experimentalSig,
                     "alphaDegrees", lineT, valid);
-            printCSVValue(theta, experimentalSig, "theta", lineT, valid);
-            printCSVValue(Vh, experimentalSig, "Vh", lineT, valid);
-            printCSVValue(gX, experimentalSig, "gX", lineT, valid);
-            printCSVValue(gY, experimentalSig, "gY", lineT, valid);
-            printCSVValue(wX, experimentalSig, "wX", lineT, valid);
-            printCSVValue(wY, experimentalSig, "wY", lineT, valid);
-            printCSVValue(windHeading, windHeadingSig, "", lineT, valid);
-            printCSVValue(windMag, windMagSig, "", lineT, valid);
-            printCSVValue(windMag2, windMagSig, "2", lineT, valid);
+            printCsvValue(theta, experimentalSig, "theta", lineT, valid);
+            printCsvValue(Vh, experimentalSig, "Vh", lineT, valid);
+            printCsvValue(gX, experimentalSig, "gX", lineT, valid);
+            printCsvValue(gY, experimentalSig, "gY", lineT, valid);
+            printCsvValue(wX, experimentalSig, "wX", lineT, valid);
+            printCsvValue(wY, experimentalSig, "wY", lineT, valid);
+            printCsvValue(windHeading, windHeadingSig, "", lineT, valid);
+            printCsvValue(windMag, windMagSig, "", lineT, valid);
+            printCsvValue(windMag2, windMagSig, "2", lineT, valid);
         } catch (Exception e) {
             DatConLog.Exception(e);
         }

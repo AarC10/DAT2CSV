@@ -20,10 +20,10 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.AxesAndSigs;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class HomePoint24_13 extends Record {
 
@@ -41,8 +41,8 @@ public class HomePoint24_13 extends Record {
         super(convertDat, 13, 24);
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             double longRad = payloadBB.getDouble(0);
             double latRad = payloadBB.getDouble(8);
@@ -82,11 +82,11 @@ public class HomePoint24_13 extends Record {
     @Override
     public void printCols(lineType lineT) {
         try {
-            printCSVValue(convertDat.getHPLongDeg(), AxesAndSigs.hpLongitudeSig,
+            printCsvValue(convertDat.getHPLongDeg(), AxesAndSigs.hpLongitudeSig,
                     "", lineT, valid);
-            printCSVValue(convertDat.getHPLatDeg(), AxesAndSigs.hpLatitudeSig,
+            printCsvValue(convertDat.getHPLatDeg(), AxesAndSigs.hpLatitudeSig,
                     "", lineT, valid);
-            printCSVValue(rthHeight, AxesAndSigs.rthHeightSig, "", lineT,
+            printCsvValue(rthHeight, AxesAndSigs.rthHeightSig, "", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

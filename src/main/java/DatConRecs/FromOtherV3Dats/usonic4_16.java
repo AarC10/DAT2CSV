@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class usonic4_16 extends Record {
     protected boolean valid = false;
@@ -22,14 +22,14 @@ public class usonic4_16 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
 
-            usonic_h = (float) (((float) (record.getShort(0))) / 1000.0);
-            usonic_flag = record.getUnsignedByte(2);
-            usonic_cnt = record.getUnsignedByte(3);
+            usonic_h = (float) (((float) (_payload.getShort(0))) / 1000.0);
+            usonic_flag = _payload.getUnsignedByte(2);
+            usonic_cnt = _payload.getUnsignedByte(3);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -47,7 +47,7 @@ public class usonic4_16 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(usonic_h, usonicFloatSig, "usonic_h", lineT,
+            printCsvValue(usonic_h, usonicFloatSig, "usonic_h", lineT,
                     (usonic_flag > 0));
             //            printCsvValue(usonic_flag, usonicIntSig, "usonic_flag", lineT,
             //                    valid);

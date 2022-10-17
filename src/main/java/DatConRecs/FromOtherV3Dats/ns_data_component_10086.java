@@ -1,12 +1,12 @@
 package DatConRecs.FromOtherV3Dats;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 public class ns_data_component_10086 extends Record {
     protected boolean valid = false;
@@ -18,11 +18,11 @@ public class ns_data_component_10086 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
-            ns_cmpnt = record.getUnsignedInt(0);
+            ns_cmpnt = _payload.getUnsignedInt(0);
         } catch (Exception e) {
             RecordException(e);
         }
@@ -40,7 +40,7 @@ public class ns_data_component_10086 extends Record {
     public void printCols(lineType lineT) {
         try {
 
-            printCSVValue(ns_cmpnt, ns_data_componentIntSig, "ns_cmpnt", lineT,
+            printCsvValue(ns_cmpnt, ns_data_componentIntSig, "ns_cmpnt", lineT,
                     valid);
         } catch (Exception e) {
             DatConLog.Exception(e);

@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class imu_raw_92 extends Record {
@@ -32,26 +33,26 @@ protected short xxbaro_temp = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- gyro_x_used = record.getShort(0);
- gyro_y_used = record.getShort(2);
- gyro_z_used = record.getShort(4);
- acc_x_used = record.getShort(6);
- acc_y_used = record.getShort(8);
- acc_z_used = record.getShort(10);
- gyro_x_unused = record.getShort(12);
- gyro_y_unused = record.getShort(14);
- gyro_z_unused = record.getShort(16);
- acc_x_unused = record.getShort(18);
- acc_y_unused = record.getShort(20);
- acc_z_unused = record.getShort(22);
- xxxxcnt = record.getShort(24);
- xxbaro = record.getShort(26);
- xxbaro_temp = record.getShort(28);
+ gyro_x_used = _payload.getShort(0);
+ gyro_y_used = _payload.getShort(2);
+ gyro_z_used = _payload.getShort(4);
+ acc_x_used = _payload.getShort(6);
+ acc_y_used = _payload.getShort(8);
+ acc_z_used = _payload.getShort(10);
+ gyro_x_unused = _payload.getShort(12);
+ gyro_y_unused = _payload.getShort(14);
+ gyro_z_unused = _payload.getShort(16);
+ acc_x_unused = _payload.getShort(18);
+ acc_y_unused = _payload.getShort(20);
+ acc_z_unused = _payload.getShort(22);
+ xxxxcnt = _payload.getShort(24);
+ xxbaro = _payload.getShort(26);
+ xxbaro_temp = _payload.getShort(28);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -65,21 +66,21 @@ protected short xxbaro_temp = (short)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(gyro_x_used, imu_rawIntSig, "gyro_x_used",lineT, valid);
- printCSVValue(gyro_y_used, imu_rawIntSig, "gyro_y_used",lineT, valid);
- printCSVValue(gyro_z_used, imu_rawIntSig, "gyro_z_used",lineT, valid);
- printCSVValue(acc_x_used, imu_rawIntSig, "acc_x_used",lineT, valid);
- printCSVValue(acc_y_used, imu_rawIntSig, "acc_y_used",lineT, valid);
- printCSVValue(acc_z_used, imu_rawIntSig, "acc_z_used",lineT, valid);
- printCSVValue(gyro_x_unused, imu_rawIntSig, "gyro_x_unused",lineT, valid);
- printCSVValue(gyro_y_unused, imu_rawIntSig, "gyro_y_unused",lineT, valid);
- printCSVValue(gyro_z_unused, imu_rawIntSig, "gyro_z_unused",lineT, valid);
- printCSVValue(acc_x_unused, imu_rawIntSig, "acc_x_unused",lineT, valid);
- printCSVValue(acc_y_unused, imu_rawIntSig, "acc_y_unused",lineT, valid);
- printCSVValue(acc_z_unused, imu_rawIntSig, "acc_z_unused",lineT, valid);
- printCSVValue(xxxxcnt, imu_rawIntSig, "xxxxcnt",lineT, valid);
- printCSVValue(xxbaro, imu_rawIntSig, "xxbaro",lineT, valid);
- printCSVValue(xxbaro_temp, imu_rawIntSig, "xxbaro_temp",lineT, valid);
+ printCsvValue(gyro_x_used, imu_rawIntSig, "gyro_x_used",lineT, valid);
+ printCsvValue(gyro_y_used, imu_rawIntSig, "gyro_y_used",lineT, valid);
+ printCsvValue(gyro_z_used, imu_rawIntSig, "gyro_z_used",lineT, valid);
+ printCsvValue(acc_x_used, imu_rawIntSig, "acc_x_used",lineT, valid);
+ printCsvValue(acc_y_used, imu_rawIntSig, "acc_y_used",lineT, valid);
+ printCsvValue(acc_z_used, imu_rawIntSig, "acc_z_used",lineT, valid);
+ printCsvValue(gyro_x_unused, imu_rawIntSig, "gyro_x_unused",lineT, valid);
+ printCsvValue(gyro_y_unused, imu_rawIntSig, "gyro_y_unused",lineT, valid);
+ printCsvValue(gyro_z_unused, imu_rawIntSig, "gyro_z_unused",lineT, valid);
+ printCsvValue(acc_x_unused, imu_rawIntSig, "acc_x_unused",lineT, valid);
+ printCsvValue(acc_y_unused, imu_rawIntSig, "acc_y_unused",lineT, valid);
+ printCsvValue(acc_z_unused, imu_rawIntSig, "acc_z_unused",lineT, valid);
+ printCsvValue(xxxxcnt, imu_rawIntSig, "xxxxcnt",lineT, valid);
+ printCsvValue(xxbaro, imu_rawIntSig, "xxbaro",lineT, valid);
+ printCsvValue(xxbaro_temp, imu_rawIntSig, "xxbaro_temp",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

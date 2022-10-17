@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class fdi_26 extends Record {
@@ -23,17 +24,17 @@ protected float gyroz_bias_raw = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- ns_abnormal_all = record.getUnsignedInt(0);
- history_ns_abnormal_all = record.getUnsignedInt(4);
-gyro_bias_raw_flag = record.getUnsignedByte(8);
- gyrox_bias_raw = record.getFloat(9);
- gyroy_bias_raw = record.getFloat(13);
- gyroz_bias_raw = record.getFloat(17);
+ ns_abnormal_all = _payload.getUnsignedInt(0);
+ history_ns_abnormal_all = _payload.getUnsignedInt(4);
+gyro_bias_raw_flag = _payload.getUnsignedByte(8);
+ gyrox_bias_raw = _payload.getFloat(9);
+ gyroy_bias_raw = _payload.getFloat(13);
+ gyroz_bias_raw = _payload.getFloat(17);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -47,12 +48,12 @@ gyro_bias_raw_flag = record.getUnsignedByte(8);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(ns_abnormal_all, fdiIntSig, "ns_abnormal_all",lineT, valid);
- printCSVValue(history_ns_abnormal_all, fdiIntSig, "history_ns_abnormal_all",lineT, valid);
- printCSVValue(gyro_bias_raw_flag, fdiIntSig, "gyro_bias_raw_flag",lineT, valid);
- printCSVValue(gyrox_bias_raw, fdiFloatSig, "gyrox_bias_raw",lineT, valid);
- printCSVValue(gyroy_bias_raw, fdiFloatSig, "gyroy_bias_raw",lineT, valid);
- printCSVValue(gyroz_bias_raw, fdiFloatSig, "gyroz_bias_raw",lineT, valid);
+ printCsvValue(ns_abnormal_all, fdiIntSig, "ns_abnormal_all",lineT, valid);
+ printCsvValue(history_ns_abnormal_all, fdiIntSig, "history_ns_abnormal_all",lineT, valid);
+ printCsvValue(gyro_bias_raw_flag, fdiIntSig, "gyro_bias_raw_flag",lineT, valid);
+ printCsvValue(gyrox_bias_raw, fdiFloatSig, "gyrox_bias_raw",lineT, valid);
+ printCsvValue(gyroy_bias_raw, fdiFloatSig, "gyroy_bias_raw",lineT, valid);
+ printCsvValue(gyroz_bias_raw, fdiFloatSig, "gyroz_bias_raw",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

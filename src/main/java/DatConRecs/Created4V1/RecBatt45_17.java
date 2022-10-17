@@ -2,18 +2,17 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.RecBatt;
-import files.ConvertDat;
+import Files.ConvertDat;
 
 public class RecBatt45_17 extends RecBatt {
-    public double ratedCapacity = 0.0;
 
     public RecBatt45_17(ConvertDat convertDat) {
         super(convertDat, 17, 45, 0);
     }
 
-    protected double maxVolt(double... floatVolts) {
-        double retv = -Float.MAX_VALUE;
-        for (double volts : floatVolts) {
+    protected float maxVolt(float... floatVolts) {
+        float retv = -Float.MAX_VALUE;
+        for (float volts : floatVolts) {
             if (volts > retv) {
                 retv = volts;
             }
@@ -21,9 +20,9 @@ public class RecBatt45_17 extends RecBatt {
         return retv;
     }
 
-    protected double minVolt(double... floatVolts) {
-        double retv = Float.MAX_VALUE;
-        for (double volts : floatVolts) {
+    protected float minVolt(float... floatVolts) {
+        float retv = Float.MAX_VALUE;
+        for (float volts : floatVolts) {
             if (volts < retv) {
                 retv = volts;
             }
@@ -31,29 +30,35 @@ public class RecBatt45_17 extends RecBatt {
         return retv;
     }
 
+    //public float remainingCapacity = (float) 0.0;
 
-    @Override
-    public void process(Payload record) {
-        super.process(record);
+    public float ratedCapacity = (float) 0.0;
+
+    //public int capacityPercentage;
+
+    //protected int design_capacity = (int) 0;
+
+    public void process(Payload _payload) {
+        super.process(_payload);
         if (numSamples == 0) { // first time
             init();
         }
-
         valid = true;
         numSamples++;
-        fcc = record.getUnsignedShort(0);
-        ratedCapacity = payloadBB.getShort(2);
-        remcap = payloadBB.getShort(4);
-        totalVolts = payloadBB.getShort(6) / 1000.0;
-        crrnt = -record.getUnsignedShort(8) - 65536 / 1000.0;
+        fcc = _payload.getUnsignedShort(0);
+        ratedCapacity = (float) (((float) (payloadBB.getShort(2))));
+        remcap = (float) (((float) (payloadBB.getShort(4))));
+        totalVolts = (float) (((float) (payloadBB.getShort(6))) / 1000.0);
+        crrnt = -(float) (((float) (_payload.getUnsignedShort(8) - 65536))
+                / 1000.0);
         batteryPercent = payloadBB.get(11);
-        temp = payloadBB.get(12);
+        temp = (float) (((float) (payloadBB.get(12))));
         for (int i = 0; i < numCells; i++) {
             volt[i] = (float) (((float) (payloadBB.getShort(18 + (2 * i))))
                     / 1000.0);
         }
-        double voltMax = maxVolt(volt);
-        double voltMin = minVolt(volt);
+        float voltMax = maxVolt(volt);
+        float voltMin = minVolt(volt);
         voltDiff = voltMax - voltMin;
         processComputedBatt();
     }

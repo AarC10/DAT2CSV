@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class temp_cali_data_22 extends Record {
@@ -49,43 +50,43 @@ protected float _base_temp = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-_start_flag = record.getUnsignedByte(0);
- _state = record.getByte(1);;
-_cali_cnt = record.getUnsignedByte(2);
-_temp_ready = record.getUnsignedByte(3);
-_step = record.getUnsignedByte(4);
-_cali_type = record.getUnsignedByte(5);
- _tick = record.getUnsignedShort(6);
- _grav_acc_x = record.getByte(8);;
- _grav_acc_y = record.getByte(9);;
- _grav_acc_z = record.getByte(10);;
- _dst_cali_temp = record.getByte(11);;
- _dst_cali_temp_1 = record.getFloat(12);
- _temp_min = record.getFloat(16);
- _temp_max = record.getFloat(20);
-_temp_cali_status = record.getUnsignedByte(24);
-_base_cali_status = record.getUnsignedByte(25);
-_cfg_temp_cali_fw_version = record.getUnsignedByte(26);
-_cur_temp_cali_fw_version = record.getUnsignedByte(27);
- _temp_bw_x = record.getFloat(28);
- _temp_bw_y = record.getFloat(32);
- _temp_bw_z = record.getFloat(36);
- _temp_ba_x = record.getFloat(40);
- _temp_ba_y = record.getFloat(44);
- _temp_ba_z = record.getFloat(48);
- _temp_temp = record.getFloat(52);
- _base_bw_x = record.getFloat(56);
- _base_bw_y = record.getFloat(60);
- _base_bw_z = record.getFloat(64);
- _base_ba_x = record.getFloat(68);
- _base_ba_y = record.getFloat(72);
- _base_ba_z = record.getFloat(76);
- _base_temp = record.getFloat(80);
+_start_flag = _payload.getUnsignedByte(0);
+ _state = _payload.getByte(1);;
+_cali_cnt = _payload.getUnsignedByte(2);
+_temp_ready = _payload.getUnsignedByte(3);
+_step = _payload.getUnsignedByte(4);
+_cali_type = _payload.getUnsignedByte(5);
+ _tick = _payload.getUnsignedShort(6);
+ _grav_acc_x = _payload.getByte(8);;
+ _grav_acc_y = _payload.getByte(9);;
+ _grav_acc_z = _payload.getByte(10);;
+ _dst_cali_temp = _payload.getByte(11);;
+ _dst_cali_temp_1 = _payload.getFloat(12);
+ _temp_min = _payload.getFloat(16);
+ _temp_max = _payload.getFloat(20);
+_temp_cali_status = _payload.getUnsignedByte(24);
+_base_cali_status = _payload.getUnsignedByte(25);
+_cfg_temp_cali_fw_version = _payload.getUnsignedByte(26);
+_cur_temp_cali_fw_version = _payload.getUnsignedByte(27);
+ _temp_bw_x = _payload.getFloat(28);
+ _temp_bw_y = _payload.getFloat(32);
+ _temp_bw_z = _payload.getFloat(36);
+ _temp_ba_x = _payload.getFloat(40);
+ _temp_ba_y = _payload.getFloat(44);
+ _temp_ba_z = _payload.getFloat(48);
+ _temp_temp = _payload.getFloat(52);
+ _base_bw_x = _payload.getFloat(56);
+ _base_bw_y = _payload.getFloat(60);
+ _base_bw_z = _payload.getFloat(64);
+ _base_ba_x = _payload.getFloat(68);
+ _base_ba_y = _payload.getFloat(72);
+ _base_ba_z = _payload.getFloat(76);
+ _base_temp = _payload.getFloat(80);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -99,38 +100,38 @@ _cur_temp_cali_fw_version = record.getUnsignedByte(27);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(_start_flag, temp_cali_dataIntSig, "_start_flag",lineT, valid);
- printCSVValue(_state, temp_cali_dataIntSig, "_state",lineT, valid);
- printCSVValue(_cali_cnt, temp_cali_dataIntSig, "_cali_cnt",lineT, valid);
- printCSVValue(_temp_ready, temp_cali_dataIntSig, "_temp_ready",lineT, valid);
- printCSVValue(_step, temp_cali_dataIntSig, "_step",lineT, valid);
- printCSVValue(_cali_type, temp_cali_dataIntSig, "_cali_type",lineT, valid);
- printCSVValue(_tick, temp_cali_dataIntSig, "_tick",lineT, valid);
- printCSVValue(_grav_acc_x, temp_cali_dataIntSig, "_grav_acc_x",lineT, valid);
- printCSVValue(_grav_acc_y, temp_cali_dataIntSig, "_grav_acc_y",lineT, valid);
- printCSVValue(_grav_acc_z, temp_cali_dataIntSig, "_grav_acc_z",lineT, valid);
- printCSVValue(_dst_cali_temp, temp_cali_dataIntSig, "_dst_cali_temp",lineT, valid);
- printCSVValue(_dst_cali_temp_1, temp_cali_dataFloatSig, "_dst_cali_temp_1",lineT, valid);
- printCSVValue(_temp_min, temp_cali_dataFloatSig, "_temp_min",lineT, valid);
- printCSVValue(_temp_max, temp_cali_dataFloatSig, "_temp_max",lineT, valid);
- printCSVValue(_temp_cali_status, temp_cali_dataIntSig, "_temp_cali_status",lineT, valid);
- printCSVValue(_base_cali_status, temp_cali_dataIntSig, "_base_cali_status",lineT, valid);
- printCSVValue(_cfg_temp_cali_fw_version, temp_cali_dataIntSig, "_cfg_temp_cali_fw_version",lineT, valid);
- printCSVValue(_cur_temp_cali_fw_version, temp_cali_dataIntSig, "_cur_temp_cali_fw_version",lineT, valid);
- printCSVValue(_temp_bw_x, temp_cali_dataFloatSig, "_temp_bw_x",lineT, valid);
- printCSVValue(_temp_bw_y, temp_cali_dataFloatSig, "_temp_bw_y",lineT, valid);
- printCSVValue(_temp_bw_z, temp_cali_dataFloatSig, "_temp_bw_z",lineT, valid);
- printCSVValue(_temp_ba_x, temp_cali_dataFloatSig, "_temp_ba_x",lineT, valid);
- printCSVValue(_temp_ba_y, temp_cali_dataFloatSig, "_temp_ba_y",lineT, valid);
- printCSVValue(_temp_ba_z, temp_cali_dataFloatSig, "_temp_ba_z",lineT, valid);
- printCSVValue(_temp_temp, temp_cali_dataFloatSig, "_temp_temp",lineT, valid);
- printCSVValue(_base_bw_x, temp_cali_dataFloatSig, "_base_bw_x",lineT, valid);
- printCSVValue(_base_bw_y, temp_cali_dataFloatSig, "_base_bw_y",lineT, valid);
- printCSVValue(_base_bw_z, temp_cali_dataFloatSig, "_base_bw_z",lineT, valid);
- printCSVValue(_base_ba_x, temp_cali_dataFloatSig, "_base_ba_x",lineT, valid);
- printCSVValue(_base_ba_y, temp_cali_dataFloatSig, "_base_ba_y",lineT, valid);
- printCSVValue(_base_ba_z, temp_cali_dataFloatSig, "_base_ba_z",lineT, valid);
- printCSVValue(_base_temp, temp_cali_dataFloatSig, "_base_temp",lineT, valid);
+ printCsvValue(_start_flag, temp_cali_dataIntSig, "_start_flag",lineT, valid);
+ printCsvValue(_state, temp_cali_dataIntSig, "_state",lineT, valid);
+ printCsvValue(_cali_cnt, temp_cali_dataIntSig, "_cali_cnt",lineT, valid);
+ printCsvValue(_temp_ready, temp_cali_dataIntSig, "_temp_ready",lineT, valid);
+ printCsvValue(_step, temp_cali_dataIntSig, "_step",lineT, valid);
+ printCsvValue(_cali_type, temp_cali_dataIntSig, "_cali_type",lineT, valid);
+ printCsvValue(_tick, temp_cali_dataIntSig, "_tick",lineT, valid);
+ printCsvValue(_grav_acc_x, temp_cali_dataIntSig, "_grav_acc_x",lineT, valid);
+ printCsvValue(_grav_acc_y, temp_cali_dataIntSig, "_grav_acc_y",lineT, valid);
+ printCsvValue(_grav_acc_z, temp_cali_dataIntSig, "_grav_acc_z",lineT, valid);
+ printCsvValue(_dst_cali_temp, temp_cali_dataIntSig, "_dst_cali_temp",lineT, valid);
+ printCsvValue(_dst_cali_temp_1, temp_cali_dataFloatSig, "_dst_cali_temp_1",lineT, valid);
+ printCsvValue(_temp_min, temp_cali_dataFloatSig, "_temp_min",lineT, valid);
+ printCsvValue(_temp_max, temp_cali_dataFloatSig, "_temp_max",lineT, valid);
+ printCsvValue(_temp_cali_status, temp_cali_dataIntSig, "_temp_cali_status",lineT, valid);
+ printCsvValue(_base_cali_status, temp_cali_dataIntSig, "_base_cali_status",lineT, valid);
+ printCsvValue(_cfg_temp_cali_fw_version, temp_cali_dataIntSig, "_cfg_temp_cali_fw_version",lineT, valid);
+ printCsvValue(_cur_temp_cali_fw_version, temp_cali_dataIntSig, "_cur_temp_cali_fw_version",lineT, valid);
+ printCsvValue(_temp_bw_x, temp_cali_dataFloatSig, "_temp_bw_x",lineT, valid);
+ printCsvValue(_temp_bw_y, temp_cali_dataFloatSig, "_temp_bw_y",lineT, valid);
+ printCsvValue(_temp_bw_z, temp_cali_dataFloatSig, "_temp_bw_z",lineT, valid);
+ printCsvValue(_temp_ba_x, temp_cali_dataFloatSig, "_temp_ba_x",lineT, valid);
+ printCsvValue(_temp_ba_y, temp_cali_dataFloatSig, "_temp_ba_y",lineT, valid);
+ printCsvValue(_temp_ba_z, temp_cali_dataFloatSig, "_temp_ba_z",lineT, valid);
+ printCsvValue(_temp_temp, temp_cali_dataFloatSig, "_temp_temp",lineT, valid);
+ printCsvValue(_base_bw_x, temp_cali_dataFloatSig, "_base_bw_x",lineT, valid);
+ printCsvValue(_base_bw_y, temp_cali_dataFloatSig, "_base_bw_y",lineT, valid);
+ printCsvValue(_base_bw_z, temp_cali_dataFloatSig, "_base_bw_z",lineT, valid);
+ printCsvValue(_base_ba_x, temp_cali_dataFloatSig, "_base_ba_x",lineT, valid);
+ printCsvValue(_base_ba_y, temp_cali_dataFloatSig, "_base_ba_y",lineT, valid);
+ printCsvValue(_base_ba_z, temp_cali_dataFloatSig, "_base_ba_z",lineT, valid);
+ printCsvValue(_base_temp, temp_cali_dataFloatSig, "_base_temp",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class taskd_info_52745 extends Record {
@@ -20,14 +21,14 @@ protected int pending3 = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- period_jitter3 = record.getInt(0);
- exec_time3 = record.getUnsignedShort(4);
- pending3 = record.getUnsignedShort(6);
+ period_jitter3 = _payload.getInt(0);
+ exec_time3 = _payload.getUnsignedShort(4);
+ pending3 = _payload.getUnsignedShort(6);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -41,9 +42,9 @@ protected int pending3 = (int)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(period_jitter3, taskd_infoIntSig, "period_jitter3",lineT, valid);
- printCSVValue(exec_time3, taskd_infoIntSig, "exec_time3",lineT, valid);
- printCSVValue(pending3, taskd_infoIntSig, "pending3",lineT, valid);
+ printCsvValue(period_jitter3, taskd_infoIntSig, "period_jitter3",lineT, valid);
+ printCsvValue(exec_time3, taskd_infoIntSig, "exec_time3",lineT, valid);
+ printCsvValue(pending3, taskd_infoIntSig, "pending3",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

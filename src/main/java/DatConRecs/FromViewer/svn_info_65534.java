@@ -1,12 +1,12 @@
 package DatConRecs.FromViewer;
 
-import java.nio.ByteBuffer;
-
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+
+import java.nio.ByteBuffer;
 
 public class svn_info_65534 extends Record {
 
@@ -19,8 +19,8 @@ public class svn_info_65534 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
 
         } catch (Exception e) {

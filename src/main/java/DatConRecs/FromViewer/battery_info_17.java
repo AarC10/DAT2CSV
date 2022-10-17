@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class battery_info_17 extends Record {
@@ -39,33 +40,33 @@ protected int vol_main = (int)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- design_capacity = record.getUnsignedShort(0);
- full_charge_capacity = record.getUnsignedShort(2);
- remaining_capacity = record.getUnsignedShort(4);
- pack_voltage = record.getUnsignedShort(6);
- current = record.getShort(8);
-life_percentage = record.getUnsignedByte(10);
-capacity_percentage = record.getUnsignedByte(11);
- temperature = record.getShort(12);
- cycle_count = record.getUnsignedShort(14);
- serial_number = record.getUnsignedShort(16);
- cell1 = record.getUnsignedShort(18);
- cell2 = record.getUnsignedShort(20);
- cell3 = record.getUnsignedShort(22);
- cell4 = record.getUnsignedShort(24);
- cell5 = record.getUnsignedShort(26);
- cell6 = record.getUnsignedShort(28);
- average_current = record.getShort(30);
-right = record.getUnsignedByte(32);
- error_count = record.getUnsignedInt(33);
- n_discharge_times = record.getUnsignedInt(37);
- current_status = record.getUnsignedInt(41);
- vol_main = record.getUnsignedShort(45);
+ design_capacity = _payload.getUnsignedShort(0);
+ full_charge_capacity = _payload.getUnsignedShort(2);
+ remaining_capacity = _payload.getUnsignedShort(4);
+ pack_voltage = _payload.getUnsignedShort(6);
+ current = _payload.getShort(8);
+life_percentage = _payload.getUnsignedByte(10);
+capacity_percentage = _payload.getUnsignedByte(11);
+ temperature = _payload.getShort(12);
+ cycle_count = _payload.getUnsignedShort(14);
+ serial_number = _payload.getUnsignedShort(16);
+ cell1 = _payload.getUnsignedShort(18);
+ cell2 = _payload.getUnsignedShort(20);
+ cell3 = _payload.getUnsignedShort(22);
+ cell4 = _payload.getUnsignedShort(24);
+ cell5 = _payload.getUnsignedShort(26);
+ cell6 = _payload.getUnsignedShort(28);
+ average_current = _payload.getShort(30);
+right = _payload.getUnsignedByte(32);
+ error_count = _payload.getUnsignedInt(33);
+ n_discharge_times = _payload.getUnsignedInt(37);
+ current_status = _payload.getUnsignedInt(41);
+ vol_main = _payload.getUnsignedShort(45);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -79,28 +80,28 @@ right = record.getUnsignedByte(32);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(design_capacity, battery_infoIntSig, "design_capacity",lineT, valid);
- printCSVValue(full_charge_capacity, battery_infoIntSig, "full_charge_capacity",lineT, valid);
- printCSVValue(remaining_capacity, battery_infoIntSig, "remaining_capacity",lineT, valid);
- printCSVValue(pack_voltage, battery_infoIntSig, "pack_voltage",lineT, valid);
- printCSVValue(current, battery_infoIntSig, "current",lineT, valid);
- printCSVValue(life_percentage, battery_infoIntSig, "life_percentage",lineT, valid);
- printCSVValue(capacity_percentage, battery_infoIntSig, "capacity_percentage",lineT, valid);
- printCSVValue(temperature, battery_infoIntSig, "temperature",lineT, valid);
- printCSVValue(cycle_count, battery_infoIntSig, "cycle_count",lineT, valid);
- printCSVValue(serial_number, battery_infoIntSig, "serial_number",lineT, valid);
- printCSVValue(cell1, battery_infoIntSig, "cell1",lineT, valid);
- printCSVValue(cell2, battery_infoIntSig, "cell2",lineT, valid);
- printCSVValue(cell3, battery_infoIntSig, "cell3",lineT, valid);
- printCSVValue(cell4, battery_infoIntSig, "cell4",lineT, valid);
- printCSVValue(cell5, battery_infoIntSig, "cell5",lineT, valid);
- printCSVValue(cell6, battery_infoIntSig, "cell6",lineT, valid);
- printCSVValue(average_current, battery_infoIntSig, "average_current",lineT, valid);
- printCSVValue(right, battery_infoIntSig, "right",lineT, valid);
- printCSVValue(error_count, battery_infoIntSig, "error_count",lineT, valid);
- printCSVValue(n_discharge_times, battery_infoIntSig, "n_discharge_times",lineT, valid);
- printCSVValue(current_status, battery_infoIntSig, "current_status",lineT, valid);
- printCSVValue(vol_main, battery_infoIntSig, "vol_main",lineT, valid);
+ printCsvValue(design_capacity, battery_infoIntSig, "design_capacity",lineT, valid);
+ printCsvValue(full_charge_capacity, battery_infoIntSig, "full_charge_capacity",lineT, valid);
+ printCsvValue(remaining_capacity, battery_infoIntSig, "remaining_capacity",lineT, valid);
+ printCsvValue(pack_voltage, battery_infoIntSig, "pack_voltage",lineT, valid);
+ printCsvValue(current, battery_infoIntSig, "current",lineT, valid);
+ printCsvValue(life_percentage, battery_infoIntSig, "life_percentage",lineT, valid);
+ printCsvValue(capacity_percentage, battery_infoIntSig, "capacity_percentage",lineT, valid);
+ printCsvValue(temperature, battery_infoIntSig, "temperature",lineT, valid);
+ printCsvValue(cycle_count, battery_infoIntSig, "cycle_count",lineT, valid);
+ printCsvValue(serial_number, battery_infoIntSig, "serial_number",lineT, valid);
+ printCsvValue(cell1, battery_infoIntSig, "cell1",lineT, valid);
+ printCsvValue(cell2, battery_infoIntSig, "cell2",lineT, valid);
+ printCsvValue(cell3, battery_infoIntSig, "cell3",lineT, valid);
+ printCsvValue(cell4, battery_infoIntSig, "cell4",lineT, valid);
+ printCsvValue(cell5, battery_infoIntSig, "cell5",lineT, valid);
+ printCsvValue(cell6, battery_infoIntSig, "cell6",lineT, valid);
+ printCsvValue(average_current, battery_infoIntSig, "average_current",lineT, valid);
+ printCsvValue(right, battery_infoIntSig, "right",lineT, valid);
+ printCsvValue(error_count, battery_infoIntSig, "error_count",lineT, valid);
+ printCsvValue(n_discharge_times, battery_infoIntSig, "n_discharge_times",lineT, valid);
+ printCsvValue(current_status, battery_infoIntSig, "current_status",lineT, valid);
+ printCsvValue(vol_main, battery_infoIntSig, "vol_main",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

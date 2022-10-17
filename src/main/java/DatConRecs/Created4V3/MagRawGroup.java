@@ -2,12 +2,8 @@ package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Persist;
-import files.Signal;
-import files.Units;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class MagRawGroup extends Record {
 
@@ -30,8 +26,8 @@ public class MagRawGroup extends Record {
 
     protected Signal magRawSig = null;
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             magX = payloadBB.getShort(0);
             magY = payloadBB.getShort(2);
@@ -48,10 +44,10 @@ public class MagRawGroup extends Record {
             try {
                 float magMod = (int) Math
                         .sqrt(magX * magX + magY * magY + magZ * magZ);
-                printCSVValue(magX, magRawSig, "rawX", lineT, valid);
-                printCSVValue(magY, magRawSig, "rawY", lineT, valid);
-                printCSVValue(magZ, magRawSig, "rawZ", lineT, valid);
-                printCSVValue(magMod, magRawSig, "rawMod", lineT, valid);
+                printCsvValue(magX, magRawSig, "rawX", lineT, valid);
+                printCsvValue(magY, magRawSig, "rawY", lineT, valid);
+                printCsvValue(magZ, magRawSig, "rawZ", lineT, valid);
+                printCsvValue(magMod, magRawSig, "rawMod", lineT, valid);
                 //            printCsvValue(magYaw, AxesAndSigs.magYawSig, "(" + index + ")",
                 //                    lineT, valid);
             } catch (Exception e) {

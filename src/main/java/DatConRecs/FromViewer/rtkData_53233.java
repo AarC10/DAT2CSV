@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class rtkData_53233 extends Record {
@@ -33,27 +34,27 @@ protected long cntRTK = (long)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- Lat = record.getInt(0);
- Lon = record.getInt(4);
- Height = record.getInt(8);
- satNum = record.getUnsignedShort(12);
- posType = record.getUnsignedShort(14);
- reserve1 = record.getInt(16);
- reserve2 = record.getInt(20);
- reserve3 = record.getInt(24);
- reserve4 = record.getInt(28);
- reserve5 = record.getInt(32);
- reserve6 = record.getInt(36);
- reserve7 = record.getInt(40);
- reserve8 = record.getInt(44);
- reserve9 = record.getInt(48);
- reserve10 = record.getInt(52);
- cntRTK = record.getUnsignedInt(56);
+ Lat = _payload.getInt(0);
+ Lon = _payload.getInt(4);
+ Height = _payload.getInt(8);
+ satNum = _payload.getUnsignedShort(12);
+ posType = _payload.getUnsignedShort(14);
+ reserve1 = _payload.getInt(16);
+ reserve2 = _payload.getInt(20);
+ reserve3 = _payload.getInt(24);
+ reserve4 = _payload.getInt(28);
+ reserve5 = _payload.getInt(32);
+ reserve6 = _payload.getInt(36);
+ reserve7 = _payload.getInt(40);
+ reserve8 = _payload.getInt(44);
+ reserve9 = _payload.getInt(48);
+ reserve10 = _payload.getInt(52);
+ cntRTK = _payload.getUnsignedInt(56);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -67,22 +68,22 @@ protected long cntRTK = (long)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(Lat, rtkDataIntSig, "Lat",lineT, valid);
- printCSVValue(Lon, rtkDataIntSig, "Lon",lineT, valid);
- printCSVValue(Height, rtkDataIntSig, "Height",lineT, valid);
- printCSVValue(satNum, rtkDataIntSig, "satNum",lineT, valid);
- printCSVValue(posType, rtkDataIntSig, "posType",lineT, valid);
- printCSVValue(reserve1, rtkDataIntSig, "reserve1",lineT, valid);
- printCSVValue(reserve2, rtkDataIntSig, "reserve2",lineT, valid);
- printCSVValue(reserve3, rtkDataIntSig, "reserve3",lineT, valid);
- printCSVValue(reserve4, rtkDataIntSig, "reserve4",lineT, valid);
- printCSVValue(reserve5, rtkDataIntSig, "reserve5",lineT, valid);
- printCSVValue(reserve6, rtkDataIntSig, "reserve6",lineT, valid);
- printCSVValue(reserve7, rtkDataIntSig, "reserve7",lineT, valid);
- printCSVValue(reserve8, rtkDataIntSig, "reserve8",lineT, valid);
- printCSVValue(reserve9, rtkDataIntSig, "reserve9",lineT, valid);
- printCSVValue(reserve10, rtkDataIntSig, "reserve10",lineT, valid);
- printCSVValue(cntRTK, rtkDataIntSig, "cntRTK",lineT, valid);
+ printCsvValue(Lat, rtkDataIntSig, "Lat",lineT, valid);
+ printCsvValue(Lon, rtkDataIntSig, "Lon",lineT, valid);
+ printCsvValue(Height, rtkDataIntSig, "Height",lineT, valid);
+ printCsvValue(satNum, rtkDataIntSig, "satNum",lineT, valid);
+ printCsvValue(posType, rtkDataIntSig, "posType",lineT, valid);
+ printCsvValue(reserve1, rtkDataIntSig, "reserve1",lineT, valid);
+ printCsvValue(reserve2, rtkDataIntSig, "reserve2",lineT, valid);
+ printCsvValue(reserve3, rtkDataIntSig, "reserve3",lineT, valid);
+ printCsvValue(reserve4, rtkDataIntSig, "reserve4",lineT, valid);
+ printCsvValue(reserve5, rtkDataIntSig, "reserve5",lineT, valid);
+ printCsvValue(reserve6, rtkDataIntSig, "reserve6",lineT, valid);
+ printCsvValue(reserve7, rtkDataIntSig, "reserve7",lineT, valid);
+ printCsvValue(reserve8, rtkDataIntSig, "reserve8",lineT, valid);
+ printCsvValue(reserve9, rtkDataIntSig, "reserve9",lineT, valid);
+ printCsvValue(reserve10, rtkDataIntSig, "reserve10",lineT, valid);
+ printCsvValue(cntRTK, rtkDataIntSig, "cntRTK",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

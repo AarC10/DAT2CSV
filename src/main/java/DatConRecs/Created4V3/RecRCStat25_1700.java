@@ -1,9 +1,9 @@
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 public class RecRCStat25_1700 extends RCStatus {
     protected boolean valid = false;
@@ -17,12 +17,12 @@ public class RecRCStat25_1700 extends RCStatus {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             statusValid = true;
             //cur_cmd = _payload.getUnsignedShort(0);
-            fail_safe = record.getUnsignedByte(2);
+            fail_safe = _payload.getUnsignedByte(2);
             //vedio_lost = _payload.getUnsignedByte(3);
             data_lost = ((payloadBB.get(4) == 1) ? "lost" : "");
             app_lost = ((payloadBB.get(5) == 1) ? "lost" : "");
@@ -40,7 +40,7 @@ public class RecRCStat25_1700 extends RCStatus {
     public void printCols(lineType lineT) {
         super.printCols(lineT);
         try {
-            printCSVValue(connected, RCStateSig, "connected", lineT,
+            printCsvValue(connected, RCStateSig, "connected", lineT,
                     statusValid);
         } catch (Exception e) {
             DatConLog.Exception(e);

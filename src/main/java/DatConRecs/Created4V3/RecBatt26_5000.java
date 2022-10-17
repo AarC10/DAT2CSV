@@ -19,10 +19,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package DatConRecs.Created4V3;
 
 import DatConRecs.Payload;
-import DatConRecs.RecBatt;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
 
 // 50 HZ
 //length 47
@@ -49,8 +48,8 @@ public class RecBatt26_5000 extends RecBatt {
 
     private int status4 = 0;
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             if (numSamples == 0) { // first time
                 init();
@@ -73,8 +72,8 @@ public class RecBatt26_5000 extends RecBatt {
                 volt[i] = (float) (((float) (payloadBB.getShort(18 + (2 * i))))
                         / 1000.0);
             }
-            double voltMax = maxVolt(volt);
-            double voltMin = minVolt(volt);
+            float voltMax = maxVolt(volt);
+            float voltMin = minVolt(volt);
             voltDiff = voltMax - voltMin;
             processComputedBatt();
         } catch (Exception e) {
@@ -115,10 +114,10 @@ public class RecBatt26_5000 extends RecBatt {
             //            printCsvValue(fcc, batteryFCC, "", lineT, valid);
             //            printCsvValue(remcap, batteryRemCap, "", lineT, valid);
             //            printCsvValue(temp, batteryTempSig, "", lineT, valid);
-            printCSVValue(status1, statusSig, "status1", lineT, true);
-            printCSVValue(status2, statusSig, "status2", lineT, true);
-            printCSVValue(status3, statusSig, "status3", lineT, true);
-            printCSVValue(status4, statusSig, "status4", lineT, true);
+            printCsvValue(status1, statusSig, "status1", lineT, true);
+            printCsvValue(status2, statusSig, "status2", lineT, true);
+            printCsvValue(status3, statusSig, "status3", lineT, true);
+            printCsvValue(status4, statusSig, "status4", lineT, true);
          
         } catch (Exception e) {
             DatConLog.Exception(e);

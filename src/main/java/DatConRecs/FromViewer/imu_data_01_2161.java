@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class imu_data_01_2161 extends Record {
@@ -29,23 +30,23 @@ protected float imu_Ref_01 = (float)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
- imu_gyro_tempX_01 = record.getFloat(0);
- imu_gyro_tempY_01 = record.getFloat(4);
- imu_gyro_tempZ_01 = record.getFloat(8);
- imu_gyro_x_01 = record.getFloat(12);
- imu_gyro_y_01 = record.getFloat(16);
- imu_gyro_z_01 = record.getFloat(20);
- imu_acc_x_01 = record.getFloat(24);
- imu_acc_y_01 = record.getFloat(28);
- imu_acc_z_01 = record.getFloat(32);
- imu_airpress_01 = record.getFloat(36);
- imu_Vin_01 = record.getFloat(40);
- imu_Ref_01 = record.getFloat(44);
+ imu_gyro_tempX_01 = _payload.getFloat(0);
+ imu_gyro_tempY_01 = _payload.getFloat(4);
+ imu_gyro_tempZ_01 = _payload.getFloat(8);
+ imu_gyro_x_01 = _payload.getFloat(12);
+ imu_gyro_y_01 = _payload.getFloat(16);
+ imu_gyro_z_01 = _payload.getFloat(20);
+ imu_acc_x_01 = _payload.getFloat(24);
+ imu_acc_y_01 = _payload.getFloat(28);
+ imu_acc_z_01 = _payload.getFloat(32);
+ imu_airpress_01 = _payload.getFloat(36);
+ imu_Vin_01 = _payload.getFloat(40);
+ imu_Ref_01 = _payload.getFloat(44);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -59,18 +60,18 @@ protected float imu_Ref_01 = (float)0;
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(imu_gyro_tempX_01, imu_data_01FloatSig, "imu_gyro_tempX_01",lineT, valid);
- printCSVValue(imu_gyro_tempY_01, imu_data_01FloatSig, "imu_gyro_tempY_01",lineT, valid);
- printCSVValue(imu_gyro_tempZ_01, imu_data_01FloatSig, "imu_gyro_tempZ_01",lineT, valid);
- printCSVValue(imu_gyro_x_01, imu_data_01FloatSig, "imu_gyro_x_01",lineT, valid);
- printCSVValue(imu_gyro_y_01, imu_data_01FloatSig, "imu_gyro_y_01",lineT, valid);
- printCSVValue(imu_gyro_z_01, imu_data_01FloatSig, "imu_gyro_z_01",lineT, valid);
- printCSVValue(imu_acc_x_01, imu_data_01FloatSig, "imu_acc_x_01",lineT, valid);
- printCSVValue(imu_acc_y_01, imu_data_01FloatSig, "imu_acc_y_01",lineT, valid);
- printCSVValue(imu_acc_z_01, imu_data_01FloatSig, "imu_acc_z_01",lineT, valid);
- printCSVValue(imu_airpress_01, imu_data_01FloatSig, "imu_airpress_01",lineT, valid);
- printCSVValue(imu_Vin_01, imu_data_01FloatSig, "imu_Vin_01",lineT, valid);
- printCSVValue(imu_Ref_01, imu_data_01FloatSig, "imu_Ref_01",lineT, valid);
+ printCsvValue(imu_gyro_tempX_01, imu_data_01FloatSig, "imu_gyro_tempX_01",lineT, valid);
+ printCsvValue(imu_gyro_tempY_01, imu_data_01FloatSig, "imu_gyro_tempY_01",lineT, valid);
+ printCsvValue(imu_gyro_tempZ_01, imu_data_01FloatSig, "imu_gyro_tempZ_01",lineT, valid);
+ printCsvValue(imu_gyro_x_01, imu_data_01FloatSig, "imu_gyro_x_01",lineT, valid);
+ printCsvValue(imu_gyro_y_01, imu_data_01FloatSig, "imu_gyro_y_01",lineT, valid);
+ printCsvValue(imu_gyro_z_01, imu_data_01FloatSig, "imu_gyro_z_01",lineT, valid);
+ printCsvValue(imu_acc_x_01, imu_data_01FloatSig, "imu_acc_x_01",lineT, valid);
+ printCsvValue(imu_acc_y_01, imu_data_01FloatSig, "imu_acc_y_01",lineT, valid);
+ printCsvValue(imu_acc_z_01, imu_data_01FloatSig, "imu_acc_z_01",lineT, valid);
+ printCsvValue(imu_airpress_01, imu_data_01FloatSig, "imu_airpress_01",lineT, valid);
+ printCsvValue(imu_Vin_01, imu_data_01FloatSig, "imu_Vin_01",lineT, valid);
+ printCsvValue(imu_Ref_01, imu_data_01FloatSig, "imu_Ref_01",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

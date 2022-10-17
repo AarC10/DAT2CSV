@@ -1,11 +1,12 @@
 package DatConRecs.FromViewer;
-import DatConRecs.*;
+
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Signal;
+import Files.Units;
 
 
 public class special_cmd_23 extends Record {
@@ -26,20 +27,20 @@ protected short byte7 = (short)0;
        }
 
 @Override
-  public void process(Payload record) {
-      super.process(record);
+  public void process(Payload _payload) {
+      super.process(_payload);
         try {
       valid = true;
 
-byte1 = record.getUnsignedByte(0);
-byte2 = record.getUnsignedByte(1);
- word1 = record.getUnsignedShort(2);
-byte3 = record.getUnsignedByte(4);
-ctrl_action = record.getUnsignedByte(5);
-byte4 = record.getUnsignedByte(6);
-byte5 = record.getUnsignedByte(7);
-byte6 = record.getUnsignedByte(8);
-byte7 = record.getUnsignedByte(9);
+byte1 = _payload.getUnsignedByte(0);
+byte2 = _payload.getUnsignedByte(1);
+ word1 = _payload.getUnsignedShort(2);
+byte3 = _payload.getUnsignedByte(4);
+ctrl_action = _payload.getUnsignedByte(5);
+byte4 = _payload.getUnsignedByte(6);
+byte5 = _payload.getUnsignedByte(7);
+byte6 = _payload.getUnsignedByte(8);
+byte7 = _payload.getUnsignedByte(9);
 } catch (Exception e) {RecordException(e);}}
 
 
@@ -53,15 +54,15 @@ byte7 = record.getUnsignedByte(9);
    public void printCols(lineType lineT) {
 try {
 
- printCSVValue(byte1, special_cmdIntSig, "byte1",lineT, valid);
- printCSVValue(byte2, special_cmdIntSig, "byte2",lineT, valid);
- printCSVValue(word1, special_cmdIntSig, "word1",lineT, valid);
- printCSVValue(byte3, special_cmdIntSig, "byte3",lineT, valid);
- printCSVValue(ctrl_action, special_cmdIntSig, "ctrl_action",lineT, valid);
- printCSVValue(byte4, special_cmdIntSig, "byte4",lineT, valid);
- printCSVValue(byte5, special_cmdIntSig, "byte5",lineT, valid);
- printCSVValue(byte6, special_cmdIntSig, "byte6",lineT, valid);
- printCSVValue(byte7, special_cmdIntSig, "byte7",lineT, valid);
+ printCsvValue(byte1, special_cmdIntSig, "byte1",lineT, valid);
+ printCsvValue(byte2, special_cmdIntSig, "byte2",lineT, valid);
+ printCsvValue(word1, special_cmdIntSig, "word1",lineT, valid);
+ printCsvValue(byte3, special_cmdIntSig, "byte3",lineT, valid);
+ printCsvValue(ctrl_action, special_cmdIntSig, "ctrl_action",lineT, valid);
+ printCsvValue(byte4, special_cmdIntSig, "byte4",lineT, valid);
+ printCsvValue(byte5, special_cmdIntSig, "byte5",lineT, valid);
+ printCsvValue(byte6, special_cmdIntSig, "byte6",lineT, valid);
+ printCsvValue(byte7, special_cmdIntSig, "byte7",lineT, valid);
  } catch (Exception e) {
 DatConLog.Exception(e);
 }

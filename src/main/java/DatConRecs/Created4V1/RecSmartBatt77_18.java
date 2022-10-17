@@ -2,12 +2,8 @@ package DatConRecs.Created4V1;
 
 import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.AxesAndSigs;
-import files.ConvertDat;
-import files.DatConLog;
-import files.Signal;
-import files.Units;
-import files.ConvertDat.lineType;
+import Files.*;
+import Files.ConvertDat.lineType;
 
 public class RecSmartBatt77_18 extends Record {
 
@@ -36,8 +32,8 @@ public class RecSmartBatt77_18 extends Record {
         current = this;
     }
 
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
             valid = true;
             batteryUsefulTime = payloadBB.getShort(0);
@@ -108,11 +104,11 @@ public class RecSmartBatt77_18 extends Record {
         try {
             String batStat = batStatString(batteryStatus);
             String batGHStat = batGHStatString(batteryGoHomeStatus);
-            printCSVValue(batStat, batteryStatusSig, "", lineT, valid);
-            printCSVValue(batGHStat, batteryGHStatusSig, "", lineT, valid);
-            printCSVValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT,
+            printCsvValue(batStat, batteryStatusSig, "", lineT, valid);
+            printCsvValue(batGHStat, batteryGHStatusSig, "", lineT, valid);
+            printCsvValue(goHomeBatt, AxesAndSigs.battGoHome, "", lineT,
                     validGHB);
-            printCSVValue(voltagePercent, voltagePercentSig, "", lineT,
+            printCsvValue(voltagePercent, voltagePercentSig, "", lineT,
                     validVP);
         } catch (Exception e) {
             DatConLog.Exception(e);

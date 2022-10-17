@@ -1,11 +1,11 @@
 package DatConRecs.FromViewer;
 
-import DatConRecs.*;
+import DatConRecs.Payload;
 import DatConRecs.Record;
-import files.ConvertDat;
-import files.ConvertDat.lineType;
-import files.DatConLog;
-import files.Persist;
+import Files.ConvertDat;
+import Files.ConvertDat.lineType;
+import Files.DatConLog;
+import Files.Persist;
 
 public class console_52719 extends Record {
     String text = "";
@@ -15,10 +15,10 @@ public class console_52719 extends Record {
     }
 
     @Override
-    public void process(Payload record) {
-        super.process(record);
+    public void process(Payload _payload) {
+        super.process(_payload);
         try {
-            String payloadString = record.getString();
+            String payloadString = _payload.getString();
             if (Persist.EXPERIMENTAL_DEV) {
                 System.out.println("console_52719 " + payloadString);
             }
