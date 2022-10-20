@@ -5,6 +5,7 @@ import Files.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Objects;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -19,7 +20,7 @@ public class DATConZipProcessor {
         ConvertDat convertDat = datFile.createConVertDat();
 
         String csvFilename = file.getAbsolutePath() + ".csv";
-        System.out.println("Writing :" + csvFilename);
+        System.out.println("Writing: " + csvFilename);
         convertDat.csvWriter = new CsvWriter(csvFilename);
         convertDat.createRecordParsers();
 
@@ -35,15 +36,13 @@ public class DATConZipProcessor {
         File zipFolder = new File(zipFolderLocation);
 
         try (ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream(zipFolder))) {
-
-
             for (File file : Objects.requireNonNull(datFolder.listFiles())) {
                 if (file.isFile() && file.getName().endsWith(".DAT")) {
                     processDATFile(file);
                     File convertedFile = new File(file.getAbsolutePath() + ".csv");
                     if (convertedFile.exists()) {
                         zipOutputStream.putNextEntry(new ZipEntry(convertedFile.getName()));
-                        zipOutputStream.write(convertedFile.getAbsolutePath().getBytes());
+                        Files.copy(convertedFile.toPath(), zipOutputStream);
                         zipOutputStream.closeEntry();
                     }
                 }
