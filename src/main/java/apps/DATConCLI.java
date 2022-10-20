@@ -10,7 +10,7 @@ public class DATConCLI {
 //        String datFilename = args[0];
 
         for (int i = 10; i < 32; i++) {
-           String datFilename = "/home/aaron/Downloads/djiDatData/FLY0" + i + ".DAT";
+            String datFilename = "/home/aaron/Downloads/djiDatData/FLY0" + i + ".DAT";
             System.out.println("Processing: " + datFilename);
             File file = new File(datFilename);
 
