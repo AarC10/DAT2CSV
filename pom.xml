@@ -24,7 +24,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>apps.DATConCLI</mainClass>
+                            <mainClass>apps.DATConZipProcessor</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
