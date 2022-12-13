@@ -32,22 +32,11 @@ public class DATConZipProcessor {
         String datFolderLocation = args[0];
         File datFolder = new File(datFolderLocation);
 
-        String zipFolderLocation = args[1];
-        File zipFolder = new File(zipFolderLocation);
 
-        try (ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream(zipFolder))) {
-            for (File file : Objects.requireNonNull(datFolder.listFiles())) {
-                if (file.isFile() && file.getName().endsWith(".DAT")) {
-                    processDATFile(file);
-                    File convertedFile = new File(file.getAbsolutePath() + ".csv");
-                    if (convertedFile.exists()) {
-                        zipOutputStream.putNextEntry(new ZipEntry(convertedFile.getName()));
-                        Files.copy(convertedFile.toPath(), zipOutputStream);
-                        zipOutputStream.closeEntry();
-                    }
-                }
-            }
+        File[] datFiles = datFolder.listFiles((dir, name) -> name.endsWith(".DAT"));
+        for (File datFile : Objects.requireNonNull(datFiles)) {
+            System.out.println("Processing: " + datFile.getAbsolutePath());
+            processDATFile(datFile);
         }
-
     }
 }
